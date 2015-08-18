@@ -1,0 +1,16 @@
+.clear {
+    clear: both;
+}
+#login-form .checkbox label {
+    padding-left: 0;
+}
+
+#login-form .login-button {
+    max-width: 45%;
+    float: right;
+}
+
+#login-form .field-loginform-rememberme {
+    max-width: 45%;
+    display: inline-block;
+}

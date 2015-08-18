@@ -11,10 +11,28 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'language' => 'ru',
+    'homeUrl' => '/',
     'components' => [
+        'assetManager' => [
+            'appendTimestamp' => true,
+        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
+        ],
+        'request' => [
+            'baseUrl' => ''
+        ],
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'enableStrictParsing' => true,
+            'rules' => [
+                '/' => 'site',
+                '<action>' => 'site/<action>',
+                '<alias[\wd-]+>' => 'site/page',
+            ],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

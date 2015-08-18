@@ -7,15 +7,36 @@ $params = array_merge(
 );
 
 return [
-    'id' => 'app-backend',
+    'id' => 'admin_LTE',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => require(__DIR__ . '/modules.php'),
+    'language' => 'ru',
+    'homeUrl' => '/_root/',
     'components' => [
+        'assetManager' => [
+            'appendTimestamp' => true,
+        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
+        ],
+        'request' => [
+            'baseUrl' => '/_root',
+        ],
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'enableStrictParsing' => true,
+            'rules' => [
+                '/' => 'site/index',
+                '<action:(login|logout)>' => 'site/<action>',
+                '<module:[\wd-]+>/page/<page:[\d]+>' => '<module>/default/index',
+                '<module:[\wd-]+>' => '<module>/default/index',
+                '<module:[\wd-]+>/<action:[\wd-]+>/<id:[\d]+>' => '<module>/default/<action>',
+                '<module:[\wd-]+>/<action:[\wd-]+>' => '<module>/default/<action>',
+            ],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
