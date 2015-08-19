@@ -31,3 +31,11 @@
 .icon-2x {
     font-size: 1.3em;
 }
+
+.table-hover th {
+    background: #EEEEEE;
+}
+
+.table-hover td, .table-hover th {
+    border: 1px solid #ddd;
+}

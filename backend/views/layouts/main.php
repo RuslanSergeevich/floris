@@ -1,6 +1,7 @@
 <?php
 use backend\assets\AppAsset;
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -163,25 +164,13 @@ AppAsset::register($this);
                                         <small>Member since Nov. 2012</small>
                                     </p>
                                 </li>
-                                <!-- Menu Body -->
-                                <li class="user-body">
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Followers</a>
-                                    </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Sales</a>
-                                    </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Friends</a>
-                                    </div>
-                                </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
                                         <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                        <?= Html::a('Выйти',Url::toRoute('/site/logout'),['data-method' => 'post', 'class' => 'btn btn-default btn-flat']) ?>
                                     </div>
                                 </li>
                             </ul>
@@ -210,6 +199,11 @@ AppAsset::register($this);
                     <li class="active">
                         <a href="/_root/pages">
                             <i class="fa fa-th"></i> <span>Страницы</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/_root/news">
+                            <i class="fa fa-th"></i> <span>Новости</span>
                         </a>
                     </li>
                 </ul>
