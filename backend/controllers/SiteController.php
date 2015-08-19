@@ -26,7 +26,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'upload-image-ckeditor'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -35,7 +35,7 @@ class SiteController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'logout' => ['post'],
+                    'logout' => ['post','get'],
                 ],
             ],
         ];
@@ -50,6 +50,10 @@ class SiteController extends Controller
             'error' => [
                 'class' => 'yii\web\ErrorAction',
             ],
+            'upload-image-ckeditor' => [
+                'class' => 'backend\components\UploadImageCkEditor',
+                'path' => dirname(dirname(__DIR__)) . '/frontend/web/userfiles/ckeditor_upload/'
+            ]
         ];
     }
 

@@ -14,3 +14,20 @@
     max-width: 45%;
     display: inline-block;
 }
+
+.button-add {
+    width: 10em;
+    margin: 1em;
+}
+
+.content-wrapper a.cke_button {
+    height: 17px;
+}
+
+.table-hover .fa {
+    margin-left: 1.3em;
+}
+
+.icon-2x {
+    font-size: 1.3em;
+}

@@ -31,7 +31,7 @@ return [
             'enableStrictParsing' => true,
             'rules' => [
                 '/' => 'site/index',
-                '<action:(login|logout)>' => 'site/<action>',
+                '<action:(login|logout|upload-image-ckeditor)>' => 'site/<action>',
                 '<module:[\wd-]+>/page/<page:[\d]+>' => '<module>/default/index',
                 '<module:[\wd-]+>' => '<module>/default/index',
                 '<module:[\wd-]+>/<action:[\wd-]+>/<id:[\d]+>' => '<module>/default/<action>',

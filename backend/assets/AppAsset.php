@@ -22,14 +22,18 @@ class AppAsset extends AssetBundle
         'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
         'css/ionicons.min.css',
         'css/skins/_all-skins.min.css',
-        'plugins/iCheck/flat/blue.css',
+        'plugins/iCheck/all.css',
+        'css/override.css',
+        'plugins/select2/select2.min.css',
         //'plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css',
         //'plugins/jvectormap/jquery-jvectormap-1.2.2.css',
     ];
     public $js = [
+        'js/bootstrap.min.js',
         'plugins/slimScroll/jquery.slimscroll.min.js',
         'plugins/fastclick/fastclick.min.js',
-        'plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js',
+        'plugins/iCheck/icheck.min.js',
+        //'plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js',
         //'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js',
         //'plugins/daterangepicker/daterangepicker.js',
         //'plugins/knob/jquery.knob.js',
@@ -38,7 +42,7 @@ class AppAsset extends AssetBundle
         //'plugins/sparkline/jquery.sparkline.min.js',
         'js/jquery-ui.min.js',
         'js/app.js',
-        'js/pages/demo.js',
+        //'js/demo.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
