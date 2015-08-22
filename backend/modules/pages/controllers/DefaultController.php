@@ -36,7 +36,7 @@ class DefaultController extends SiteController
      */
     public function actionIndex()
     {
-        $query = Pages::find()->where(['parent_id' => 0]);
+        $query = Pages::find()->where(['parent_id' => 0])->orderBy(['pos' => SORT_ASC]);
         return $this->render('index', [
             'dataProvider' => $this->_findData($query)
         ]);

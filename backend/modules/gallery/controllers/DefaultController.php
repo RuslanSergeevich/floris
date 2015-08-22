@@ -178,6 +178,10 @@ class DefaultController extends SiteController
         }
     }
 
+    /**
+     * @param $id
+     * @return string
+     */
     public function actionChilds($id)
     {
         return $this->renderAjax('blocks/_gallery_childs', [

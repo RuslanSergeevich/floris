@@ -95,4 +95,7 @@ use yii\helpers\Url;
     <!-- /.modal-dialog -->
 <?php $this->registerCssFile(Url::toRoute('/lte/css/jquery.jgrowl.min.css'));?>
 <?php $this->registerJsFile(Url::toRoute('/lte/js/jquery.jgrowl.min.js'),['depends'=>'yii\web\JqueryAsset']);?>
-<?php $this->registerJsFile(Url::toRoute('/lte/js/gallery_child_box_bundle.js'),['depends'=>'yii\web\JqueryAsset']);?>
+<?php $this->registerJs('$("#child_box .table-hover tbody").sortable({revert: true,items: "tr", cursor: "move", stop: function(event, ui) {
+                            $.post("gallery/update-gallery-pos",{data:$("#child_box .table-hover tbody").sortable("toArray")});
+                            $.jGrowl("Порядок изменён успешно!", { header: "Уведомление" });
+                        }});');?>
