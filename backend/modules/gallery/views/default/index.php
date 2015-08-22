@@ -1,10 +1,10 @@
 <?php
 
+use backend\assets\CkEditorAsset;
 use yii\helpers\Html;
-use yii\helpers\Url;
 use yii\grid\GridView;
 use common\models\Gallery;
-use backend\assets\CkEditorAsset;
+use yii\helpers\Url;
 
 CkEditorAsset::register($this);
 
@@ -43,11 +43,18 @@ $this->title = 'Галереи';
                         'id',
                         [
                             'class' => 'yii\grid\ActionColumn',
-                            'template' => '{child}',
+                            'template' => '{childs}',
                             'header' => 'Название галереи',
                             'buttons' => [
-                                'child' => function($url, $model){
-                                    return $model->publish ? $model->name : Html::tag('s', $model->name);
+                                'childs' => function($url, $model){
+                                    $name = $model->publish ? $model->name : Html::tag('s', $model->name);
+                                    return Gallery::existsChilds($model->id)
+                                        ? Html::a($name . Html::tag('i', '', [
+                                                'class' => 'fa fa-fw fa-plus-square-o',
+                                                'href' => '#child-box',
+                                                'data-toggle' =>'modal'
+                                            ]), $url, ['class' => 'child'])
+                                        : $name;
                                 }
                             ],
                         ],
@@ -100,10 +107,7 @@ $this->title = 'Галереи';
         </div>
     </div>
 </div>
-
+<?= Html::tag('div', '', ['id' => 'child-box', 'class' => 'modal fade'])?>
 <?php $this->registerCssFile(Url::toRoute('/lte/css/jquery.jgrowl.min.css'));?>
 <?php $this->registerJsFile(Url::toRoute('/lte/js/jquery.jgrowl.min.js'),['depends'=>'yii\web\JqueryAsset']);?>
-<?php $this->registerJs('$(".table-hover tbody").sortable({revert: true,items: "tr", cursor: "move", stop: function(event, ui) {
-        $.post("gallery/update-gallery-pos",{data:$(".table-hover tbody").sortable("toArray")});
-        $.jGrowl("Порядок изменён успешно!", { header: "Уведомление" });
-    }});$("#dataTables th").eq(5).click();');?>
+<?php $this->registerJsFile(Url::toRoute('/lte/js/gallery_main_bundle.js'),['depends'=>'yii\web\JqueryAsset']);?>

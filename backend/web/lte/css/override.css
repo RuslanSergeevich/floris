@@ -108,7 +108,12 @@
 }
 
 #gallery_box a.child {
+    color: #333;
+}
+
+#gallery_box a.child i {
     color: #4E9CC4;
+    font-size: 1.1em;
 }
 
 .ajax {
@@ -117,4 +122,17 @@
 
 .ui-sortable-helper {
     display: table;
+}
+
+.child:hover {
+    cursor: pointer;
+}
+
+.table-hover .fa-plus-square-o {
+    margin-left: 0.3em;
+    vertical-align: middle;
+}
+
+#child-box .modal-dialog {
+    width: 50%;
 }

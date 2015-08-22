@@ -24,7 +24,7 @@ class DefaultController extends SiteController
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'add', 'update', 'delete', 'multiupload', 'load-images', 'update-positions', 'image-edit', 'image-delete', 'update-gallery-pos'],
+                        'actions' => ['index', 'add', 'update', 'delete', 'multiupload', 'load-images', 'update-positions', 'image-edit', 'image-delete', 'update-gallery-pos', 'childs'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -39,6 +39,7 @@ class DefaultController extends SiteController
                     'image-delete' => ['post'],
                     'update-gallery-pos' => ['post'],
                     'load-images' => ['post'],
+                    'childs' => ['post'],
                 ],
             ],
         ];
@@ -175,6 +176,14 @@ class DefaultController extends SiteController
             $gallery->pos = $key;
             $gallery->update();
         }
+    }
+
+    public function actionChilds($id)
+    {
+        return $this->renderAjax('blocks/_gallery_childs', [
+            'dataProvider' => $this->_findData(Gallery::find()->where(['parent_id' => $id])->orderBy(['pos' => SORT_ASC])),
+            'parent_id' => $id
+        ]);
     }
 
     /**

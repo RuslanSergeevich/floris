@@ -89,7 +89,21 @@ class Gallery extends \yii\db\ActiveRecord
      */
     public static function getListGallery($id)
     {
-        $model = Gallery::find()->select('id, name')->where('id != :id', [':id' => $id])->andWhere(['parent_id' => 0])->all();
+
+        if($id){
+            $model = Gallery::find()->select('id, name')->where('id != :id', [':id' => $id])->andWhere(['parent_id' => 0])->all();
+        } else {
+            $model = Gallery::find()->select('id, name')->where(['parent_id' => 0])->all();
+        }
         return ArrayHelper::map(ArrayHelper::merge([['id' => '0', 'name' => 'Не выбрано']],$model), 'id', 'name');
+    }
+
+    /**
+     * @param $id
+     * @return $this
+     */
+    public static function existsChilds($id)
+    {
+        return Gallery::find()->where(['parent_id' => $id])->count() > 0 ? true : false;
     }
 }
