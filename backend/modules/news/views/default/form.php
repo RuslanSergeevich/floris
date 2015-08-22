@@ -22,15 +22,15 @@ $this->title = 'Добавление/Редактирование новости
                 </div><!-- /.box-header -->
             <?php $form = ActiveForm::begin(['method' => 'post', 'options' => ['role' => 'form', 'enctype' => 'multipart/form-data']]); ?>
                 <div class="box-body">
-                    <?php if($model->image){?>
-                        <?= Html::img('@news/'.$model->image, ['alt' => $model->name, 'width' => '150']) ?>
-                    <?php } ?>
-                    <?= $form->field($model, 'file')->fileInput() ?>
                     <?= $form->field($model, 'name') ?>
                     <?= $form->field($model, 'title') ?>
                     <?= $form->field($model, 'description') ?>
                     <?= $form->field($model, 'keywords') ?>
                     <?= $form->field($model, 'alias') ?>
+                    <?php if($model->image){?>
+                        <?= Html::img('@news/'.$model->image, ['alt' => $model->name, 'width' => '150']) ?>
+                    <?php } ?>
+                    <?= $form->field($model, 'file')->fileInput() ?>
                     <?= $form->field($model, 'text')->textarea() ?>
                     <?php if(!$model->isNewRecord):?>
                         <?= $form->field($model, 'publish')->checkbox(['class' => 'minimal']) ?>

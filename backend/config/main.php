@@ -7,7 +7,7 @@ $params = array_merge(
 );
 
 return [
-    'id' => 'admin_LTE',
+    'id' => 'Admin LTE',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],

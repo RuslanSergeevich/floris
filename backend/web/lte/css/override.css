@@ -28,14 +28,93 @@
     margin-left: 1.3em;
 }
 
-.icon-2x {
-    font-size: 1.3em;
-}
-
 .table-hover th {
     background: #EEEEEE;
 }
 
 .table-hover td, .table-hover th {
     border: 1px solid #ddd;
+}
+
+.icon-2x {
+    font-size: 3em;
+}
+
+.dropzone {
+    border: 3px solid #dddddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 1em;
+    position: relative;
+    padding: 0;
+}
+
+#thumbs {
+    margin: 60px auto 35px;
+    text-align: center;
+}
+
+#thumbs img {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 2px;
+    display: inline-block;
+}
+
+/*=== gallery_ajax_form ===*/
+.dropzone.dz-clickable {
+    cursor: pointer;
+}
+
+.dropzone.dz-clickable .dz-message, .dropzone.dz-clickable .dz-message * {
+    cursor: pointer;
+}
+.dropzone .dz-message {
+    font-weight: 400;
+}
+.dropzone .dz-message {
+    margin: 2em 0;
+    text-align: center;
+}
+.clear{
+    clear: both;
+}
+
+#image_box li{
+    list-style-type: none;
+    display: inline-block;
+    margin: 0.5em;
+    overflow: hidden;
+}
+
+#thumbs .icon-move:hover{
+    cursor: move;
+}
+
+#thumbs .edit .fa {
+    margin-left: 1em;
+}
+
+#thumbs .fa:hover{
+    cursor: pointer;
+}
+
+#thumbs .edit span{ margin-left: 1em; }
+#thumbs .unpublished{
+    border: 7px solid #AA433A;
+    opacity: 0.5;
+}
+
+#gallery_box a.child {
+    color: #4E9CC4;
+}
+
+.ajax {
+    display: none;
+}
+
+.ui-sortable-helper {
+    display: table;
 }

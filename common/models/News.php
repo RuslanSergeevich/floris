@@ -95,7 +95,7 @@ class News extends \yii\db\ActiveRecord
     public function doUpload()
     {
         $makePath = dirname(dirname(__DIR__)) . self::PATH;
-        if (!file_exists($makePath)) { FileHelper::createDirectory($makePath, 755); }
+        if (!file_exists($makePath)) { FileHelper::createDirectory($makePath, 755, true); }
         $image = $this->file->baseName . '-' . time() . '.' . $this->file->extension;
         if($this->file->saveAs($makePath.$image)){
             return $image;
@@ -111,8 +111,8 @@ class News extends \yii\db\ActiveRecord
     public static function getStatusesIcon($status)
     {
         $statuses = [
-            self::UNPUBLISHED => '<i class="fa fa-fw fa-close icon-2x"></i>',
-            self::PUBLISH => '<i class="fa fa-fw fa-check icon-2x"></i>'
+            self::UNPUBLISHED => '<i class="fa fa-fw fa-close"></i>',
+            self::PUBLISH => '<i class="fa fa-fw fa-check"></i>'
         ];
         return $statuses[$status];
     }

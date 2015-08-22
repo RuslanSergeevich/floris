@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m150819_093209_news extends Migration
+class m150819_130758_gallery extends Migration
 {
     public function up()
     {
@@ -11,31 +11,39 @@ class m150819_093209_news extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-        $this->createTable('{{%news}}', [
+        $this->createTable('{{%gallery}}', [
             'id' => $this->primaryKey(),
-            'alias' => $this->string()->notNull(),
-            'image' => $this->text()->notNull(),
+            'parent_id' => $this->integer()->defaultValue(0),
             'name' => $this->string()->notNull(),
-            'text' => $this->text()->notNull(),
-            'title' => $this->text()->notNull(),
-            'description' => $this->text()->notNull(),
-            'keywords' => $this->text()->notNull(),
             'publish' => $this->integer(1)->defaultValue(1),
             'pos' => $this->integer()->defaultValue(0),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull()
         ], $tableOptions);
 
+        $this->createTable('{{%gallery_images}}', [
+            'id' => $this->primaryKey(),
+            'gallery_cat_id' => $this->integer()->notNull(),
+            'name' => $this->string()->notNull(),
+            'alt' => $this->string()->notNull(),
+            'title' => $this->string()->notNull(),
+            'basename' => $this->string()->notNull(),
+            'ext' => $this->string()->notNull(),
+            'publish' => $this->integer(1)->defaultValue(1),
+            'pos' => $this->integer()->defaultValue(0),
+        ], $tableOptions);
+
         $this->insert('modules', [
-            'module' => 'news',
-            'name' => 'Новости',
+            'module' => 'gallery',
+            'name' => 'Галерея',
             'active' => 1
         ]);
     }
 
     public function down()
     {
-        $this->dropTable('{{%news}}');
+        $this->dropTable('{{%gallery}}');
+        $this->dropTable('{{%gallery_images}}');
     }
 
     /*

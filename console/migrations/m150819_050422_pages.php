@@ -25,11 +25,17 @@ class m150819_050422_pages extends Migration
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull()
         ], $tableOptions);
+
+        $this->insert('modules', [
+            'module' => 'pages',
+            'name' => 'Страницы',
+            'active' => 1
+        ]);
     }
 
     public function down()
     {
-        return $this->dropTable('{{%pages}}');
+        $this->dropTable('{{%pages}}');
     }
 
     /*

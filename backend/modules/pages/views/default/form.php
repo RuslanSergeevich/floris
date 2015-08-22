@@ -37,10 +37,8 @@ $this->title = 'Добавление/Редактирование страниц
                     <div class="form-group">
                         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
                     </div>
-
-                <?php ActiveForm::end(); ?>
-
                 </div>
+            <?php ActiveForm::end(); ?>
             </div>
         </div>
     </div>

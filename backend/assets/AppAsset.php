@@ -40,7 +40,7 @@ class AppAsset extends AssetBundle
         //'plugins/jvectormap/jquery-jvectormap-1.2.2.min.js',
         //'plugins/jvectormap/jquery-jvectormap-world-mill-en.js',
         //'plugins/sparkline/jquery.sparkline.min.js',
-        'js/jquery-ui.min.js',
+        'plugins/jQueryUI/jquery-ui.min.js',
         'js/app.js',
         //'js/demo.js',
     ];
