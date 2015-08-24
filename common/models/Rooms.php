@@ -7,10 +7,11 @@ use yii\behaviors\TimestampBehavior;
 use backend\components\DropDownTreeBehavior;
 
 /**
- * This is the model class for table "pages".
+ * This is the model class for table "rooms".
  *
  * @property integer $id
  * @property integer $parent_id
+ * @property integer $gallery_cat_id
  * @property string $alias
  * @property string $name
  * @property string $text
@@ -19,10 +20,10 @@ use backend\components\DropDownTreeBehavior;
  * @property string $keywords
  * @property integer $publish
  * @property integer $pos
- * @property string $created_at
- * @property string $updated_at
+ * @property integer $created_at
+ * @property integer $updated_at
  */
-class Pages extends \yii\db\ActiveRecord
+class Rooms extends \yii\db\ActiveRecord
 {
 
     const PUBLISH = 1;
@@ -31,7 +32,12 @@ class Pages extends \yii\db\ActiveRecord
     /**
      * @var
      */
-    public static $pages;
+    public static $galleries;
+
+    /**
+     * @var
+     */
+    public static $rooms;
 
     public function behaviors()
     {
@@ -47,9 +53,13 @@ class Pages extends \yii\db\ActiveRecord
         ];
     }
 
+    /**
+     *
+     */
     public function init()
     {
-        self::$pages = $this->getTree(Pages::find()->asArray()->all());
+        self::$galleries = $this->getTree(Gallery::find()->asArray()->all());
+        self::$rooms = $this->getTree(Rooms::find()->asArray()->all());
     }
 
     /**
@@ -57,7 +67,7 @@ class Pages extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'pages';
+        return 'rooms';
     }
 
     /**
@@ -66,13 +76,12 @@ class Pages extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['parent_id', 'publish', 'pos'], 'integer'],
+            [['parent_id', 'gallery_cat_id', 'publish', 'pos', 'created_at', 'updated_at'], 'integer'],
             [['alias', 'name', 'text', 'title', 'description', 'keywords'], 'required'],
             [['text', 'title', 'description', 'keywords'], 'string'],
-            [['created_at', 'updated_at'], 'safe'],
             [['alias', 'name'], 'string', 'max' => 255],
             ['pos', 'default', 'value' => 0],
-            ['alias', 'unique'],
+            ['alias', 'unique']
         ];
     }
 
@@ -83,7 +92,8 @@ class Pages extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'parent_id' => 'Родительская страница',
+            'parent_id' => 'Родитель',
+            'gallery_cat_id' => 'Галерея',
             'alias' => 'Alias',
             'name' => 'Название',
             'text' => 'Текст',
@@ -118,4 +128,5 @@ class Pages extends \yii\db\ActiveRecord
     {
         return static::find()->where(['parent_id' => $id])->count() > 0 ? true : false;
     }
+
 }

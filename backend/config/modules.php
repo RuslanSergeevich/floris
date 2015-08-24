@@ -16,4 +16,7 @@ return [
     'actions' => [
         'class' => 'backend\modules\actions\Actions',
     ],
+    'rooms' => [
+        'class' => 'backend\modules\rooms\Rooms',
+    ],
 ];

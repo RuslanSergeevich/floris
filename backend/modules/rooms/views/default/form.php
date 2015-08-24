@@ -3,14 +3,14 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
-use common\models\Pages;
+use common\models\Rooms;
 use backend\assets\CkEditorAsset;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Pages */
+/* @var $model common\models\Rooms */
 CkEditorAsset::register($this);
 
-$this->title = 'Добавление/Редактирование страницы';
+$this->title = 'Добавление/Редактирование номера';
 ?>
 
 <div class="row">
@@ -26,8 +26,9 @@ $this->title = 'Добавление/Редактирование страниц
                     <?php if(($parent_id = Yii::$app->request->post('parent_id')) !== null){
                         echo $form->field($model, 'parent_id')->hiddenInput(['value' => $parent_id])->label(false);
                     } else {
-                        echo $form->field($model, 'parent_id')->dropDownList(Pages::$pages, ['class' => 'form-control select2']);
+                        echo $form->field($model, 'parent_id')->dropDownList(Rooms::$rooms, ['class' => 'form-control select2']);
                     }?>
+                    <?= $form->field($model, 'gallery_cat_id')->dropDownList(Rooms::$galleries, ['class' => 'form-control select2'])?>
                     <?= $form->field($model, 'name') ?>
                     <?= $form->field($model, 'title') ?>
                     <?= $form->field($model, 'description') ?>

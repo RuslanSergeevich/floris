@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m150824_063105_actions extends Migration
+class m150824_072103_rooms extends Migration
 {
     public function up()
     {
@@ -11,10 +11,11 @@ class m150824_063105_actions extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-        $this->createTable('{{%actions}}', [
+        $this->createTable('{{%rooms}}', [
             'id' => $this->primaryKey(),
+            'parent_id' => $this->integer()->defaultValue(0),
+            'gallery_cat_id' => $this->integer()->defaultValue(0),
             'alias' => $this->string()->notNull(),
-            'image' => $this->text()->notNull(),
             'name' => $this->string()->notNull(),
             'text' => $this->text()->notNull(),
             'title' => $this->text()->notNull(),
@@ -27,15 +28,15 @@ class m150824_063105_actions extends Migration
         ], $tableOptions);
 
         $this->insert('modules', [
-            'module' => 'actions',
-            'name' => 'Акции',
+            'module' => 'rooms',
+            'name' => 'Номера',
             'active' => 1
         ]);
     }
 
     public function down()
     {
-        $this->dropTable('{{%actions}}');
+        $this->dropTable('{{%rooms}}');
     }
 
     /*
@@ -49,3 +50,4 @@ class m150824_063105_actions extends Migration
     }
     */
 }
+
