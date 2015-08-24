@@ -13,4 +13,7 @@ return [
     'imodules' => [
         'class' => 'backend\modules\imodules\Imodules',
     ],
+    'actions' => [
+        'class' => 'backend\modules\actions\Actions',
+    ],
 ];

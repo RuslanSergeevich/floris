@@ -6,15 +6,15 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
-/* @var $dataProvider @common\models\Gallery */
-/* @var $parent_id @common\models\Gallery */
+/* @var $dataProvider @common\models\Pages */
+/* @var $parent_id @common\models\Pages */
 ?>
 
 <div class="modal-dialog">
     <div class="modal-content">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Список дочерних галерей</h4>
+        <h4 class="modal-title">Список дочерних страниц</h4>
     </div>
     <div class="modal-body">
     <div class="row">
@@ -34,7 +34,7 @@ use yii\helpers\Url;
                     'id',
                     [
                         'attribute' => 'name',
-                        'header' => 'Название галереи',
+                        'header' => 'Название',
                         'format' => 'html',
                         'value' => function ($model) {
                             return $model->publish ? $model->name : Html::tag('s', $model->name);
@@ -82,7 +82,7 @@ use yii\helpers\Url;
                 ],
             ]);?>
         <div class="modal-footer">
-            <?= Html::beginForm(Url::toRoute(['/gallery/add']), 'post', ['class' => 'child-add']) ?>
+            <?= Html::beginForm(Url::toRoute(['/pages/add']), 'post', ['class' => 'child-add']) ?>
                 <?= Html::input('hidden', 'parent_id', $parent_id) ?>
                 <?= Html::submitButton('Добавить', ['class' => 'btn btn-block btn-primary button-add']) ?>
             <?= Html::endForm() ?>
@@ -99,6 +99,6 @@ use yii\helpers\Url;
 <?php $this->registerCssFile(Url::toRoute('/lte/css/jquery.jgrowl.min.css'));?>
 <?php $this->registerJsFile(Url::toRoute('/lte/js/jquery.jgrowl.min.js'),['depends'=>'yii\web\JqueryAsset']);?>
 <?php $this->registerJs('$("#child_box .table-hover tbody").sortable({revert: true,items: "tr", cursor: "move", stop: function(event, ui) {
-                            $.post("gallery/update-gallery-pos",{data:$("#child_box .table-hover tbody").sortable("toArray")});
+                            $.post("pages/update-pos",{data:$("#child_box .table-hover tbody").sortable("toArray")});
                             $.jGrowl("Порядок изменён успешно!", { header: "Уведомление" });
                         }});');?>

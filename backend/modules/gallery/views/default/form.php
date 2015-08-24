@@ -47,7 +47,9 @@ $this->title = 'Добавление/Редактирование галереи
 
                         <div class="form-group">
                             <div class="dz-message">
-                                Перетащите сюда файлы или щелкните для загрузки изображений.<br><span class="fa fa-fw fa-cloud-upload icon-2x"></span>
+                                <span class="fa fa-fw fa-cloud-upload icon-2x"></span><br />
+                                <div>Загрузить</div>
+                                <div class="notice">Можно перетащить/загрузить одну или группу изображений за один раз</div>
                                 <?= $formImage->field($images, 'file')->fileInput(['multiple' => true, 'class' => 'hidden'])->label(false) ?>
                                 <?= Html::input('hidden', 'id', $model->id, ['id' => 'gallery_cat_id']) ?>
                             </div>

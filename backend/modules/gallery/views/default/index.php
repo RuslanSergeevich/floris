@@ -28,8 +28,7 @@ $this->title = 'Галереи';
                 </div>
             </div><!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
-                <?php
-                echo GridView::widget([
+                <?php echo GridView::widget([
                     'dataProvider' => $dataProvider,
                     'summary' => false,
                     'id' => 'gallery_box',

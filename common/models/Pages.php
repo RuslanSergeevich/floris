@@ -91,9 +91,9 @@ class Pages extends \yii\db\ActiveRecord
     public static function getListPages($id = false)
     {
         if($id){
-            $model = Pages::find()->select('id, name')->where(['parent_id' => 0])->where(['<>', 'id', $id])->all();
+            $model = static::find()->select('id, name')->where(['parent_id' => 0])->where(['<>', 'id', $id])->all();
         } else {
-            $model = Pages::find()->select('id, name')->where(['parent_id' => 0])->all();
+            $model = static::find()->select('id, name')->where(['parent_id' => 0])->all();
         }
 
         return ArrayHelper::map(ArrayHelper::merge([['id' => '0', 'name' => 'Не выбрано']],$model),'id','name');
@@ -110,5 +110,14 @@ class Pages extends \yii\db\ActiveRecord
             self::PUBLISH => '<i class="fa fa-fw fa-check"></i>'
         ];
         return $statuses[$status];
+    }
+
+    /**
+     * @param $id
+     * @return $this
+     */
+    public static function existsChilds($id)
+    {
+        return static::find()->where(['parent_id' => $id])->count() > 0 ? true : false;
     }
 }

@@ -1,6 +1,14 @@
 <?php
 /* @var $this yii\web\View */
 $this->title = 'My Yii Application';
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => $this->title,
+]);
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => $this->title
+]);
 ?>
 <div class="site-index">
 

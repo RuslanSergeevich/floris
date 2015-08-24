@@ -91,9 +91,9 @@ class Gallery extends \yii\db\ActiveRecord
     {
 
         if($id){
-            $model = Gallery::find()->select('id, name')->where('id != :id', [':id' => $id])->andWhere(['parent_id' => 0])->all();
+            $model = static::find()->select('id, name')->where('id != :id', [':id' => $id])->andWhere(['parent_id' => 0])->all();
         } else {
-            $model = Gallery::find()->select('id, name')->where(['parent_id' => 0])->all();
+            $model = static::find()->select('id, name')->where(['parent_id' => 0])->all();
         }
         return ArrayHelper::map(ArrayHelper::merge([['id' => '0', 'name' => 'Не выбрано']],$model), 'id', 'name');
     }
@@ -104,6 +104,6 @@ class Gallery extends \yii\db\ActiveRecord
      */
     public static function existsChilds($id)
     {
-        return Gallery::find()->where(['parent_id' => $id])->count() > 0 ? true : false;
+        return static::find()->where(['parent_id' => $id])->count() > 0 ? true : false;
     }
 }

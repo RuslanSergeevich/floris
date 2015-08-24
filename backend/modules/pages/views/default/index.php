@@ -31,16 +31,32 @@ $this->title = 'Общеинформационные страницы';
                     'dataProvider' => $dataProvider,
                     'summary' => false,
                     'tableOptions' => ['class' => 'table table-hover'],
+                    'id' =>'pages_box',
+                    'rowOptions' => function($model){
+                        return [
+                            'id' => $model['id']
+                        ];
+                    },
                     'columns' => [
                         'id',
                         [
-                            'attribute' => 'name',
-                            'header' => 'Название страницы',
-                            'value' => function ($model) {
-                                return $model->publish ? $model->name : Html::tag('s', $model->name);
-                            },
-                            'format' => 'html'
+                            'class' => 'yii\grid\ActionColumn',
+                            'template' => '{childs}',
+                            'header' => 'Название',
+                            'buttons' => [
+                                'childs' => function($url, $model){
+                                    $name = $model->publish ? $model->name : Html::tag('s', $model->name);
+                                    return Pages::existsChilds($model->id)
+                                        ? Html::a($name . Html::tag('i', '', [
+                                                'class' => 'fa fa-fw fa-plus-square-o',
+                                                'href' => '#child-box',
+                                                'data-toggle' =>'modal'
+                                            ]), $url, ['class' => 'child'])
+                                        : $name;
+                                }
+                            ],
                         ],
+                        'alias',
                         [
                             'attribute' => 'publish',
                             'header' => 'Публикация',
@@ -63,7 +79,6 @@ $this->title = 'Общеинформационные страницы';
                                 return Yii::$app->formatter->asRelativeTime($model->updated_at);
                             },
                         ],
-                        'pos',
                         [
                             'class' => 'yii\grid\ActionColumn',
                             'header' => 'Редактирование',
@@ -91,3 +106,7 @@ $this->title = 'Общеинформационные страницы';
         </div>
     </div>
 </div>
+<?= Html::tag('div', '', ['id' => 'child-box', 'class' => 'modal fade'])?>
+<?php $this->registerCssFile(Url::toRoute('/lte/css/jquery.jgrowl.min.css'));?>
+<?php $this->registerJsFile(Url::toRoute('/lte/js/jquery.jgrowl.min.js'),['depends'=>'yii\web\JqueryAsset']);?>
+<?php $this->registerJsFile(Url::toRoute('/lte/js/pages_main_bundle.js'),['depends'=>'backend\assets\AppAsset']);?>

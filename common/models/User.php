@@ -11,6 +11,7 @@ use yii\web\IdentityInterface;
  * User model
  *
  * @property integer $id
+ * @property string $name
  * @property string $username
  * @property string $password_hash
  * @property string $password_reset_token
@@ -52,6 +53,9 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
+            [['name', 'username', 'email'], 'string'],
+            [['created_at', 'updated_at'], 'safe'],
+            [['email'], 'email'],
         ];
     }
 
@@ -185,4 +189,17 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'id',
+            'name' => 'Отображаемое имя',
+            'username' => 'Логин',
+        ];
+    }
+
 }

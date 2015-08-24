@@ -40,7 +40,6 @@ class SidebarWidget extends Widget
     public function run()
     {
         if($modules = Modules::find()->where(['active' => 1])->orderBy('name','ASC')->asArray()->all()){
-            $this->_html = Html::beginTag('ul', ['class' => 'sidebar-menu']);
             $this->_html .= Html::tag('li', self::NAME_NAVIGATION, ['class' => 'header']);
                 foreach($modules as $module){
                     $this->_html .= Html::tag('li', Html::a('<i class="fa fa-th"></i> <span>'.$module['name'].'</span>', Url::toRoute(self::URL_SEPARATOR.$module['module'])),
@@ -49,12 +48,11 @@ class SidebarWidget extends Widget
                             'id' => 'module-'.$module['module']
                         ]);
                 }
-            $this->_html .= Html::tag('li', Html::a('<i class="fa fa-fw fa-gears"></i> <span>'.self::MODULE.'</span>', Url::toRoute(self::URL_SEPARATOR.self::URL_MODULE)), [
-                'class' => $this->moduleId == self::URL_MODULE ? 'active' : '',
-            ]);
-            $this->_html .= Html::endTag('ul');
         }
-        return $this->_html;
+        $this->_html .= Html::tag('li', Html::a('<i class="fa fa-fw fa-gears"></i> <span>'.self::MODULE.'</span>', Url::toRoute(self::URL_SEPARATOR.self::URL_MODULE)), [
+            'class' => $this->moduleId == self::URL_MODULE ? 'active' : '',
+        ]);
+        return Html::tag('ul', $this->_html, ['class' => 'sidebar-menu']);
     }
 
 } 

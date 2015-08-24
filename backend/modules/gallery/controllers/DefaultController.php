@@ -100,6 +100,7 @@ class DefaultController extends SiteController
         if(!$model = Gallery::findOne(['id' => $id])){
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+
         if($model->load(Yii::$app->request->post()) && $model->validate()){
             $model->save();
             return $this->redirect(Yii::$app->homeUrl.$this->module->id);

@@ -23,7 +23,11 @@ $this->title = 'Добавление/Редактирование страниц
                 </div><!-- /.box-header -->
             <?php $form = ActiveForm::begin(['method' => 'post', 'options' => ['role' => 'form']]); ?>
                 <div class="box-body">
-                    <?= $form->field($model, 'parent_id')->dropDownList(Pages::getListPages($model->id), ['class' => 'form-control select2']) ?>
+                    <?php if(($parent_id = Yii::$app->request->post('parent_id')) !== null){
+                        echo $form->field($model, 'parent_id')->hiddenInput(['value' => $parent_id])->label(false);
+                    } else {
+                        echo $form->field($model, 'parent_id')->dropDownList(Pages::getListPages($model->id), ['class' => 'form-control select2']);
+                    }?>
                     <?= $form->field($model, 'name') ?>
                     <?= $form->field($model, 'title') ?>
                     <?= $form->field($model, 'description') ?>
