@@ -3,6 +3,8 @@
 namespace common\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
+use yii\helpers\FileHelper;
 
 /**
  * This is the model class for table "actions".
@@ -22,6 +24,14 @@ use Yii;
  */
 class Actions extends \yii\db\ActiveRecord
 {
+
+    const PUBLISH = 1;
+    const UNPUBLISHED = 0;
+
+    const PATH = '/frontend/web/userfiles/actions/';
+
+    public $file;
+
     /**
      * @inheritdoc
      */
@@ -30,16 +40,29 @@ class Actions extends \yii\db\ActiveRecord
         return 'actions';
     }
 
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => TimestampBehavior::className(),
+                'createdAtAttribute' => 'created_at',
+                'updatedAtAttribute' => 'updated_at',
+            ],
+        ];
+    }
+
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['alias', 'image', 'name', 'text', 'title', 'description', 'keywords', 'created_at', 'updated_at'], 'required'],
+            [['alias', 'name', 'text', 'title', 'description', 'keywords'], 'required'],
             [['image', 'text', 'title', 'description', 'keywords'], 'string'],
             [['publish', 'pos', 'created_at', 'updated_at'], 'integer'],
-            [['alias', 'name'], 'string', 'max' => 255]
+            [['alias', 'name'], 'string', 'max' => 255],
+            ['pos', 'default', 'value' => 0],
+            ['alias', 'unique']
         ];
     }
 
@@ -50,17 +73,60 @@ class Actions extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'image' => 'Изображение',
+            'file' => 'Изображение',
             'alias' => 'Alias',
-            'image' => 'Image',
-            'name' => 'Name',
-            'text' => 'Text',
+            'name' => 'Название',
+            'text' => 'Текст',
             'title' => 'Title',
             'description' => 'Description',
             'keywords' => 'Keywords',
-            'publish' => 'Publish',
-            'pos' => 'Pos',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
+            'publish' => 'Публикация',
+            'pos' => 'Позиция',
+            'created_at' => 'Создана',
+            'updated_at' => 'Обновлена'
         ];
+    }
+
+    /**
+     * @return bool|string
+     */
+    public function doUpload()
+    {
+        $makePath = dirname(dirname(__DIR__)) . self::PATH;
+        if (!file_exists($makePath)) { FileHelper::createDirectory($makePath, 755, true); }
+        $image = $this->file->baseName . '-' . time() . '.' . $this->file->extension;
+        if($this->file->saveAs($makePath.$image)){
+            return $image;
+        }
+        return '';
+    }
+
+    /**
+     * @param $status
+     * @return mixed
+     */
+    public static function getStatusesIcon($status)
+    {
+        $statuses = [
+            self::UNPUBLISHED => '<i class="fa fa-fw fa-close"></i>',
+            self::PUBLISH => '<i class="fa fa-fw fa-check"></i>'
+        ];
+        return $statuses[$status];
+    }
+
+    /**
+     * @return bool
+     */
+    public function beforeDelete()
+    {
+        if (parent::beforeDelete()) {
+            if($this->image){
+                unlink(dirname(dirname(__DIR__)) . self::PATH . $this->image);
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 }

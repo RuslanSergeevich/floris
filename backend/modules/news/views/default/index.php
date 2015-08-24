@@ -1,14 +1,14 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $dataProvider @app\modules\models\Pages */
+/* @var $dataProvider @app\modules\models\News */
 
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\GridView;
 use common\models\News;
 
-$this->title = 'Новости';
+$this->title = 'Список новостей';
 ?>
 
 <div class="row">

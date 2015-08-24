@@ -6,7 +6,7 @@ use yii\helpers\Url;
 use backend\assets\CkEditorAsset;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\News */
+/* @var $model common\models\Actions */
 CkEditorAsset::register($this);
 
 $this->title = 'Добавление/Редактирование новости';
@@ -28,7 +28,7 @@ $this->title = 'Добавление/Редактирование новости
                             <?= $form->field($model, 'keywords') ?>
                             <?= $form->field($model, 'alias') ?>
                             <?php if($model->image){?>
-                                <?= Html::img('@news/'.$model->image, ['alt' => $model->name, 'width' => '150']) ?>
+                                <?= Html::img('@actions/'.$model->image, ['alt' => $model->name, 'width' => '150']) ?>
                             <?php } ?>
                             <?= $form->field($model, 'file')->fileInput() ?>
                             <?= $form->field($model, 'text')->textarea() ?>
@@ -45,4 +45,4 @@ $this->title = 'Добавление/Редактирование новости
         </div>
     </div>
 </div>
-<?php $this->registerJsFile(Url::toRoute('/lte/js/news_bundle.js'),['depends'=>'yii\web\JqueryAsset']);?>
+<?php $this->registerJsFile(Url::toRoute('/lte/js/actions_bundle.js'),['depends'=>'yii\web\JqueryAsset']);?>
