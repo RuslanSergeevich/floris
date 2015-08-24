@@ -48,7 +48,7 @@ class Rooms extends \yii\db\ActiveRecord
                 'updatedAtAttribute' => 'updated_at',
             ],
             [
-                'class' => DropDownTreeBehavior::className(),
+                'class' => DropDownTreeBehavior::className()
             ]
         ];
     }

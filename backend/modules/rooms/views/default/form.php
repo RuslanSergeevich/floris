@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 use common\models\Rooms;
 use backend\assets\CkEditorAsset;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Rooms */
@@ -26,6 +27,7 @@ $this->title = 'Добавление/Редактирование номера';
                     <?php if(($parent_id = Yii::$app->request->post('parent_id')) !== null){
                         echo $form->field($model, 'parent_id')->hiddenInput(['value' => $parent_id])->label(false);
                     } else {
+                        ArrayHelper::remove(Rooms::$rooms,$model->id);
                         echo $form->field($model, 'parent_id')->dropDownList(Rooms::$rooms, ['class' => 'form-control select2']);
                     }?>
                     <?= $form->field($model, 'gallery_cat_id')->dropDownList(Rooms::$galleries, ['class' => 'form-control select2'])?>
