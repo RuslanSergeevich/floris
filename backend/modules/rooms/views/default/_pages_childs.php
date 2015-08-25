@@ -82,7 +82,7 @@ use yii\helpers\Url;
                 ],
             ]);?>
         <div class="modal-footer">
-            <?= Html::beginForm(Url::toRoute(['/pages/add']), 'post', ['class' => 'child-add']) ?>
+            <?= Html::beginForm(Url::toRoute(['/rooms/add']), 'post', ['class' => 'child-add']) ?>
                 <?= Html::input('hidden', 'parent_id', $parent_id) ?>
                 <?= Html::submitButton('Добавить', ['class' => 'btn btn-block btn-primary button-add']) ?>
             <?= Html::endForm() ?>

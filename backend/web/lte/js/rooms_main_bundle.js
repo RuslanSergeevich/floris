@@ -1,5 +1,5 @@
-$("#pages_box .table-hover tbody").sortable({revert: true,items: "tr", cursor: "move", stop: function(event, ui) {
-    $.post("rooms/update-pos",{data:$("#pages_box .table-hover tbody").sortable("toArray")});
+$("#rooms_box .table-hover tbody").sortable({revert: true,items: "tr", cursor: "move", stop: function(event, ui) {
+    $.post("rooms/update-pos",{data:$("#rooms_box .table-hover tbody").sortable("toArray")});
     $.jGrowl("Порядок изменён успешно!", { header: "Уведомление" });
 }});
 

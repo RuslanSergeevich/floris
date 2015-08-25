@@ -59,14 +59,14 @@ AppAsset::register($this);
                                             foreach($orders as $order){?>
                                                 <li>
                                                     <a href="<?= Url::toRoute('/orders/update/'.$order['id'])?>">
-                                                        <i class="fa fa-user text-red"></i> Заявка: «<?= Html::tag('b', Orders::getRoomName($order['room_id']))?>»
+                                                        <i class="fa fa-user text-red"></i> Заявка на: «<?= Html::tag('b', Orders::getRoomName($order['room_id']))?>»
                                                     </a>
                                                 </li>
                                             <?php }
                                         }?>
                                     </ul>
                                 </li>
-                                <li class="footer"><a href="#">Смотреть все</a></li>
+                                <li class="footer"><a href="<?= Url::toRoute('/orders')?>">Смотреть все</a></li>
                             </ul>
                         </li>
                         <!-- User Account: style can be found in dropdown.less -->

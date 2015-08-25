@@ -106,7 +106,9 @@ $this->title = 'Номера';
             </div>
         </div>
     </div>
-<?= Html::tag('div', '', ['id' => 'child-box', 'class' => 'modal fade'])?>
+<?= Html::tag('div', '', ['id' => 'child-box', 'class' => 'modal fade', 'data' => [
+    'backdrop' => ''
+]])?>
 <?php $this->registerCssFile(Url::toRoute('/lte/css/jquery.jgrowl.min.css'));?>
 <?php $this->registerJsFile(Url::toRoute('/lte/js/jquery.jgrowl.min.js'),['depends'=>'yii\web\JqueryAsset']);?>
 <?php $this->registerJsFile(Url::toRoute('/lte/js/rooms_main_bundle.js'),['depends'=>'backend\assets\AppAsset']);?>

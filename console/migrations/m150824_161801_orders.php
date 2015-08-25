@@ -23,7 +23,7 @@ class m150824_161801_orders extends Migration
 
         $this->insert('modules', [
             'module' => 'orders',
-            'name' => 'Бронь',
+            'name' => 'Заявки',
             'active' => 1
         ]);
     }
