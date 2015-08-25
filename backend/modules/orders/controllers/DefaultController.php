@@ -1,11 +1,11 @@
 <?php
 
-namespace backend\modules\actions\controllers;
+namespace backend\modules\orders\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
 use backend\controllers\SiteController;
-use common\models\Actions;
+use common\models\Orders;
 use yii\data\ActiveDataProvider;
 use yii\data\Pagination;
 use yii\web\NotFoundHttpException;
@@ -22,7 +22,7 @@ class DefaultController extends SiteController
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'add', 'update', 'delete'],
+                        'actions' => ['index', 'update', 'delete'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -36,20 +36,9 @@ class DefaultController extends SiteController
      */
     public function actionIndex()
     {
-        $query = Actions::find();
+        $query = Orders::find();
         return $this->render('index', [
             'dataProvider' => $this->_findData($query)
-        ]);
-    }
-
-    /**
-     * @return string|\yii\web\Response
-     */
-    public function actionAdd()
-    {
-        $this->_loadData($model = new Actions());
-        return $this->render('form', [
-            'model' => new Actions()
         ]);
     }
 
@@ -60,20 +49,25 @@ class DefaultController extends SiteController
      */
     public function actionUpdate($id)
     {
-        if(!$model = Actions::findOne(['id' => $id])){
+        if (!$model = Orders::findOne(['id' => $id])) {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
         $this->_loadData($model);
         return $this->render('form', ['model' => $model]);
     }
 
+    /**
+     * @param $id
+     * @return \yii\web\Response
+     * @throws NotFoundHttpException
+     */
     public function actionDelete($id)
     {
-        if(!$model = Actions::findOne(['id' => $id])){
+        if (!$model = Orders::findOne(['id' => $id])) {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
         $model->delete();
-        return $this->redirect(Yii::$app->homeUrl.$this->module->id);
+        return $this->redirect(Yii::$app->homeUrl . $this->module->id);
     }
 
     /**
@@ -99,9 +93,9 @@ class DefaultController extends SiteController
      */
     private function _loadData($model)
     {
-        if($model->load(Yii::$app->request->post()) && $model->validate()) {
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             $model->save();
-            return $this->redirect(Yii::$app->homeUrl.$this->module->id);
+            return $this->redirect(Yii::$app->homeUrl . $this->module->id);
         }
     }
 }

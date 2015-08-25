@@ -9,7 +9,6 @@ use common\models\News;
 use yii\data\ActiveDataProvider;
 use yii\data\Pagination;
 use yii\web\NotFoundHttpException;
-use yii\web\UploadedFile;
 
 class DefaultController extends SiteController
 {
@@ -101,9 +100,6 @@ class DefaultController extends SiteController
     private function _loadData($model)
     {
         if($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if($model->file = UploadedFile::getInstance($model, 'file')){
-                $model->image = $model->doUpload();
-            }
             $model->save();
             return $this->redirect(Yii::$app->homeUrl.$this->module->id);
         }

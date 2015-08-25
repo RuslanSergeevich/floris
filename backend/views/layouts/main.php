@@ -3,6 +3,7 @@ use backend\assets\AppAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use backend\components\SidebarWidget;
+use common\models\Orders;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -46,19 +47,23 @@ AppAsset::register($this);
                         </li>
                         <li class="dropdown notifications-menu">
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="true">
-                                <i class="fa fa-bell-o"></i>
-                                <span class="label label-warning">1</span>
+                                Заявки
+                                <span class="label label-warning"><?= Orders::getNewOrders()?></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="header">Новые отзывы</li>
                                 <li>
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-user text-red"></i> Тестовый отзыв
-                                            </a>
-                                        </li>
+                                        <?php if($orders = Orders::getNewOrdersList()){
+                                            foreach($orders as $order){?>
+                                                <li>
+                                                    <a href="<?= Url::toRoute('/orders/update/'.$order['id'])?>">
+                                                        <i class="fa fa-user text-red"></i> Заявка: «<?= Html::tag('b', Orders::getRoomName($order['room_id']))?>»
+                                                    </a>
+                                                </li>
+                                            <?php }
+                                        }?>
                                     </ul>
                                 </li>
                                 <li class="footer"><a href="#">Смотреть все</a></li>

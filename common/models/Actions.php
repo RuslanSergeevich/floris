@@ -4,7 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
-use yii\helpers\FileHelper;
+use backend\components\FileBehavior;
 
 /**
  * This is the model class for table "actions".
@@ -28,7 +28,8 @@ class Actions extends \yii\db\ActiveRecord
     const PUBLISH = 1;
     const UNPUBLISHED = 0;
 
-    const PATH = '/frontend/web/userfiles/actions/';
+    const PATH = '/userfiles/actions/';
+    const IMAGE_ENTITY = 'image';
 
     public $file;
 
@@ -48,6 +49,11 @@ class Actions extends \yii\db\ActiveRecord
                 'createdAtAttribute' => 'created_at',
                 'updatedAtAttribute' => 'updated_at',
             ],
+            [
+                'class' => FileBehavior::className(),
+                'path' => self::PATH,
+                'entity' => self::IMAGE_ENTITY
+            ]
         ];
     }
 
@@ -89,20 +95,6 @@ class Actions extends \yii\db\ActiveRecord
     }
 
     /**
-     * @return bool|string
-     */
-    public function doUpload()
-    {
-        $makePath = dirname(dirname(__DIR__)) . self::PATH;
-        if (!file_exists($makePath)) { FileHelper::createDirectory($makePath, 755, true); }
-        $image = $this->file->baseName . '-' . time() . '.' . $this->file->extension;
-        if($this->file->saveAs($makePath.$image)){
-            return $image;
-        }
-        return '';
-    }
-
-    /**
      * @param $status
      * @return mixed
      */
@@ -113,20 +105,5 @@ class Actions extends \yii\db\ActiveRecord
             self::PUBLISH => '<i class="fa fa-fw fa-check"></i>'
         ];
         return $statuses[$status];
-    }
-
-    /**
-     * @return bool
-     */
-    public function beforeDelete()
-    {
-        if (parent::beforeDelete()) {
-            if($this->image){
-                unlink(dirname(dirname(__DIR__)) . self::PATH . $this->image);
-            }
-            return true;
-        } else {
-            return false;
-        }
     }
 }

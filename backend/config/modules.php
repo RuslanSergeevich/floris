@@ -19,4 +19,7 @@ return [
     'rooms' => [
         'class' => 'backend\modules\rooms\Rooms',
     ],
+    'orders' => [
+        'class' => 'backend\modules\orders\Orders',
+    ],
 ];

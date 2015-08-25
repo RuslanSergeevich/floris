@@ -1,21 +1,21 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $dataProvider common\models\Pages */
+/* @var $dataProvider common\models\Orders */
 
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\GridView;
-use common\models\Actions;
+use common\models\Orders;
 
-$this->title = 'Список акций';
+$this->title = 'Список заявок на бронирование';
 ?>
 
 <div class="row">
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Список акций представлен ниже</h3>
+                <h3 class="box-title">Список заявок на бронирование</h3>
                 <div class="box-tools">
                     <div class="input-group" style="width: 150px;">
                         <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Поиск" />
@@ -34,27 +34,21 @@ $this->title = 'Список акций';
                     'columns' => [
                         'id',
                         [
-                            'attribute' => 'name',
-                            'header' => 'Название',
+                            'attribute' => 'room_id',
+                            'header' => 'Номер',
                             'value' => function ($model) {
-                                return $model->publish ? $model->name : Html::tag('s', $model->name);
-                            },
-                            'format' => 'html'
-                        ],
-                        [
-                            'attribute' => 'image',
-                            'header' => 'Изображение',
-                            'value' => function ($model) {
-                                return $model->image ? Html::img(Actions::PATH . $model->image, ['width' => 55]) : '';
+                                return Orders::getRoomName($model->room_id);
                             },
                             'format' => 'html'
                         ],
                         [
                             'attribute' => 'publish',
-                            'header' => 'Публикация',
+                            'header' => 'Статус',
                             'format' => 'html',
                             'value' => function ($model) {
-                                return Actions::getStatusesIcon($model->publish);
+                                return $model->status == 0
+                                    ? Html::tag('span', Orders::getStatuses($model->status), ['class' => 'label label-danger'])
+                                    : Html::tag('span', Orders::getStatuses($model->status), ['class' => 'label label-info']);
                             },
                         ],
                         [
@@ -71,7 +65,6 @@ $this->title = 'Список акций';
                                 return Yii::$app->formatter->asRelativeTime($model->updated_at);
                             },
                         ],
-                        'pos',
                         [
                             'class' => 'yii\grid\ActionColumn',
                             'header' => 'Редактирование',
@@ -90,9 +83,6 @@ $this->title = 'Список акций';
                             ],
                         ],
                     ],
-                ]);
-                echo Html::tag('div', Html::a('Добавить', Url::toRoute(['/actions/add']), ['class' => 'btn btn-block btn-primary']), [
-                    'class' => 'button-add'
                 ]);
                 ?>
             </div>
