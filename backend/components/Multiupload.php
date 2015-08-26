@@ -66,6 +66,5 @@ class Multiupload extends Action{
                 ->save($this->path . $image->basename . '_thumb.' . $image->ext, ['quality' => $this->quality]);
             return $image->save();
         }
-        print_r($image->errors);
     }
 } 

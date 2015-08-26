@@ -20,6 +20,7 @@ class Orders extends \yii\db\ActiveRecord
 {
     const ACTIVE = 1;
     const DISABLE = 0;
+    const LIMIT = 7;
 
     /**
      * @inheritdoc
@@ -105,6 +106,6 @@ class Orders extends \yii\db\ActiveRecord
      */
     public static function getNewOrdersList()
     {
-        return self::find()->where(['status' => self::DISABLE])->limit(7)->asArray()->all();
+        return static::find()->where(['status' => self::DISABLE])->limit(self::LIMIT)->asArray()->all();
     }
 }

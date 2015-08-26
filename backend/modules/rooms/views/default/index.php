@@ -62,7 +62,7 @@ $this->title = 'Номера';
                                 'header' => 'Публикация',
                                 'format' => 'html',
                                 'value' => function ($model) {
-                                    return Rooms::getStatusesIcon($model->publish);
+                                    Rooms::getStatusesIcon($model->publish);
                                 },
                             ],
                             [

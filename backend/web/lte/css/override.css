@@ -107,11 +107,11 @@
     opacity: 0.5;
 }
 
-#gallery_box a.child {
+.content a.child {
     color: #333;
 }
 
-#gallery_box a.child i {
+.content a.child i {
     color: #4E9CC4;
     font-size: 1.1em;
 }
