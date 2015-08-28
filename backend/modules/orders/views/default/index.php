@@ -47,8 +47,8 @@ $this->title = 'Список заявок на бронирование';
                             'format' => 'html',
                             'value' => function ($model) {
                                 return $model->status == 0
-                                    ? Html::tag('span', Orders::getStatuses($model->status), ['class' => 'label label-danger'])
-                                    : Html::tag('span', Orders::getStatuses($model->status), ['class' => 'label label-info']);
+                                    ? Html::tag('span', Orders::getStatuses($model->status), ['class' => 'label label-info'])
+                                    : Html::tag('span', Orders::getStatuses($model->status), ['class' => 'label label-success']);
                             },
                         ],
                         [
