@@ -147,7 +147,7 @@ AppAsset::register($this);
             <div class="pull-right hidden-xs">
                 <b>Light version</b> 0.0.1
             </div>
-            <strong>&copy; Ассоциация курортов Крыма <a href="#">АКК</a>.</strong> Все права защищены.
+            <strong>&copy; <a href="#">АКК</a>.</strong> Все права защищены.
         </footer>
 
         <div class="control-sidebar-bg"></div>

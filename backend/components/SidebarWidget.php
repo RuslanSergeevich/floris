@@ -9,7 +9,6 @@ use Yii;
 
 /**
  * Class SidebarWidget
- * Made for The Association of Crimean resorts
  * @author Alexandr Krasnopyorov <sanya-sliver@yandex.ru>
  */
 class SidebarWidget extends Widget

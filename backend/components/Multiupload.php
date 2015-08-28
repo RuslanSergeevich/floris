@@ -11,7 +11,6 @@ use yii\helpers\FileHelper;
 
 /**
  * Class Multiupload
- * Made for The Association of Crimean resorts
  * @author Alexandr Krasnopyorov <sanya-sliver@yandex.ru>
  */
 

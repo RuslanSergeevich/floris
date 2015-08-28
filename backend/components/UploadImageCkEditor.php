@@ -1,7 +1,6 @@
 <?php
 /**
  * Class UploadImageCkEditor
- * Made for The Association of Crimean resorts
  * @author Alexandr Krasnopyorov <sanya-sliver@yandex.ru>
  */
 
