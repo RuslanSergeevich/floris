@@ -16,6 +16,7 @@ class m130524_201442_init extends Migration
         $this->createTable('{{%user}}', [
             'id' => Schema::TYPE_PK,
             'username' => Schema::TYPE_STRING . ' NOT NULL',
+            'name' => Schema::TYPE_STRING . ' NOT NULL',
             'auth_key' => Schema::TYPE_STRING . '(32) NOT NULL',
             'password_hash' => Schema::TYPE_STRING . ' NOT NULL',
             'password_reset_token' => Schema::TYPE_STRING,
@@ -25,8 +26,16 @@ class m130524_201442_init extends Migration
             'updated_at' => Schema::TYPE_INTEGER . ' NOT NULL',
         ], $tableOptions);
 
+        $this->createTable('{{%modules}}', [
+            'id' => $this->primaryKey(),
+            'module' => $this->string(),
+            'name' => $this->string(),
+            'active' => $this->integer(1)->defaultValue(1)
+        ], $tableOptions);
+
         $this->insert('user', [
             'username' => 'root',
+            'name' => 'Администратор',
             'auth_key' => '',
             'password_hash' => '$2y$13$Jx8AQMNrAEEV832g8TMBl.GCwn24rFTyDI8gZZhraO1EMshZrrNBq', //b234254
             'password_reset_token' => '',
