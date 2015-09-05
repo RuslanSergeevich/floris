@@ -19,7 +19,7 @@ class DropDownTreeBehavior extends Behavior
      */
     public function getTree($model)
     {
-        if ($model) {
+        if ($model !== null) {
             $this->_list = [];
             $this->_createList($model);
             return ArrayHelper::map(ArrayHelper::merge([['id' => '0', 'name' => 'Не выбрано']],$this->_list),'id','name');
@@ -33,7 +33,7 @@ class DropDownTreeBehavior extends Behavior
      */
     private function _createList($items = null, $parent_id = 0, $t = '-')
     {
-        if ($items != null) {
+        if ($items !== null) {
             $t = $t.self::POSTFIX;
             foreach ($items as $item) {
                 if ($item['parent_id'] == $parent_id) {
