@@ -30,6 +30,7 @@ class m130524_201442_init extends Migration
             'id' => $this->primaryKey(),
             'module' => $this->string(),
             'name' => $this->string(),
+            'icon' => $this->string(),
             'active' => $this->integer(1)->defaultValue(1)
         ], $tableOptions);
 

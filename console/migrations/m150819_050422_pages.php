@@ -29,6 +29,7 @@ class m150819_050422_pages extends Migration
         $this->insert('modules', [
             'module' => 'pages',
             'name' => 'Страницы',
+            'icon' => '',
             'active' => 1
         ]);
     }

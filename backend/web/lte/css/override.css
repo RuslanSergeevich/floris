@@ -161,3 +161,28 @@
     font-size: 12px;
     font-style: italic;
 }
+
+.main-header .logo {
+    font-size: 14px;
+}
+
+.sidebar-mini.sidebar-collapse .main-header .logo > .logo-mini {
+    font-size: 11px;
+}
+
+.skin-blue .main-header .logo {
+    background-color: #5F9501;
+}
+
+.skin-blue .main-header .navbar {
+    background-color: #699F01;
+}
+
+.logo-footer {
+    background-image: url("/_root/lte/img/granat.jpeg");
+    width: 98px;
+    height: 27px;
+    position: absolute;
+    margin: 12px 5px 12px 15px;
+    bottom: 0;
+}

@@ -18,7 +18,7 @@ AppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
+    <title><?= Html::encode($this->title) ?> | Web Design Studio GRANAT</title>
     <?php $this->head() ?>
 </head>
 <body class="skin-blue sidebar-mini">
@@ -29,9 +29,9 @@ AppAsset::register($this);
             <!-- Logo -->
             <a href="<?= Yii::$app->homeUrl?>" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>A</b>LT</span>
+                <span class="logo-mini">GRANAT</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Admin</b>LTE</span>
+                <span class="logo-lg"><b>Web Design Studio</b> GRANAT</span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -134,6 +134,7 @@ AppAsset::register($this);
                 ])?>
             </section>
             <!-- /.sidebar -->
+            <div class="logo-footer"></div>
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
@@ -145,9 +146,9 @@ AppAsset::register($this);
         </div><!-- /.content-wrapper -->
         <footer class="main-footer">
             <div class="pull-right hidden-xs">
-                <b>Light version</b> 0.0.1
+                <b>Floris</b>
             </div>
-            <strong>&copy; <a href="#">АКК</a>.</strong> Все права защищены.
+            <b>&copy; <?= Html::a('Web Design Studio GRANAT', 'http://granat.in', ['target' => '_blank'])?></b>
         </footer>
 
         <div class="control-sidebar-bg"></div>

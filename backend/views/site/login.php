@@ -11,7 +11,7 @@ use yii\bootstrap\ActiveForm;
 
 LoginAsset::register($this);
 
-$this->title = 'Вход в панель управления сайтом';
+$this->title = 'Вход в панель управления сайтом | Web Design Studio GRANAT';
 $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
@@ -27,11 +27,9 @@ $this->beginPage() ?>
         <div class="site-login">
             <div class="login-box">
                 <div class="login-logo">
-                    <b>Admin</b> light version 0.0.1
+                    <b>Web Design Studio GRANAT</b>
                 </div><!-- /.login-logo -->
                 <div class="login-box-body">
-                    <p class="login-box-msg">Введите логин\пароль</p>
-
                     <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
                         <?= $form->field($model, 'username', [
                             'inputTemplate' => '<div class="form-group has-feedback">{input}<span class="glyphicon glyphicon-user form-control-feedback"></span></div>',

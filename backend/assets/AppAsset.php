@@ -19,7 +19,7 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web/lte';
     public $css = [
         'css/AdminLTE.min.css',
-        'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
+        'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css',
         'css/ionicons.min.css',
         'css/skins/_all-skins.min.css',
         'plugins/iCheck/all.css',
