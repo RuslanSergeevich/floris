@@ -1,0 +1,548 @@
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+article, aside, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+
+button::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner {
+  padding: 0;
+  border: none;
+}
+
+.ie button:focus,
+.ie input[type="button"]:focus,
+.ie input[type="submit"]:focus {
+  outline: none;
+}
+
+img[align=left] {
+  float: left;
+}
+
+img[align=right] {
+  float: right;
+}
+
+address {
+  font-style: normal;
+}
+
+a img {
+  border: none;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@font-face {
+  font-family: 'espuma_proregular';
+  src: url("/fonts/espumapro-regular-webfont.eot");
+  src: url("/fonts/espumapro-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/espumapro-regular-webfont.woff2") format("woff2"), url("/fonts/espumapro-regular-webfont.woff") format("woff"), url("/fonts/espumapro-regular-webfont.ttf") format("truetype"), url("/fonts/espumapro-regular-webfont.svg#espuma_proregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'open_sansregular';
+  src: url("/fonts/opensans-webfont.eot");
+  src: url("/fonts/opensans-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/opensans-webfont.woff2") format("woff2"), url("/fonts/opensans-webfont.woff") format("woff"), url("/fonts/opensans-webfont.ttf") format("truetype"), url("/fonts/opensans-webfont.svg#open_sansregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'open_sanslight';
+  src: url("/fonts/opensans-light-webfont.eot");
+  src: url("/fonts/opensans-light-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/opensans-light-webfont.woff2") format("woff2"), url("/fonts/opensans-light-webfont.woff") format("woff"), url("/fonts/opensans-light-webfont.ttf") format("truetype"), url("/fonts/opensans-light-webfont.svg#open_sanslight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'open_sanssemibold';
+  src: url("/fonts/opensans-semibold-webfont.eot");
+  src: url("/fonts/opensans-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/opensans-semibold-webfont.woff2") format("woff2"), url("/fonts/opensans-semibold-webfont.woff") format("woff"), url("/fonts/opensans-semibold-webfont.ttf") format("truetype"), url("/fonts/opensans-semibold-webfont.svg#open_sanssemibold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+html, body {
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  font: normal 14px Tahoma, Arial, FreeSans, sans-serif;
+  color: #fff;
+}
+
+input, textarea {
+  font: 14px Tahoma, Arial, FreeSans, sans-serif;
+  color: #fff;
+}
+
+.clr {
+  zoom: 1;
+}
+.clr:before, .clr:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.clr:after {
+  clear: both;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:hover {
+  text-decoration: none;
+}
+a:hover {
+  color: #fff;
+}
+a:active, a:focus {
+  outline: none;
+}
+
+input {
+  outline: none;
+}
+
+input[type=submit]:hover {
+  cursor: pointer;
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.fleft {
+  float: left;
+}
+
+.fright {
+  float: right;
+}
+
+.break {
+  word-wrap: break-word;
+  word-break: break-all;
+  word-break: break-word;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+#wrapper {
+  min-width: 900px;
+  min-height: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.inner {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Header */
+header {
+  width: 100%;
+  height: 107px;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+header a.logo {
+  background: url('/images/logo_white.png') 0 0 no-repeat;
+  position: absolute;
+  top: 32px;
+  left: 35px;
+  display: block;
+  width: 100px;
+  height: 50px;
+}
+header menu {
+  position: relative;
+  margin: 20px 0 0 310px;
+  list-style: none;
+}
+header menu li {
+  position: absolute;
+  top: 0;
+  display: inline-block;
+}
+header menu li a {
+  font: 15px "open_sansregular";
+  color: #fff;
+  text-decoration: underline;
+  position: relative;
+  padding-left: 45px;
+}
+header menu li a:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '';
+}
+header menu li.about {
+  top: 0;
+  left: 0;
+}
+header menu li.about a:after {
+  background: url('/images/sprite.png') 0 -166px;
+  height: 27px;
+  width: 20px;
+  top: -5px;
+}
+header menu li.cataloge {
+  left: 0;
+  top: 35px;
+}
+header menu li.cataloge a:after {
+  background: url('/images/sprite.png') 0 -442px;
+  height: 26px;
+  width: 29px;
+  top: -2px;
+}
+header menu li.privat {
+  left: 200px;
+}
+header menu li.privat a:after {
+  background: url('/images/sprite.png') 0 -389px;
+  height: 23px;
+  width: 27px;
+}
+header menu li.blog {
+  top: 35px;
+  left: 200px;
+}
+header menu li.blog a:after {
+  background: url('/images/sprite.png') 0 -223px;
+  height: 24px;
+  width: 21px;
+}
+header menu li.buy {
+  left: 420px;
+}
+header menu li.buy a:after {
+  background: url('/images/sprite.png') 0 -277px;
+  height: 28px;
+  width: 21px;
+  top: -3px;
+}
+header menu li.contacts {
+  top: 35px;
+  left: 420px;
+}
+header menu li.contacts a:after {
+  background: url('/images/sprite.png') 0 -335px;
+  height: 24px;
+  width: 27px;
+}
+header .phone {
+  position: absolute;
+  top: 30px;
+  right: 255px;
+  font: 16px "open_sansregular";
+  text-align: center;
+}
+header .phone a {
+  text-decoration: underline;
+  display: block;
+  font: 13px "open_sansregular";
+}
+header a.btn {
+  position: absolute;
+  top: 31px;
+  right: 20px;
+}
+
+/* End Header */
+/* Footer */
+footer {
+  height: 170px;
+  background: #16171c;
+  padding: 50px 35px;
+  position: relative;
+}
+footer menu {
+  list-style: none;
+}
+footer menu li {
+  display: inline-block;
+  margin-right: 35px;
+}
+footer menu li a {
+  font: 12px "open_sanssemibold";
+  border-bottom: 1px solid #fff;
+}
+footer a.vacation {
+  position: absolute;
+  font: 12px "open_sanssemibold";
+  border-bottom: 1px solid #fff;
+  right: 35px;
+  top: 50px;
+}
+footer a.search {
+  position: absolute;
+  background: url('/images/sprite.png') 0 -104px;
+  height: 32px;
+  width: 32px;
+  top: 44px;
+  right: 124px;
+}
+footer .footer-bottom {
+  border-top: 1px solid #404145;
+  padding-top: 15px;
+  margin-top: 34px;
+  position: relative;
+  font: 12px "open_sansregular";
+}
+footer .footer-bottom .copy {
+  position: absolute;
+  left: 0;
+  top: 15px;
+}
+footer .footer-bottom .info {
+  position: absolute;
+  top: 15px;
+  left: 289px;
+}
+footer .footer-bottom .sales {
+  position: absolute;
+  top: 15px;
+  left: 448px;
+}
+footer .footer-bottom .socials {
+  position: absolute;
+  top: 18px;
+  left: 590px;
+}
+footer .footer-bottom .socials a {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 14px;
+}
+footer .footer-bottom .socials a.fb {
+  background: url('/images/sprite.png') 0 0;
+  height: 22px;
+  width: 12px;
+}
+footer .footer-bottom .socials a.fb:hover {
+  background: url('/images/sprite.png') 0 -52px;
+}
+footer .footer-bottom .socials a.yt {
+  background: url('/images/sprite.png') 0 -588px;
+  height: 25px;
+  width: 26px;
+}
+footer .footer-bottom .socials a.yt:hover {
+  background: url('/images/sprite.png') 0 -643px;
+}
+footer .footer-bottom .socials a.vk {
+  background: url('/images/sprite.png') 0 -498px;
+  height: 15px;
+  width: 27px;
+}
+footer .footer-bottom .socials a.vk:hover {
+  background: url('/images/sprite.png') 0 -543px;
+}
+footer .footer-bottom .design {
+  position: absolute;
+  right: 0;
+  top: 15px;
+  text-align: right;
+}
+
+/* End Footer */
+.btn {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto;
+  font: 15px "open_sansregular";
+  color: #fff;
+  border: 1px solid #fff;
+  height: 45px;
+  padding: 0 25px;
+  line-height: 40px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+section {
+  height: 660px;
+}
+section .title {
+  text-align: center;
+  font: 40px "espuma_proregular";
+  line-height: 60px;
+}
+section .btns {
+  text-align: center;
+  margin-top: 80px;
+}
+section .btns a.btn {
+  font: 15px "open_sanssemibold";
+  padding-left: 54px;
+  background: url('/images/main/ico-btn-1.png') no-repeat 17px 8px;
+  line-height: 44px;
+  text-transform: uppercase;
+}
+section.b1 {
+  background: url('/images/main/bg-1.png') no-repeat 50% 50%;
+  background-size: cover;
+  height: 730px;
+  padding-top: 250px;
+}
+section.b2 {
+  background: url('/images/main/bg-2.png') no-repeat 50% 50%;
+  background-size: cover;
+}
+section.b2 .b-left {
+  width: 50%;
+  float: left;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  padding: 60px 0 0 185px;
+}
+section.b2 .b-left .title {
+  font-size: 26px;
+  text-align: left;
+  font: 40px "espuma_proregular";
+}
+section.b2 .b-left .b-text {
+  margin-top: 59px;
+  width: 460px;
+}
+section.b2 .b-left .b-text .sub-title {
+  font: 26px "open_sanssemibold";
+  margin-bottom: 36px;
+}
+section.b2 .b-left .b-text p {
+  font: 16px "open_sansregular";
+}
+section.b2 .b-left .b-text .btn {
+  background: url('/images/main/ico-btn-4.png') no-repeat 17px 8px;
+  padding-left: 60px;
+  margin-top: 44px;
+}
+section.b3 {
+  background: url('/images/main/bg-3.png') no-repeat 50% 50%;
+  background-size: cover;
+  padding-top: 245px;
+}
+section.b3 .btns {
+  margin-top: 45px;
+}
+section.b3 .btns a.btn {
+  background: url('/images/main/ico-btn-2.png') no-repeat 17px 8px;
+}
+section.b4 {
+  background: url('/images/main/bg-4.png') no-repeat 50% 50%;
+  background-size: cover;
+}
+section.b4 .b-left {
+  width: 50%;
+  float: left;
+  height: 100%;
+  padding-top: 180px;
+  text-align: center;
+}
+section.b4 .b-left .title {
+  text-align: left;
+  display: inline-block;
+}
+section.b4 .b-left .btns {
+  margin-top: 17px;
+  text-align: left;
+}
+section.b4 .b-left .btns a.blog {
+  background: url('/images/main/ico-btn-3.png') no-repeat 17px 8px;
+}
+section.b4 .b-right {
+  width: 50%;
+  float: right;
+  background: rgba(0, 0, 0, 0.75);
+  height: 100%;
+  padding: 145px 0 0 113px;
+}
+section.b4 .b-right .title {
+  font-size: 26px;
+  text-align: left;
+}
+section.b4 .b-right ul {
+  list-style: disc;
+  padding-left: 18px;
+  margin-top: 21px;
+}
+section.b4 .b-right ul li {
+  margin-bottom: 25px;
+}
+section.b4 .b-right ul li a {
+  font: 20px "open_sanslight";
+  border-bottom: 1px solid #fff;
+}
+section.b5 {
+  background: url('/images/main/bg-5.png') no-repeat 50% 50%;
+  background-size: cover;
+  padding-top: 115px;
+}
+section.b5 .title {
+  margin-bottom: 56px;
+}
+section.b5 ul {
+  text-align: center;
+}
+section.b5 ul li {
+  display: inline-block;
+  width: 330px;
+  text-align: left;
+}
+section.b5 ul li .title {
+  margin: 0 0 27px 0;
+  text-align: left;
+}
+section.b5 ul li p {
+  font: 16px "open_sansregular";
+  line-height: 25px;
+}
+section.b5 ul li .btn {
+  margin-top: 43px;
+}
