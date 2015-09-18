@@ -29,9 +29,9 @@ AppAsset::register($this);
             <!-- Logo -->
             <a href="<?= Yii::$app->homeUrl?>" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini">GRANAT</span>
+                <span class="logo-mini">FLORIS</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Web Design Studio</b> GRANAT</span>
+                <span class="logo-lg"><?= Html::img('@lte_images/logo_white.png', ['alt' => 'logo'])?></span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">

@@ -67,7 +67,7 @@ class Pages extends \yii\db\ActiveRecord
     {
         return [
             [['parent_id', 'publish', 'pos'], 'integer'],
-            [['alias', 'name', 'text', 'title', 'description', 'keywords'], 'required'],
+            [['alias', 'name', 'title', 'description'], 'required'],
             [['text', 'title', 'description', 'keywords'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
             [['alias', 'name'], 'string', 'max' => 255],

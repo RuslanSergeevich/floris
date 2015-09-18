@@ -1,59 +1,104 @@
 <?php
 /* @var $this yii\web\View */
-$this->title = 'My Yii Application';
+/* @var $model common\models\Pages */
+$this->title = $model->title;
 $this->registerMetaTag([
     'name' => 'description',
-    'content' => $this->title,
+    'content' => $model->description,
 ]);
 $this->registerMetaTag([
     'name' => 'keywords',
-    'content' => $this->title
+    'content' => $model->keywords
 ]);
 ?>
-<div class="site-index">
-
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+<main>
+    <section class="b1">
+        <div class="title">
+            МЫ ПРОИЗВОДИМ, ПРОДАЁМ<br>НАТУРАЛЬНЫЙ КРЫМСКИЙ ЧАЙ<br>И СЛАДОСТИ ОПТОМ
+        </div>
+        <div class="btns">
+            <a class="btn" href="#">ПОДРОБНО О КОМПАНИИ</a>
+        </div>
+    </section>
+    <section class="b2">
+        <div class="b-left">
+            <div class="title">
+                ВЫБИРАЙТЕ<br>НАТУРАЛЬНУЮ<br>ПРОДУКЦИЮ
             </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+            <div class="b-text">
+                <div class="sub-title">
+                    Чай в фильтр-пакетах
+                </div>
+                <p>
+                    Аналог классического чая Floris в измельченном формате и герметично упакованный в фильрт-пакет. Чай заваривается за пять минут не теряя при этом неповторимый вкус чаев Floris.
+                </p>
+                <a class="btn" href="#">В КАТАЛОГ</a>
             </div>
         </div>
-
-    </div>
-</div>
+    </section>
+    <section class="b3">
+        <div class="title">
+            ЗАКАЖИТЕ ПРОИЗВОДСТВО ЧАЯ<br>ПОД СВОЕЙ ТОРГОВОЙ МАРКОЙ
+        </div>
+        <div class="btns">
+            <a class="btn" href="#">ПОДРОБНЕЕ</a>
+        </div>
+    </section>
+    <section class="b4">
+        <div class="b-left">
+            <div class="title left">
+                ЧИТАЙТЕ ИНТЕРЕСНЫЕ<br>СТАТЬИ О ЛЮБИМОМ<br>НАПИТКЕ
+                <div class="btns">
+                    <a class="btn blog" href="/blog.html">ЧИТАТЬ БЛОГ</a>
+                </div>
+            </div>
+        </div>
+        <div class="b-right">
+            <div class="title">
+                5 топ-тем нашего блога:
+            </div>
+            <ul>
+                <li>
+                    <a href="#">Вся правда о чае в пакетиках</a>
+                </li>
+                <li>
+                    <a href="#">10 ошибок начинающих производителей</a>
+                </li>
+                <li>
+                    <a href="#">Запускать нельзя тестировать. Новый подход к созданию упаковки</a>
+                </li>
+                <li>
+                    <a href="#">Раскрываем секреты продающего видео</a>
+                </li>
+                <li>
+                    <a href="#">Большой бизнес за 2 дня. Как мы работали на фестивале уличной еды</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="b5">
+        <div class="title">
+            ГЕОГРАФИЯ ТОЧЕК ПРОДАЖ
+        </div>
+        <ul>
+            <li>
+                <div class="title">
+                    Потребителю
+                </div>
+                <p>
+                    Мы придумали удобный сервис для<br>любителей чая Флорис. Это хороший<br>способ найти ближайший магазин<br>с нашей продукцией.
+                </p>
+                <a class="btn" href="#">Найти</a>
+            </li>
+            <li>
+                <div class="title">
+                    Реализатору
+                </div>
+                <p>
+                    Уникальный сервис расчитан на то,<br>чтобы ваши продажи росли. Добавьте<br>свою магазин для увеличения потока<br>клиентов.
+                </p>
+                <a class="btn" href="#">ДОБАВИТЬ МАГАЗИН</a>
+            </li>
+        </ul>
+    </section>
+</main>

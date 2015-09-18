@@ -166,6 +166,10 @@
     font-size: 14px;
 }
 
+.skin-blue .main-header .logo:hover, .skin-blue .main-header .navbar .sidebar-toggle:hover {
+    background-color: #5F8F01;
+}
+
 .sidebar-mini.sidebar-collapse .main-header .logo > .logo-mini {
     font-size: 11px;
 }
