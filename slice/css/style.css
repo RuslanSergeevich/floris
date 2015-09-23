@@ -2618,9 +2618,14 @@ body .ui-tooltip {
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
+.btn.border {
+  border: 1px solid #272830;
+  color: #272830;
+}
 
 section {
-  height: 660px;
+  min-height: 660px;
+  padding-bottom: 50px;
 }
 section .title {
   text-align: center;
@@ -2876,4 +2881,171 @@ section.cataloge .b-cataloge-content .b-product-list ul li a img {
 }
 section.cataloge .b-cataloge-content .b-product-list ul li a:hover {
   color: #13a8a6;
+}
+
+section.about .top-block {
+  background: url('../images/about/top-bg.png') no-repeat 50% 50%;
+  background-size: cover;
+  height: 440px;
+  padding-top: 190px;
+}
+section.about .top-block .title {
+  text-align: center;
+  font: 40px "espuma_proregular";
+  line-height: 60px;
+}
+section.about .b-content {
+  padding-top: 80px;
+}
+section.about .b-content .inner {
+  width: 900px;
+}
+section.about .b-content p {
+  font: 20px "open_sansregular";
+  color: #272830;
+  line-height: 30px;
+}
+section.about .b-content .b-local {
+  margin-top: 80px;
+}
+section.about .b-content .b-local .title {
+  color: #272830;
+  font: 17px "open_sanssemibold";
+  float: left;
+}
+section.about .b-content .b-local p {
+  color: #272830;
+  margin-left: 235px;
+  margin-bottom: 15px;
+}
+section.about .b-content .b-local.vacations .title {
+  float: left;
+}
+section.about .b-content .b-local.vacations a.btn {
+  margin: 15px 0 0 235px;
+}
+section.about .b-content .logos {
+  margin-top: 45px;
+}
+section.about .b-content .logos ul {
+  text-align: center;
+}
+section.about .b-content .logos ul li {
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  margin: 0 110px 50px 0;
+}
+section.about .b-content .logos ul li:nth-child(4n+4) {
+  margin-right: 0;
+}
+section.about .b-content .logos ul li img {
+  width: 120px;
+  height: 120px;
+}
+section.about .b-content.employees {
+  padding-top: 0;
+}
+section.about .b-content.employees .title {
+  text-align: left;
+  float: none;
+}
+section.about .b-content.employees ul {
+  margin-top: 30px;
+}
+section.about .b-content.employees ul li {
+  width: 200px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  margin-right: 29px;
+}
+section.about .b-content.employees ul li:nth-child(4) {
+  margin-right: 0;
+}
+section.about .b-content.employees ul li .img {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  height: 130px;
+  width: 130px;
+  overflow: hidden;
+  margin: 0 auto 30px;
+}
+section.about .b-content.employees ul li .img img {
+  width: 130px;
+  height: 130px;
+}
+section.about .b-content.employees ul li p {
+  text-align: left;
+  font: 14px "open_sanssemibold";
+}
+section.about .b-content.employees ul li p span {
+  display: block;
+  margin-top: 20px;
+  font: 14px "open_sansregular";
+}
+section.about .b-content-promo {
+  background: url('../images/about/section1-bg.png') no-repeat 50% 50%;
+  background-size: cover;
+  height: 374px;
+  margin-top: 50px;
+  text-align: center;
+  padding-top: 90px;
+  margin-bottom: -80px;
+}
+section.about .b-content-promo ul {
+  text-align: center;
+}
+section.about .b-content-promo ul li {
+  display: inline-block;
+  width: 170px;
+  vertical-align: top;
+  text-align: center;
+  font: 18px "open_sansregular";
+  margin: 0 60px;
+}
+section.about .b-content-promo ul li:first-child {
+  margin-left: 0;
+}
+section.about .b-content-promo ul li:last-child {
+  margin-right: 0;
+}
+section.about .b-content-promo ul li:nth-child(odd) .circle {
+  padding-top: 45px;
+}
+section.about .b-content-promo ul li .circle {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  height: 125px;
+  width: 125px;
+  border: 1px solid #fff;
+  margin: 15px auto;
+  font-size: 30px;
+  padding-top: 32px;
+  line-height: 30px;
+}
+section.about .b-content-promo ul li .circle span {
+  font-size: 18px;
+  display: block;
+}
+section.about .geography-sale {
+  height: 120px;
+  border-top: 1px solid #d4d4d6;
+  border-bottom: 1px solid #d4d4d6;
+  margin-top: 20px;
+}
+section.about .geography-sale .text {
+  font: 25px "espuma_proregular";
+  color: #272830;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  padding-top: 48px;
+}
+section.about .geography-sale a.btn {
+  margin-left: 50px;
+  vertical-align: top;
+  margin-top: 38px;
 }
