@@ -183,10 +183,11 @@
 }
 
 .logo-footer {
-    background-image: url("/_root/lte/img/granat.jpeg");
+    background-image: url("/_root/lte/img/logo_granat.png");
     width: 98px;
     height: 27px;
     position: absolute;
-    margin: 12px 5px 12px 15px;
-    bottom: 0;
+    bottom: 1em;
+    left:50%;
+    margin-left:-25%;
 }
