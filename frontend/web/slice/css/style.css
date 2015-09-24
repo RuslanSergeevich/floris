@@ -2648,10 +2648,13 @@ section.b1 {
   background-size: cover;
   height: 730px;
   padding-top: 250px;
+  padding-bottom: 0;
 }
 section.b2 {
   background: url('../images/main/bg-2.png') no-repeat 50% 50%;
   background-size: cover;
+  padding-bottom: 0;
+  height: 660px;
 }
 section.b2 .b-left {
   width: 50%;
@@ -2685,6 +2688,7 @@ section.b3 {
   background: url('../images/main/bg-3.png') no-repeat 50% 50%;
   background-size: cover;
   padding-top: 245px;
+  padding-bottom: 0;
 }
 section.b3 .btns {
   margin-top: 45px;
@@ -2695,6 +2699,8 @@ section.b3 .btns a.btn {
 section.b4 {
   background: url('../images/main/bg-4.png') no-repeat 50% 50%;
   background-size: cover;
+  padding-bottom: 0;
+  height: 660px;
 }
 section.b4 .b-left {
   width: 50%;
@@ -2741,6 +2747,7 @@ section.b5 {
   background: url('../images/main/bg-5.png') no-repeat 50% 50%;
   background-size: cover;
   padding-top: 115px;
+  padding-bottom: 0;
 }
 section.b5 .title {
   margin-bottom: 56px;
@@ -2958,7 +2965,7 @@ section.about .b-content.employees ul li {
   display: inline-block;
   vertical-align: top;
   text-align: center;
-  margin-right: 29px;
+  margin-right: 28px;
 }
 section.about .b-content.employees ul li:nth-child(4) {
   margin-right: 0;
@@ -3048,4 +3055,305 @@ section.about .geography-sale a.btn {
   margin-left: 50px;
   vertical-align: top;
   margin-top: 38px;
+}
+
+main.privat section.top {
+  height: 732px;
+  background: url('../images/privat/bg-1.png') no-repeat 50% 50%;
+  background-size: cover;
+}
+main.privat section.top .title {
+  font: 40px "espuma_proregular";
+  text-align: center;
+  line-height: 60px;
+  padding-top: 270px;
+}
+main.privat section.top .sub-title {
+  text-align: center;
+  font: 20px "open_sansregular";
+  margin-top: 72px;
+}
+main.privat section.type-of-tea {
+  min-height: 438px;
+  height: 438px;
+}
+main.privat section.type-of-tea .title {
+  font: 26px "open_sanssemibold";
+  color: #282830;
+  padding-top: 71px;
+}
+main.privat section.type-of-tea ul {
+  text-align: center;
+  margin-top: 45px;
+}
+main.privat section.type-of-tea ul li {
+  display: inline-block;
+  text-align: center;
+  width: 160px;
+  vertical-align: top;
+  margin-right: 40px;
+}
+main.privat section.type-of-tea ul li .img {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  margin: 0 auto 25px;
+}
+main.privat section.type-of-tea ul li .img img {
+  width: 150px;
+  height: 150px;
+}
+main.privat section.type-of-tea ul li p {
+  font: 14px "open_sansregular";
+  font-style: italic;
+  color: #000;
+}
+main.privat section.type-of-tea ul li:last-child {
+  margin-right: 0;
+}
+main.privat section.components {
+  height: 458px;
+  min-height: 458px;
+  background: url('../images/privat/bg-2.png') no-repeat 50% 50%;
+  background-size: cover;
+}
+main.privat section.components .count {
+  color: #fff;
+  font: 167px "open_sansregular";
+  position: absolute;
+  top: 88px;
+  left: 50%;
+  margin-left: -300px;
+}
+main.privat section.components .text {
+  font: 34px "open_sansregular";
+  position: absolute;
+  top: 131px;
+  left: 575px;
+  line-height: 36px;
+}
+main.privat section.components .text p {
+  font-style: italic;
+  font-size: 16px;
+  margin-top: 20px;
+  line-height: 20px;
+}
+main.privat section.components a.btn {
+  margin: 323px auto 0;
+}
+main.privat section.type-of-product {
+  height: 820px;
+}
+main.privat section.type-of-product .title {
+  font: 26px "open_sanssemibold";
+  color: #282830;
+  padding-top: 71px;
+}
+main.privat section.type-of-product ul {
+  text-align: center;
+  margin: 45px auto 0;
+  width: 960px;
+}
+main.privat section.type-of-product ul li {
+  display: inline-block;
+  text-align: center;
+  width: 200px;
+  vertical-align: top;
+  margin-right: 176px;
+  margin-bottom: 50px;
+}
+main.privat section.type-of-product ul li .img {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 25px;
+}
+main.privat section.type-of-product ul li .img img {
+  width: 200px;
+  height: 200px;
+}
+main.privat section.type-of-product ul li p {
+  font: 14px "open_sansregular";
+  font-style: italic;
+  color: #000;
+}
+main.privat section.type-of-product ul li:nth-child(3n+3) {
+  margin-right: 0;
+}
+main.privat section.privat-label {
+  height: 1110px;
+  background: url('../images/privat/bg-3.png') no-repeat 50% 50%;
+  background-size: cover;
+}
+main.privat section.privat-label .title {
+  font: 26px "open_sanssemibold";
+  color: #fff;
+  padding-top: 71px;
+}
+main.privat section.privat-label .count {
+  color: #fff;
+  font: 48px "open_sansregular";
+  position: absolute;
+  top: 189px;
+  left: 50%;
+  margin-left: -210px;
+  width: 120px;
+  height: 120px;
+  border: 2px solid #fff;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 23px;
+}
+main.privat section.privat-label .text {
+  font: 38px "open_sansregular";
+  position: absolute;
+  top: 185px;
+  left: 650px;
+  line-height: 36px;
+  color: #fff;
+}
+main.privat section.privat-label .text:after {
+  width: 110px;
+  height: 2px;
+  content: '';
+  background: #fff;
+  position: absolute;
+  top: 158px;
+  left: 0px;
+}
+main.privat section.privat-label .text p {
+  font-style: italic;
+  font-size: 20px;
+  margin-top: 95px;
+  line-height: 20px;
+}
+main.privat section.privat-label .bottom-text {
+  height: 300px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 692px;
+}
+main.privat section.privat-label .bottom-text .title {
+  font: 26px "open_sanssemibold";
+  color: #fff;
+  padding-top: 71px;
+}
+main.privat section.privat-label .bottom-text ul {
+  text-align: center;
+  margin-top: 63px;
+}
+main.privat section.privat-label .bottom-text ul li {
+  display: inline-block;
+  width: 265px;
+  margin-right: 40px;
+  vertical-align: top;
+  position: relative;
+  text-align: left;
+}
+main.privat section.privat-label .bottom-text ul li .sub-title {
+  text-transform: uppercase;
+  margin-bottom: 58px;
+  font: 20px "open_sansregular";
+}
+main.privat section.privat-label .bottom-text ul li .sub-title:after {
+  content: '';
+  background: #fff;
+  width: 60px;
+  height: 1px;
+  position: absolute;
+  top: 45px;
+  left: 0;
+}
+main.privat section.privat-label .bottom-text ul li:last-child {
+  margin-right: 0;
+}
+main.privat section.geography-sale {
+  height: 120px;
+  min-height: 120px;
+  border-top: 1px solid #d4d4d6;
+  border-bottom: 1px solid #d4d4d6;
+  margin-top: 20px;
+}
+main.privat section.geography-sale .text {
+  font: 25px "espuma_proregular";
+  color: #272830;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  padding-top: 48px;
+}
+main.privat section.geography-sale a.btn {
+  margin-left: 50px;
+  vertical-align: top;
+  margin-top: 38px;
+}
+main.privat section.tasks {
+  height: 360px;
+  min-height: 360px;
+  padding-top: 80px;
+}
+main.privat section.tasks .title {
+  font: 26px "open_sanssemibold";
+  color: #282830;
+  padding-top: 0;
+}
+main.privat section.tasks ul {
+  text-align: center;
+  margin-top: 60px;
+}
+main.privat section.tasks ul li {
+  text-align: left;
+  width: 265px;
+  margin-right: 40px;
+  display: inline-block;
+}
+main.privat section.tasks ul li:last-child {
+  margin-right: 0;
+}
+main.privat section.tasks ul li p {
+  font: 16px "open_sansregular";
+  color: #282830;
+}
+main.privat section.cases {
+  padding-top: 80px;
+}
+main.privat section.cases .title {
+  font: 26px "open_sanssemibold";
+  color: #282830;
+  padding-top: 0;
+}
+main.privat section.cases ul {
+  width: 960px;
+  margin: 50px auto 0;
+}
+main.privat section.cases ul li {
+  height: 220px;
+  margin-bottom: 40px;
+}
+main.privat section.cases ul li .img {
+  float: left;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+main.privat section.cases ul li .img img {
+  width: 200px;
+  height: 200px;
+}
+main.privat section.cases ul li .desc {
+  margin-left: 250px;
+}
+main.privat section.cases ul li .desc h3 {
+  color: #000;
+  font: 20px "open_sanssemibold";
+  text-transform: uppercase;
+}
+main.privat section.cases ul li .desc p {
+  color: #000;
+  font: 16px "open_sansregular";
 }
