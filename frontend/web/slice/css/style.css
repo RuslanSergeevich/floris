@@ -245,7 +245,7 @@ header menu li.about {
   left: 0;
 }
 header menu li.about a:after {
-  background: url('../images/sprite.png') 0 -166px;
+  background: url('../images/sprite.png') 0 -312px;
   height: 27px;
   width: 20px;
   top: -5px;
@@ -255,7 +255,7 @@ header menu li.cataloge {
   top: 35px;
 }
 header menu li.cataloge a:after {
-  background: url('../images/sprite.png') 0 -442px;
+  background: url('../images/sprite.png') 0 -588px;
   height: 26px;
   width: 29px;
   top: -2px;
@@ -264,7 +264,7 @@ header menu li.privat {
   left: 200px;
 }
 header menu li.privat a:after {
-  background: url('../images/sprite.png') 0 -389px;
+  background: url('../images/sprite.png') 0 -535px;
   height: 23px;
   width: 27px;
 }
@@ -273,7 +273,7 @@ header menu li.blog {
   left: 200px;
 }
 header menu li.blog a:after {
-  background: url('../images/sprite.png') 0 -223px;
+  background: url('../images/sprite.png') 0 -369px;
   height: 24px;
   width: 21px;
 }
@@ -281,7 +281,7 @@ header menu li.buy {
   left: 420px;
 }
 header menu li.buy a:after {
-  background: url('../images/sprite.png') 0 -277px;
+  background: url('../images/sprite.png') 0 -423px;
   height: 28px;
   width: 21px;
   top: -3px;
@@ -291,7 +291,7 @@ header menu li.contacts {
   left: 420px;
 }
 header menu li.contacts a:after {
-  background: url('../images/sprite.png') 0 -335px;
+  background: url('../images/sprite.png') 0 -481px;
   height: 24px;
   width: 27px;
 }
@@ -388,20 +388,20 @@ footer .footer-bottom .socials a.fb:hover {
   background: url('../images/sprite.png') 0 -52px;
 }
 footer .footer-bottom .socials a.yt {
-  background: url('../images/sprite.png') 0 -588px;
+  background: url('../images/sprite.png') 0 -734px;
   height: 25px;
   width: 26px;
 }
 footer .footer-bottom .socials a.yt:hover {
-  background: url('../images/sprite.png') 0 -643px;
+  background: url('../images/sprite.png') 0 -789px;
 }
 footer .footer-bottom .socials a.vk {
-  background: url('../images/sprite.png') 0 -498px;
+  background: url('../images/sprite.png') 0 -644px;
   height: 15px;
   width: 27px;
 }
 footer .footer-bottom .socials a.vk:hover {
-  background: url('../images/sprite.png') 0 -543px;
+  background: url('../images/sprite.png') 0 -689px;
 }
 footer .footer-bottom .design {
   position: absolute;
@@ -411,6 +411,183 @@ footer .footer-bottom .design {
 }
 
 /* End Footer */
+/**
+ * BxSlider v4.1.2 - Fully loaded, responsive content slider
+ * http://bxslider.com
+ *
+ * Written by: Steven Wanderski, 2014
+ * http://stevenwanderski.com
+ * (while drinking Belgian ales and listening to jazz)
+ *
+ * CEO and founder of bxCreative, LTD
+ * http://bxcreative.com
+ */
+/** RESET AND LAYOUT
+===================================*/
+.bx-wrapper {
+  position: relative;
+  margin: 0 auto 60px;
+  padding: 0;
+  *zoom: 1;
+}
+
+.bx-wrapper img {
+  max-width: 100%;
+  display: block;
+}
+
+/** THEME
+===================================*/
+.bx-wrapper .bx-viewport {
+  /*fix other elements on the page moving (on Chrome)*/
+  -webkit-transform: translatez(0);
+  -moz-transform: translatez(0);
+  -ms-transform: translatez(0);
+  -o-transform: translatez(0);
+  transform: translatez(0);
+}
+
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+}
+
+/* LOADER */
+.bx-wrapper .bx-loading {
+  min-height: 50px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+
+/* PAGER */
+.bx-wrapper .bx-pager {
+  text-align: center;
+  font-size: .85em;
+  font-family: Arial;
+  font-weight: bold;
+  color: #666;
+  padding-top: 20px;
+}
+
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background: #666;
+  text-indent: -9999px;
+  display: block;
+  width: 16px;
+  height: 27px;
+  margin: 0 5px;
+  outline: 0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+  background: #000;
+}
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+.bx-wrapper .bx-prev {
+  left: 10px;
+}
+
+.bx-wrapper .bx-next {
+  right: 10px;
+}
+
+.bx-wrapper .bx-controls-direction a {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  outline: 0;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  z-index: 100;
+}
+
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+
+/* AUTO CONTROLS (START / STOP) */
+.bx-wrapper .bx-controls-auto {
+  text-align: center;
+}
+
+.bx-wrapper .bx-controls-auto .bx-start {
+  display: block;
+  text-indent: -9999px;
+  width: 10px;
+  height: 11px;
+  outline: 0;
+  background: url("../images/controls.png") -86px -11px no-repeat;
+  margin: 0 3px;
+}
+
+.bx-wrapper .bx-controls-auto .bx-start:hover,
+.bx-wrapper .bx-controls-auto .bx-start.active {
+  background-position: -86px 0;
+}
+
+.bx-wrapper .bx-controls-auto .bx-stop {
+  display: block;
+  text-indent: -9999px;
+  width: 9px;
+  height: 11px;
+  outline: 0;
+  background: url("../images/controls.png") -86px -44px no-repeat;
+  margin: 0 3px;
+}
+
+.bx-wrapper .bx-controls-auto .bx-stop:hover,
+.bx-wrapper .bx-controls-auto .bx-stop.active {
+  background-position: -86px -33px;
+}
+
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+  text-align: left;
+  width: 80%;
+}
+
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+  right: 0;
+  width: 35px;
+}
+
+/* IMAGE CAPTIONS */
+.bx-wrapper .bx-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #666 \9;
+  background: rgba(80, 80, 80, 0.75);
+  width: 100%;
+}
+
+.bx-wrapper .bx-caption span {
+  color: #fff;
+  font-family: Arial;
+  display: block;
+  font-size: .85em;
+  padding: 10px;
+}
+
 /* 
  * Selecter v3.2.4 - 2015-04-04 
  * A jQuery plugin for replacing default select elements. Part of the Formstone Library. 
@@ -2772,6 +2949,30 @@ section.b5 ul li .btn {
   margin-top: 43px;
 }
 
+.cataloge-menu {
+  height: 58px;
+  background: #191919;
+  border-top: 1px solid #404040;
+  border-bottom: 1px solid #404040;
+  text-align: center;
+}
+.cataloge-menu menu {
+  list-style: none;
+}
+.cataloge-menu menu li {
+  display: inline-block;
+  padding: 20px 25px 0;
+}
+.cataloge-menu menu li a {
+  font: 15px "open_sanssemibold";
+  color: #fff;
+  text-decoration: none;
+}
+.cataloge-menu menu li.active a {
+  border-bottom: 3px solid #13a8a6;
+  padding-bottom: 13px;
+}
+
 section.cataloge {
   height: auto;
   min-height: 600px;
@@ -2780,29 +2981,6 @@ section.cataloge .cataloge-header {
   background: url('../images/cataloge-header.png') no-repeat 50% 50%;
   background-size: cover;
   height: 107px;
-}
-section.cataloge .cataloge-menu {
-  height: 58px;
-  background: #191919;
-  border-top: 1px solid #404040;
-  border-bottom: 1px solid #404040;
-  text-align: center;
-}
-section.cataloge .cataloge-menu menu {
-  list-style: none;
-}
-section.cataloge .cataloge-menu menu li {
-  display: inline-block;
-  padding: 20px 25px 0;
-}
-section.cataloge .cataloge-menu menu li a {
-  font: 15px "open_sanssemibold";
-  color: #fff;
-  text-decoration: none;
-}
-section.cataloge .cataloge-menu menu li.active a {
-  border-bottom: 3px solid #13a8a6;
-  padding-bottom: 13px;
 }
 section.cataloge .cataloge-filter {
   height: 145px;
@@ -3356,4 +3534,212 @@ main.privat section.cases ul li .desc h3 {
 main.privat section.cases ul li .desc p {
   color: #000;
   font: 16px "open_sansregular";
+}
+
+section.blog .blog-header {
+  background: url('../images/blog-header.jpg') no-repeat 50% 50%;
+  background-size: cover;
+  height: 107px;
+}
+section.blog aside.side-right {
+  float: right;
+  display: inline-block;
+  width: 235px;
+  min-height: 300px;
+}
+section.blog aside.side-right + .b-content {
+  width: 1115px;
+  border-right: 1px solid #d4d4d6;
+  display: inline-block;
+}
+section.blog aside.side-right .b-module {
+  border-top: 1px solid #d4d4d6;
+}
+section.blog aside.side-right .b-module.rss {
+  padding: 0 10px 20px;
+}
+section.blog aside.side-right .b-module h3 {
+  font: 16px "open_sanssemibold";
+  margin: 15px 0 0;
+}
+section.blog aside.side-right .b-module input {
+  width: 100%;
+  margin: 10px 0;
+}
+section.blog aside.side-right .b-module input[type=text] {
+  height: 35px;
+  -moz-box-shadow: inset 0 0 3px #ccc;
+  -webkit-box-shadow: inset 0 0 3px #ccc;
+  box-shadow: inset 0 0 3px #ccc;
+  padding: 0 10px;
+  font: 16px "open_sansregular";
+  color: #16171c;
+  border: 1px solid #dedee0;
+}
+section.blog aside.side-right .b-module input[type=submit] {
+  background: #fff;
+  font: 16px "open_sanssemibold";
+  width: 160px;
+  margin: 10px 36px 0;
+}
+section.blog article {
+  padding: 50px 130px 50px 0;
+  border-bottom: 1px solid #d4d4d6;
+}
+section.blog article h2 {
+  color: #16171c;
+  font: 26px "open_sanssemibold";
+}
+section.blog article .date {
+  font: 10px "open_sansregular";
+  color: #a2a2a3;
+  margin-bottom: 20px;
+}
+section.blog article .media {
+  width: 920px;
+  margin: 20px 0;
+}
+section.blog article p {
+  font: 16px "open_sansregular";
+  color: #16171c;
+}
+section.blog article:nth-child(even) h2 {
+  color: #33b8b7;
+}
+
+section.product .product-header {
+  background: url('../images/product-header.jpg') no-repeat 50% 50%;
+  background-size: cover;
+  height: 107px;
+}
+section.product .product-card {
+  min-height: 600px;
+  border-bottom: 1px solid #d1d1d1;
+}
+section.product .product-card .img {
+  width: 675px;
+  height: 600px;
+  border-right: 1px solid #d1d1d1;
+  float: left;
+}
+section.product .product-card .bx-controls-direction a {
+  width: 17px;
+  height: 25px;
+  position: absolute;
+}
+section.product .product-card .bx-controls-direction a.bx-prev {
+  background: url('../images/product/arrow-left.png') no-repeat 0 0;
+}
+section.product .product-card .bx-controls-direction a.bx-next {
+  background: url('../images/product/arrow-right.png') no-repeat 0 0;
+}
+section.product .product-card .bx-controls .bx-pager {
+  bottom: 0;
+}
+section.product .product-card .bx-controls .bx-pager-item {
+  margin: 0 10px;
+}
+section.product .product-card .bx-controls .bx-pager-item a {
+  width: 11px;
+  height: 11px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #a9a9ac;
+  margin: 0;
+}
+section.product .product-card .bx-controls .bx-pager-item a.active {
+  background: #272830;
+}
+section.product .product-card .description {
+  margin-left: 725px;
+  position: relative;
+  width: 610px;
+}
+section.product .product-card .description .social {
+  position: absolute;
+  right: 0;
+  top: 100px;
+}
+section.product .product-card .description .social a {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 5px;
+}
+section.product .product-card .description .social a.fb {
+  background: url('../images/sprite.png') 0 -166px;
+  height: 22px;
+  width: 12px;
+}
+section.product .product-card .description .social a.insta {
+  background: url('../images/sprite.png') 0 -218px;
+  height: 19px;
+  width: 19px;
+}
+section.product .product-card .description .social a.vk {
+  background: url('../images/sprite.png') 0 -267px;
+  height: 15px;
+  width: 27px;
+}
+section.product .product-card .description .top {
+  padding-top: 50px;
+  text-align: left;
+  border-bottom: 1px solid #d1d1d1;
+  height: 135px;
+}
+section.product .product-card .description .top h2 {
+  font: 26px "open_sanssemibold";
+  color: #16171c;
+  margin: 0;
+}
+section.product .product-card .description .top h2 span {
+  display: block;
+  font-size: 16px;
+  margin-top: 15px;
+}
+section.product .product-card .description .b-text {
+  border-bottom: 1px solid #d1d1d1;
+  padding-bottom: 40px;
+  margin-bottom: 25px;
+}
+section.product .product-card .description .b-text p {
+  color: #16171c;
+  font: 14px "open_sansregular";
+  margin-top: 10px;
+}
+section.product .product-card .description .b-text p.bold {
+  font: 14px "open_sanssemibold";
+}
+section.product .product-card .description .b-text ul {
+  margin-top: 30px;
+}
+section.product .product-card .description .b-text ul li {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  width: 142px;
+  height: 60px;
+}
+section.product .product-card .description .b-text ul li:nth-child(2) {
+  border-left: 1px solid #d1d1d1;
+  border-right: 1px solid #d1d1d1;
+}
+section.product .product-card .description .logistic-info {
+  margin-right: 60px;
+}
+section.product .product-card .description .logistic-info .selecter-selected {
+  width: 270px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #191919;
+}
+section.product .product-card .description .logistic-info .selecter-options {
+  width: 270px;
+}
+section.product .product-card .description a.btn.green {
+  background: #1ad2d1;
+  color: #fff;
+  font: 15px "open_sanssemibold";
+  padding-top: 11px;
 }

@@ -1,6 +1,12 @@
 $(document).ready(function(){
 	$('select').selecter();
 
+	$('.product-card .img ul').bxSlider({
+		pager: true,
+		nextText: '',
+		prevText: ''
+	});
+
 	$('.filter-weight').slider({
 		min: 0,
 		max: 350,
