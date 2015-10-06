@@ -183,6 +183,11 @@ h3 {
   margin-bottom: 30px;
 }
 
+p {
+  font: 16px "open_sansregular";
+  color: #16171c;
+}
+
 /* Header */
 a.go-top {
   background: url('../images/go-top.png') 0 0 no-repeat;
@@ -245,7 +250,7 @@ header menu li.about {
   left: 0;
 }
 header menu li.about a:after {
-  background: url('../images/sprite.png') 0 -312px;
+  background: url('../images/sprite.png') 0 -356px;
   height: 27px;
   width: 20px;
   top: -5px;
@@ -255,7 +260,7 @@ header menu li.cataloge {
   top: 35px;
 }
 header menu li.cataloge a:after {
-  background: url('../images/sprite.png') 0 -588px;
+  background: url('../images/sprite.png') 0 -632px;
   height: 26px;
   width: 29px;
   top: -2px;
@@ -264,7 +269,7 @@ header menu li.privat {
   left: 200px;
 }
 header menu li.privat a:after {
-  background: url('../images/sprite.png') 0 -535px;
+  background: url('../images/sprite.png') 0 -579px;
   height: 23px;
   width: 27px;
 }
@@ -273,7 +278,7 @@ header menu li.blog {
   left: 200px;
 }
 header menu li.blog a:after {
-  background: url('../images/sprite.png') 0 -369px;
+  background: url('../images/sprite.png') 0 -413px;
   height: 24px;
   width: 21px;
 }
@@ -281,7 +286,7 @@ header menu li.buy {
   left: 420px;
 }
 header menu li.buy a:after {
-  background: url('../images/sprite.png') 0 -423px;
+  background: url('../images/sprite.png') 0 -467px;
   height: 28px;
   width: 21px;
   top: -3px;
@@ -291,7 +296,7 @@ header menu li.contacts {
   left: 420px;
 }
 header menu li.contacts a:after {
-  background: url('../images/sprite.png') 0 -481px;
+  background: url('../images/sprite.png') 0 -525px;
   height: 24px;
   width: 27px;
 }
@@ -341,7 +346,7 @@ footer a.vacation {
 }
 footer a.search {
   position: absolute;
-  background: url('../images/sprite.png') 0 -104px;
+  background: url('../images/sprite.png') 0 -148px;
   height: 32px;
   width: 32px;
   top: 44px;
@@ -380,28 +385,28 @@ footer .footer-bottom .socials a {
   margin-right: 14px;
 }
 footer .footer-bottom .socials a.fb {
-  background: url('../images/sprite.png') 0 0;
+  background: url('../images/sprite.png') 0 -44px;
   height: 22px;
   width: 12px;
 }
 footer .footer-bottom .socials a.fb:hover {
-  background: url('../images/sprite.png') 0 -52px;
+  background: url('../images/sprite.png') 0 -96px;
 }
 footer .footer-bottom .socials a.yt {
-  background: url('../images/sprite.png') 0 -734px;
+  background: url('../images/sprite.png') 0 -988px;
   height: 25px;
   width: 26px;
 }
 footer .footer-bottom .socials a.yt:hover {
-  background: url('../images/sprite.png') 0 -789px;
+  background: url('../images/sprite.png') 0 -1043px;
 }
 footer .footer-bottom .socials a.vk {
-  background: url('../images/sprite.png') 0 -644px;
+  background: url('../images/sprite.png') 0 -843px;
   height: 15px;
   width: 27px;
 }
 footer .footer-bottom .socials a.vk:hover {
-  background: url('../images/sprite.png') 0 -689px;
+  background: url('../images/sprite.png') 0 -888px;
 }
 footer .footer-bottom .design {
   position: absolute;
@@ -2799,6 +2804,12 @@ body .ui-tooltip {
   border: 1px solid #272830;
   color: #272830;
 }
+.btn.green {
+  background: #1ad2d1;
+  color: #fff;
+  font: 15px "open_sanssemibold";
+  line-height: 44px;
+}
 
 section {
   min-height: 660px;
@@ -3215,13 +3226,14 @@ section.about .b-content-promo ul li .circle span {
   font-size: 18px;
   display: block;
 }
-section.about .geography-sale {
+
+.geography-sale {
   height: 120px;
   border-top: 1px solid #d4d4d6;
   border-bottom: 1px solid #d4d4d6;
   margin-top: 20px;
 }
-section.about .geography-sale .text {
+.geography-sale .text {
   font: 25px "espuma_proregular";
   color: #272830;
   text-align: center;
@@ -3229,7 +3241,7 @@ section.about .geography-sale .text {
   display: inline-block;
   padding-top: 48px;
 }
-section.about .geography-sale a.btn {
+.geography-sale a.btn {
   margin-left: 50px;
   vertical-align: top;
   margin-top: 38px;
@@ -3590,6 +3602,10 @@ section.blog article h2 {
   color: #16171c;
   font: 26px "open_sanssemibold";
 }
+section.blog article h2 a {
+  color: #16171c;
+  font: 26px "open_sanssemibold";
+}
 section.blog article .date {
   font: 10px "open_sansregular";
   color: #a2a2a3;
@@ -3603,7 +3619,7 @@ section.blog article p {
   font: 16px "open_sansregular";
   color: #16171c;
 }
-section.blog article:nth-child(even) h2 {
+section.blog article:nth-child(even) h2 a {
   color: #33b8b7;
 }
 
@@ -3611,6 +3627,42 @@ section.product .product-header {
   background: url('../images/product-header.jpg') no-repeat 50% 50%;
   background-size: cover;
   height: 107px;
+}
+section.product .product-selecter {
+  background: #191919;
+  height: 175px;
+}
+section.product .product-selecter .b-top {
+  height: 25px;
+  background: #d4d4d6;
+  text-align: center;
+  font: 14px "open_sansregular";
+  color: #191919;
+  line-height: 24px;
+}
+section.product .product-selecter .bx-viewport {
+  width: 1190px !important;
+  margin: 10px auto 0;
+}
+section.product .product-selecter ul li {
+  width: 130px !important;
+  height: 130px !important;
+  margin: 0 10px;
+  text-align: center;
+}
+section.product .product-selecter .bx-controls-direction a {
+  width: 23px;
+  height: 39px;
+  position: absolute;
+  content: '';
+  background: none;
+  position: absolute;
+}
+section.product .product-selecter .bx-controls-direction a.bx-prev {
+  background: url('../images/product/slider-left.png') no-repeat 0 0;
+}
+section.product .product-selecter .bx-controls-direction a.bx-next {
+  background: url('../images/product/slider-right.png') no-repeat 0 0;
 }
 section.product .product-card {
   min-height: 600px;
@@ -3667,17 +3719,17 @@ section.product .product-card .description .social a {
   margin: 0 5px;
 }
 section.product .product-card .description .social a.fb {
-  background: url('../images/sprite.png') 0 -166px;
+  background: url('../images/sprite.png') 0 -210px;
   height: 22px;
   width: 12px;
 }
 section.product .product-card .description .social a.insta {
-  background: url('../images/sprite.png') 0 -218px;
+  background: url('../images/sprite.png') 0 -262px;
   height: 19px;
   width: 19px;
 }
 section.product .product-card .description .social a.vk {
-  background: url('../images/sprite.png') 0 -267px;
+  background: url('../images/sprite.png') 0 -311px;
   height: 15px;
   width: 27px;
 }
@@ -3742,4 +3794,126 @@ section.product .product-card .description a.btn.green {
   color: #fff;
   font: 15px "open_sanssemibold";
   padding-top: 11px;
+}
+
+section.contacts .contacts-header {
+  background: url('../images/contacts-header.png') no-repeat 50% 50%;
+  background-size: cover;
+  height: 434px;
+  padding-top: 190px;
+}
+section.contacts .contacts-header .title {
+  text-align: center;
+  font: 40px "espuma_proregular";
+  line-height: 60px;
+}
+section.contacts .geography-sale {
+  border-top: none;
+  margin-top: 0;
+}
+section.contacts .b-info {
+  border-bottom: 1px solid #d4d4d6;
+  padding: 50px 0;
+}
+section.contacts .b-info ul {
+  display: block;
+  width: 840px;
+  margin: 0 auto;
+}
+section.contacts .b-info ul li {
+  display: inline-block;
+  vertical-align: top;
+  width: 370px;
+  margin-right: 85px;
+}
+section.contacts .b-info ul li:nth-child(2) {
+  margin-right: 0;
+}
+section.contacts .b-info ul li h2 {
+  font: 26px "open_sanssemibold";
+  color: #16171c;
+  text-align: left;
+  padding: 0;
+  margin: 0 0 10px;
+}
+section.contacts .b-info ul li p {
+  margin-bottom: 0;
+}
+section.contacts .b-info ul li span {
+  display: block;
+  position: relative;
+  padding-left: 34px;
+  font: 16px "open_sansregular";
+  color: #16171c;
+  margin-top: 5px;
+}
+section.contacts .b-info ul li span:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+section.contacts .b-info ul li span.mobile:after {
+  background: url('../images/sprite.png') 0 -688px;
+  height: 22px;
+  width: 14px;
+  left: 5px;
+}
+section.contacts .b-info ul li span.mail:after {
+  background: url('../images/sprite.png') 0 0;
+  height: 14px;
+  width: 21px;
+  top: 5px;
+  left: 2px;
+}
+section.contacts .b-info ul li span.skype:after {
+  background: url('../images/sprite.png') 0 -792px;
+  height: 21px;
+  width: 20px;
+  left: 2px;
+}
+section.contacts .b-info ul li span.phone:after {
+  background: url('../images/sprite.png') 0 -740px;
+  height: 22px;
+  width: 21px;
+  left: 2px;
+}
+section.contacts .b-info h2 {
+  font: 26px "open_sanssemibold";
+  color: #16171c;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+section.contacts .b-info .social {
+  margin: 0 auto;
+  text-align: center;
+}
+section.contacts .b-info .social a {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 5px;
+}
+section.contacts .b-info .social a.fb {
+  background: url('../images/sprite.png') 0 -210px;
+  height: 22px;
+  width: 12px;
+}
+section.contacts .b-info .social a.insta {
+  background: url('../images/sprite.png') 0 -262px;
+  height: 19px;
+  width: 19px;
+}
+section.contacts .b-info .social a.vk {
+  background: url('../images/sprite.png') 0 -311px;
+  height: 15px;
+  width: 27px;
+}
+section.contacts .b-info .social a.youtube {
+  background: url('../images/sprite.png') 0 -933px;
+  height: 25px;
+  width: 26px;
+}
+section.contacts .b-info a.btn {
+  margin-top: 20px;
 }

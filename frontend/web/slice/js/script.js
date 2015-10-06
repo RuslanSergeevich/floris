@@ -1,8 +1,19 @@
 $(document).ready(function(){
+
+	if (device.mobile() == true) {
+		$('body').attr('id', 'mobile');
+	}
+
 	$('select').selecter();
 
 	$('.product-card .img ul').bxSlider({
 		pager: true,
+		nextText: '',
+		prevText: ''
+	});
+
+	$('.product-selecter ul').bxSlider({
+		pager: false,
 		nextText: '',
 		prevText: ''
 	});
