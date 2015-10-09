@@ -188,6 +188,14 @@ p {
   color: #16171c;
 }
 
+.screen {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
 /* Header */
 a.go-top {
   background: url('../images/go-top.png') 0 0 no-repeat;
@@ -205,6 +213,7 @@ a.go-top:hover {
 
 header {
   width: 100%;
+  min-width: 1350px;
   height: 107px;
   background: rgba(0, 0, 0, 0.7);
   position: fixed;
@@ -393,20 +402,20 @@ footer .footer-bottom .socials a.fb:hover {
   background: url('../images/sprite.png') 0 -96px;
 }
 footer .footer-bottom .socials a.yt {
-  background: url('../images/sprite.png') 0 -988px;
+  background: url('../images/sprite.png') 0 -1065px;
   height: 25px;
   width: 26px;
 }
 footer .footer-bottom .socials a.yt:hover {
-  background: url('../images/sprite.png') 0 -1043px;
+  background: url('../images/sprite.png') 0 -1120px;
 }
 footer .footer-bottom .socials a.vk {
-  background: url('../images/sprite.png') 0 -843px;
+  background: url('../images/sprite.png') 0 -920px;
   height: 15px;
   width: 27px;
 }
 footer .footer-bottom .socials a.vk:hover {
-  background: url('../images/sprite.png') 0 -888px;
+  background: url('../images/sprite.png') 0 -965px;
 }
 footer .footer-bottom .design {
   position: absolute;
@@ -2831,6 +2840,9 @@ section .btns a.btn {
   line-height: 44px;
   text-transform: uppercase;
 }
+section.b1 p, section.b2 p, section.b3 p, section.b4 p, section.b5 p {
+  color: #fff;
+}
 section.b1 {
   background: url('../images/main/bg-1.png') no-repeat 50% 50%;
   background-size: cover;
@@ -3330,6 +3342,7 @@ main.privat section.components .text p {
   font-size: 16px;
   margin-top: 20px;
   line-height: 20px;
+  color: #fff;
 }
 main.privat section.components a.btn {
   margin: 323px auto 0;
@@ -3420,6 +3433,7 @@ main.privat section.privat-label .text p {
   font-size: 20px;
   margin-top: 95px;
   line-height: 20px;
+  color: #fff;
 }
 main.privat section.privat-label .bottom-text {
   height: 300px;
@@ -3461,6 +3475,9 @@ main.privat section.privat-label .bottom-text ul li .sub-title:after {
 }
 main.privat section.privat-label .bottom-text ul li:last-child {
   margin-right: 0;
+}
+main.privat section.privat-label .bottom-text ul li p {
+  color: #fff;
 }
 main.privat section.geography-sale {
   height: 120px;
@@ -3606,6 +3623,9 @@ section.blog article h2 a {
   color: #16171c;
   font: 26px "open_sanssemibold";
 }
+section.blog article h2 a:hover {
+  color: #33b8b7;
+}
 section.blog article .date {
   font: 10px "open_sansregular";
   color: #a2a2a3;
@@ -3618,9 +3638,6 @@ section.blog article .media {
 section.blog article p {
   font: 16px "open_sansregular";
   color: #16171c;
-}
-section.blog article:nth-child(even) h2 a {
-  color: #33b8b7;
 }
 
 section.product .product-header {
@@ -3854,7 +3871,7 @@ section.contacts .b-info ul li span:after {
   top: 0;
 }
 section.contacts .b-info ul li span.mobile:after {
-  background: url('../images/sprite.png') 0 -688px;
+  background: url('../images/sprite.png') 0 -765px;
   height: 22px;
   width: 14px;
   left: 5px;
@@ -3867,13 +3884,13 @@ section.contacts .b-info ul li span.mail:after {
   left: 2px;
 }
 section.contacts .b-info ul li span.skype:after {
-  background: url('../images/sprite.png') 0 -792px;
+  background: url('../images/sprite.png') 0 -869px;
   height: 21px;
   width: 20px;
   left: 2px;
 }
 section.contacts .b-info ul li span.phone:after {
-  background: url('../images/sprite.png') 0 -740px;
+  background: url('../images/sprite.png') 0 -817px;
   height: 22px;
   width: 21px;
   left: 2px;
@@ -3910,10 +3927,593 @@ section.contacts .b-info .social a.vk {
   width: 27px;
 }
 section.contacts .b-info .social a.youtube {
-  background: url('../images/sprite.png') 0 -933px;
+  background: url('../images/sprite.png') 0 -1010px;
   height: 25px;
   width: 26px;
 }
 section.contacts .b-info a.btn {
   margin-top: 20px;
+}
+
+@media only screen and (max-width: 640px) {
+  .screen {
+    display: none !important;
+  }
+
+  .mobile {
+    display: block !important;
+  }
+
+  #wrapper,
+  header,
+  .inner {
+    width: 623px !important;
+    min-width: 623px !important;
+  }
+
+  a.mobile-menu {
+    background: url('../images/mobile-menu.png') 0 0 no-repeat;
+    width: 44px;
+    height: 34px;
+    position: absolute;
+    top: 36px;
+    left: 32px;
+  }
+  a.mobile-menu:hover {
+    cursor: pointer;
+  }
+
+  a.mobile-phone {
+    background: url('../images/sprite.png') 0 -688px;
+    height: 47px;
+    width: 47px;
+    position: absolute;
+    top: 30px;
+    right: 220px;
+  }
+  a.mobile-phone:hover {
+    cursor: pointer;
+  }
+
+  header a.logo {
+    top: 38px;
+    left: 111px;
+  }
+  header menu {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    height: 540px;
+    top: 107px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding-top: 50px;
+  }
+  header menu li {
+    display: block;
+    width: 100%;
+    position: relative;
+    left: auto !important;
+    top: auto !important;
+    text-align: left;
+    height: 20px;
+    width: 250px;
+    margin: 0 auto 55px;
+  }
+  header menu li:last-child {
+    margin-bottom: 0;
+  }
+
+  section.b1 {
+    height: 840px;
+    padding-top: 320px;
+  }
+  section.b1 .title {
+    font-size: 36px;
+  }
+  section.b2 {
+    height: 740px;
+  }
+  section.b2 .b-left {
+    width: 100%;
+    float: none;
+    padding: 60px 80px 0 185px;
+  }
+  section.b2 .b-left .b-text {
+    width: auto;
+  }
+  section.b2 .b-left .b-text .title {
+    font-size: 36px;
+  }
+  section.b2 .b-left .b-text p {
+    font-size: 22px;
+  }
+  section.b3 {
+    height: 740px;
+  }
+  section.b3 .title {
+    font-size: 34px;
+    padding: 0 20px;
+  }
+  section.b4 {
+    height: 1480px;
+  }
+  section.b4 .b-left {
+    float: none;
+    width: 100%;
+    display: block;
+    height: 740px;
+  }
+  section.b4 .b-left .title {
+    text-align: center;
+    font-size: 36px;
+    display: block;
+  }
+  section.b4 .b-left .btns {
+    text-align: center;
+  }
+  section.b4 .b-right {
+    float: none;
+    width: 100%;
+    text-align: left;
+  }
+  section.b5 {
+    height: 960px;
+  }
+  section.b5 .title {
+    font-size: 36px;
+  }
+  section.b5 ul li {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  section.b5 ul li .title {
+    text-align: center;
+  }
+  section.b5 ul li p {
+    text-align: center;
+  }
+  section.blog .inner {
+    padding: 0 50px;
+  }
+  section.blog aside.side-right {
+    float: none;
+    width: 100%;
+    display: block;
+    min-height: 100px;
+    background: #ebebeb;
+  }
+  section.blog aside.side-right .rss {
+    text-align: center;
+  }
+  section.blog aside.side-right .rss form {
+    width: 335px;
+    margin: 20px auto 0;
+  }
+  section.blog aside.side-right + .b-content {
+    width: 100%;
+    display: block;
+    border-right: none;
+  }
+  section.blog article {
+    padding: 50px 0;
+  }
+  section.blog article p {
+    text-align: justify;
+  }
+  section.blog article .media {
+    width: 100%;
+  }
+  section.blog article .media img {
+    width: 100%;
+    height: auto;
+  }
+  section.cataloge .cataloge-menu menu li {
+    padding: 20px 20px 0;
+  }
+  section.cataloge .cataloge-filter {
+    position: relative;
+    padding-top: 0;
+    height: 190px;
+  }
+  section.cataloge .cataloge-filter .fleft {
+    float: none;
+    position: absolute;
+  }
+  section.cataloge .cataloge-filter .comp {
+    top: 50px;
+    left: 34px;
+  }
+  section.cataloge .cataloge-filter .pack {
+    top: 104px;
+    left: 34px;
+  }
+  section.cataloge .cataloge-filter .weight {
+    top: 50px;
+    left: 273px;
+  }
+  section .b-cataloge-content {
+    padding: 0 50px 50px;
+    text-align: center;
+  }
+  section .b-cataloge-content .inner {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+  section .b-cataloge-content .b-product-list ul {
+    text-align: center;
+  }
+  section .b-cataloge-content .b-product-list ul li {
+    margin: 0 20px 25px !important;
+    text-align: center;
+  }
+  section.about .top-block .title {
+    font-size: 36px;
+  }
+  section.about .inner {
+    padding: 0 50px;
+  }
+  section.about p {
+    text-align: justify;
+  }
+  section.about .b-content .b-local .title {
+    float: none;
+    font: 28px "open_sanssemibold";
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  section.about .b-content .b-local p {
+    margin-left: 0;
+  }
+  section.about .b-content .logos ul li {
+    margin: 0 0 50px;
+  }
+  section.about .b-content .logos ul li:nth-child(3n+2) {
+    margin: 0 38px 50px;
+  }
+  section.about .b-content.employees {
+    text-align: center;
+  }
+  section.about .b-content.employees .title {
+    text-align: center;
+  }
+  section.about .b-content.employees ul {
+    text-align: center;
+  }
+  section.about .b-content.employees ul li {
+    margin: 0 20px 30px !important;
+    text-align: center;
+  }
+  section.about .b-content.employees ul li p {
+    text-align: center;
+  }
+  section.about .b-content.employees .vacations .title {
+    float: none !important;
+  }
+  section.about .b-content.employees .vacations a.btn {
+    display: block;
+    margin: 35px auto 0;
+    width: 150px;
+  }
+  section.about .b-content-promo ul {
+    width: 9999px;
+  }
+  section.about .b-content-promo ul li {
+    margin: 0;
+  }
+  section.about .b-content-promo .bx-controls .bx-controls-direction a {
+    width: 23px;
+    height: 39px;
+  }
+  section.about .b-content-promo .bx-controls .bx-controls-direction a.bx-prev {
+    background: url('../images/mobile/arrow-l.png') 0 0 no-repeat;
+    left: -30px;
+  }
+  section.about .b-content-promo .bx-controls .bx-controls-direction a.bx-next {
+    background: url('../images/mobile/arrow-r.png') 0 0 no-repeat;
+    right: -30px;
+  }
+  section.about .b-content-promo .bx-controls .bx-pager {
+    bottom: -60px;
+  }
+  section.about .b-content-promo .bx-controls .bx-pager-item {
+    -moz-border-radius: none;
+    -webkit-border-radius: none;
+    border-radius: none;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+  }
+  section.about .b-content-promo .bx-controls .bx-pager-item a {
+    border: 2px solid #fff;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: none;
+    width: 12px;
+    height: 12px;
+  }
+  section.about .b-content-promo .bx-controls .bx-pager-item a.active {
+    background: #fff;
+  }
+  section.about .geography-sale {
+    text-align: center;
+    height: 160px;
+  }
+  section.about .geography-sale .text {
+    padding-top: 38px;
+  }
+  section.about .geography-sale .btn {
+    display: block;
+    margin: 18px auto 0;
+    width: 130px;
+  }
+  section.product .cataloge-menu menu li {
+    padding: 20px 20px 0;
+  }
+  section.product .product-selecter {
+    width: 100%;
+  }
+  section.product .product-selecter .bx-viewport {
+    width: 480px !important;
+    margin: 10px auto 0;
+  }
+  section.product .product-selecter .bx-viewport ul li {
+    margin: 0 17px;
+  }
+  section.product .product-card {
+    width: 100%;
+  }
+  section.product .product-card .img {
+    width: 622px;
+    float: none;
+    border-right: none;
+  }
+  section.product .product-card .img img {
+    width: 600px;
+  }
+  section.product .product-card .description {
+    margin-left: 0;
+    padding: 0 30px 20px;
+  }
+  section.product .product-card .description .social {
+    right: 26px;
+  }
+  section.product .product-card .description .b-text ul li {
+    width: 32%;
+    text-align: center;
+  }
+  section.contacts .geography-sale {
+    height: auto;
+    padding-bottom: 45px;
+    border-bottom: none;
+  }
+  section.contacts .geography-sale .btn {
+    display: block;
+    margin: 20px auto 0;
+    width: 130px;
+  }
+  section.contacts .b-info {
+    border: none;
+    padding: 0;
+  }
+  section.contacts .b-info ul {
+    width: 100%;
+  }
+  section.contacts .b-info ul li {
+    display: block;
+    width: 100%;
+    border-top: 1px solid #d4d4d6;
+    padding: 50px 60px;
+  }
+  section.contacts .b-info ul li:last-child {
+    border-bottom: 1px solid #d4d4d6;
+  }
+  section.contacts .b-info.connect-soc {
+    padding: 50px 0;
+    border-bottom: 1px solid #d4d4d6;
+  }
+  section.contacts .b-info:last-child {
+    padding-top: 50px;
+  }
+
+  main.privat .title {
+    text-align: center !important;
+  }
+  main.privat section.top {
+    min-height: 510px;
+    height: 510px;
+  }
+  main.privat section.top .title {
+    font-size: 35px;
+    padding: 180px 0 0;
+  }
+  main.privat section.top .sub-title {
+    width: 340px;
+    margin: 30px auto 0;
+    display: block;
+  }
+  main.privat section.type-of-tea {
+    min-height: 500px;
+    height: auto;
+  }
+  main.privat section.type-of-tea ul {
+    text-align: center;
+  }
+  main.privat section.type-of-tea ul li {
+    display: block;
+    margin: 0 auto 30px !important;
+  }
+  main.privat section.components {
+    height: 460px;
+    min-height: 460px;
+  }
+  main.privat section.components .count {
+    top: 67px;
+    left: 65px;
+    margin-left: 0;
+  }
+  main.privat section.components .text {
+    left: 320px;
+    top: 110px;
+  }
+  main.privat section.components .text p {
+    color: #fff;
+  }
+  main.privat section.components a.btn {
+    width: 238px;
+    height: 61px;
+    font-size: 20px;
+    line-height: 61px;
+  }
+  main.privat section.type-of-product {
+    height: auto;
+  }
+  main.privat section.type-of-product ul {
+    text-align: center;
+    width: 100%;
+  }
+  main.privat section.type-of-product ul li {
+    display: block;
+    margin: 0 auto 60px !important;
+  }
+  main.privat section.privat-label {
+    height: 1510px;
+    background: url('../images/privat/bg-3_mobile.png') no-repeat 50% 50%;
+  }
+  main.privat section.privat-label .clount {
+    top: 160px;
+    left: 80px;
+    margin-left: 0;
+  }
+  main.privat section.privat-label .text {
+    left: 240px;
+    top: 160px;
+  }
+  main.privat section.privat-label .text p {
+    color: #fff;
+  }
+  main.privat section.privat-label .bottom-text {
+    top: 500px;
+    width: 350px;
+    margin: 0 auto;
+  }
+  main.privat section.privat-label .bottom-text ul {
+    text-align: center;
+    width: 100%;
+    margin-top: 55px;
+  }
+  main.privat section.privat-label .bottom-text ul li {
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 90px;
+  }
+  main.privat section.privat-label .bottom-text ul li p {
+    color: #fff;
+  }
+  main.privat section.tasks {
+    height: auto;
+  }
+  main.privat section.tasks ul {
+    width: 265px;
+    margin: 0 auto;
+  }
+  main.privat section.tasks ul li {
+    display: block;
+    margin: 30px auto 0 !important;
+  }
+  main.privat section.geography-sale {
+    height: 210px;
+  }
+  main.privat section.geography-sale .btn {
+    display: block;
+    width: 150px;
+    margin: 40px auto 0 !important;
+  }
+  main.privat section.cases ul {
+    width: 100%;
+  }
+  main.privat section.cases ul li {
+    height: auto;
+    width: 360px;
+    margin: 0 auto 40px;
+  }
+  main.privat section.cases ul li .img {
+    float: none;
+    text-align: center;
+    margin: 0 auto 40px;
+  }
+  main.privat section.cases ul li .img img {
+    margin: 0 auto;
+  }
+  main.privat section.cases ul li .desc {
+    margin-left: 0;
+    text-align: center;
+  }
+  main.privat section.cases ul li .desc h3 {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  main.privat section.cases ul li .desc p {
+    text-align: left;
+  }
+
+  footer {
+    height: 480px;
+  }
+  footer menu li {
+    margin-right: 15px;
+  }
+  footer menu li a {
+    font-size: 10px;
+  }
+  footer .footer-search {
+    position: relative;
+    width: 570px;
+    margin: 40px auto 0;
+  }
+  footer .footer-search input {
+    border: none;
+  }
+  footer .footer-search input[type=text] {
+    width: 570px;
+    height: 55px;
+    background: #323336;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    padding: 0 20px;
+  }
+  footer .footer-search input[type=submit] {
+    position: absolute;
+    background: url('../images/sprite.png') 0 -148px;
+    height: 32px;
+    width: 32px;
+    right: 10px;
+    top: 10px;
+  }
+  footer .footer-bottom {
+    height: 284px;
+    position: relative;
+  }
+  footer .footer-bottom > div {
+    font-size: 20px;
+  }
+  footer .footer-bottom .copy {
+    width: 230px;
+  }
+  footer .footer-bottom .info {
+    top: 119px;
+    left: 0;
+  }
+  footer .footer-bottom .sales {
+    top: 195px;
+    left: 0;
+  }
+  footer .footer-bottom .design {
+    font-size: 12px;
+    top: 210px;
+  }
 }
