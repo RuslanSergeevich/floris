@@ -2,6 +2,7 @@
 
 use frontend\assets\AppAsset;
 use yii\helpers\Html;
+use frontend\components\MenuWidget;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -9,9 +10,9 @@ use yii\helpers\Html;
 AppAsset::register($this);?>
 <?php $this->beginPage()?>
 <!DOCTYPE html lang="<?= Yii::$app->language ?>">
-<!--[if lte IE 8 ]> <html class='ie ie8' lang='en'> <![endif]-->
-<!--[if IE 9 ]> <html class='ie ie9' lang='en'> <![endif]-->
-<!--[if gt IE 9]> <!--><html lang='en'><!-- <![endif]-->
+<!--[if lte IE 8 ]> <html class='ie ie8' lang='<?= Yii::$app->language ?>'> <![endif]-->
+<!--[if IE 9 ]> <html class='ie ie9' lang='<?= Yii::$app->language ?>'> <![endif]-->
+<!--[if gt IE 9]> <!--><html lang='<?= Yii::$app->language ?>'><!-- <![endif]-->
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -29,26 +30,10 @@ AppAsset::register($this);?>
 <?php $this->beginBody() ?>
 <div id="wrapper">
     <header>
-        <a class="logo" href="/"></a><menu>
-            <li class="about">
-                <a href="/about.html">О компании</a>
-            </li>
-            <li class="cataloge">
-                <a href="/cataloge.html">Ассортимент</a>
-            </li>
-            <li class="privat">
-                <a href="/privat.html">Приват Лэйбл</a>
-            </li>
-            <li class="blog">
-                <a href="/blog.html">Блог</a>
-            </li>
-            <li class="buy">
-                <a href="/buy.html">Где купить</a>
-            </li>
-            <li class="contacts">
-                <a href="/contacts.html">Контакты</a>
-            </li>
-        </menu>
+        <a class="logo" href="/"></a>
+        <?= MenuWidget::widget([
+            'attach_icon' => true
+        ])?>
         <div class="phone">
             0 800 1111-00-00<a class="fancybox" href="#call-me">Перезвоните мне</a>
         </div>
@@ -59,29 +44,11 @@ AppAsset::register($this);?>
         <?= $content?>
     </div>
     <footer>
-        <menu>
-            <li>
-                <a href="#">О КОМПАНИИ</a>
-            </li>
-            <li>
-                <a href="#">АССОРТИМЕНТ</a>
-            </li>
-            <li>
-                <a href="#">ПРИВАТ ЛЭЙБЛ</a>
-            </li>
-            <li>
-                <a href="#">БЛОГ</a>
-            </li>
-            <li>
-                <a href="#">ГДЕ КУПИТЬ</a>
-            </li>
-            <li>
-                <a href="#">КОНТАКТЫ</a>
-            </li>
-        </menu><a class="search" href="#"></a><a class="vacation" href="#">Вакансии</a>
+       <?= MenuWidget::widget()?>
+        <a class="search" href="#"></a><a class="vacation" href="#">Вакансии</a>
         <div class="footer-bottom">
             <div class="copy">
-                © 2011–2015. Флорис.<br>Крым, г. Симферополь, ул. Данилова, 43
+                © 2011–<?= date('Y')?>. Флорис.<br>Крым, г. Симферополь, ул. Данилова, 43
             </div>
             <div class="info">
                 +7 978 049-96-11<br>info@floristea.com

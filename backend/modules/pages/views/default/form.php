@@ -15,15 +15,29 @@ $this->title = 'Добавление/Редактирование страниц
 ?>
 
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-10">
 
         <div class="box">
             <div class="box box-info">
                 <div class="box-header with-border">
                     <h3 class="box-title"><?= Html::encode($this->title)?></h3>
                 </div><!-- /.box-header -->
+
             <?php $form = ActiveForm::begin(['method' => 'post', 'options' => ['role' => 'form']]); ?>
                 <div class="box-body">
+
+                    <?php
+                    $templates = [
+                        'index' => 'Главная',
+                        'about' => 'О компании',
+                        'catalog' => 'Каталог',
+                        'private' => 'Приват лэйбл',
+                        'blog' => 'Блог',
+                        'buy' => 'Где купить',
+                        'contacts' => 'Контакты',
+                    ];
+                    echo $form->field($model, 'template')->dropDownList($templates, ['class' => 'form-control select2']);?>
+
                     <?php if(($parent_id = Yii::$app->request->post('parent_id')) !== null){
                         echo $form->field($model, 'parent_id')->hiddenInput(['value' => $parent_id])->label(false);
                     } else {
@@ -31,6 +45,7 @@ $this->title = 'Добавление/Редактирование страниц
                         echo $form->field($model, 'parent_id')->dropDownList(Pages::$pages, ['class' => 'form-control select2']);
                     }?>
                     <?= $form->field($model, 'name') ?>
+                    <?= $form->field($model, 'menu_name') ?>
                     <?= $form->field($model, 'title') ?>
                     <?= $form->field($model, 'description') ?>
                     <?= $form->field($model, 'keywords') ?>
@@ -39,6 +54,7 @@ $this->title = 'Добавление/Редактирование страниц
                     <?php if(!$model->isNewRecord):?>
                         <?= $form->field($model, 'publish')->checkbox(['class' => 'minimal']) ?>
                     <?php endif;?>
+                    <?= $form->field($model, 'show_menu')->checkbox(['class' => 'minimal']) ?>
                     <?= $form->field($model, 'pos') ?>
                     <div class="form-group">
                         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>

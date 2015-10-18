@@ -11,6 +11,9 @@ use yii\web\NotFoundHttpException;
  */
 class SiteController extends Controller
 {
+
+    const ROOT_PATH = 'index';
+
     /**
      * @inheritdoc
      */
@@ -25,12 +28,25 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        if(!$model = Pages::findOne(['alias' => 'index', 'publish' => Pages::PUBLISH])){
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
         return $this->render('index', [
+            'model' => $this->_queryOrException(Pages::findOne(['alias' => self::ROOT_PATH, 'publish' => Pages::PUBLISH]))
+        ]);
+    }
+
+    public function actionPage($alias)
+    {
+        $model = $this->_queryOrException(Pages::findOne(['alias' => $alias, 'publish' => Pages::PUBLISH]));
+        return $this->render($model['template'], [
             'model' => $model
         ]);
+    }
+
+    private function _queryOrException($model)
+    {
+        if(!$model){
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+        return $model;
     }
 
 }

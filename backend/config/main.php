@@ -12,7 +12,7 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => require(__DIR__ . '/modules.php'),
-    'language' => 'ru',
+    'language' => 'ru-RU',
     'homeUrl' => '/_root/',
     'components' => [
         'assetManager' => [

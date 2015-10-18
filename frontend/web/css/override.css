@@ -1,0 +1,12 @@
+.alert-message {
+    text-align: center;
+    font-size: 2em;
+}
+
+.alert-message p {
+    margin-top: 1em;
+}
+
+footer menu li a {
+    text-transform: uppercase;
+}

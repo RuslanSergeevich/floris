@@ -1,23 +1,27 @@
 <?php
+
+use yii\helpers\Url;
+use yii\helpers\Html;
+
 /* @var $this yii\web\View */
 /* @var $model common\models\Pages */
-$this->title = $model->title;
+$this->title = Html::encode($model->title);
 $this->registerMetaTag([
     'name' => 'description',
-    'content' => $model->description,
+    'content' => Html::encode($model->description),
 ]);
 $this->registerMetaTag([
     'name' => 'keywords',
-    'content' => $model->keywords
+    'content' => Html::encode($model->keywords)
 ]);
 ?>
 <main>
     <section class="b1">
         <div class="title">
-            МЫ ПРОИЗВОДИМ, ПРОДАЁМ<br>НАТУРАЛЬНЫЙ КРЫМСКИЙ ЧАЙ<br>И СЛАДОСТИ ОПТОМ
+            <?= $model['name']?>
         </div>
         <div class="btns">
-            <a class="btn" href="#">ПОДРОБНО О КОМПАНИИ</a>
+            <?= Html::a('ПОДРОБНО О КОМПАНИИ', Url::to('about'), ['class' => 'btn'])?>
         </div>
     </section>
     <section class="b2">

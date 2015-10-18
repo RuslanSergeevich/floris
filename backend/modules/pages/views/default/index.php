@@ -69,7 +69,7 @@ $this->title = 'Общеинформационные страницы';
                             'attribute' => 'created_at',
                             'header' => 'Создана',
                             'value' => function ($model) {
-                                return Yii::$app->formatter->asDate($model->created_at,'full');
+                                return Yii::$app->formatter->asDate($model->created_at);
                             },
                         ],
                         [

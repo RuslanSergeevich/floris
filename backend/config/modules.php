@@ -25,4 +25,7 @@ return [
     'reviews' => [
         'class' => 'backend\modules\reviews\Reviews',
     ],
+    'blog' => [
+        'class' => 'backend\modules\blog\Blog',
+    ],
 ];

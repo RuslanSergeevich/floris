@@ -13,15 +13,18 @@ class m150819_050422_pages extends Migration
 
         $this->createTable('{{%pages}}', [
             'id' => $this->primaryKey(),
+            'template' => $this->string()->notNull(),
             'parent_id' => $this->integer()->notNull()->defaultValue(0),
             'alias' => $this->string()->notNull(),
             'name' => $this->string()->notNull(),
+            'menu_name' => $this->string()->notNull(),
             'text' => $this->text()->notNull(),
             'title' => $this->text()->notNull(),
             'description' => $this->text()->notNull(),
             'keywords' => $this->text()->notNull(),
             'publish' => $this->integer(1)->defaultValue(1),
             'pos' => $this->integer()->defaultValue(0),
+            'show_menu' => $this->integer()->defaultValue(0),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull()
         ], $tableOptions);

@@ -10,14 +10,17 @@ use backend\components\DropDownTreeBehavior;
  * This is the model class for table "pages".
  *
  * @property integer $id
+ * @property integer $template
  * @property integer $parent_id
  * @property string $alias
  * @property string $name
+ * @property string $menu_name
  * @property string $text
  * @property string $title
  * @property string $description
  * @property string $keywords
  * @property integer $publish
+ * @property integer $show_menu
  * @property integer $pos
  * @property string $created_at
  * @property string $updated_at
@@ -66,12 +69,13 @@ class Pages extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['parent_id', 'publish', 'pos'], 'integer'],
+            [['parent_id', 'publish', 'pos', 'show_menu'], 'integer'],
             [['alias', 'name', 'title', 'description'], 'required'],
             [['text', 'title', 'description', 'keywords'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
-            [['alias', 'name'], 'string', 'max' => 255],
+            [['alias', 'name', 'menu_name', 'template'], 'string', 'max' => 255],
             ['pos', 'default', 'value' => 0],
+            ['show_menu', 'default', 'value' => 0],
             ['alias', 'unique'],
         ];
     }
@@ -83,15 +87,18 @@ class Pages extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'template' => 'Выберите шаблон страницы',
             'parent_id' => 'Родительская страница',
             'alias' => 'Alias',
             'name' => 'Название',
+            'menu_name' => 'Название в меню',
             'text' => 'Текст',
             'title' => 'Title',
             'description' => 'Description',
             'keywords' => 'Keywords',
             'publish' => 'Публикация',
             'pos' => 'Позиция',
+            'show_menu' => 'Отображать в меню?',
             'created_at' => 'Создана',
             'updated_at' => 'Обновлена'
         ];
