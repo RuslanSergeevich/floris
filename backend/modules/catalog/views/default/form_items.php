@@ -11,7 +11,7 @@ use common\models\CatalogItems;
 /* @var $model common\models\News */
 CkEditorAsset::register($this);
 
-$this->title = 'Добавление/Редактирование статьи блога';
+$this->title = 'Добавление/Редактирование товара';
 ?>
 
 <div class="row">
@@ -30,6 +30,7 @@ $this->title = 'Добавление/Редактирование статьи �
                                 echo $form->field($model, 'parent_id')->hiddenInput()->label(false);
                             }?>
                             <?= $form->field($model, 'gallery_cat_id')->dropDownList(CatalogItems::$galleries, ['class' => 'form-control select2'])?>
+                            <?= $form->field($model, 'type_id')->dropDownList(CatalogItems::$types, ['class' => 'form-control select2'])?>
                             <?= $form->field($model, 'name') ?>
                             <?= $form->field($model, 'title') ?>
                             <?= $form->field($model, 'description') ?>

@@ -6,7 +6,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\GridView;
-use common\models\Catalog;
+use common\models\CatalogItems;
 
 $this->title = 'Каталог';
 ?>
@@ -46,7 +46,7 @@ $this->title = 'Каталог';
                             'header' => 'Публикация',
                             'format' => 'html',
                             'value' => function ($model) {
-                                return Catalog::getStatusesIcon($model->publish);
+                                return CatalogItems::getStatusesIcon($model->publish);
                             },
                         ],
                         [

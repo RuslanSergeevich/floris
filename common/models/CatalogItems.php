@@ -5,11 +5,13 @@ namespace common\models;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use backend\components\DropDownTreeBehavior;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "catalog_items".
  *
  * @property integer $id
+ * @property integer $type_id
  * @property integer $parent_id
  * @property integer $gallery_cat_id
  * @property string $alias
@@ -26,11 +28,16 @@ use backend\components\DropDownTreeBehavior;
 class CatalogItems extends \yii\db\ActiveRecord
 {
 
-    public static $galleries;
+    const PUBLISH = 1;
+    const UNPUBLISHED = 0;
+
+    public static $galleries = [];
+    public static $types = [];
 
     public function init()
     {
         self::$galleries = $this->getTree(Gallery::find()->asArray()->all());
+        self::$types = ArrayHelper::map(ArrayHelper::merge([['id' => '0', 'name' => 'Не выбрано']],Types::find()->asArray()->all()),'id','name');
     }
 
     public function behaviors()
@@ -62,7 +69,7 @@ class CatalogItems extends \yii\db\ActiveRecord
     {
         return [
             [['parent_id', 'alias', 'name', 'text', 'title'], 'required'],
-            [['parent_id', 'gallery_cat_id', 'publish', 'pos', 'created_at', 'updated_at'], 'integer'],
+            [['parent_id', 'gallery_cat_id', 'publish', 'pos', 'created_at', 'updated_at', 'type_id'], 'integer'],
             [['text', 'title', 'description', 'keywords'], 'string'],
             [['alias', 'name'], 'string', 'max' => 255],
             ['pos', 'default', 'value' => 0],
@@ -77,6 +84,7 @@ class CatalogItems extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'type_id' => 'Выберите тип товара',
             'parent_id' => 'Parent ID',
             'gallery_cat_id' => 'Галерея',
             'alias' => 'Alias',
@@ -90,5 +98,18 @@ class CatalogItems extends \yii\db\ActiveRecord
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
         ];
+    }
+
+    /**
+     * @param $status
+     * @return mixed
+     */
+    public static function getStatusesIcon($status)
+    {
+        $statuses = [
+            self::UNPUBLISHED => '<i class="fa fa-fw fa-close"></i>',
+            self::PUBLISH => '<i class="fa fa-fw fa-check"></i>'
+        ];
+        return $statuses[$status];
     }
 }

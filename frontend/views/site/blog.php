@@ -53,7 +53,7 @@ $this->registerMetaTag([
                                 <?= Html::img('@blog/' . $blog['image'], ['alt' => '', 'title' => ''])?>
                             </div>
                         <?php endif;?>
-                        <?= $blog['text']?>
+                        <?= str_replace('[image]','',$blog['text'])?>
                     </article>
                 <?php endforeach; ?>
             <?php endif; ?>
