@@ -28,4 +28,10 @@ return [
     'blog' => [
         'class' => 'backend\modules\blog\Blog',
     ],
+    'types' => [
+        'class' => 'backend\modules\types\Types',
+    ],
+    'catalog' => [
+        'class' => 'backend\modules\catalog\Catalog',
+    ],
 ];

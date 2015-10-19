@@ -32,9 +32,9 @@ return [
             'rules' => [
                 '/' => 'site/index',
                 '<action:(login|logout|upload-image-ckeditor|profile)>' => 'site/<action>',
-                '<module:[\wd-]+>/page/<page:[\d]+>' => '<module>/default/index',
+                '<module:[\wd-]+>/page/<page:\d+>' => '<module>/default/index',
                 '<module:[\wd-]+>' => '<module>/default/index',
-                '<module:[\wd-]+>/<action:[\wd-]+>/<id:[\d]+>' => '<module>/default/<action>',
+                '<module:[\wd-]+>/<action:[\wd-]+>/<id:\d+>' => '<module>/default/<action>',
                 '<module:[\wd-]+>/<action:[\wd-]+>' => '<module>/default/<action>',
             ],
         ],

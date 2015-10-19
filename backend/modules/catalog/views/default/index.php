@@ -1,21 +1,21 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $dataProvider common\models\Orders */
+/* @var $dataProvider @common\models\Catalog */
 
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\GridView;
-use common\models\Orders;
+use common\models\Catalog;
 
-$this->title = 'Список заявок на бронирование';
+$this->title = 'Каталог';
 ?>
 
 <div class="row">
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Список заявок</h3>
+                <h3 class="box-title">Каталог</h3>
                 <div class="box-tools">
                     <div class="input-group" style="width: 150px;">
                         <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Поиск" />
@@ -34,21 +34,19 @@ $this->title = 'Список заявок на бронирование';
                     'columns' => [
                         'id',
                         [
-                            'attribute' => 'room_id',
-                            'header' => 'Номер',
+                            'attribute' => 'name',
+                            'header' => 'Название',
                             'value' => function ($model) {
-                                return Orders::getRoomName($model->room_id);
+                                return $model->publish ? $model->name : Html::tag('s', $model->name);
                             },
                             'format' => 'html'
                         ],
                         [
                             'attribute' => 'publish',
-                            'header' => 'Статус',
+                            'header' => 'Публикация',
                             'format' => 'html',
                             'value' => function ($model) {
-                                return $model->status == 0
-                                    ? Html::tag('span', Orders::getStatuses($model->status), ['class' => 'label label-info'])
-                                    : Html::tag('span', Orders::getStatuses($model->status), ['class' => 'label label-success']);
+                                return Catalog::getStatusesIcon($model->publish);
                             },
                         ],
                         [
@@ -64,6 +62,17 @@ $this->title = 'Список заявок на бронирование';
                             'value' => function ($model) {
                                 return Yii::$app->formatter->asRelativeTime($model->updated_at);
                             },
+                        ],
+                        'pos',
+                        [
+                            'class' => 'yii\grid\ActionColumn',
+                            'header' => 'Товары',
+                            'template' => '{items}',
+                            'buttons' => [
+                                'items' => function($url){
+                                    return Html::a('Перейти', $url, ['class' => 'btn btn-block btn-info btn-sm']);
+                                }
+                            ],
                         ],
                         [
                             'class' => 'yii\grid\ActionColumn',
@@ -83,6 +92,9 @@ $this->title = 'Список заявок на бронирование';
                             ],
                         ],
                     ],
+                ]);
+                echo Html::tag('div', Html::a('Добавить', Url::toRoute(['/catalog/add']), ['class' => 'btn btn-block btn-primary']), [
+                    'class' => 'button-add'
                 ]);
                 ?>
             </div>

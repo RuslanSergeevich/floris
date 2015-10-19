@@ -13,8 +13,12 @@ class AppAsset extends AssetBundle
         'css/override.css',
     ];
     public $js = [
+        'js/lib/jquery-ui.js',
+        'js/lib/jquery.fancybox.js',
+        'js/lib/selectbox.js',
+        'js/lib/device.js',
+        'js/lib/bxslider.js',
         'js/script.js',
-        'js/lib/jquery.fancybox.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

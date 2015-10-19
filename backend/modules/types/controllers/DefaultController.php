@@ -1,11 +1,11 @@
 <?php
 
-namespace backend\modules\blog\controllers;
+namespace backend\modules\types\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
 use backend\controllers\SiteController;
-use common\models\Blog;
+use common\models\Types;
 use yii\data\ActiveDataProvider;
 use yii\data\Pagination;
 use yii\web\NotFoundHttpException;
@@ -43,7 +43,7 @@ class DefaultController extends SiteController
      */
     public function actionIndex()
     {
-        $query = Blog::find();
+        $query = Types::find();
         return $this->render('index', [
             'dataProvider' => $this->_findData($query)
         ]);
@@ -54,9 +54,9 @@ class DefaultController extends SiteController
      */
     public function actionAdd()
     {
-        $this->_loadData($model = new Blog());
+        $this->_loadData($model = new Types());
         return $this->render('form', [
-            'model' => new Blog()
+            'model' => new Types()
         ]);
     }
 
@@ -67,7 +67,7 @@ class DefaultController extends SiteController
      */
     public function actionUpdate($id)
     {
-        if(!$model = Blog::findOne(['id' => $id])){
+        if(!$model = Types::findOne(['id' => $id])){
             throw new NotFoundHttpException('The requested page does not exist.');
         }
         $this->_loadData($model);
@@ -81,7 +81,7 @@ class DefaultController extends SiteController
      */
     public function actionDelete($id)
     {
-        Blog::findOne(['id' => $id])->delete();
+        Types::findOne(['id' => $id])->delete();
         return $this->redirect(Yii::$app->homeUrl.$this->module->id);
     }
 
