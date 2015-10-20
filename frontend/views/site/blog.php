@@ -38,26 +38,24 @@ $this->registerMetaTag([
             </div>
         </aside>
         <div class="b-content">
-
-            <?php if ($model = Blog::getAllBlogs()):?>
-                <?php foreach ($model as $blog): ?>
-                    <article>
-                        <h2>
-                            <?= Html::a($blog['name'], Url::to(['blog/view', 'alias' => $blog['alias']]))?>
-                        </h2>
-                        <div class="date">
-                            <?= Yii::$app->formatter->asRelativeTime($blog['created_at'])?>
+        <?php if ($model = Blog::getAllBlogs()):?>
+            <?php foreach ($model as $blog): ?>
+                <article>
+                    <h2>
+                        <?= Html::a($blog['name'], Url::to(['blog/view', 'alias' => $blog['alias']]))?>
+                    </h2>
+                    <div class="date">
+                        <?= Yii::$app->formatter->asRelativeTime($blog['created_at'])?>
+                    </div>
+                    <?php if($blog['image']):?>
+                        <div class="media">
+                            <?= Html::img('@blog/' . $blog['image'], ['alt' => '', 'title' => ''])?>
                         </div>
-                        <?php if($blog['image']):?>
-                            <div class="media">
-                                <?= Html::img('@blog/' . $blog['image'], ['alt' => '', 'title' => ''])?>
-                            </div>
-                        <?php endif;?>
-                        <?= str_replace('[image]','',$blog['text'])?>
-                    </article>
-                <?php endforeach; ?>
-            <?php endif; ?>
-
+                    <?php endif;?>
+                    <?= str_replace('[image]','',$blog['text'])?>
+                </article>
+            <?php endforeach; ?>
+        <?php endif; ?>
         </div>
     </div>
 </section>

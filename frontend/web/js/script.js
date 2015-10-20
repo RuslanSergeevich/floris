@@ -1,10 +1,26 @@
 $(document).ready(function(){
-
-	// if (device.mobile() == true) {
-	// 	$('body').attr('id', 'mobile-view');
-	// }
-
 	$('select').selecter();
+
+	$('a.fancybox').fancybox({
+		helpers: {
+      overlay: {
+        locked: false
+      }
+    }
+  });
+
+  $('.phone').bind("change keyup input click", function() {
+    if (this.value.match(/[^0-9]/g)) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    }
+	});
+
+	$('.gallerey-magazine ul').bxSlider({
+		pager: false,
+		nextText: '',
+		prevText: '',
+		auto: true
+	});
 
 	$('.product-card .img ul').bxSlider({
 		pager: true,
@@ -52,5 +68,14 @@ $(document).ready(function(){
 
 	$('.mobile-menu').on('click', function() {
 		$('header menu').toggleClass('screen');
+	});
+
+	$('ul.list-product li').on('click', function(){
+		var self = $(this),
+				product = self.data('product');
+
+		self.addClass('active').siblings('li').removeClass('active');
+		$('.choise-product').hide();
+		$('.choise-product.'+product).show();
 	});
 });
