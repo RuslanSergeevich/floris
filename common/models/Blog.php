@@ -126,4 +126,18 @@ class Blog extends \yii\db\ActiveRecord
     {
         return self::find()->where(['publish' => self::PUBLISH])->orderBy('created_at DESC')->asArray()->all();
     }
+
+    /**
+     * @param $id
+     * @return bool|int
+     * @throws \Exception
+     */
+    public static function unlinkImage($id)
+    {
+        $model = self::findOne(['id' => $id]);
+        if(unlink($model->getFileDir() . $model->image)){
+            $model->image = '';
+            return $model->update();
+        }
+    }
 }

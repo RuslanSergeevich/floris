@@ -21,7 +21,7 @@ $this->registerMetaTag([
             МЫ ПРОИЗВОДИМ, ПРОДАЁМ<br>НАТУРАЛЬНЫЙ КРЫМСКИЙ ЧАЙ<br>И СЛАДОСТИ ОПТОМ
         </div>
         <div class="btns">
-            <a class="btn" href="#">ПОДРОБНО О КОМПАНИИ</a>
+            <?= Html::a('ПОДРОБНО О КОМПАНИИ', Url::to('about'),['class' => 'btn'])?>
         </div>
     </section>
     <section class="b2">

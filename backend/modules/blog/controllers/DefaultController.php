@@ -23,7 +23,7 @@ class DefaultController extends SiteController
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'add', 'update', 'delete'],
+                        'actions' => ['index', 'add', 'update', 'delete', 'delete-image'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -33,6 +33,7 @@ class DefaultController extends SiteController
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['post'],
+                    'delete-image' => ['post'],
                 ],
             ],
         ];
@@ -83,6 +84,14 @@ class DefaultController extends SiteController
     {
         Blog::findOne(['id' => $id])->delete();
         return $this->redirect(Yii::$app->homeUrl.$this->module->id);
+    }
+
+    /**
+     * @param $id
+     */
+    public function actionDeleteImage($id)
+    {
+        return Blog::unlinkImage($id);
     }
 
     /**

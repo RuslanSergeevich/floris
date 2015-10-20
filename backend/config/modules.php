@@ -34,4 +34,13 @@ return [
     'catalog' => [
         'class' => 'backend\modules\catalog\Catalog',
     ],
+    'packing' => [
+        'class' => 'backend\modules\packing\Packing',
+    ],
+    'composition' => [
+        'class' => 'backend\modules\composition\Composition',
+    ],
+    'weight' => [
+        'class' => 'backend\modules\weight\Weight',
+    ],
 ];

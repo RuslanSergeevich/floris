@@ -13,7 +13,7 @@ $this->title = 'Добавление/Редактирование статьи �
 ?>
 
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
 
         <div class="box">
             <div class="box box-info">
@@ -29,7 +29,14 @@ $this->title = 'Добавление/Редактирование статьи �
                             <?= $form->field($model, 'keywords') ?>
                             <?= $form->field($model, 'alias') ?>
                             <?php if($model->image){?>
-                                <?= Html::img('@blog/'.$model->image, ['alt' => $model->name, 'width' => '150']) ?>
+                                <div class="image-box">
+                                    <?= Html::img('@blog/'.$model->image, [
+                                        'alt' => $model->name,
+                                        'width' => '150',
+                                        'data-blog_id' => $model->id
+                                    ]) ?>
+                                    <i class="fa fa-fw fa-close delete-image"></i>
+                                </div>
                             <?php } ?>
                             <?= $form->field($model, 'file')->fileInput() ?>
                             <?= $form->field($model, 'text')->textarea() ?>
