@@ -10,3 +10,7 @@
 footer menu li a {
     text-transform: uppercase;
 }
+
+.mobile-menu {
+    display: none;
+}

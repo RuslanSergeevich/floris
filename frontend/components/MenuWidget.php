@@ -42,7 +42,7 @@ class MenuWidget extends Widget
                     ]);
             }
         }
-        return Html::tag('menu', $this->_html);
+        return Html::tag('menu', $this->_html, ['class' => 'screen']);
     }
 
 } 

@@ -3,6 +3,7 @@
 use frontend\assets\AppAsset;
 use yii\helpers\Html;
 use frontend\components\MenuWidget;
+use yii\helpers\Url;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -32,15 +33,15 @@ AppAsset::register($this);?>
     <a class="go-top"></a>
     <header>
         <a class="mobile-menu mobile"></a>
-        <a class="mobile-phone mobile" href="tel:+123456"></a>
-        <a class="logo" href="/"></a>
+        <?= Html::a('','tel:+79780499611', ['class' => 'mobile-phone mobile'])?>
+        <?= Html::a('', Url::home(),['class' => 'logo'])?>
         <?= MenuWidget::widget([
             'attach_icon' => true
         ])?>
         <div class="phone screen">
-            0 800 1111-00-00<a class="fancybox" href="#backcall">Перезвоните мне</a>
+            0 800 1111-00-00<?= Html::a('Перезвоните мне', '#backcall',['class' => 'fancybox'])?>
         </div>
-        <a class="deal btn fancybox" href="#sotrudnichestvo">Сотрудничество</a>
+        <?= Html::a('Сотрудничество', '#sotrudnichestvo',['class' => 'deal btn fancybox'])?>
     </header>
 
     <div id="main">
@@ -56,16 +57,18 @@ AppAsset::register($this);?>
         <a class="search screen" href="#"></a><a class="vacation" href="#">Вакансии</a>
         <div class="footer-bottom">
             <div class="copy">
-                © 2011–2015. Флорис.<br>Крым, г. Симферополь, ул. Данилова, 43
+                © 2011–<?= date('Y')?>. Флорис.<br>Крым, г. Симферополь, ул. Данилова, 43
             </div>
             <div class="info">
-                +7 978 049-96-11<br>info@floristea.com
+                +7 978 049-96-11<br><?= Yii::$app->formatter->asEmail('info@floristea.com')?>
             </div>
             <div class="sales">
                 Отдел продаж:<br>+7 3652 583-577
             </div>
             <div class="socials">
-                <a class="fb" href="#"></a><a class="yt" href="#"></a><a class="vk" href="#"></a>
+                <?= Html::a('','https://www.facebook.com/floristea/',['class' => 'fb', 'target' => '_blank'])?>
+                <a class="yt" href="#"></a>
+                <?= Html::a('','http://vk.com/floristea',['class' => 'vk', 'target' => '_blank'])?>
             </div>
             <div class="design">
                 Дизайн шаблонов сайта<br>разработан в
