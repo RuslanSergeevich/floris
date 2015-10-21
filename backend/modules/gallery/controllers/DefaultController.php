@@ -68,7 +68,7 @@ class DefaultController extends SiteController
     {
         $query = Gallery::find()->where(['parent_id' => 0])->orderBy(['pos' => SORT_ASC]);
         return $this->render('index', [
-            'dataProvider' => $this->_findData($query)
+            'dataProvider' => $this->findData($query)
         ]);
     }
 
@@ -186,21 +186,8 @@ class DefaultController extends SiteController
     public function actionChilds($id)
     {
         return $this->renderAjax('blocks/_gallery_childs', [
-            'dataProvider' => $this->_findData(Gallery::find()->where(['parent_id' => $id])->orderBy(['pos' => SORT_ASC])),
+            'dataProvider' => $this->findData(Gallery::find()->where(['parent_id' => $id])->orderBy(['pos' => SORT_ASC])),
             'parent_id' => $id
-        ]);
-    }
-
-    /**
-     * @param $query
-     * @return ActiveDataProvider
-     */
-    private function _findData($query)
-    {
-        return new ActiveDataProvider([
-            'query' => $query,
-            'sort' => false,
-            'pagination' => false
         ]);
     }
 

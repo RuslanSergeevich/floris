@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "packing".
@@ -82,5 +83,13 @@ class Packing extends \yii\db\ActiveRecord
             self::PUBLISH => '<i class="fa fa-fw fa-check"></i>'
         ];
         return $statuses[$status];
+    }
+
+    /**
+     * @return array
+     */
+    public static function getList()
+    {
+        return ArrayHelper::map(ArrayHelper::merge([['id' => '0', 'name' => 'Не выбрано']],self::find()->where(['publish' => self::PUBLISH])->orderBy('pos ASC')->asArray()->all()),'id','name');
     }
 }

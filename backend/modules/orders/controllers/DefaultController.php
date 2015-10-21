@@ -6,14 +6,10 @@ use Yii;
 use yii\filters\AccessControl;
 use backend\controllers\SiteController;
 use common\models\Orders;
-use yii\data\ActiveDataProvider;
-use yii\data\Pagination;
 use yii\web\NotFoundHttpException;
 
 class DefaultController extends SiteController
 {
-
-    const PAGE_SIZE = 25;
 
     public function behaviors()
     {
@@ -38,7 +34,7 @@ class DefaultController extends SiteController
     {
         $query = Orders::find();
         return $this->render('index', [
-            'dataProvider' => $this->_findData($query)
+            'dataProvider' => $this->findData($query)
         ]);
     }
 
@@ -52,7 +48,7 @@ class DefaultController extends SiteController
         if (!$model = Orders::findOne(['id' => $id])) {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
-        $this->_loadData($model);
+        $this->loadData($model);
         return $this->render('form', ['model' => $model]);
     }
 
@@ -68,34 +64,5 @@ class DefaultController extends SiteController
         }
         $model->delete();
         return $this->redirect(Yii::$app->homeUrl . $this->module->id);
-    }
-
-    /**
-     * @param $query
-     * @return ActiveDataProvider
-     */
-    private function _findData($query)
-    {
-        return new ActiveDataProvider([
-            'query' => $query,
-            'sort' => false,
-            'pagination' => new Pagination([
-                'pageSize' => self::PAGE_SIZE,
-                'forcePageParam' => false,
-                'pageSizeParam' => false
-            ])
-        ]);
-    }
-
-    /**
-     * @param $model
-     * @return \yii\web\Response
-     */
-    private function _loadData($model)
-    {
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            $model->save();
-            return $this->redirect(Yii::$app->homeUrl . $this->module->id);
-        }
     }
 }

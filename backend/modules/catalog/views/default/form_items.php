@@ -29,8 +29,12 @@ $this->title = 'Добавление/Редактирование товара';
                             } else {
                                 echo $form->field($model, 'parent_id')->hiddenInput()->label(false);
                             }?>
-                            <?= $form->field($model, 'gallery_cat_id')->dropDownList(CatalogItems::$galleries, ['class' => 'form-control select2'])?>
                             <?= $form->field($model, 'type_id')->dropDownList(CatalogItems::$types, ['class' => 'form-control select2'])?>
+                            <?= $form->field($model, 'composition_id')->dropDownList(CatalogItems::$composition, ['class' => 'form-control select2'])?>
+                            <?= $form->field($model, 'packing_id')->dropDownList(CatalogItems::$packing, ['class' => 'form-control select2'])?>
+                            <?= $form->field($model, 'weight_id')->dropDownList(CatalogItems::$weight, ['class' => 'form-control select2'])?>
+                            <?= $form->field($model, 'gallery_cat_id')->dropDownList(CatalogItems::$galleries, ['class' => 'form-control select2'])?>
+                            <hr />
                             <?= $form->field($model, 'name') ?>
                             <?= $form->field($model, 'title') ?>
                             <?= $form->field($model, 'description') ?>

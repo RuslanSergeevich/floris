@@ -5,6 +5,7 @@ namespace common\models;
 use Yii;
 use backend\components\FileBehavior;
 use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "blog".
@@ -18,6 +19,7 @@ use yii\behaviors\TimestampBehavior;
  * @property string $description
  * @property string $keywords
  * @property integer $publish
+ * @property integer $show_main
  * @property integer $pos
  * @property integer $created_at
  * @property integer $updated_at
@@ -27,6 +29,7 @@ class Blog extends \yii\db\ActiveRecord
 
     const PUBLISH = 1;
     const UNPUBLISHED = 0;
+    const SHOW_MAIN = 1;
 
     /**
      * directory to save
@@ -62,6 +65,13 @@ class Blog extends \yii\db\ActiveRecord
     }
 
     /**
+     * @return ScopesBlog
+     */
+    public static function find() {
+        return new ScopesBlog(get_called_class());
+    }
+
+    /**
      * @inheritdoc
      */
     public static function tableName()
@@ -77,7 +87,7 @@ class Blog extends \yii\db\ActiveRecord
         return [
             [['alias', 'name', 'text', 'title'], 'required'],
             [['image', 'text', 'title', 'description', 'keywords'], 'string'],
-            [['publish', 'pos', 'created_at', 'updated_at'], 'integer'],
+            [['publish', 'pos', 'show_main', 'created_at', 'updated_at'], 'integer'],
             [['alias', 'name'], 'string', 'max' => 255],
             ['pos', 'default', 'value' => 0],
             ['alias', 'unique'],
@@ -100,6 +110,7 @@ class Blog extends \yii\db\ActiveRecord
             'description' => 'Description',
             'keywords' => 'Keywords',
             'publish' => 'Публикация',
+            'show_main' => 'Отображать на главной?',
             'pos' => 'Позиция',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
@@ -140,4 +151,15 @@ class Blog extends \yii\db\ActiveRecord
             return $model->update();
         }
     }
+}
+
+class ScopesBlog extends ActiveQuery{
+
+    /**
+     * @return $this
+     */
+    public function showMain() {
+        return $this->andWhere(['show_main' => Blog::SHOW_MAIN, 'publish' => Blog::PUBLISH]);
+    }
+
 }

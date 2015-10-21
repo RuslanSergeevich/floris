@@ -14,7 +14,7 @@ CkEditorAsset::register($this);
 $this->title = 'Добавление/Редактирование галереи';
 ?>
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
 
         <div class="box">
             <div class="box box-info">

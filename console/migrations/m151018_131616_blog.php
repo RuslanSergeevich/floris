@@ -21,6 +21,7 @@ class m151018_131616_blog extends Migration
             'description' => $this->text()->notNull(),
             'keywords' => $this->text()->notNull(),
             'publish' => $this->integer(1)->defaultValue(1),
+            'show_main' => $this->integer(1)->defaultValue(1),
             'pos' => $this->integer()->defaultValue(0),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull()

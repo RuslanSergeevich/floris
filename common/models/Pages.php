@@ -5,6 +5,7 @@ namespace common\models;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use backend\components\DropDownTreeBehavior;
+use frontend\components\BoxesBehavior;
 
 /**
  * This is the model class for table "pages".
@@ -31,9 +32,6 @@ class Pages extends \yii\db\ActiveRecord
     const PUBLISH = 1;
     const UNPUBLISHED = 0;
 
-    /**
-     * @var
-     */
     public static $pages;
 
     public function behaviors()
@@ -46,6 +44,9 @@ class Pages extends \yii\db\ActiveRecord
             ],
             [
                 'class' => DropDownTreeBehavior::className(),
+            ],
+            [
+                'class' => BoxesBehavior::className(),
             ]
         ];
     }

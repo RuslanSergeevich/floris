@@ -8,12 +8,18 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use common\models\LoginForm;
 use yii\filters\VerbFilter;
+use yii\data\ActiveDataProvider;
+use yii\data\Pagination;
+use yii\web\NotFoundHttpException;
 
 /**
  * Site controller
  */
 class SiteController extends Controller
 {
+
+    const PAGE_SIZE = 25;
+
     /**
      * @inheritdoc
      */
@@ -133,6 +139,50 @@ class SiteController extends Controller
             Yii::$app->session->setFlash('success', 'Сообщение отправлено!');
         } else {
             Yii::$app->session->setFlash('success', 'Возникла ошибка при отправке сообщения:(');
+        }
+    }
+
+    /*
+     |-----------------------------------------------------------
+     |   PROTECTED_FUNCTIONS
+     |-----------------------------------------------------------
+     */
+
+    /**
+     * @param $query
+     * @return ActiveDataProvider
+     * @throws NotFoundHttpException
+     */
+    protected function findData($query)
+    {
+        $model = new ActiveDataProvider([
+            'query' => $query,
+            'sort' => false,
+            'pagination' => new Pagination([
+                'pageSize' => self::PAGE_SIZE,
+                'forcePageParam' => false,
+                'pageSizeParam' => false
+            ])
+        ]);
+
+        if(!$model){
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+
+        return $model;
+    }
+
+    /**
+     * @param $model
+     * @return \yii\web\Response
+     */
+    protected function loadData($model)
+    {
+        if($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $model->save();
+            return (isset($model->parent_id) && $model->parent_id)
+                ? $this->redirect(Yii::$app->homeUrl.$this->module->id .'/items/'.$model->parent_id)
+                : $this->redirect(Yii::$app->homeUrl.$this->module->id);
         }
     }
 }

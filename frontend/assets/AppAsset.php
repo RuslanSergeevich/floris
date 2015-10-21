@@ -19,6 +19,7 @@ class AppAsset extends AssetBundle
         'js/lib/device.js',
         'js/lib/bxslider.js',
         'js/script.js',
+        'js/app_bundle.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

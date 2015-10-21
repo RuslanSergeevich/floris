@@ -38,7 +38,7 @@ class DefaultController extends SiteController
     {
         $query = Actions::find();
         return $this->render('index', [
-            'dataProvider' => $this->_findData($query)
+            'dataProvider' => $this->findData($query)
         ]);
     }
 
@@ -47,7 +47,7 @@ class DefaultController extends SiteController
      */
     public function actionAdd()
     {
-        $this->_loadData($model = new Actions());
+        $this->loadData($model = new Actions());
         return $this->render('form', [
             'model' => new Actions()
         ]);
@@ -63,7 +63,7 @@ class DefaultController extends SiteController
         if(!$model = Actions::findOne(['id' => $id])){
             throw new NotFoundHttpException('The requested page does not exist.');
         }
-        $this->_loadData($model);
+        $this->loadData($model);
         return $this->render('form', ['model' => $model]);
     }
 
@@ -74,34 +74,5 @@ class DefaultController extends SiteController
         }
         $model->delete();
         return $this->redirect(Yii::$app->homeUrl.$this->module->id);
-    }
-
-    /**
-     * @param $query
-     * @return ActiveDataProvider
-     */
-    private function _findData($query)
-    {
-        return new ActiveDataProvider([
-            'query' => $query,
-            'sort' => false,
-            'pagination' => new Pagination([
-                'pageSize' => self::PAGE_SIZE,
-                'forcePageParam' => false,
-                'pageSizeParam' => false
-            ])
-        ]);
-    }
-
-    /**
-     * @param $model
-     * @return \yii\web\Response
-     */
-    private function _loadData($model)
-    {
-        if($model->load(Yii::$app->request->post()) && $model->validate()) {
-            $model->save();
-            return $this->redirect(Yii::$app->homeUrl.$this->module->id);
-        }
     }
 }

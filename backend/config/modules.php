@@ -43,4 +43,7 @@ return [
     'weight' => [
         'class' => 'backend\modules\weight\Weight',
     ],
+    'boxes' => [
+        'class' => 'backend\modules\boxes\Boxes',
+    ],
 ];

@@ -48,5 +48,4 @@ class SiteController extends Controller
         }
         return $model;
     }
-
 }

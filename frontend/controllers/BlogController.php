@@ -3,14 +3,13 @@
 namespace frontend\controllers;
 
 use Yii;
-use yii\web\Controller;
 use common\models\Blog;
 
 /**
  * Class BlogController
  * @package frontend\controllers
  */
-class BlogController extends Controller
+class BlogController extends SiteController
 {
     /**
      * @param $alias

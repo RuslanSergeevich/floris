@@ -7,16 +7,12 @@ use yii\filters\AccessControl;
 use backend\controllers\SiteController;
 use common\models\Catalog;
 use common\models\CatalogItems;
-use yii\data\ActiveDataProvider;
-use yii\data\Pagination;
 use yii\helpers\Url;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 class DefaultController extends SiteController
 {
-
-    const PAGE_SIZE = 25;
 
     public function behaviors()
     {
@@ -49,7 +45,7 @@ class DefaultController extends SiteController
         $query = Catalog::find();
         Url::remember();
         return $this->render('index', [
-            'dataProvider' => $this->_findData($query)
+            'dataProvider' => $this->findData($query)
         ]);
     }
 
@@ -58,7 +54,7 @@ class DefaultController extends SiteController
      */
     public function actionAdd()
     {
-        $this->_loadData($model = new Catalog());
+        $this->loadData($model = new Catalog());
         return $this->render('form', [
             'model' => new Catalog()
         ]);
@@ -72,7 +68,7 @@ class DefaultController extends SiteController
     public function actionUpdate($id)
     {
         $model = Catalog::findOne(['id' => $id]);
-        $this->_loadData($model);
+        $this->loadData($model);
         return $this->render('form', ['model' => $model]);
     }
 
@@ -99,7 +95,7 @@ class DefaultController extends SiteController
         $query = CatalogItems::find()->where(['parent_id' => $id]);
         Url::remember();
         return $this->render('index_items', [
-            'dataProvider' => $this->_findData($query)
+            'dataProvider' => $this->findData($query)
         ]);
     }
 
@@ -108,7 +104,7 @@ class DefaultController extends SiteController
      */
     public function actionItemAdd()
     {
-        $this->_loadData($model = new CatalogItems());
+        $this->loadData($model = new CatalogItems());
         return $this->render('form_items', [
             'model' => new CatalogItems()
         ]);
@@ -117,7 +113,7 @@ class DefaultController extends SiteController
     public function actionItemUpdate($id)
     {
         $model = CatalogItems::findOne(['id' => $id]);
-        $this->_loadData($model);
+        $this->loadData($model);
         return $this->render('form_items', ['model' => $model]);
     }
 
@@ -125,49 +121,5 @@ class DefaultController extends SiteController
     {
         CatalogItems::findOne(['id' => $id])->delete();
         return $this->redirect(Url::previous());
-    }
-
-    /*
-     |-----------------------------------------------------------
-     |   PRIVATE_FUNCTIONS
-     |-----------------------------------------------------------
-     */
-
-    /**
-     * @param $query
-     * @return ActiveDataProvider
-     * @throws NotFoundHttpException
-     */
-    private function _findData($query)
-    {
-        $model = new ActiveDataProvider([
-            'query' => $query,
-            'sort' => false,
-            'pagination' => new Pagination([
-                'pageSize' => self::PAGE_SIZE,
-                'forcePageParam' => false,
-                'pageSizeParam' => false
-            ])
-        ]);
-
-        if(!$model){
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
-
-        return $model;
-    }
-
-    /**
-     * @param $model
-     * @return \yii\web\Response
-     */
-    private function _loadData($model)
-    {
-        if($model->load(Yii::$app->request->post()) && $model->validate()) {
-            $model->save();
-            return (isset($model->parent_id) && $model->parent_id)
-            ? $this->redirect(Yii::$app->homeUrl.$this->module->id .'/items/'.$model->parent_id)
-            : $this->redirect(Yii::$app->homeUrl.$this->module->id);
-        }
     }
 }

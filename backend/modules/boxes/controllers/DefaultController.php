@@ -1,12 +1,13 @@
 <?php
 
-namespace backend\modules\pages\controllers;
+namespace backend\modules\boxes\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
 use backend\controllers\SiteController;
-use common\models\Pages;
+use common\models\Boxes;
 use yii\helpers\Url;
+use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 class DefaultController extends SiteController
@@ -18,7 +19,7 @@ class DefaultController extends SiteController
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'add', 'update', 'delete', 'update-pos', 'childs'],
+                        'actions' => ['index', 'add', 'update', 'delete'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -27,8 +28,7 @@ class DefaultController extends SiteController
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'update-pos' => ['post'],
-                    'childs' => ['post'],
+                    'delete' => ['post'],
                 ],
             ],
         ];
@@ -39,7 +39,7 @@ class DefaultController extends SiteController
      */
     public function actionIndex()
     {
-        $query = Pages::find()->where(['parent_id' => 0])->orderBy(['pos' => SORT_ASC]);
+        $query = Boxes::find();
         Url::remember();
         return $this->render('index', [
             'dataProvider' => $this->findData($query)
@@ -47,56 +47,32 @@ class DefaultController extends SiteController
     }
 
     /**
-     * @return string
+     * @return string|\yii\web\Response
      */
     public function actionAdd()
     {
-        $this->loadData($model = new Pages());
+        $this->loadData($model = new Boxes());
         return $this->render('form', [
-            'model' => new Pages()
+            'model' => new Boxes()
         ]);
     }
 
     /**
      * @param $id
-     * @return string
+     * @return string|\yii\web\Response
+     * @throws NotFoundHttpException
      */
     public function actionUpdate($id)
     {
-        $model = Pages::findOne(['id' => $id]);
+        $model = Boxes::findOne(['id' => $id]);
         $this->loadData($model);
         return $this->render('form', ['model' => $model]);
     }
 
-    /**
-     * @param $id
-     * @return \yii\web\Response
-     * @throws \Exception
-     */
     public function actionDelete($id)
     {
-        Pages::findOne(['id' => $id])->delete();
+        Boxes::findOne(['id' => $id])->delete();
         return $this->redirect(Url::previous());
     }
 
-    public function actionUpdatePos()
-    {
-        foreach(Yii::$app->request->post('data') as $key => $value){
-            $gallery = Pages::findOne(['id' => $value]);
-            $gallery->pos = $key;
-            $gallery->update();
-        }
-    }
-
-    /**
-     * @param $id
-     * @return string
-     */
-    public function actionChilds($id)
-    {
-        return $this->renderAjax('_pages_childs', [
-            'dataProvider' => $this->findData(Pages::find()->where(['parent_id' => $id])->orderBy(['pos' => SORT_ASC])),
-            'parent_id' => $id
-        ]);
-    }
 }

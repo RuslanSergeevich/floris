@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "types".
@@ -82,10 +83,10 @@ class Types extends \yii\db\ActiveRecord
     }
 
     /**
-     * @return array|\yii\db\ActiveRecord[]
+     * @return array
      */
-    public static function getAllTypes()
+    public static function getList()
     {
-        return self::find()->where(['publish' => self::PUBLISH])->orderBy('pos DESC')->asArray()->all();
+        return ArrayHelper::map(ArrayHelper::merge([['id' => '0', 'name' => 'Не выбрано']],self::find()->where(['publish' => self::PUBLISH])->orderBy('pos ASC')->asArray()->all()),'id','name');
     }
 }

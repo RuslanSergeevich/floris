@@ -4,35 +4,24 @@ namespace common\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
-use yii\helpers\ArrayHelper;
 
 /**
- * This is the model class for table "composition".
+ * This is the model class for table "boxes".
  *
  * @property integer $id
+ * @property string $sys_name
  * @property string $name
+ * @property string $title
  * @property integer $publish
  * @property integer $pos
  * @property integer $created_at
  * @property integer $updated_at
  */
-class Composition extends \yii\db\ActiveRecord
+class Boxes extends \yii\db\ActiveRecord
 {
-
     const PUBLISH = 1;
     const UNPUBLISHED = 0;
 
-    /**
-     * @inheritdoc
-     */
-    public static function tableName()
-    {
-        return 'composition';
-    }
-
-    /**
-     * @return array
-     */
     public function behaviors()
     {
         return [
@@ -47,13 +36,21 @@ class Composition extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+    public static function tableName()
+    {
+        return 'boxes';
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function rules()
     {
         return [
-            [['name'], 'required'],
-            [['publish', 'pos', 'created_at', 'updated_at'], 'integer'],
-            [['name'], 'string', 'max' => 255],
-            ['pos', 'default', 'value' => 0]
+            [['sys_name', 'name', 'title'], 'required'],
+            [['publish', 'created_at', 'updated_at'], 'integer'],
+            [['sys_name', 'name', 'title'], 'string', 'max' => 255],
+            [['text'], 'string']
         ];
     }
 
@@ -64,11 +61,13 @@ class Composition extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Значение',
-            'publish' => 'Publish',
-            'pos' => 'Позиция',
-            'created_at' => 'Обновлена',
-            'updated_at' => 'Обновлена',
+            'sys_name' => 'Системное имя',
+            'name' => 'Название блока',
+            'title' => 'Заголовок блока',
+            'text' => 'Контент блока',
+            'publish' => 'Публикация',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
         ];
     }
 
@@ -86,10 +85,10 @@ class Composition extends \yii\db\ActiveRecord
     }
 
     /**
-     * @return array
+     * @return array|\yii\db\ActiveRecord[]
      */
-    public static function getList()
+    public static function getBoxBySysName()
     {
-        return ArrayHelper::map(ArrayHelper::merge([['id' => '0', 'name' => 'Не выбрано']],self::find()->where(['publish' => self::PUBLISH])->orderBy('pos ASC')->asArray()->all()),'id','name');
+        return self::find()->select(['sys_name','title','name','text'])->where(['publish' => self::PUBLISH])->asArray()->all();
     }
 }

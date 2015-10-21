@@ -1,5 +1,7 @@
 $(document).ready(function(){
-	$('select').selecter();
+	$('select').selecter({
+		'mobile': true
+	});
 
 	$('a.fancybox').fancybox({
 		helpers: {

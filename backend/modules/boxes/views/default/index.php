@@ -1,21 +1,21 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $dataProvider @common\models\Packing */
+/* @var $dataProvider @common\models\Catalog */
 
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\GridView;
-use common\models\Weight;
+use common\models\Boxes;
 
-$this->title = 'Масса(нетто)';
+$this->title = 'Каталог';
 ?>
 
 <div class="row">
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title"><?= $this->title?></h3>
+                <h3 class="box-title">Каталог</h3>
                 <div class="box-tools">
                     <div class="input-group" style="width: 150px;">
                         <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Поиск" />
@@ -46,7 +46,7 @@ $this->title = 'Масса(нетто)';
                             'header' => 'Публикация',
                             'format' => 'html',
                             'value' => function ($model) {
-                                return Weight::getStatusesIcon($model->publish);
+                                return Boxes::getStatusesIcon($model->publish);
                             },
                         ],
                         [
@@ -63,7 +63,6 @@ $this->title = 'Масса(нетто)';
                                 return Yii::$app->formatter->asRelativeTime($model->updated_at);
                             },
                         ],
-                        'pos',
                         [
                             'class' => 'yii\grid\ActionColumn',
                             'header' => 'Редактирование',
@@ -83,7 +82,7 @@ $this->title = 'Масса(нетто)';
                         ],
                     ],
                 ]);
-                echo Html::tag('div', Html::a('Добавить', Url::toRoute(['/weight/add']), ['class' => 'btn btn-block btn-primary']), [
+                echo Html::tag('div', Html::a('Добавить', Url::toRoute(['/boxes/add']), ['class' => 'btn btn-block btn-primary']), [
                     'class' => 'button-add'
                 ]);
                 ?>

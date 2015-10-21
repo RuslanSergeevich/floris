@@ -6,15 +6,11 @@ use Yii;
 use yii\filters\AccessControl;
 use backend\controllers\SiteController;
 use common\models\Rooms;
-use yii\data\ActiveDataProvider;
-use yii\data\Pagination;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 class DefaultController extends SiteController
 {
-    const PAGE_SIZE = 25;
-
     public function behaviors()
     {
         return [
@@ -45,20 +41,16 @@ class DefaultController extends SiteController
     {
         $query = Rooms::find()->where(['parent_id' => 0])->orderBy(['pos' => SORT_ASC]);
         return $this->render('index', [
-            'dataProvider' => $this->_findData($query)
+            'dataProvider' => $this->findData($query)
         ]);
     }
 
     /**
-     * @return string|\yii\web\Response
+     * @return string
      */
     public function actionAdd()
     {
-        $model = new Rooms();
-        if($model->load(Yii::$app->request->post()) && $model->validate()){
-            $model->save();
-            return $this->redirect(Yii::$app->homeUrl.$this->module->id);
-        }
+        $this->loadData($model = new Rooms());
         return $this->render('form', [
             'model' => new Rooms()
         ]);
@@ -71,13 +63,8 @@ class DefaultController extends SiteController
      */
     public function actionUpdate($id)
     {
-        if(!$model = Rooms::findOne(['id' => $id])){
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
-        if($model->load(Yii::$app->request->post()) && $model->validate()){
-            $model->update();
-            return $this->redirect(Yii::$app->homeUrl.$this->module->id);
-        }
+        $model = Rooms::findOne(['id' => $id]);
+        $this->loadData($model);
         return $this->render('form', ['model' => $model]);
     }
 
@@ -88,11 +75,8 @@ class DefaultController extends SiteController
      */
     public function actionDelete($id)
     {
-        if(!$model = Rooms::findOne(['id' => $id])){
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
-        $model->delete();
-        return $this->redirect(Yii::$app->homeUrl.$this->module->id);
+        Rooms::findOne(['id' => $id])->delete();
+        return $this->redirect(Url::previous());
     }
 
     public function actionUpdatePos()
@@ -111,25 +95,8 @@ class DefaultController extends SiteController
     public function actionChilds($id)
     {
         return $this->renderAjax('_pages_childs', [
-            'dataProvider' => $this->_findData(Rooms::find()->where(['parent_id' => $id])->orderBy(['pos' => SORT_ASC])),
+            'dataProvider' => $this->findData(Rooms::find()->where(['parent_id' => $id])->orderBy(['pos' => SORT_ASC])),
             'parent_id' => $id
-        ]);
-    }
-
-    /**
-     * @param $query
-     * @return ActiveDataProvider
-     */
-    private function _findData($query)
-    {
-        return new ActiveDataProvider([
-            'query' => $query,
-            'sort' => false,
-            'pagination' => new Pagination([
-                'pageSize' => self::PAGE_SIZE,
-                'forcePageParam' => false,
-                'pageSizeParam' => false
-            ])
         ]);
     }
 }

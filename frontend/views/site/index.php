@@ -18,7 +18,7 @@ $this->registerMetaTag([
 <main>
     <section class="b1">
         <div class="title">
-            МЫ ПРОИЗВОДИМ, ПРОДАЁМ<br>НАТУРАЛЬНЫЙ КРЫМСКИЙ ЧАЙ<br>И СЛАДОСТИ ОПТОМ
+            <?= $model->name?>
         </div>
         <div class="btns">
             <?= Html::a('ПОДРОБНО О КОМПАНИИ', Url::to('about'),['class' => 'btn'])?>
@@ -53,7 +53,7 @@ $this->registerMetaTag([
                 <p>
                     Аналог классического чая Floris в измельченном формате и герметично упакованный в фильрт-пакет. Чай заваривается за пять минут не теряя при этом неповторимый вкус чаев Floris.
                 </p>
-                <a class="btn" href="#">В КАТАЛОГ</a>
+                <?= Html::a('В КАТАЛОГ', Url::to('cataloge'),['class' => 'btn'])?>
             </div>
         </div>
         <div class="choise-product b-left product-2">
@@ -115,7 +115,7 @@ $this->registerMetaTag([
     </section>
     <section class="b3">
         <div class="title">
-            ЗАКАЖИТЕ ПРОИЗВОДСТВО ЧАЯ<br>ПОД СВОЕЙ ТОРГОВОЙ МАРКОЙ
+            <?= $model->boxes['tea_production']['title']?>
         </div>
         <div class="btns">
             <a class="btn" href="#">ПОДРОБНЕЕ</a>
@@ -124,9 +124,9 @@ $this->registerMetaTag([
     <section class="b4">
         <div class="b-left">
             <div class="title left">
-                ЧИТАЙТЕ ИНТЕРЕСНЫЕ<br>СТАТЬИ О ЛЮБИМОМ<br>НАПИТКЕ
+                <?= $model->boxes['interesting_article']['title']?>
                 <div class="btns">
-                    <a class="btn blog" href="/blog.html">ЧИТАТЬ БЛОГ</a>
+                    <?= Html::a('ЧИТАТЬ БЛОГ', Url::to('blog'),['class' => 'btn'])?>
                 </div>
             </div>
         </div>
@@ -134,48 +134,17 @@ $this->registerMetaTag([
             <div class="title">
                 5 топ-тем нашего блога:
             </div>
-            <ul>
-                <li>
-                    <a href="#">Вся правда о чае в пакетиках</a>
-                </li>
-                <li>
-                    <a href="#">10 ошибок начинающих производителей</a>
-                </li>
-                <li>
-                    <a href="#">Запускать нельзя тестировать. Новый подход к созданию упаковки</a>
-                </li>
-                <li>
-                    <a href="#">Раскрываем секреты продающего видео</a>
-                </li>
-                <li>
-                    <a href="#">Большой бизнес за 2 дня. Как мы работали на фестивале уличной еды</a>
-                </li>
-            </ul>
+            <?= Html::ul(\common\models\Blog::find()->showMain()->limit(5)->all(), ['item' => function($item, $index) {
+                return Html::tag(
+                    'li', Html::a($item['name'], Url::to(['blog/view', 'alias' => $item['alias']]))
+                );
+            }]) ?>
         </div>
     </section>
     <section class="b5">
         <div class="title">
-            ГЕОГРАФИЯ ТОЧЕК ПРОДАЖ
+            <?= $model->boxes['geography']['title']?>
         </div>
-        <ul>
-            <li>
-                <div class="title">
-                    Потребителю
-                </div>
-                <p>
-                    Мы придумали удобный сервис для<br>любителей чая Флорис. Это хороший<br>способ найти ближайший магазин<br>с нашей продукцией.
-                </p>
-                <a class="btn" href="#">Найти</a>
-            </li>
-            <li>
-                <div class="title">
-                    Реализатору
-                </div>
-                <p>
-                    Уникальный сервис расчитан на то,<br>чтобы ваши продажи росли. Добавьте<br>свою магазин для увеличения потока<br>клиентов.
-                </p>
-                <a class="btn" href="#">ДОБАВИТЬ МАГАЗИН</a>
-            </li>
-        </ul>
+            <?= $model->boxes['geography']['text']?>
     </section>
 </main>

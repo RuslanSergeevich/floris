@@ -6,9 +6,7 @@ use Yii;
 use yii\filters\AccessControl;
 use backend\controllers\SiteController;
 use common\models\Types;
-use yii\data\ActiveDataProvider;
-use yii\data\Pagination;
-use yii\web\NotFoundHttpException;
+use yii\helpers\Url;
 use yii\filters\VerbFilter;
 
 class DefaultController extends SiteController
@@ -44,8 +42,9 @@ class DefaultController extends SiteController
     public function actionIndex()
     {
         $query = Types::find();
+        Url::remember();
         return $this->render('index', [
-            'dataProvider' => $this->_findData($query)
+            'dataProvider' => $this->findData($query)
         ]);
     }
 
@@ -54,7 +53,7 @@ class DefaultController extends SiteController
      */
     public function actionAdd()
     {
-        $this->_loadData($model = new Types());
+        $this->loadData($model = new Types());
         return $this->render('form', [
             'model' => new Types()
         ]);
@@ -62,15 +61,12 @@ class DefaultController extends SiteController
 
     /**
      * @param $id
-     * @return string|\yii\web\Response
-     * @throws NotFoundHttpException
+     * @return string
      */
     public function actionUpdate($id)
     {
-        if(!$model = Types::findOne(['id' => $id])){
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
-        $this->_loadData($model);
+        $model = Types::findOne(['id' => $id]);
+        $this->loadData($model);
         return $this->render('form', ['model' => $model]);
     }
 
@@ -82,35 +78,6 @@ class DefaultController extends SiteController
     public function actionDelete($id)
     {
         Types::findOne(['id' => $id])->delete();
-        return $this->redirect(Yii::$app->homeUrl.$this->module->id);
-    }
-
-    /**
-     * @param $query
-     * @return ActiveDataProvider
-     */
-    private function _findData($query)
-    {
-        return new ActiveDataProvider([
-            'query' => $query,
-            'sort' => false,
-            'pagination' => new Pagination([
-                'pageSize' => self::PAGE_SIZE,
-                'forcePageParam' => false,
-                'pageSizeParam' => false
-            ])
-        ]);
-    }
-
-    /**
-     * @param $model
-     * @return \yii\web\Response
-     */
-    private function _loadData($model)
-    {
-        if($model->load(Yii::$app->request->post()) && $model->validate()) {
-            $model->save();
-            return $this->redirect(Yii::$app->homeUrl.$this->module->id);
-        }
+        return $this->redirect(Url::previous());
     }
 }

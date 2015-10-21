@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m151019_085637_catalog_items extends Migration
+class m151021_100305_boxes extends Migration
 {
     public function up()
     {
@@ -11,30 +11,28 @@ class m151019_085637_catalog_items extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-        $this->createTable('{{%catalog_items}}', [
+        $this->createTable('{{%boxes}}', [
             'id' => $this->primaryKey(),
-            'parent_id' => $this->integer()->notNull(),
-            'type_id' => $this->integer()->notNull(),
-            'composition_id' => $this->integer()->notNull(),
-            'packing_id' => $this->integer()->notNull(),
-            'weight_id' => $this->integer()->notNull(),
-            'gallery_cat_id' => $this->integer()->notNull(),
-            'alias' => $this->string()->notNull(),
+            'sys_name' => $this->string()->notNull(),
             'name' => $this->string()->notNull(),
+            'title' => $this->string()->notNull(),
             'text' => $this->text()->notNull(),
-            'title' => $this->text()->notNull(),
-            'description' => $this->text()->notNull(),
-            'keywords' => $this->text()->notNull(),
             'publish' => $this->integer(1)->defaultValue(1),
-            'pos' => $this->integer()->defaultValue(0),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull()
         ], $tableOptions);
+
+        $this->insert('modules', [
+            'module' => 'boxes',
+            'name' => 'Блоки сайта',
+            'active' => 1,
+            'icon' => 'fa-cube'
+        ]);
     }
 
     public function down()
     {
-        $this->dropTable('{{%catalog_items}}');
+        $this->dropTable('{{%boxes}}');
     }
 
     /*

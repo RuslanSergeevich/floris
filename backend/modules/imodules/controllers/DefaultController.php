@@ -6,8 +6,6 @@ use Yii;
 use backend\controllers\SiteController;
 use yii\filters\AccessControl;
 use backend\modules\imodules\models\Modules as MM;
-use yii\data\ActiveDataProvider;
-use yii\data\Pagination;
 use yii\web\NotFoundHttpException;
 
 class DefaultController extends SiteController
@@ -37,7 +35,7 @@ class DefaultController extends SiteController
     public function actionIndex()
     {
         return $this->render('index', [
-            'dataProvider' => $this->_findData(MM::find())
+            'dataProvider' => $this->findData(MM::find())
         ]);
     }
 
@@ -55,22 +53,6 @@ class DefaultController extends SiteController
             $model->update();
         }
         return $this->redirect(Yii::$app->homeUrl.$this->module->id);
-    }
-
-    /**
-     * @param $query
-     * @return ActiveDataProvider
-     */
-    private function _findData($query)
-    {
-        return new ActiveDataProvider([
-            'query' => $query,
-            'sort' => false,
-            'pagination' => new Pagination([
-                'forcePageParam' => false,
-                'pageSizeParam' => false
-            ])
-        ]);
     }
 
 }

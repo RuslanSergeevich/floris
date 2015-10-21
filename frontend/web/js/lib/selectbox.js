@@ -384,6 +384,13 @@
           html += 'href="' + opVal + '"';
         } else {
           html += 'data-value="' + opVal + '"';
+          /*
+           |--------------------------------------------------------------------------
+           |   Krasnopyorov: 'ADD_ATTRIBUTE_DATA(data-composition_id|data-packing_id)'
+           |--------------------------------------------------------------------------
+           */
+          html += $op.attr('data-composition_id') ?  'data-composition_id="' + $op.attr('data-composition_id') + '"' : '';
+          html += $op.attr('data-packing_id')     ?  'data-packing_id="' + $op.attr('data-packing_id') + '"'         : '';
         }
         html += '>' + $("<span></span>").text( _trim($op.text(), data.trim) ).html() + '</' + itemTag + '>';
         j++;

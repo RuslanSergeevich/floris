@@ -1,6 +1,10 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
+use frontend\components\DDWidget;
+use common\models\Composition;
+use common\models\Packing;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Pages */
@@ -21,45 +25,26 @@ $this->registerMetaTag([
             <li class="active">
                 <a href="#">Весь ассортимент</a>
             </li>
-            <li>
-                <a href="#">ТМ Floris</a>
-            </li>
-            <li>
-                <a href="#">ТМ Легенды Крыма</a>
-            </li>
-            <li>
-                <a href="#">Сладости</a>
-            </li>
+            <?php if ($model = \common\models\Types::getList()):
+                ArrayHelper::remove($model, 0);?>
+                <?php foreach ($model as $key => $value): ?>
+                    <?= Html::tag('li', Html::tag('a', $value, ['href' => '#', 'data-type_id' => $key]))?>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </menu>
     </div>
     <div class="cataloge-filter">
         <div class="inner">
-            <div class="comp fleft">
-                <select>
-                    <option value="">
-                        Состав 1
-                    </option>
-                    <option value="">
-                        Состав 2
-                    </option>
-                    <option value="">
-                        Состав 3
-                    </option>
-                </select>
-            </div>
-            <div class="pack fleft">
-                <select>
-                    <option value="">
-                        Упаковка 1
-                    </option>
-                    <option value="">
-                        Упаковка 2
-                    </option>
-                    <option value="">
-                        Упаковка 3
-                    </option>
-                </select>
-            </div>
+            <?= DDWidget::widget([
+                'model' => Composition::getList(),
+                'css_class' => 'comp',
+                'entity_db' => 'data-composition_id'
+            ])?>
+            <?= DDWidget::widget([
+                'model' => Packing::getList(),
+                'css_class' => 'pack',
+                'entity_db' => 'data-packing_id'
+            ])?>
             <div class="weight fleft">
                 <div class="spinner">
                     <p>

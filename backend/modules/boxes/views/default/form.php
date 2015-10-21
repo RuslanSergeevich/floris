@@ -2,14 +2,14 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use yii\helpers\Url;
 use backend\assets\CkEditorAsset;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\News */
 CkEditorAsset::register($this);
 
-$this->title = 'Добавление/Редактирование новости';
+$this->title = 'Добавление/Редактирование блока сайта';
 ?>
 
 <div class="row">
@@ -22,20 +22,14 @@ $this->title = 'Добавление/Редактирование новости
                 </div><!-- /.box-header -->
                     <?php $form = ActiveForm::begin(['method' => 'post', 'options' => ['role' => 'form', 'enctype' => 'multipart/form-data']]); ?>
                         <div class="box-body">
+
                             <?= $form->field($model, 'name') ?>
                             <?= $form->field($model, 'title') ?>
-                            <?= $form->field($model, 'description') ?>
-                            <?= $form->field($model, 'keywords') ?>
-                            <?= $form->field($model, 'alias') ?>
-                            <?php if($model->image){?>
-                                <?= Html::img('@news/'.$model->image, ['alt' => $model->name, 'width' => '150']) ?>
-                            <?php } ?>
-                            <?= $form->field($model, 'file')->fileInput() ?>
+                            <?= $form->field($model, 'sys_name') ?>
                             <?= $form->field($model, 'text')->textarea() ?>
                             <?php if(!$model->isNewRecord):?>
                                 <?= $form->field($model, 'publish')->checkbox(['class' => 'minimal']) ?>
                             <?php endif;?>
-                            <?= $form->field($model, 'pos') ?>
                             <div class="form-group">
                                 <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
                             </div>
@@ -45,4 +39,4 @@ $this->title = 'Добавление/Редактирование новости
         </div>
     </div>
 </div>
-<?php $this->registerJsFile(Url::toRoute('/lte/js/news_bundle.js'),['depends'=>'yii\web\JqueryAsset']);?>
+<?php $this->registerJsFile(Url::toRoute('/lte/js/boxes_bundle.js'),['depends'=>'yii\web\JqueryAsset']);?>

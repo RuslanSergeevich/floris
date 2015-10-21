@@ -12,6 +12,9 @@ use yii\helpers\ArrayHelper;
  *
  * @property integer $id
  * @property integer $type_id
+ * @property integer $composition_id
+ * @property integer $packing_id
+ * @property integer $weight_id
  * @property integer $parent_id
  * @property integer $gallery_cat_id
  * @property string $alias
@@ -33,11 +36,17 @@ class CatalogItems extends \yii\db\ActiveRecord
 
     public static $galleries = [];
     public static $types = [];
+    public static $composition = [];
+    public static $packing = [];
+    public static $weight = [];
 
     public function init()
     {
         self::$galleries = $this->getTree(Gallery::find()->asArray()->all());
         self::$types = ArrayHelper::map(ArrayHelper::merge([['id' => '0', 'name' => 'Не выбрано']],Types::find()->asArray()->all()),'id','name');
+        self::$composition = Composition::getList();
+        self::$packing = Packing::getList();
+        self::$weight = Weight::getList();
     }
 
     public function behaviors()
@@ -69,7 +78,7 @@ class CatalogItems extends \yii\db\ActiveRecord
     {
         return [
             [['parent_id', 'alias', 'name', 'text', 'title'], 'required'],
-            [['parent_id', 'gallery_cat_id', 'publish', 'pos', 'created_at', 'updated_at', 'type_id'], 'integer'],
+            [['parent_id', 'gallery_cat_id', 'publish', 'pos', 'created_at', 'updated_at', 'type_id', 'composition_id', 'packing_id', 'weight_id'], 'integer'],
             [['text', 'title', 'description', 'keywords'], 'string'],
             [['alias', 'name'], 'string', 'max' => 255],
             ['pos', 'default', 'value' => 0],
@@ -86,6 +95,9 @@ class CatalogItems extends \yii\db\ActiveRecord
             'id' => 'ID',
             'type_id' => 'Выберите тип товара',
             'parent_id' => 'Parent ID',
+            'composition_id' => 'Составы чая',
+            'packing_id' => 'Упаковка',
+            'weight_id' => 'Масса(нетто)',
             'gallery_cat_id' => 'Галерея',
             'alias' => 'Alias',
             'name' => 'Наименование',
