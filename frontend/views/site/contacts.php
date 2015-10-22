@@ -35,21 +35,15 @@ $this->registerMetaTag([
             <ul>
                 <li>
                     <h2>
-                        Отдел продаж
+                        <?= $model->boxes['sales_department']['title']?>
                     </h2>
-                    <p>
-                        С удовольствием ответим на все ваши вопросы и вышлем образцы продукции
-                    </p>
-                    <span class="mobile">+7 3652 583-577</span><span class="mail">sales@floristea.com</span><span class="skype">floistea.com</span><span class="phone">+7 978 049-96-11</span>
+                        <?= $model->boxes['sales_department']['text']?>
                 </li>
                 <li>
                     <h2>
-                        Офис
+                        <?= $model->boxes['office']['title']?>
                     </h2>
-                    <p>
-                        295021, Крым, г. Симферополь, ул. Данилова, 43
-                    </p>
-                    <span class="mobile">+7 3652 583-577</span>
+                        <?= $model->boxes['office']['text']?>
                 </li>
             </ul>
         </div>
@@ -59,21 +53,15 @@ $this->registerMetaTag([
             <ul>
                 <li>
                     <h2>
-                        Отдел снабжения
+                        <?= $model->boxes['supply_division']['title']?>
                     </h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                    </p>
-                    <span class="mail">sales@floristea.com</span>
+                        <?= $model->boxes['supply_division']['text']?>
                 </li>
                 <li>
                     <h2>
-                        Для прессы
+                        <?= $model->boxes['press']['title']?>
                     </h2>
-                    <p>
-                        Дорогие журналисты, мы ответим на Ваши вопросы, вышлем необходимые материалы и поможем в подготовке статьи или сюжета! Мы не готовы платить за статьи, но открыты для новых идей и проектов.
-                    </p>
-                    <span class="mail">sales@floristea.com</span>
+                        <?= $model->boxes['press']['text']?>
                 </li>
             </ul>
         </div>
@@ -83,21 +71,15 @@ $this->registerMetaTag([
             <ul>
                 <li>
                     <h2>
-                        Директор
+                        <?= $model->boxes['director']['title']?>
                     </h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                    </p>
-                    <span class="mobile">+7 3652 583-577</span>
+                        <?= $model->boxes['director']['text']?>
                 </li>
                 <li>
                     <h2>
-                        Ищем талантливых сотрудников
+                        <?= $model->boxes['looking_people']['title']?>
                     </h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                    </p>
-                    <span class="mail">sales@floristea.com</span>
+                        <?= $model->boxes['looking_people']['text']?>
                 </li>
             </ul>
         </div>
@@ -115,12 +97,10 @@ $this->registerMetaTag([
     <div class="b-info">
         <div class="inner center">
             <h2>
-                РЕКЛАМНЫЕ МАТЕРИАЛЫ ДЛЯ ПАРТНЕРОВ
+                <?= $model->boxes['promotional_material']['title']?>
             </h2>
-            <p>
-                Все фотографии являются интелектуальной собственностью компании,<br>и могут использоваться только в рекламе нашей продукции.
-            </p>
-            <a class="btn green" href="#">СКАЧАТЬ</a>
+                <?= $model->boxes['promotional_material']['text']?>
+                <a class="btn green" href="#">СКАЧАТЬ</a>
         </div>
     </div>
 </section>

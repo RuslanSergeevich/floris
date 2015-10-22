@@ -32,7 +32,6 @@ $this->title = 'Каталог';
                     'summary' => false,
                     'tableOptions' => ['class' => 'table table-hover'],
                     'columns' => [
-                        'id',
                         [
                             'attribute' => 'name',
                             'header' => 'Название',
