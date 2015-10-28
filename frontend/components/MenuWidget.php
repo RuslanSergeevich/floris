@@ -34,7 +34,7 @@ class MenuWidget extends Widget
      */
     public function run()
     {
-        if($pages = Pages::find()->where(['publish' => Pages::PUBLISH])->orderBy('pos','ASC')->asArray()->all()){
+        if($pages = Pages::find()->where(['publish' => Pages::PUBLISH, 'show_menu' => Pages::SHOW_MENU])->orderBy('pos','ASC')->asArray()->all()){
             foreach($pages as $page){
                 $this->_html .= Html::tag('li', Html::a($page['menu_name'], Url::to(['site/page', 'alias' => $page['alias']])),
                     [
@@ -42,7 +42,7 @@ class MenuWidget extends Widget
                     ]);
             }
         }
-        return Html::tag('menu', $this->_html, ['class' => 'screen']);
+        return Html::tag('menu', $this->_html, ['role' => 'navigation']);
     }
 
 } 

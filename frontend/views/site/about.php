@@ -15,7 +15,7 @@ $this->registerMetaTag([
 ]);
 ?>
 <section class="about">
-    <div class="top-block">
+    <div class="top-block b-top-section">
         <div class="title">
             ФЛОРИС — ЧАЙНАЯ КОМПАНИЯ<br>С ПОЛНЫМ ПРОИЗВОДСТВЕННЫМ<br>ЦИКЛОМ
         </div>
@@ -108,7 +108,7 @@ $this->registerMetaTag([
             </ul>
         </div>
     </div>
-    <div class="b-content">
+    <div class="b-content clients">
         <div class="inner">
             <div class="b-local">
                 <div class="title">

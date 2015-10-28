@@ -15,7 +15,7 @@ $this->registerMetaTag([
 ]);
 ?>
 <section class="contacts">
-    <div class="contacts-header">
+    <div class="contacts-header b-top-section">
         <div class="inner">
             <div class="title">
                 МЫ ВСЕГДА ОТКРЫТЫ<br>СОТРУДНИЧЕСТВУ
@@ -90,7 +90,7 @@ $this->registerMetaTag([
                 ПРИСОЕДИНЯЙТЕСЬ
             </h2>
             <div class="social">
-                <a class="fb" href="#" target="_blank"></a><a class="insta" href="#" target="_blank"></a><a class="vk" href="#" target="_blank"></a>
+                <a class="fb" href="#" target="_blank"></a><a class="insta" href="#" target="_blank"></a><a class="vk" href="#" target="_blank"></a><a class="youtube" href="#" target="_blank"></a>
             </div>
         </div>
     </div>

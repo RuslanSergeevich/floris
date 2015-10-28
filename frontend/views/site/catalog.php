@@ -61,6 +61,9 @@ $this->registerMetaTag([
                             <li class="active">
                                 350
                             </li>
+                            <li>
+                                525
+                            </li>
                         </ul>
                     </div>
                 </div>

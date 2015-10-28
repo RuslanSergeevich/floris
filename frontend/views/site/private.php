@@ -15,7 +15,7 @@ $this->registerMetaTag([
 ]);
 ?>
 <main class="privat">
-    <section class="top">
+    <section class="top b-top-section">
         <div class="inner">
             <div class="title">
                 МЫ ПРОИЗВОДИМ И ФАСУЕМ ЧАЙ<br>ПОД ВАШЕЙ ТОРГОВОЙ МАРКОЙ<br>С ДОСТАВКОЙ ПО ВСЕМУ СНГ
@@ -152,15 +152,41 @@ $this->registerMetaTag([
             <div class="title">
                 Что дает Private Label
             </div>
-            <div class="count">
-                1
-            </div>
-            <div class="text">
-                Отличный способ<br>протестировать <br>нишу
-                <p>
-                    Не требует вложений<br>в оборудование и производство
-                </p>
-            </div>
+            <ul class="slider">
+                <li>
+                    <div class="count">
+                        1
+                    </div>
+                    <div class="text">
+                        Отличный способ<br>протестировать <br>нишу
+                        <p>
+                            Не требует вложений<br>в оборудование и производство
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="count">
+                        2
+                    </div>
+                    <div class="text">
+                        Отличный способ<br>протестировать <br>нишу
+                        <p>
+                            Не требует вложений<br>в оборудование и производство
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="count">
+                        3
+                    </div>
+                    <div class="text">
+                        Отличный способ<br>протестировать <br>нишу
+                        <p>
+                            Не требует вложений<br>в оборудование и производство
+                        </p>
+                    </div>
+                </li>
+            </ul>
             <div class="bottom-text">
                 <div class="title">
                     Почему стоит заказать производство у нас?

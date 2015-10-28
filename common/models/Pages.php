@@ -31,6 +31,7 @@ class Pages extends \yii\db\ActiveRecord
 
     const PUBLISH = 1;
     const UNPUBLISHED = 0;
+    const SHOW_MENU = 1;
 
     public static $pages;
 

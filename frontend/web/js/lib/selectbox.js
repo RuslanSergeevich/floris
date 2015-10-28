@@ -10,11 +10,11 @@
   "use strict";
 
   var guid = 0,
-    userAgent = (window.navigator.userAgent||window.navigator.vendor||window.opera),
-    isFirefox = /Firefox/i.test(userAgent),
-    isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(userAgent),
-    isFirefoxMobile = (isFirefox && isMobile),
-    $body = null;
+      userAgent = (window.navigator.userAgent||window.navigator.vendor||window.opera),
+      isFirefox = /Firefox/i.test(userAgent),
+      isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(userAgent),
+      isFirefoxMobile = (isFirefox && isMobile),
+      $body = null;
 
   /**
    * @options
@@ -110,9 +110,9 @@
           data.$selecter.off(".selecter");
 
           data.$select.off(".selecter")
-                .removeClass("selecter-element")
-                .show()
-                .unwrap();
+              .removeClass("selecter-element")
+              .show()
+              .unwrap();
         }
       });
     },
@@ -143,21 +143,21 @@
 
 
     /**
-    * @method private
-    * @name refresh
-    * @description DEPRECATED - Updates instance base on target options
-    * @example $(".target").selecter("refresh");
-    */
+     * @method private
+     * @name refresh
+     * @description DEPRECATED - Updates instance base on target options
+     * @example $(".target").selecter("refresh");
+     */
     refresh: function() {
       return pub.update.apply($(this));
     },
 
     /**
-    * @method
-    * @name update
-    * @description Updates instance base on target options
-    * @example $(".target").selecter("update");
-    */
+     * @method
+     * @name update
+     * @description Updates instance base on target options
+     * @example $(".target").selecter("update");
+     */
     update: function() {
       return $(this).each(function(i, input) {
         var data = $(input).parent(".selecter").data("selecter");
@@ -225,7 +225,7 @@
 
       // Grab true original index, only if selected attribute exits
       var $originalOption = $select.find("[selected]").not(":disabled"),
-        originalOptionIndex = $select.find("option").index($originalOption);
+          originalOptionIndex = $select.find("option").index($originalOption);
 
       if (!opts.multiple && opts.label !== "") {
         $select.prepend('<option value="" class="selecter-placeholder" selected>' + opts.label + '</option>');
@@ -238,7 +238,7 @@
 
       // Build options array
       var $allOptions = $select.find("option, optgroup"),
-        $options = $allOptions.filter("option");
+          $options = $allOptions.filter("option");
 
       // If we didn't actually have a selected elemtn
       if (!$originalOption.length) {
@@ -247,8 +247,8 @@
 
       // Determine original item
       var originalIndex = (originalOptionIndex > -1) ? originalOptionIndex : 0,
-        originalLabel = (opts.label !== "") ? opts.label : $originalOption.text(),
-        wrapperTag = "div";
+          originalLabel = (opts.label !== "") ? opts.label : $originalOption.text(),
+          wrapperTag = "div";
 
       // Swap tab index, no more interacting with the actual select!
       opts.tabIndex = $select[0].tabIndex;
@@ -256,7 +256,7 @@
 
       // Build HTML
       var inner = "",
-        wrapper = "";
+          wrapper = "";
 
       // Build wrapper
       wrapper += '<' + wrapperTag + ' class="selecter ' + opts.customClass;
@@ -288,21 +288,21 @@
 
       // Modify DOM
       $select.addClass("selecter-element")
-           .wrap(wrapper)
-           .after(inner);
+          .wrap(wrapper)
+          .after(inner);
 
       // Store plugin data
       var $selecter = $select.parent(".selecter"),
-        data = $.extend({
-          $select: $select,
-          $allOptions: $allOptions,
-          $options: $options,
-          $selecter: $selecter,
-          $selected: $selecter.find(".selecter-selected"),
-          $itemsWrapper: $selecter.find(".selecter-options"),
-          index: -1,
-          guid: guid++
-        }, opts);
+          data = $.extend({
+            $select: $select,
+            $allOptions: $allOptions,
+            $options: $options,
+            $selecter: $selecter,
+            $selected: $selecter.find(".selecter-selected"),
+            $itemsWrapper: $selecter.find(".selecter-options"),
+            index: -1,
+            guid: guid++
+          }, opts);
 
       _buildOptions(data);
 
@@ -317,10 +317,10 @@
 
       // Bind click events
       data.$selecter.on("touchstart.selecter", ".selecter-selected", data, _onTouchStart)
-              .on("click.selecter", ".selecter-selected", data, _onClick)
-              .on("click.selecter", ".selecter-item", data, _onSelect)
-              .on("close.selecter", data, _onClose)
-              .data("selecter", data);
+          .on("click.selecter", ".selecter-selected", data, _onClick)
+          .on("click.selecter", ".selecter-item", data, _onSelect)
+          .on("close.selecter", data, _onClose)
+          .data("selecter", data);
 
       // Change events
       data.$select.on("change.selecter", data, _onChange);
@@ -328,7 +328,7 @@
       // Focus/Blur events
       if (!isMobile) {
         data.$selecter.on("focusin.selecter", data, _onFocus)
-                .on("blur.selecter", data, _onBlur);
+            .on("blur.selecter", data, _onBlur);
 
         // Handle clicks to associated labels
         data.$select.on("focusin.selecter", data, function(e) {
@@ -346,8 +346,8 @@
    */
   function _buildOptions(data) {
     var html = '',
-      itemTag = (data.links) ? "a" : "span",
-      j = 0;
+        itemTag = (data.links) ? "a" : "span",
+        j = 0;
 
     for (var i = 0, count = data.$allOptions.length; i < count; i++) {
       var $op = data.$allOptions.eq(i);
@@ -418,7 +418,7 @@
     data.touchStartY = data.touchStartEvent.touches[0].clientY;
 
     data.$selecter.on("touchmove.selecter", ".selecter-selected", data, _onTouchMove)
-            .on("touchend.selecter", ".selecter-selected", data, _onTouchEnd);
+        .on("touchend.selecter", ".selecter-selected", data, _onTouchEnd);
   }
 
   /**
@@ -429,7 +429,7 @@
    */
   function _onTouchMove(e) {
     var data = e.data,
-      oe = e.originalEvent;
+        oe = e.originalEvent;
 
     if (Math.abs(oe.touches[0].clientX - data.touchStartX) > 10 || Math.abs(oe.touches[0].clientY - data.touchStartY) > 10) {
       data.$selecter.off("touchmove.selecter touchend.selecter");
@@ -503,9 +503,9 @@
     // Make sure it's not alerady open
     if (!data.$selecter.hasClass("open")) {
       var offset = data.$selecter.offset(),
-        bodyHeight = $body.outerHeight(),
-        optionsHeight = data.$itemsWrapper.outerHeight(true),
-        selectedOffset = (data.index >= 0) ? data.$items.eq(data.index).position() : { left: 0, top: 0 };
+          bodyHeight = $body.outerHeight(),
+          optionsHeight = data.$itemsWrapper.outerHeight(true),
+          selectedOffset = (data.index >= 0) ? data.$items.eq(data.index).position() : { left: 0, top: 0 };
 
       // Calculate bottom of document
       if (offset.top + optionsHeight > bodyHeight) {
@@ -516,7 +516,7 @@
 
       // Bind Events
       data.$selecter.removeClass("closed")
-              .addClass("open");
+          .addClass("open");
       $body.on("click.selecter-" + data.guid, ":not(.selecter-options)", data, _onCloseHelper);
 
       _scrollOptions(data);
@@ -554,7 +554,7 @@
     if (data.$selecter.hasClass("open")) {
       data.$itemsWrapper.hide();
       data.$selecter.removeClass("open bottom")
-              .addClass("closed");
+          .addClass("closed");
 
       $body.off(".selecter-" + data.guid);
     }
@@ -571,7 +571,7 @@
     e.stopPropagation();
 
     var $target = $(this),
-      data = e.data;
+        data = e.data;
 
     if (!data.$select.is(":disabled")) {
       if (data.$itemsWrapper.is(":visible")) {
@@ -599,7 +599,7 @@
    */
   function _onChange(e, internal) {
     var $target = $(this),
-      data = e.data;
+        data = e.data;
 
     if (!internal && !data.multiple) {
       var index = data.$options.index(data.$options.filter("[value='" + _escape($target.val()) + "']"));
@@ -623,10 +623,10 @@
 
     if (!data.$select.is(":disabled") && !data.multiple) {
       data.$selecter.addClass("focus")
-              .on("keydown.selecter-" + data.guid, data, _onKeypress);
+          .on("keydown.selecter-" + data.guid, data, _onKeypress);
 
       $(".selecter").not(data.$selecter)
-              .trigger("close.selecter", [ data ]);
+          .trigger("close.selecter", [ data ]);
     }
   }
 
@@ -643,10 +643,10 @@
     var data = e.data;
 
     data.$selecter.removeClass("focus")
-            .off("keydown.selecter-" + data.guid);
+        .off("keydown.selecter-" + data.guid);
 
     $(".selecter").not(data.$selecter)
-            .trigger("close.selecter", [ data ]);
+        .trigger("close.selecter", [ data ]);
   }
 
   /**
@@ -670,7 +670,7 @@
       e.stopPropagation();
 
       var total = data.$items.length - 1,
-        index = (data.index < 0) ? 0 : data.index;
+          index = (data.index < 0) ? 0 : data.index;
 
       // Firefox left/right support thanks to Kylemade
       if ($.inArray(e.keyCode, (isFirefox) ? [38, 40, 37, 39] : [38, 40]) > -1) {
@@ -685,8 +685,8 @@
         }
       } else {
         var input = String.fromCharCode(e.keyCode).toUpperCase(),
-          letter,
-          i;
+            letter,
+            i;
 
         // Search for input from original index
         for (i = data.index + 1; i <= total; i++) {
@@ -726,8 +726,8 @@
    */
   function _update(index, data) {
     var $item = data.$items.eq(index),
-      isSelected = $item.hasClass("selected"),
-      isDisabled = $item.hasClass("disabled");
+        isSelected = $item.hasClass("selected"),
+        isDisabled = $item.hasClass("disabled");
 
     // Check for disabled options
     if (!isDisabled) {
@@ -741,13 +741,13 @@
         }
       } else if (index > -1 && index < data.$items.length) {
         var newLabel = $item.html(),
-          newValue = $item.data("value");
+            newValue = $item.data("value");
 
         data.$selected.html(newLabel)
-                .removeClass('placeholder');
+            .removeClass('placeholder');
 
         data.$items.filter(".selected")
-               .removeClass("selected");
+            .removeClass("selected");
 
         data.$select[0].selectedIndex = index;
 
@@ -767,11 +767,11 @@
    */
   function _scrollOptions(data) {
     var $selected = data.$items.eq(data.index),
-      selectedOffset = (data.index >= 0 && !$selected.hasClass("placeholder")) ? $selected.position() : { left: 0, top: 0 };
+        selectedOffset = (data.index >= 0 && !$selected.hasClass("placeholder")) ? $selected.position() : { left: 0, top: 0 };
 
     if ($.fn.scroller !== undefined) {
       data.$itemsWrapper.scroller("scroll", (data.$itemsWrapper.find(".scroller-content").scrollTop() + selectedOffset.top), 0)
-                .scroller("reset");
+          .scroller("reset");
     } else {
       data.$itemsWrapper.scrollTop( data.$itemsWrapper.scrollTop() + selectedOffset.top );
     }

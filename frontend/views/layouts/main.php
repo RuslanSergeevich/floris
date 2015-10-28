@@ -47,10 +47,10 @@ AppAsset::register($this);?>
     <div id="main">
         <?= $content?>
     </div>
-    <footer>
+    <footer role="contentinfo">
        <?= MenuWidget::widget()?>
         <div class="footer-search mobile">
-            <form>
+            <form role="search">
                 <input type="text" name=""><input type="submit" value="">
             </form>
         </div>
