@@ -24,6 +24,11 @@ class MenuWidget extends Widget
      */
     public $attach_icon = false;
 
+    /**
+     * @var
+     */
+    public $class_name = '';
+
     public function init()
     {
         parent::init();
@@ -42,7 +47,7 @@ class MenuWidget extends Widget
                     ]);
             }
         }
-        return Html::tag('menu', $this->_html, ['role' => 'navigation']);
+        return Html::tag('menu', $this->_html, ['class' => $this->class_name, 'role' => 'navigation']);
     }
 
 } 

@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use backend\components\FileBehavior;
 
 /**
  * This is the model class for table "boxes".
@@ -12,6 +13,8 @@ use yii\behaviors\TimestampBehavior;
  * @property string $sys_name
  * @property string $name
  * @property string $title
+ * @property string $text
+ * @property string $link
  * @property integer $publish
  * @property integer $pos
  * @property integer $created_at
@@ -22,6 +25,20 @@ class Boxes extends \yii\db\ActiveRecord
     const PUBLISH = 1;
     const UNPUBLISHED = 0;
 
+    /**
+     * directory to save
+     */
+    const PATH = '/userfiles/boxes/';
+    /**
+     *
+     */
+    const IMAGE_ENTITY = 'image';
+
+    /**
+     * @var
+     */
+    public $file;
+
     public function behaviors()
     {
         return [
@@ -30,6 +47,11 @@ class Boxes extends \yii\db\ActiveRecord
                 'createdAtAttribute' => 'created_at',
                 'updatedAtAttribute' => 'updated_at',
             ],
+            [
+                'class' => FileBehavior::className(),
+                'path' => self::PATH,
+                'entity' => self::IMAGE_ENTITY
+            ]
         ];
     }
 
@@ -50,7 +72,7 @@ class Boxes extends \yii\db\ActiveRecord
             [['sys_name', 'name', 'title'], 'required'],
             [['publish', 'created_at', 'updated_at'], 'integer'],
             [['sys_name', 'name', 'title'], 'string', 'max' => 255],
-            [['text'], 'string']
+            [['text','link'], 'string']
         ];
     }
 
@@ -65,6 +87,8 @@ class Boxes extends \yii\db\ActiveRecord
             'name' => 'Название блока',
             'title' => 'Заголовок блока',
             'text' => 'Контент блока',
+            'link' => 'Ссылка на кнопку',
+            'file' => 'Изображение(1420 x 660px)',
             'publish' => 'Публикация',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
@@ -89,6 +113,6 @@ class Boxes extends \yii\db\ActiveRecord
      */
     public static function getBoxBySysName()
     {
-        return self::find()->select(['sys_name','title','name','text'])->where(['publish' => self::PUBLISH])->asArray()->all();
+        return self::find()->select(['sys_name','title','name','text','link','image'])->where(['publish' => self::PUBLISH])->asArray()->all();
     }
 }

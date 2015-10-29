@@ -11,6 +11,7 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/style.css',
         'css/override.css',
+        'css/jquery.kladr.min.css',
     ];
     public $js = [
         'js/lib/jquery-ui.js',
@@ -19,9 +20,10 @@ class AppAsset extends AssetBundle
         'js/lib/device.js',
         'js/lib/bxslider.js',
         'js/script.js',
+        'js/jquery.kladr.min.js',
         'js/app_bundle.js',
     ];
     public $depends = [
-        'yii\web\YiiAsset',
+        'yii\web\JqueryAsset',
     ];
 }

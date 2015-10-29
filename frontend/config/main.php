@@ -32,6 +32,7 @@ return [
                 '/' => 'site',
                 '<alias[\wd-]+>' => 'site/page',
                 'blog/<alias[\wd-]+>' => 'blog/view',
+                'product/<alias[\wd-]+>' => 'product/view',
             ],
         ],
         'log' => [

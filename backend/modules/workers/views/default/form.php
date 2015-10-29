@@ -3,13 +3,12 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use backend\assets\CkEditorAsset;
-use yii\helpers\Url;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\News */
+/* @var $model common\models\Composition */
 CkEditorAsset::register($this);
 
-$this->title = 'Добавление/Редактирование блока сайта';
+$this->title = 'Добавление/Редактирование информации о сотруднике компании';
 ?>
 
 <div class="row">
@@ -22,26 +21,19 @@ $this->title = 'Добавление/Редактирование блока с�
                 </div><!-- /.box-header -->
                     <?php $form = ActiveForm::begin(['method' => 'post', 'options' => ['role' => 'form', 'enctype' => 'multipart/form-data']]); ?>
                         <div class="box-body">
-
                             <?= $form->field($model, 'name') ?>
-                            <?= $form->field($model, 'title') ?>
-                            <?= $form->field($model, 'sys_name') ?>
-                            <?= $form->field($model, 'link') ?>
+                            <?= $form->field($model, 'appointment') ?>
                             <?= $form->field($model, 'file')->fileInput() ?>
                             <?php if($model->image){?>
                                 <div class="image-box">
-                                    <?= Html::img('@boxes/'.$model->image, [
+                                    <?= Html::img('@workers/'.$model->image, [
                                         'alt' => $model->name,
-                                        'width' => '250',
+                                        'width' => '100',
                                         'data-blog_id' => $model->id
                                     ]) ?>
                                 </div>
                                 <hr />
                             <?php } ?>
-                            <?= $form->field($model, 'text')->textarea() ?>
-                            <?php if(!$model->isNewRecord):?>
-                                <?= $form->field($model, 'publish')->checkbox(['class' => 'minimal']) ?>
-                            <?php endif;?>
                             <div class="form-group">
                                 <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
                             </div>
@@ -51,4 +43,3 @@ $this->title = 'Добавление/Редактирование блока с�
         </div>
     </div>
 </div>
-<?php $this->registerJsFile(Url::toRoute('/lte/js/boxes_bundle.js'),['depends'=>'yii\web\JqueryAsset']);?>

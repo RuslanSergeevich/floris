@@ -1,6 +1,8 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
+use common\models\Workers;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Pages */
@@ -17,40 +19,29 @@ $this->registerMetaTag([
 <section class="about">
     <div class="top-block b-top-section">
         <div class="title">
-            ФЛОРИС — ЧАЙНАЯ КОМПАНИЯ<br>С ПОЛНЫМ ПРОИЗВОДСТВЕННЫМ<br>ЦИКЛОМ
+            <?= $model->name?>
         </div>
     </div>
     <div class="b-content">
         <div class="inner">
-            <p>
-                В феврале 2011 года мы начали с 6 видов травяных и ягодных смесей,  продавали в родном Крыму. За 4 года мы немного выросли: сегодня выпускаем 60 наименований чая, освоили контрактное производство под марками наших клиентов. Появились сладости и торговая марка Легенды Крыма — наш сувенирный бренд.
-            </p>
+            <?= $model->text?>
             <div class="b-local">
                 <div class="title">
-                    Ингредиенты
+                    <?= $model->boxes['ingredients']['title']?>
                 </div>
-                <p>
-                    Мы выращиваем, сушим и перерабатываем все травы сами, а затем смешиваем и получаем купажи. Готовые смеси упаковываются в фильтр-пакеты (после измельчения) , картонные коробки или прозрачные банки. В чаи идут только цветки, листья и плоды растений.
-                </p>
+                    <?= $model->boxes['ingredients']['text']?>
             </div>
             <div class="b-local">
                 <div class="title">
-                    Рецептуры
+                    <?= $model->boxes['recipes']['title']?>
                 </div>
-                <p>
-                    Создавая рецептуры мы добиваемся нужного вкуса за счет натуральных компонентов. Самый сильный ароматизатор — лаванда, краситель — каркаде. Сложно описать вкус словами, скажем так: за 4 дня фестиваля Джаз Коктебель мы продали 3 000 полулитровых стаканов чая Флорис.
-                </p>
+                    <?= $model->boxes['recipes']['text']?>
             </div>
             <div class="b-local">
                 <div class="title">
-                    Производство
+                    <?= $model->boxes['production']['title']?>
                 </div>
-                <p>
-                    Подход к производству рационален: самая популярная картонная коробка идеально раскладывается на лист А4, полностью заполняя его, а прозрачное окошко дает возможность рассмотреть все ингредиенты.
-                </p>
-                <p>
-                    В 2015 мы научились работать с черным и зеленым чаем, смешивая его с редкими крымскими травами.
-                </p>
+                    <?= $model->boxes['production']['text']?>
             </div>
         </div>
     </div>
@@ -112,11 +103,9 @@ $this->registerMetaTag([
         <div class="inner">
             <div class="b-local">
                 <div class="title">
-                    Наши клиенты
+                    <?= $model->boxes['our_clients']['title']?>
                 </div>
-                <p>
-                    Наши клиенты — розничные сети, магазины и кафе здоровой пищи, сувенирные лавки и супермаркеты.
-                </p>
+                    <?= $model->boxes['our_clients']['text']?>
             </div>
             <div class="logos">
                 <ul>
@@ -151,9 +140,9 @@ $this->registerMetaTag([
     <div class="geography-sale">
         <div class="inner center">
             <div class="text">
-                ГЕОГРАФИЯ ТОЧЕК ПРОДАЖ
+                <?= $model->boxes['geography_points']['title']?>
             </div>
-            <a class="btn border" href="#">НАЙТИ</a>
+            <?= Html::a('НАЙТИ', Url::to($model->boxes['geography_points']['link']),['class' => 'btn border'])?>
         </div>
     </div>
     <div class="b-content employees">
@@ -163,51 +152,18 @@ $this->registerMetaTag([
                     Сотрудники компании
                 </div>
             </div>
-            <ul>
-                <li>
-                    <div class="img">
-                        <img src="/images/about/men.png" alt="">
-                    </div>
-                    <p>
-                        Вениамин Константинопольский<span>Должность</span>
-                    </p>
-                </li>
-                <li>
-                    <div class="img">
-                        <img src="/images/about/men.png" alt="">
-                    </div>
-                    <p>
-                        Вениамин Константинопольский<span>Должность</span>
-                    </p>
-                </li>
-                <li>
-                    <div class="img">
-                        <img src="/images/about/men.png" alt="">
-                    </div>
-                    <p>
-                        Вениамин Константинопольский<span>Должность</span>
-                    </p>
-                </li>
-                <li>
-                    <div class="img">
-                        <img src="/images/about/men.png" alt="">
-                    </div>
-                    <p>
-                        Вениамин Константинопольский<span>Должность</span>
-                    </p>
-                </li>
-            </ul>
+            <?= Html::ul(Workers::getList(), ['item' => function($item, $index) {
+                return Html::tag(
+                    'li',
+                    Html::tag('div', Html::img('@workers' .'/'. $item['image']), [ 'class' => 'img']) . Html::tag('p',$item['name'] . Html::tag('span', $item['appointment']))
+                );
+            }]) ?>
             <div class="b-local vacations">
                 <div class="title fleft">
-                    Вакансии
+                    <?= $model->boxes['vacancy']['title']?>
                 </div>
-                <p>
-                    Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                </p>
-                <p>
-                    Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                </p>
-                <a class="btn border" href="#">ВАКАНСИИ</a>
+                    <?= $model->boxes['vacancy']['text']?>
+                <?= Html::a('ВАКАНСИИ', Url::to($model->boxes['geography_points']['link']),['class' => 'btn border'])?>
             </div>
         </div>
     </div>

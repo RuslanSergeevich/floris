@@ -46,4 +46,10 @@ return [
     'boxes' => [
         'class' => 'backend\modules\boxes\Boxes',
     ],
+    'workers' => [
+        'class' => 'backend\modules\workers\Workers',
+    ],
+    'geography' => [
+        'class' => 'backend\modules\geography\Geography',
+    ],
 ];

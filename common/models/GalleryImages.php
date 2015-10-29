@@ -83,7 +83,8 @@ class GalleryImages extends \yii\db\ActiveRecord
      */
     public static function getImages($gallery_cat_id)
     {
-        return GalleryImages::findByCondition(['gallery_cat_id' => $gallery_cat_id])
+        return GalleryImages::find()
+            ->where(['gallery_cat_id' => $gallery_cat_id])
             ->orderBy('pos')
             ->all();
     }

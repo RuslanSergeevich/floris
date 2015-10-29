@@ -1,3 +1,14 @@
+/*
+ |-----------------------------------------------------------
+ |   поиск адреса Яндекс-api
+ |-----------------------------------------------------------
+ */
+$(function () {
+    $('[name="city"]').kladr({
+        oneString: true
+    });
+});
+
 (function() {
     $('body').ready(function() {
         return $('.cataloge-menu li a').on('click', function(e) {
@@ -6,5 +17,4 @@
             return $(this).parent('li').addClass('active');
         });
     });
-
 }).call(this);

@@ -51,7 +51,14 @@ $this->registerMetaTag([
                         Масса упаковки нетто
                     </p>
                     <div class="slider filter-weight">
-                        <ul>
+                        <?= Html::ul(\common\models\Weight::find()->all(), ['item' => function($item, $index) {
+                            return Html::tag(
+                                'li',
+                                $item['name'],
+                                ['class' => $index == 0 ? 'active' : '']
+                            );
+                        }]) ?>
+                        <!--ul>
                             <li>
                                 0
                             </li>
@@ -64,7 +71,7 @@ $this->registerMetaTag([
                             <li>
                                 525
                             </li>
-                        </ul>
+                        </ul-->
                     </div>
                 </div>
             </div>
