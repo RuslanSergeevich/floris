@@ -1,10 +1,8 @@
 <?php
-
 use frontend\assets\AppAsset;
 use yii\helpers\Html;
 use frontend\components\MenuWidget;
 use yii\helpers\Url;
-
 /* @var $this \yii\web\View */
 /* @var $content string */
 
@@ -28,7 +26,7 @@ AppAsset::register($this);?>
 </head>
 
 <body>
-<?php $this->beginBody() ?>
+<?php $this->beginBody()?>
 <div id="wrapper">
     <a class="go-top"></a>
     <header role="banner">

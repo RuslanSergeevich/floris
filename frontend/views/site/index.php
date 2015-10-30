@@ -16,11 +16,9 @@ $this->registerMetaTag([
 ]);
 ?>
 <main>
-    <section class="b1 b-top-section" style="background: url('<?= Yii::getAlias('@boxes') .'/'. $model->boxes['we_produce']['image']?>')">
+    <section class="b1 b-top-section top-section" style="background-image: url('<?= Yii::getAlias('@boxes') .'/'. $model->boxes['we_produce']['image']?>')">
         <div class="title">
             <?= $model->boxes['we_produce']['title']?>
-        </div>
-        <div class="btns">
             <?= Html::a('ПОДРОБНО О КОМПАНИИ', Url::to($model->boxes['we_produce']['link']),['class' => 'btn'])?>
         </div>
     </section>
@@ -217,20 +215,20 @@ $this->registerMetaTag([
             </div>
         </div>
     </section>
-    <section class="b3" style="background: url('<?= Yii::getAlias('@boxes') .'/'. $model->boxes['tea_production']['image']?>')">
+    <section class="b3" style="background-image: url('<?= Yii::getAlias('@boxes') .'/'. $model->boxes['tea_production']['image']?>')">
         <div class="title">
             <?= $model->boxes['tea_production']['title']?>
         </div>
         <div class="btns">
-            <a class="btn" href="#">ПОДРОБНЕЕ</a>
+            <a class="btn btn-ico" href="#">ПОДРОБНЕЕ</a>
         </div>
     </section>
-    <section class="b4" style="background: url('<?= Yii::getAlias('@boxes') .'/'. $model->boxes['interesting_article']['image']?>')">
+    <section class="b4" style="background-image: url('<?= Yii::getAlias('@boxes') .'/'. $model->boxes['interesting_article']['image']?>')">
         <div class="b-left">
             <div class="title left">
                 <?= $model->boxes['interesting_article']['title']?>
                 <div class="btns">
-                    <?= Html::a('ЧИТАТЬ БЛОГ', Url::to($model->boxes['interesting_article']['link']),['class' => 'btn blog'])?>
+                    <?= Html::a('ЧИТАТЬ БЛОГ', Url::to($model->boxes['interesting_article']['link']),['class' => 'btn blog btn-ico'])?>
                 </div>
             </div>
         </div>
@@ -245,7 +243,7 @@ $this->registerMetaTag([
             }]) ?>
         </div>
     </section>
-    <section class="b5" style="background: url('<?= Yii::getAlias('@boxes') .'/'. $model->boxes['geography']['image']?>')">
+    <section class="b5" style="background-image: url('<?= Yii::getAlias('@boxes') .'/'. $model->boxes['geography']['image']?>')">
         <div class="title">
             ГЕОГРАФИЯ ТОЧЕК ПРОДАЖ
         </div>

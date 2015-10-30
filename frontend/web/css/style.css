@@ -209,8 +209,32 @@ a:hover {
   text-decoration: none !important;
 }
 
+.top-section .title {
+  text-align: center;
+  font: 40px "espuma_proregular";
+  line-height: 60px;
+  vertical-align: middle;
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+}
+
 .b-top-section {
-  min-height: 600px !important;
+  min-height: 300px !important;
+}
+
+.selecter {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.preloader {
+  display: block;
+  margin: 0 auto;
+  background: #fff url('../images/preloader.gif') 50% 50%;
+  height: 228px;
+  border-top: 1px solid #d4d4d6;
 }
 
 /* Header */
@@ -229,6 +253,7 @@ a.go-top:hover {
 }
 
 header {
+  width: 100%;
   width: 100%;
   height: 107px;
   background: rgba(0, 0, 0, 0.7);
@@ -417,18 +442,68 @@ footer a.vacation:hover {
   color: #1ad2d1;
   border: none;
 }
+footer .b-search {
+  position: absolute;
+  width: 157px;
+  height: 34px;
+  top: 43px;
+  right: 123px;
+  opacity: 0;
+  transition: linear 0.3s;
+  z-index: 1;
+}
+footer .b-search form {
+  position: relative;
+  width: 100%;
+}
+footer .b-search form input[type=text] {
+  width: 157px;
+  height: 35px;
+  -moz-border-radius: 16px;
+  -webkit-border-radius: 16px;
+  border-radius: 16px;
+  border: 1px solid #121216;
+  background: #2e2f33;
+  padding: 0 35px 0 15px;
+}
+footer .b-search form input[type=submit] {
+  position: absolute;
+  background: #2e2f33 url('../images/icons/footer/search_normal.svg') no-repeat 50% 50%;
+  background-size: 50%;
+  height: 32px;
+  width: 32px;
+  top: 1px;
+  right: 1px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: none;
+}
+footer .b-search form input[type=submit]:hover {
+  background: #2e2f33 url('../images/icons/footer/search_hover.svg') no-repeat 50% 50%;
+  background-size: 60%;
+}
+footer .b-search.active {
+  opacity: 1;
+  z-index: 3;
+}
 footer a.search {
   position: absolute;
-  background: url('../images/icons/footer/search_normal.svg') no-repeat 0 0;
-  background-size: cover;
+  background: #2e2f33 url('../images/icons/footer/search_normal.svg') no-repeat 50% 50%;
+  background-size: 50%;
   height: 32px;
   width: 32px;
   top: 44px;
   right: 124px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  z-index: 2;
 }
 footer a.search:hover {
-  background: url('../images/icons/footer/search_hover.svg') no-repeat 0 0;
-  background-size: cover;
+  background: #2e2f33 url('../images/icons/footer/search_hover.svg') no-repeat 50% 50%;
+  background-size: 60%;
+  cursor: pointer;
 }
 footer .footer-bottom {
   border-top: 1px solid #404145;
@@ -3130,7 +3205,15 @@ body .ui-tooltip {
   text-transform: uppercase;
   text-decoration: none !important;
 }
+.btn:hover {
+  color: #1ad2d1;
+  border: 2px solid #1ad2d1;
+}
 .btn.border {
+  border: 2px solid #272830;
+  color: #272830;
+}
+.btn.border:hover {
   border: 2px solid #272830;
   color: #272830;
 }
@@ -3139,6 +3222,12 @@ body .ui-tooltip {
   color: #fff;
   font: 15px "open_sanssemibold";
   line-height: 44px;
+}
+.btn.green:hover {
+  color: #fff;
+}
+.btn.btn-ico {
+  padding-left: 60px;
 }
 
 section {
@@ -3149,6 +3238,10 @@ section .title {
   text-align: center;
   font: 40px "espuma_proregular";
   line-height: 60px;
+  vertical-align: middle;
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 section .btns {
   text-align: center;
@@ -3161,17 +3254,22 @@ section.b1 p, section.b2 p, section.b3 p, section.b4 p, section.b5 p {
   color: #fff;
 }
 section.b1 {
-  background: url('../images/main/bg-1.png') no-repeat 50% 50%;
+  background-image: url('../images/main/bg-1.png');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
   background-size: cover;
   height: 730px;
-  padding-top: 250px;
   padding-bottom: 0;
+  display: table;
+  width: 100%;
 }
-section.b1 a.btn {
-  position: absolute;
-  left: 50%;
-  margin: 0 0 0 -138px;
-  bottom: 100px;
+section.b1 .title a.btn {
+  margin: 50px auto 0;
+  display: block;
+  width: 280px;
   font: 15px "open_sanssemibold";
   padding-left: 54px;
   background: url('../images/main/ico-btn-1.png') no-repeat 17px 8px;
@@ -3186,7 +3284,7 @@ section.b2 {
   position: relative;
 }
 section.b2 .b-list-product {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
   height: 100%;
   position: absolute;
   top: 0;
@@ -3488,7 +3586,7 @@ section.cataloge .cataloge-filter .fleft .spinner .slider ul li:last-child {
   margin-right: 0;
 }
 section.cataloge .b-cataloge-content {
-  padding: 0 50px 50px;
+  padding: 50px;
 }
 section.cataloge .b-cataloge-content .b-product-list ul li {
   display: inline-block;
@@ -3518,13 +3616,9 @@ section.cataloge .b-cataloge-content .b-product-list ul li a:hover {
 section.about .top-block {
   background: url('../images/about/top-bg.png') no-repeat 50% 50%;
   background-size: cover;
-  height: 440px;
-  padding-top: 190px;
-}
-section.about .top-block .title {
-  text-align: center;
-  font: 40px "espuma_proregular";
-  line-height: 60px;
+  min-height: 300px;
+  display: table;
+  width: 100%;
 }
 section.about .b-content {
   padding-top: 80px;
@@ -3684,15 +3778,11 @@ section.about .b-content-promo ul li .circle span {
 }
 
 main.privat section.top {
-  height: 732px;
+  min-height: 300px;
   background: url('../images/privat/bg-1.png') no-repeat 50% 50%;
   background-size: cover;
-}
-main.privat section.top .title {
-  font: 40px "espuma_proregular";
-  text-align: center;
-  line-height: 60px;
-  padding-top: 270px;
+  width: 100%;
+  display: table;
 }
 main.privat section.top .sub-title {
   text-align: center;
@@ -3789,7 +3879,7 @@ main.privat section.type-of-product ul li {
   text-align: center;
   width: 200px;
   vertical-align: top;
-  margin-right: 176px;
+  margin-right: 174px;
   margin-bottom: 50px;
 }
 main.privat section.type-of-product ul li .img {
@@ -4065,10 +4155,11 @@ section.blog aside.side-right .b-module input[type=submit] {
   background: #fff;
   font: 16px "open_sanssemibold";
   width: 160px;
-  margin: 10px 36px 0;
+  margin: 10px auto 0;
+  display: block;
 }
 section.blog article {
-  padding: 50px 130px 50px 20px;
+  padding: 50px 30px 50px 0px;
   border-bottom: 1px solid #d4d4d6;
 }
 section.blog article h2 {
@@ -4089,11 +4180,12 @@ section.blog article .date {
 }
 section.blog article .media {
   width: 100%;
-  max-width: 920px;
+  max-width: 100%;
   margin: 20px 0;
 }
 section.blog article .media img {
   max-width: 100%;
+  width: 100%;
 }
 section.blog article p {
   font: 16px "open_sansregular";
@@ -4270,7 +4362,7 @@ section.product .product-card .description .b-text ul li:nth-child(2) {
   border-right: 1px solid #d1d1d1;
 }
 section.product .product-card .description .logistic-info {
-  margin-right: 60px;
+  margin-right: 70px;
 }
 section.product .product-card .description .logistic-info .selecter-selected {
   width: 270px;
@@ -4292,13 +4384,9 @@ section.product .product-card .description a.btn.green {
 section.contacts .contacts-header {
   background: url('../images/contacts-header.png') no-repeat 50% 50%;
   background-size: cover;
-  height: 434px;
-  padding-top: 190px;
-}
-section.contacts .contacts-header .title {
-  text-align: center;
-  font: 40px "espuma_proregular";
-  line-height: 60px;
+  min-height: 300px;
+  width: 100%;
+  display: table;
 }
 section.contacts .geography-sale {
   border-top: none;
@@ -4336,7 +4424,7 @@ section.contacts .b-info ul li p {
 section.contacts .b-info ul li span {
   display: block;
   position: relative;
-  padding-left: 34px;
+  padding-left: 25px;
   font: 16px "open_sansregular";
   color: #16171c;
   margin-top: 5px;
@@ -4352,7 +4440,6 @@ section.contacts .b-info ul li span.mobile:after {
   background-size: cover;
   height: 22px;
   width: 18px;
-  left: 5px;
 }
 section.contacts .b-info ul li span.mail:after {
   background: url('../images/icons/contacts/email.svg') no-repeat 0 0;
@@ -4360,14 +4447,12 @@ section.contacts .b-info ul li span.mail:after {
   height: 17px;
   width: 21px;
   top: 2px;
-  left: 6px;
 }
 section.contacts .b-info ul li span.skype:after {
   background: url('../images/icons/contacts/skype.svg') no-repeat 0 0;
   background-size: cover;
   height: 21px;
   width: 20px;
-  left: 6px;
   top: 1px;
 }
 section.contacts .b-info ul li span.phone:after {
@@ -4375,7 +4460,6 @@ section.contacts .b-info ul li span.phone:after {
   background-size: cover;
   height: 22px;
   width: 21px;
-  left: 5px;
 }
 section.contacts .b-info h2 {
   font: 26px "open_sanssemibold";
@@ -4526,6 +4610,29 @@ section.map .add-mag p a {
 }
 section.map .add-mag p a:hover {
   text-decoration: underline;
+}
+
+section.page-404 {
+  background: url('../images/404_bg.jpg') no-repeat 50% 50%;
+  background-size: cover;
+  padding-top: 240px;
+  margin-bottom: -170px;
+}
+section.page-404 .title {
+  text-align: center;
+  font: 80px "open_sanslight";
+  line-height: 60px;
+}
+section.page-404 .sub-title {
+  font: 16px "open_sansregular";
+  text-align: center;
+  margin-top: 50px;
+}
+section.page-404 .btns {
+  text-align: center;
+}
+section.page-404 .btns a.btn {
+  margin: 45px auto 0;
 }
 
 .fancybox-overlay {
@@ -4681,10 +4788,6 @@ a.fancybox-close {
   header a.mobile-phone:hover {
     cursor: pointer;
   }
-
-  section.blog aside.side-right + .b-content {
-    max-width: 800px;
-  }
 }
 @media screen and (max-width: 1210px) {
   header a.deal {
@@ -4692,6 +4795,9 @@ a.fancybox-close {
   }
   header a.mobile-phone {
     right: 50px;
+  }
+  header menu.active {
+    display: block;
   }
 
   section.b2 .b-left {
@@ -4737,6 +4843,9 @@ a.fancybox-close {
     top: 38px;
     left: 111px;
   }
+  header a.mobile-menu {
+    display: block;
+  }
   header a.mobile-phone {
     right: 250px;
   }
@@ -4754,6 +4863,7 @@ a.fancybox-close {
     right: 0;
     margin: 0;
     padding-top: 50px;
+    display: none;
   }
   header menu li {
     display: block;
@@ -4863,7 +4973,7 @@ a.fancybox-close {
   section.blog aside.side-right + .b-content {
     width: 100%;
     display: table-cell;
-    border-right: none;
+    padding-right: 20px;
     vertical-align: top;
     margin-right: 240px;
   }
@@ -5124,13 +5234,18 @@ a.fancybox-close {
   }
   main.privat section.components a.btn {
     width: 238px;
-    height: 61px;
-    font-size: 20px;
-    line-height: 61px;
+    height: 45px;
+    font-size: 15px;
+    line-height: 46px;
+    border: 1px solid #fff;
+    margin: 270px 0 0 100px;
   }
   main.privat section.type-of-product {
     min-height: 800px;
     height: auto;
+  }
+  main.privat section.type-of-product .title {
+    padding-top: 71px;
   }
   main.privat section.type-of-product ul {
     text-align: center;
@@ -5309,6 +5424,24 @@ a.fancybox-close {
     margin: 0 30px 40px 0;
     float: left;
   }
+
+  footer .footer-bottom > div {
+    font-size: 10px;
+  }
+  footer .footer-bottom .copy {
+    top: 24px;
+  }
+  footer .footer-bottom .info {
+    left: 235px;
+    top: 24px;
+  }
+  footer .footer-bottom .sales {
+    left: 340px;
+    top: 24px;
+  }
+  footer .footer-bottom .socials {
+    left: 475px;
+  }
 }
 @media screen and (max-width: 768px) {
   section.b1 .title {
@@ -5347,7 +5480,7 @@ a.fancybox-close {
   section.b5 ul li {
     display: inline-block;
     text-align: left;
-    width: 300px;
+    width: 100%;
   }
   section.b5 ul li .title {
     text-align: left;
@@ -5370,7 +5503,13 @@ a.fancybox-close {
   }
 
   section.cataloge .b-cataloge-content .b-product-list ul li {
-    margin-right: 15px;
+    margin-right: 29px;
+  }
+  section.cataloge .b-cataloge-content .b-product-list ul li:nth-child(3n+3) {
+    margin-right: 0;
+  }
+  section.cataloge .b-cataloge-content .b-product-list ul li:nth-child(4n+4) {
+    margin-right: 29px;
   }
 
   section.product .product-card {
@@ -5477,11 +5616,14 @@ a.fancybox-close {
 
   main.privat section.type-of-tea ul {
     text-align: left;
-    width: 690px;
+    width: 571px;
     margin: 45px auto 0;
   }
   main.privat section.type-of-tea ul li {
     margin: 0 40px 50px 0;
+  }
+  main.privat section.type-of-tea ul li:nth-child(3n+3) {
+    margin-right: 0;
   }
 
   main.privat section.privat-label {
@@ -5513,6 +5655,7 @@ a.fancybox-close {
   main.privat section.privat-label .bottom-text ul li {
     display: block;
     margin: 0 auto 80px;
+    width: 385px;
   }
   main.privat section.privat-label .bottom-text ul li:last-child {
     margin: 0 auto;
@@ -5533,26 +5676,12 @@ a.fancybox-close {
     display: block;
     margin: 0 auto 30px;
   }
-
-  footer .footer-bottom > div {
-    font-size: 10px;
-  }
-  footer .footer-bottom .copy {
-    top: 24px;
-  }
-  footer .footer-bottom .info {
-    left: 235px;
-    top: 24px;
-  }
-  footer .footer-bottom .sales {
-    left: 340px;
-    top: 24px;
-  }
-  footer .footer-bottom .socials {
-    left: 475px;
-  }
 }
 @media screen and (max-width: 420px) {
+  .selecter {
+    width: 270px;
+  }
+
   a.go-top {
     bottom: 20px;
   }
@@ -5570,7 +5699,7 @@ a.fancybox-close {
   header menu {
     width: 220px;
     top: 54px;
-    padding-left: 30px;
+    padding-left: 11px;
   }
   header menu li {
     margin-bottom: 30px;
@@ -5616,9 +5745,6 @@ a.fancybox-close {
     left: 51px;
   }
 
-  section.b1 {
-    padding-top: 200px;
-  }
   section.b1 .title {
     font-size: 19px;
     line-height: 35px;
@@ -5781,7 +5907,9 @@ a.fancybox-close {
     text-align: center;
   }
   section.about .b-content.clients .logos ul {
-    text-align: center;
+    text-align: left;
+    width: 250px;
+    margin: 45px auto 0;
   }
   section.about .b-content.clients .logos ul li {
     width: 60px;
@@ -5826,7 +5954,7 @@ a.fancybox-close {
   section.about .b-content.employees ul li {
     width: 120px;
     display: inline-block;
-    margin: 0 0 20px;
+    margin: 0 14px 30px;
   }
   section.about .b-content.employees ul li .img {
     width: 90px;
@@ -5898,14 +6026,20 @@ a.fancybox-close {
   main.privat section.components {
     height: 620px;
   }
-
+  main.privat section.components .count {
+    top: 17px;
+  }
   main.privat section.components .text {
     left: 72px;
-    top: 270px;
+    top: 40px;
   }
-
   main.privat section.components a.btn {
-    margin: 513px auto 0;
+    margin: 200px 0 0 70px;
+    font-size: 11px;
+    min-width: 100px;
+    width: 100px;
+    height: 30px;
+    line-height: 27px;
   }
 
   main.privat section.privat-label .title {
@@ -6057,20 +6191,26 @@ a.fancybox-close {
   section.cataloge .cataloge-filter {
     height: 260px;
   }
+  section.cataloge .cataloge-filter .comp,
+  section.cataloge .cataloge-filter .pack {
+    left: 24px;
+    margin-right: 0;
+  }
   section.cataloge .cataloge-filter .weight {
     display: block;
     float: none;
     position: relative;
     top: 170px;
-    left: 10px;
-    max-width: 300px;
-    width: 300px;
+    left: 50%;
+    max-width: 260px;
+    width: 260px;
+    margin-left: -130px;
   }
   section.cataloge .cataloge-filter .weight ul {
     margin: 0 auto;
   }
   section.cataloge .cataloge-filter .weight ul li {
-    margin: 0 32px !important;
+    margin: 0 27px !important;
   }
   section.cataloge .cataloge-filter .weight ul li:first-child {
     margin-left: 0px !important;
@@ -6213,23 +6353,27 @@ a.fancybox-close {
     font-size: 10px;
   }
   section.product .product-card .description a.btn {
-    font-size: 11px;
+    font-size: 11px !important;
     min-width: 100px;
-    line-height: 10px;
+    line-height: 10px !important;
     height: 34px;
     width: auto;
-    display: inline-block;
-    margin: 0 0 0 75px;
+    display: block;
+    margin: 50px auto 0;
   }
   section.product .product-card .logistic-info {
     float: none;
-    width: 230px;
-    margin: 0 30px 0 0;
+    width: 100%;
+    margin: 0;
   }
-  section.product .product-card .logistic-info .selecter-selected {
+  section.product .product-card .logistic-info .selecter {
+    width: 280px;
+  }
+  section.product .product-card .logistic-info .selecter .selecter-selected {
     font-size: 11px;
     width: 230px;
     padding: 14px 15px 0;
+    width: 280px;
   }
 
   main.privat section.top .title {
@@ -6276,7 +6420,6 @@ a.fancybox-close {
   main.privat section.components .text {
     font-size: 18px;
     left: 50%;
-    top: 90px;
     margin-left: -15px;
     line-height: 31px;
   }
@@ -6287,6 +6430,7 @@ a.fancybox-close {
   }
   main.privat section.type-of-product .title {
     font-size: 14px;
+    padding-left: 50px;
   }
   main.privat section.type-of-product ul li {
     display: block;

@@ -1,22 +1,28 @@
 <?php
-
 use yii\helpers\Html;
-
 /* @var $this yii\web\View */
 /* @var $message string */
 /* @var $exception Exception */
-$this->title = $name;
+$this->title = 'К сожалению запрашиваемая Вами страница не найдена.';
+
+$this->title = Html::encode($this->title);
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => Html::encode($this->title),
+]);
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => Html::encode($this->title)
+]);
 ?>
-<main>
-    <section class="b1">
-        <div class="title">
-            <?= Html::encode($this->title) ?>
-        </div>
-        <div class="alert alert-danger alert-message">
-            <?= nl2br(Html::encode($message)) ?>
-            <p>
-               <?= Html::a('ПЕРЕЙТИ НА ГЛАВНУЮ', Yii::$app->homeUrl, ['class' => 'btn'])?>
-            </p>
-        </div>
-    </section>
-</main>
+<section class="page-404 b-top-section">
+    <div class="title">
+        404
+    </div>
+    <div class="sub-title">
+        <?= nl2br(Html::encode($message)) ?>
+    </div>
+    <div class="btns">
+        <?= Html::a('на главную', Yii::$app->homeUrl,['class' => 'btn'])?>
+    </div>
+</section>

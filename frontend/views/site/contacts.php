@@ -15,11 +15,9 @@ $this->registerMetaTag([
 ]);
 ?>
 <section class="contacts">
-    <div class="contacts-header b-top-section">
-        <div class="inner">
-            <div class="title">
-                МЫ ВСЕГДА ОТКРЫТЫ<br>СОТРУДНИЧЕСТВУ
-            </div>
+    <div class="contacts-header b-top-section top-section">
+        <div class="title">
+            МЫ ВСЕГДА ОТКРЫТЫ<br>СОТРУДНИЧЕСТВУ
         </div>
     </div>
     <div class="geography-sale">

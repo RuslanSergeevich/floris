@@ -17,7 +17,7 @@ $this->registerMetaTag([
 ]);
 ?>
 <section class="about">
-    <div class="top-block b-top-section">
+    <div class="top-block b-top-section top-section">
         <div class="title">
             <?= $model->name?>
         </div>

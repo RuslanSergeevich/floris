@@ -67,7 +67,7 @@ $(document).ready(function(){
 	});
 
 	$('.mobile-menu').on('click', function() {
-		$('header menu').toggleClass('screen');
+		$('header menu').toggleClass('active');
 	});
 
 	if ($('.b-list-product li').length > 7) {
@@ -102,4 +102,8 @@ $(document).ready(function(){
 
 	var windowHeight = $(window).height();
 	$('.b-top-section').css('height', windowHeight);
+
+	$('footer a.search').on('click', function(){
+		$('.b-search').toggleClass('active');
+	});
 });

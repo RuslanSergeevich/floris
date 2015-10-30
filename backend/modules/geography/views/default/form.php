@@ -28,7 +28,7 @@ $this->title = 'Добавление/Редактирование географ
                                 <div class="image-box">
                                     <?= Html::img('@geography/'.$model->image, [
                                         'alt' => $model->name,
-                                        'width' => '100',
+                                        'width' => '150',
                                         'data-blog_id' => $model->id
                                     ]) ?>
                                 </div>
