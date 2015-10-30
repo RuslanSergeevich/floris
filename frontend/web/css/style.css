@@ -411,7 +411,7 @@ header a.btn {
 footer {
   height: 170px;
   background: #16171c;
-  padding: 50px 35px;
+  padding: 39px 35px;
   position: relative;
 }
 footer menu {
@@ -3243,7 +3243,7 @@ section .title {
   line-height: 60px;
   vertical-align: middle;
   display: block;
-  height: 100%;
+  height: auto;
   width: 100%;
 }
 section .btns {
@@ -3365,7 +3365,7 @@ section.b2 .b-left {
   float: left;
   background: rgba(0, 0, 0, 0.5);
   height: 100%;
-  padding: 60px 0 0 185px;
+  padding: 90px 0 0 185px;
 }
 section.b2 .b-left .title {
   font-size: 26px;
@@ -3416,6 +3416,7 @@ section.b4 .b-left {
 section.b4 .b-left .title {
   text-align: left;
   display: inline-block;
+  width: auto;
 }
 section.b4 .b-left .btns {
   margin-top: 17px;
@@ -3641,6 +3642,7 @@ section.about .b-content .b-local .title {
   color: #272830;
   font: 17px "open_sanssemibold";
   float: left;
+  width: auto;
 }
 section.about .b-content .b-local p {
   color: #272830;
@@ -4895,7 +4897,7 @@ a.fancybox-close {
   section.b2 .b-left {
     width: 60%;
     float: none;
-    padding: 60px 60px 0 185px;
+    padding: 100px 60px 0 185px;
   }
   section.b2 .b-left .b-text {
     width: auto;
@@ -5689,7 +5691,7 @@ a.fancybox-close {
     right: 18px;
   }
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 568px) {
   .selecter {
     width: 270px;
   }
@@ -5712,9 +5714,10 @@ a.fancybox-close {
     width: 220px;
     top: 54px;
     padding-left: 11px;
+    padding-top: 31px;
   }
   header menu li {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
   }
   header menu li a {
     font-size: 12px;
@@ -6027,7 +6030,7 @@ a.fancybox-close {
   }
 
   main.privat section.top .title {
-    padding: 130px 0 0;
+    padding: 90px 0 0;
   }
 
   main.privat section.type-of-tea ul li,
@@ -6249,6 +6252,12 @@ a.fancybox-close {
   section.cataloge .b-cataloge-content .b-product-list ul li a {
     font-size: 11px;
     text-align: center;
+  }
+  section.cataloge .cataloge-menu menu li {
+    padding: 24px 4px 0;
+  }
+  section.cataloge .cataloge-menu menu li a {
+    font-size: 9px;
   }
 
   section.map .map-header {
@@ -6646,5 +6655,170 @@ a.fancybox-close {
     top: auto;
     right: 10px;
     bottom: 30px;
+  }
+
+  #sotrudnichestvo {
+    width: 430px;
+    margin: 0 auto;
+  }
+  #sotrudnichestvo .popup-head {
+    height: 50px;
+    width: 100%;
+    display: none;
+  }
+  #sotrudnichestvo .popup-content {
+    padding: 15px 0;
+  }
+  #sotrudnichestvo .popup-content .title {
+    font: 11px "open_sansregular";
+    margin: 5px 0 15px;
+  }
+  #sotrudnichestvo form {
+    width: 380px;
+  }
+  #sotrudnichestvo form input[type=text] {
+    height: 20px;
+    font-size: 12px;
+  }
+  #sotrudnichestvo form input[type=text].phone, #sotrudnichestvo form input[type=text].email {
+    width: 180px;
+  }
+  #sotrudnichestvo form input[type=text].phone {
+    margin-right: 16px;
+  }
+  #sotrudnichestvo form input[type=submit] {
+    margin-top: 10px;
+    font-size: 12px;
+    height: 35px;
+    line-height: 11px;
+  }
+  #sotrudnichestvo form textarea {
+    height: 56px;
+    font: 12px "open_sansregular";
+  }
+
+  #search-shop {
+    width: 430px;
+    margin: 0 auto;
+  }
+  #search-shop .popup-head {
+    height: 50px;
+    width: 100%;
+    display: none;
+  }
+  #search-shop .popup-content {
+    padding: 15px 0;
+  }
+  #search-shop .popup-content .title {
+    font: 11px "open_sansregular";
+    margin: 5px 0 15px;
+  }
+  #search-shop form {
+    width: 380px;
+  }
+  #search-shop form input[type=text] {
+    height: 20px;
+    font-size: 12px;
+    width: 165px !important;
+  }
+  #search-shop form input[type=submit] {
+    margin-top: 10px;
+    font-size: 12px;
+    height: 35px;
+    line-height: 11px;
+  }
+  #search-shop form textarea {
+    height: 56px;
+    font: 12px "open_sansregular";
+  }
+  #search-shop p {
+    font-size: 12px;
+  }
+
+  a.fancybox-close {
+    width: 18px;
+    height: 19px;
+    top: 10px;
+    right: 10px;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+}
+@media screen and (max-width: 420px) {
+  header menu {
+    padding-top: 50px;
+  }
+  header menu li {
+    margin-top: 30px;
+  }
+
+  #sotrudnichestvo {
+    width: 275px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+  }
+  #sotrudnichestvo .popup-head {
+    height: 50px;
+    width: 100%;
+    display: none;
+  }
+  #sotrudnichestvo .popup-content {
+    padding: 15px 0;
+  }
+  #sotrudnichestvo .popup-content .title {
+    margin: 25px 0 15px;
+  }
+  #sotrudnichestvo form {
+    width: 240px;
+  }
+  #sotrudnichestvo form input[type=text] {
+    display: block;
+  }
+  #sotrudnichestvo form input[type=text].phone, #sotrudnichestvo form input[type=text].email {
+    width: 100%;
+  }
+  #sotrudnichestvo form input[type=text].phone {
+    margin-right: 0;
+  }
+  #sotrudnichestvo form input[type=submit] {
+    margin-top: 20px;
+  }
+
+  #search-shop {
+    width: 275px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+  }
+  #search-shop .popup-head {
+    height: 50px;
+    width: 100%;
+    display: none;
+  }
+  #search-shop .popup-content {
+    padding: 15px 0;
+  }
+  #search-shop .popup-content .title {
+    margin: 25px 0 15px;
+  }
+  #search-shop form {
+    width: 240px;
+  }
+  #search-shop form input[type=text] {
+    display: block;
+    width: 100% !important;
+  }
+  #search-shop form input[type=text].phone {
+    margin-right: 0;
+  }
+  #search-shop form input[type=submit] {
+    margin-top: 20px;
+  }
+  #search-shop .added-imgs {
+    text-align: left;
+  }
+  #search-shop .added-imgs img {
+    margin: 0 15px 10px 0;
   }
 }
