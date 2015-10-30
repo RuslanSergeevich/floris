@@ -53,7 +53,13 @@ AppAsset::register($this);?>
                 <input type="text" name=""><input type="submit" value="">
             </form>
         </div>
-        <a class="search screen" href="#"></a><a class="vacation" href="#">Вакансии</a>
+        <a class="search screen" href="#"></a>
+        <div class="b-search">
+            <form>
+                <input type="text" name="" placeholder="Поиск..."><input type="submit" value="">
+            </form>
+        </div>
+        <a class="vacation" href="#">Вакансии</a>
         <div class="footer-bottom">
             <div class="copy">
                 © 2011–<?= date('Y')?>. Флорис.<br>Крым, г. Симферополь, ул. Данилова, 43

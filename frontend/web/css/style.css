@@ -430,6 +430,9 @@ footer menu li a:hover {
   color: #1ad2d1;
   border: none;
 }
+footer menu li:last-child {
+  display: none;
+}
 footer a.vacation {
   position: absolute;
   font: 12px "open_sanssemibold";
@@ -446,8 +449,8 @@ footer .b-search {
   position: absolute;
   width: 157px;
   height: 34px;
-  top: 43px;
-  right: 123px;
+  top: 33px;
+  right: 122px;
   opacity: 0;
   transition: linear 0.3s;
   z-index: 1;
@@ -493,7 +496,7 @@ footer a.search {
   background-size: 50%;
   height: 32px;
   width: 32px;
-  top: 44px;
+  top: 35px;
   right: 124px;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -4882,7 +4885,6 @@ a.fancybox-close {
 
   section.b1 {
     height: 840px;
-    padding-top: 320px;
   }
   section.b1 .title {
     font-size: 36px;
@@ -5197,9 +5199,6 @@ a.fancybox-close {
     min-height: 510px;
     height: 510px;
   }
-  main.privat section.top .title {
-    padding: 180px 0 0;
-  }
   main.privat section.top .sub-title {
     margin: 30px auto 0;
     display: block;
@@ -5347,7 +5346,7 @@ a.fancybox-close {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    top: 40px;
+    top: 35px;
   }
   footer a.search:hover {
     background: #2e2f33 url('../images/icons/footer/search_normal.svg') no-repeat 50% 50%;
@@ -5675,6 +5674,19 @@ a.fancybox-close {
   main.privat section.tasks ul li {
     display: block;
     margin: 0 auto 30px;
+  }
+
+  footer menu li:last-child {
+    display: inline-block;
+  }
+  footer a.vacation {
+    display: none;
+  }
+  footer a.search {
+    right: 20px;
+  }
+  footer .b-search {
+    right: 18px;
   }
 }
 @media screen and (max-width: 420px) {

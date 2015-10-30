@@ -85,11 +85,19 @@ $this->registerMetaTag([
                         <a class="fb" href="#" target="_blank"></a><a class="insta" href="#" target="_blank"></a><a class="vk" href="#" target="_blank"></a>
                     </div>
                     <h2>
-                        <?= $model->name?><span>Чай в фильтр-пакетах</span>
+                        Инди<span>Чай в фильтр-пакетах</span>
                     </h2>
                 </div>
                 <div class="b-text">
-                    <?= $model->text?>
+                    <p>
+                        Описание Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <p class="bold">
+                        Состав:
+                    </p>
+                    <p>
+                        Описание Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
                     <ul>
                         <li>
                             <img src="/images/icons/kartochka/ves.svg" alt="" height="50">
