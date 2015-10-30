@@ -19,7 +19,7 @@ $this->registerMetaTag([
     <div class="blog-header"></div>
     <div class="inner">
         <aside class="side-right">
-            <div class="b-module screen">
+            <div class="b-module">
                 <img src="/images/banner.jpg" alt="">
             </div>
             <div class="b-module rss">

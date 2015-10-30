@@ -1,9 +1,7 @@
 <?php
 namespace frontend\components;
 
-use common\models\Pages;
 use yii\base\Widget;
-use yii\helpers\Url;
 use yii\helpers\Html;
 use Yii;
 

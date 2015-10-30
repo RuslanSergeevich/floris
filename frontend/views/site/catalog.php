@@ -55,23 +55,10 @@ $this->registerMetaTag([
                             return Html::tag(
                                 'li',
                                 $item['name'],
-                                ['class' => $index == 0 ? 'active' : '']
+                                ['class' => $index == 0 ? 'active' : '',
+                                'data-weight_id' => $item['id']]
                             );
                         }]) ?>
-                        <!--ul>
-                            <li>
-                                0
-                            </li>
-                            <li>
-                                175
-                            </li>
-                            <li class="active">
-                                350
-                            </li>
-                            <li>
-                                525
-                            </li>
-                        </ul-->
                     </div>
                 </div>
             </div>

@@ -182,16 +182,6 @@
     background-color: #699F01;
 }
 
-.logo-footer {
-    background-image: url("/_root/lte/img/logo_granat.png");
-    width: 98px;
-    height: 27px;
-    position: absolute;
-    bottom: 1em;
-    left:50%;
-    margin-left:-25%;
-}
-
 .fa-close:hover {
     cursor: pointer;
 }

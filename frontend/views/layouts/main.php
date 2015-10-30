@@ -50,10 +50,10 @@ AppAsset::register($this);?>
        <?= MenuWidget::widget()?>
         <div class="footer-search mobile">
             <form role="search">
-                <input type="text" name=""><input type="submit" value="">
+                <input type="text" name="" placeholder="Поиск..."><input type="submit" value="">
             </form>
         </div>
-        <a class="search screen"></a>
+        <a class="search"></a>
         <div class="b-search">
             <form>
                 <input type="text" name="" placeholder="Поиск..."><input type="submit" value="">

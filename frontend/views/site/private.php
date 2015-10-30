@@ -1,25 +1,7 @@
-<?php
-
-use yii\helpers\Html;
-
-/* @var $this yii\web\View */
-/* @var $model common\models\Pages */
-$this->title = Html::encode($model->title);
-$this->registerMetaTag([
-    'name' => 'description',
-    'content' => Html::encode($model->description),
-]);
-$this->registerMetaTag([
-    'name' => 'keywords',
-    'content' => Html::encode($model->keywords)
-]);
-?>
 <main class="privat">
-    <section class="top b-top-section">
-        <div class="inner">
-            <div class="title">
-                МЫ ПРОИЗВОДИМ И ФАСУЕМ ЧАЙ<br>ПОД ВАШЕЙ ТОРГОВОЙ МАРКОЙ<br>С ДОСТАВКОЙ ПО ВСЕМУ СНГ
-            </div>
+    <section class="top b-top-section top-section">
+        <div class="title">
+            МЫ ПРОИЗВОДИМ И ФАСУЕМ ЧАЙ<br>ПОД ВАШЕЙ ТОРГОВОЙ МАРКОЙ<br>С ДОСТАВКОЙ ПО ВСЕМУ СНГ
             <div class="sub-title">
                 Дизайн упаковок и рекламных материалов в подарок
             </div>
