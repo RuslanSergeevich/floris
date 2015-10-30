@@ -53,7 +53,7 @@ AppAsset::register($this);?>
                 <input type="text" name=""><input type="submit" value="">
             </form>
         </div>
-        <a class="search screen" href="#"></a>
+        <a class="search screen"></a>
         <div class="b-search">
             <form>
                 <input type="text" name="" placeholder="Поиск..."><input type="submit" value="">
@@ -71,9 +71,7 @@ AppAsset::register($this);?>
                 Отдел продаж:<br>+7 3652 583-577
             </div>
             <div class="socials">
-                <?= Html::a('','https://www.facebook.com/floristea/',['class' => 'fb', 'target' => '_blank'])?>
-                <a class="yt" href="#"></a>
-                <?= Html::a('','http://vk.com/floristea',['class' => 'vk', 'target' => '_blank'])?>
+                <?= Html::a('','https://www.facebook.com/floristea/',['class' => 'fb', 'target' => '_blank'])?><a class="yt" href="#"></a><?= Html::a('','http://vk.com/floristea',['class' => 'vk', 'target' => '_blank'])?>
             </div>
             <div class="design">
                 Дизайн шаблонов сайта<br>разработан в

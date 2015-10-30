@@ -47,6 +47,7 @@ class MenuWidget extends Widget
                     ]);
             }
         }
+        !$this->attach_icon ? $this->_html .= Html::tag('li', Html::a('ВАКАНСИИ', '#')) : '';
         return Html::tag('menu', $this->_html, ['class' => $this->class_name, 'role' => 'navigation']);
     }
 
