@@ -41,7 +41,7 @@ class MenuWidget extends Widget
     {
         if($pages = Pages::find()->where(['publish' => Pages::PUBLISH, 'show_menu' => Pages::SHOW_MENU])->orderBy('pos','ASC')->asArray()->all()){
             foreach($pages as $page){
-                $this->_html .= Html::tag('li', Html::a($page['menu_name'], Url::to(['site/page', 'alias' => $page['alias']])),
+                $this->_html .= Html::tag('li', Html::a($page['menu_name'], Url::toRoute(['site/page', 'alias' => $page['alias']])),
                     [
                         'class' => $this->attach_icon ? $page['alias'] : '',
                     ]);

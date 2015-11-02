@@ -17,7 +17,11 @@ class ProductController extends SiteController
      */
     public function actionView($alias)
     {
-        $model = CatalogItems::findOne(['alias' => $alias]);
+        $model = CatalogItems::find()->where(['alias' => $alias])->with([
+            'galleryImages' => function($query){
+                $query->andWhere(['<>', 'main', CatalogItems::MAIN_IMAGE]);
+            }
+        ])->one();
         return $this->render('single_view', [
             'model' => $model
         ]);

@@ -11,6 +11,7 @@ use yii\helpers\ArrayHelper;
  *
  * @property integer $id
  * @property string $name
+ * @property string $declination
  * @property integer $publish
  * @property integer $pos
  * @property integer $created_at
@@ -52,7 +53,7 @@ class Packing extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['publish', 'pos', 'created_at', 'updated_at'], 'integer'],
-            [['name'], 'string', 'max' => 255],
+            [['name','declination'], 'string', 'max' => 255],
             ['pos', 'default', 'value' => 0]
         ];
     }
@@ -65,6 +66,7 @@ class Packing extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Наименование',
+            'declination' => 'Склонение',
             'publish' => 'Публикация',
             'pos' => 'Позиция',
             'created_at' => 'Создана',
@@ -84,6 +86,17 @@ class Packing extends \yii\db\ActiveRecord
         ];
         return $statuses[$status];
     }
+
+    /**
+     * @param $id
+     * @return string
+     */
+    public static function getValueById($id)
+    {
+        $dn = self::findOne(['id' => $id]);
+        return $dn->declination;
+    }
+
 
     /**
      * @return array

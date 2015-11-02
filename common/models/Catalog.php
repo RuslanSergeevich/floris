@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "catalog".
@@ -41,6 +42,13 @@ class Catalog extends \yii\db\ActiveRecord
     }
 
     /**
+     * @return ScopesCatalog
+     */
+    public static function find() {
+        return new ScopesCatalog(get_called_class());
+    }
+
+    /**
      * @inheritdoc
      */
     public function rules()
@@ -68,6 +76,14 @@ class Catalog extends \yii\db\ActiveRecord
     }
 
     /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCatalogItems()
+    {
+        return $this->hasMany(CatalogItems::className(), ['parent_id' => 'id']);
+    }
+
+    /**
      * @param $status
      * @return mixed
      */
@@ -79,4 +95,15 @@ class Catalog extends \yii\db\ActiveRecord
         ];
         return $statuses[$status];
     }
+}
+
+class ScopesCatalog extends ActiveQuery{
+
+    /**
+     * @return $this
+     */
+    public function publish() {
+        return $this->andWhere(['publish' => Catalog::PUBLISH]);
+    }
+
 }

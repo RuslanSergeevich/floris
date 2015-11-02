@@ -41,6 +41,8 @@ $this->title = 'Добавление/Редактирование товара';
                             <?= $form->field($model, 'keywords') ?>
                             <?= $form->field($model, 'alias') ?>
                             <?= $form->field($model, 'text')->textarea() ?>
+                            <?= $form->field($model, 'time') ?>
+                            <?= $form->field($model, 'portions') ?>
                             <?= $form->field($model, 'pos') ?>
 
                             <?php if(!$model->isNewRecord):?>

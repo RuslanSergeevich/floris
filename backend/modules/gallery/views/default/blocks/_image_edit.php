@@ -19,6 +19,7 @@ use yii\helpers\Html;
                         <?= $form->field($model, 'alt') ?>
                         <?= $form->field($model, 'title') ?>
                         <?= $form->field($model, 'publish')->checkbox(['class' => 'minimal'], false)->error(false) ?>
+                        <?= $form->field($model, 'main')->checkbox(['class' => 'minimal'], false)->error(false) ?>
                     </div>
                 </div>
             </div>

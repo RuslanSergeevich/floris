@@ -5,6 +5,7 @@ use Yii;
 use yii\web\Controller;
 use common\models\Pages;
 use yii\web\NotFoundHttpException;
+use app\models\CatalogItemsSearch;
 
 /**
  * Site controller

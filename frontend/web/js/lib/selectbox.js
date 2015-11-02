@@ -348,7 +348,6 @@
     var html = '',
         itemTag = (data.links) ? "a" : "span",
         j = 0;
-
     for (var i = 0, count = data.$allOptions.length; i < count; i++) {
       var $op = data.$allOptions.eq(i);
 
@@ -728,6 +727,18 @@
     var $item = data.$items.eq(index),
         isSelected = $item.hasClass("selected"),
         isDisabled = $item.hasClass("disabled");
+
+    var dc_id = $item.attr('data-composition_id'),
+        dp_id = $item.attr('data-packing_id');
+
+    /*
+     |-------------------------------------------------------------------------------------------
+     |   Krasnopyorov: 'ADD_ATTRIBUTE_DATA_ON_SELECTED_ITEM(data-composition_id|data-packing_id)'
+     |-------------------------------------------------------------------------------------------
+     */
+    $('.comp .selecter-selected').attr('data-composition_id', dc_id);
+    $('.pack .selecter-selected').attr('data-packing_id', dp_id);
+
 
     // Check for disabled options
     if (!isDisabled) {

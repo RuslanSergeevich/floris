@@ -2,9 +2,12 @@
 
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Url;
 use frontend\components\DDWidget;
 use common\models\Composition;
 use common\models\Packing;
+use common\models\CatalogItems;
+use common\models\Catalog;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Pages */
@@ -35,6 +38,8 @@ $this->registerMetaTag([
     </div>
     <div class="cataloge-filter">
         <div class="inner">
+            <div id="data-composition_id" class="hidden">0</div>
+            <div id="data-packing_id" class="hidden">0</div>
             <?= DDWidget::widget([
                 'model' => Composition::getList(),
                 'css_class' => 'comp',
@@ -51,12 +56,12 @@ $this->registerMetaTag([
                         Масса упаковки нетто
                     </p>
                     <div class="slider filter-weight">
-                        <?= Html::ul(\common\models\Weight::find()->all(), ['item' => function($item, $index) {
+                        <?= Html::ul(\common\models\Weight::find()->orderBy('pos ASC')->all(), ['item' => function($item, $index) {
                             return Html::tag(
                                 'li',
                                 $item['name'],
                                 ['class' => $index == 0 ? 'active' : '',
-                                'data-weight_id' => $item['id']]
+                                'data-weight_id' => $item['name'] == 0 ? 0 : $item['id']]
                             );
                         }]) ?>
                     </div>
@@ -65,132 +70,34 @@ $this->registerMetaTag([
         </div>
     </div>
     <div class="b-cataloge-content">
-        <div class="inner">
-            <div class="b-product-list">
-                <h3>
-                    Рассыпной чай
-                </h3>
-                <ul>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="b-product-list">
-                <h3>
-                    Рассыпной чай
-                </h3>
-                <ul>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="b-product-list">
-                <h3>
-                    Рассыпной чай
-                </h3>
-                <ul>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="b-product-list">
-                <h3>
-                    Рассыпной чай
-                </h3>
-                <ul>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="b-product-list">
-                <h3>
-                    Рассыпной чай
-                </h3>
-                <ul>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                    <li>
-                        <a href="/product.html"><img src="/images/cataloge-product.png" alt="">Ромашка и шиповник</a>
-                    </li>
-                </ul>
-            </div>
+        <div class="inner" id="catalog-box">
+
+            <?php if ($catalogs = Catalog::find()->select('id,name')->publish()->asArray()->all()):?>
+                <?php foreach ($catalogs as $catalog): ?>
+                    <div class="b-product-list">
+                        <h3>
+                            <?= $catalog['name']?>
+                        </h3>
+                        <?php if ($items = CatalogItems::loadItemsOneImage($catalog['id'])): ?>
+                            <?= Html::ul($items, ['item' => function($item, $index) {
+                                $img = isset($item['galleryImages'][0]['basename']) ? Html::img('@gallery/'.$item['galleryImages'][0]['basename'].'.'.$item['galleryImages'][0]['ext']) : '';
+                                return Html::tag(
+                                    'li',
+                                    Html::a($img . $item['name'],
+                                        Url::toRoute(['product/view', 'alias' => $item['alias']])),
+                                    [
+                                        'data-composition_id' => $item['composition_id'],
+                                        'data-packing_id' => $item['packing_id'],
+                                        'data-weight_id' => $item['weight_id'],
+                                        'data-type_id' => $item['type_id']
+                                    ]
+                                );
+                            }]) ?>
+                        <?php endif;?>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
+
         </div>
     </div>
 </section>

@@ -35,7 +35,7 @@ $this->registerMetaTag([
     </div>
     <div class="product-selecter">
         <div class="b-top">
-            Чай в фильтр-пакетах
+            <?= \common\models\Packing::getValueById($model->packing_id)?>
         </div>
         <div class="inner">
             <ul>
@@ -66,8 +66,7 @@ $this->registerMetaTag([
     <div class="inner">
         <div class="product-card">
             <div class="img">
-
-                <?= Html::ul(\common\models\GalleryImages::getImages($model->gallery_cat_id), ['item' => function($item, $index) {
+                <?= Html::ul($model['galleryImages'], ['item' => function($item, $index) {
                     return Html::tag(
                         'li',
                         Html::a(Html::img('@gallery/' . $item['basename'] .'.'. $item['ext'],
@@ -82,41 +81,39 @@ $this->registerMetaTag([
             <div class="description">
                 <div class="top">
                     <div class="social">
-                        <a class="fb" href="#" target="_blank"></a><a class="insta" href="#" target="_blank"></a><a class="vk" href="#" target="_blank"></a>
+                        <a class="fb" href="#" target="_blank"></a>
+                        <a class="insta" href="#" target="_blank"></a>
+                        <a class="vk" href="#" target="_blank"></a>
                     </div>
                     <h2>
-                        Инди<span>Чай в фильтр-пакетах</span>
+                        <?= $model->name?><span><?= \common\models\Packing::getValueById($model->packing_id)?></span>
                     </h2>
                 </div>
                 <div class="b-text">
-                    <p>
-                        Описание Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                    <p class="bold">
-                        Состав:
-                    </p>
-                    <p>
-                        Описание Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
+                    <?= $model->text?>
                     <ul>
                         <li>
                             <img src="/images/icons/kartochka/ves.svg" alt="" height="50">
                             <p>
-                                40 г
+                                <?= \common\models\Weight::getValueById($model->weight_id)?> г
                             </p>
                         </li>
-                        <li>
-                            <img src="/images/icons/kartochka/min.svg" alt="" height="50">
-                            <p>
-                                5 мин.
-                            </p>
-                        </li>
-                        <li>
-                            <img src="/images/icons/kartochka/porcii.svg" alt="" height="50">
-                            <p>
-                                20 порций
-                            </p>
-                        </li>
+                        <?php if($model->time):?>
+                            <li>
+                                <img src="/images/icons/kartochka/min.svg" alt="" height="50">
+                                <p>
+                                    <?= $model->time?>
+                                </p>
+                            </li>
+                        <?php endif;?>
+                        <?php if($model->portions):?>
+                            <li>
+                                <img src="/images/icons/kartochka/porcii.svg" alt="" height="50">
+                                <p>
+                                    <?= $model->portions?>
+                                </p>
+                            </li>
+                        <?php endif;?>
                     </ul>
                 </div>
                 <div class="logistic-info fright">

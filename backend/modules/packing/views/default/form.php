@@ -22,6 +22,7 @@ $this->title = 'Добавление/Редактирование вариант
                     <?php $form = ActiveForm::begin(['method' => 'post', 'options' => ['role' => 'form', 'enctype' => 'multipart/form-data']]); ?>
                         <div class="box-body">
                             <?= $form->field($model, 'name') ?>
+                            <?= $form->field($model, 'declination') ?>
                             <?= $form->field($model, 'pos') ?>
                             <?php if(!$model->isNewRecord):?>
                                 <?= $form->field($model, 'publish')->checkbox(['class' => 'minimal']) ?>

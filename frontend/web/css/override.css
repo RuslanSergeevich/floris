@@ -14,3 +14,11 @@ footer menu li a {
 #kladr_autocomplete a{
     color: #8a8b8d;
 }
+
+.hidden{
+    display: none !important;
+}
+
+.preload{
+    opacity: .5;
+}

@@ -31,6 +31,7 @@ class m150819_130758_gallery extends Migration
             'ext' => $this->string()->notNull(),
             'publish' => $this->integer(1)->defaultValue(1),
             'pos' => $this->integer()->defaultValue(0),
+            'main' => $this->integer()->defaultValue(0),
         ], $tableOptions);
 
         $this->insert('modules', [

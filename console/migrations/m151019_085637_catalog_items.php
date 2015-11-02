@@ -19,6 +19,8 @@ class m151019_085637_catalog_items extends Migration
             'packing_id' => $this->integer()->notNull(),
             'weight_id' => $this->integer()->notNull(),
             'gallery_cat_id' => $this->integer()->notNull(),
+            'time' => $this->string()->notNull(),
+            'portions' => $this->string()->notNull(),
             'alias' => $this->string()->notNull(),
             'name' => $this->string()->notNull(),
             'text' => $this->text()->notNull(),

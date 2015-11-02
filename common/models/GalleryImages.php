@@ -9,6 +9,7 @@ use Yii;
  *
  * @property integer $id
  * @property integer $gallery_cat_id
+ * @property integer $main
  * @property string $name
  * @property string $alt
  * @property string $title
@@ -44,8 +45,9 @@ class GalleryImages extends \yii\db\ActiveRecord
     {
         return [
             [['gallery_cat_id', 'basename', 'ext'], 'required'],
-            [['gallery_cat_id', 'publish', 'pos'], 'integer'],
-            [['name', 'alt', 'title', 'basename', 'ext'], 'string', 'max' => 255]
+            [['gallery_cat_id', 'publish', 'pos', 'main'], 'integer'],
+            [['name', 'alt', 'title', 'basename', 'ext'], 'string', 'max' => 255],
+            ['main', 'default', 'value' => 0]
         ];
     }
 
@@ -57,6 +59,7 @@ class GalleryImages extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'gallery_cat_id' => 'Gallery Cat ID',
+            'main' => 'Основное изображение',
             'name' => 'Название',
             'alt' => 'Alt',
             'title' => 'Title',
@@ -65,6 +68,14 @@ class GalleryImages extends \yii\db\ActiveRecord
             'publish' => 'Публикация',
             'pos' => 'Pos',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCatalogItem()
+    {
+        return $this->hasOne(CatalogItems::className(), ['gallery_cat_id' => 'gallery_cat_id']);
     }
 
     /**

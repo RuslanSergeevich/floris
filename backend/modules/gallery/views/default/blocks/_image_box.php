@@ -11,10 +11,11 @@ use common\models\GalleryImages;
 $li = [];
 foreach(GalleryImages::getImages($model->id) as $i){
     $li[] = ArrayHelper::getValue($i, function($image){
+        $main_image = $image['main'] ? ' main_image' : '';
         return [
             'content' => Html::img('@gallery/' . $image['basename'].'_thumb.'.$image['ext'],
                     [
-                        'class' => $image['publish'] == 0 ? 'unpublished' : '',
+                        'class' => ($image['publish'] == 0 ? 'unpublished' : '') . $main_image,
                         'data-pos' => $image['pos'],
                         'data-id' => $image['id'],
                     ]) . '<div class="edit">

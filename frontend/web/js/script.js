@@ -1,10 +1,10 @@
 $(document).ready(function(){
-	$('select').selecter();
+	$('select').selecter({ callback: sortable });
 
 	$('a.fancybox').fancybox({
 		helpers: {
-      overlay: {
-        locked: false
+        overlay: {
+         locked: false
       }
     }
   });
@@ -45,8 +45,8 @@ $(document).ready(function(){
 	$('.filter-weight').slider({
 		min: 0,
 		max: 525,
-		step: 175,
-		value: 175,
+		step: 110,
+		value: 0,
 		range: 'min'
 	});
 

@@ -86,6 +86,16 @@ class Weight extends \yii\db\ActiveRecord
     }
 
     /**
+     * @param $id
+     * @return string
+     */
+    public static function getValueById($id)
+    {
+        $wn = self::findOne(['id' => $id]);
+        return $wn->name;
+    }
+
+    /**
      * @return array
      */
     public static function getList()

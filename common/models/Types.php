@@ -55,6 +55,14 @@ class Types extends \yii\db\ActiveRecord
     }
 
     /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCatalogItems()
+    {
+        return $this->hasMany(CatalogItems::className(), ['type_id' => 'id']);
+    }
+
+    /**
      * @inheritdoc
      */
     public function attributeLabels()

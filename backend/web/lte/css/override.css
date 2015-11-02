@@ -185,3 +185,7 @@
 .fa-close:hover {
     cursor: pointer;
 }
+
+#thumbs img.main_image {
+    border: 3px solid #5E91C4;
+}
