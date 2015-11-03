@@ -1,11 +1,12 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\models\BackCallForm;
+use frontend\models\CooperationForm;
 use Yii;
 use yii\web\Controller;
 use common\models\Pages;
 use yii\web\NotFoundHttpException;
-use app\models\CatalogItemsSearch;
 
 /**
  * Site controller
@@ -40,6 +41,36 @@ class SiteController extends Controller
         return $this->render($model['template'], [
             'model' => $model
         ]);
+    }
+
+    /**
+     * @return \yii\web\Response
+     */
+    public function actionSend()
+    {
+        $model = new CooperationForm();
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $model->sendEmail(Yii::$app->params['adminEmail']);
+            Yii::$app->session->setFlash('message', 'Спасибо');
+        } else {
+            Yii::$app->session->setFlash('message', 'Error!');
+        }
+        return $this->redirect(Yii::$app->request->referrer);
+    }
+
+    /**
+     * @return \yii\web\Response
+     */
+    public function actionBackcall()
+    {
+        $model = new BackCallForm();
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $model->sendEmail(Yii::$app->params['adminEmail']);
+            Yii::$app->session->setFlash('message', 'Спасибо! МЫ с Вами свяжемся в ближайшее время!');
+        } else {
+            Yii::$app->session->setFlash('message', 'Error!');
+        }
+        return $this->redirect(Yii::$app->request->referrer);
     }
 
     private function _queryOrException($model)

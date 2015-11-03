@@ -30,8 +30,8 @@ AppAsset::register($this);?>
 <div id="wrapper">
     <a class="go-top"></a>
     <header role="banner">
-        <a class="mobile-menu mobile"></a>
-        <?= Html::a('','tel:+79780499611', ['class' => 'mobile-phone mobile'])?>
+        <a class="mobile-menu mobile fancybox" href="#backcall"></a>
+        <?= Html::a('','#backcall', ['class' => 'fancybox mobile-phone mobile'])?>
         <?= Html::a('', Url::home(),['class' => 'logo'])?>
         <?= MenuWidget::widget([
             'attach_icon' => true,
@@ -44,6 +44,7 @@ AppAsset::register($this);?>
     </header>
 
     <div id="main">
+        <?= Yii::$app->session->hasFlash('message') ? Html::tag('legend', Yii::$app->session->getFlash('message'), ['class' => 'flash_message']) : ''?>
         <?= $content?>
     </div>
     <footer role="contentinfo">
@@ -80,48 +81,10 @@ AppAsset::register($this);?>
     </footer>
 
 </div>
-<div class="popups" style="display: none;">
-    <div id="backcall" class="popup">
-        <div class="popup-head"></div>
-        <div class="popup-content">
-            <div class="title">
-                ЗАПОЛНИТЕ СВОИ ДАННЫЕ<br>И МЫ СКОРО СВЯЖЕМСЯ С ВАМИ
-            </div>
-            <form>
-                <input class="name" type="text" placeholder="Введите имя"><input class="phone" type="text" placeholder="Номер телефона"><input class="btn border" type="submit" value="ОТПРАВИТЬ">
-            </form>
-        </div>
-    </div>
-    <div id="sotrudnichestvo" class="popup">
-        <div class="popup-head"></div>
-        <div class="popup-content">
-            <div class="title">
-                МЫ ВСЕГДА ОТКРЫТЫ ДЛЯ СОТРУДНИЧЕСТВА<br>С НОВЫМИ ПАРТНЁРАМИ
-            </div>
-            <form>
-                <input class="name" type="text" placeholder="Введите имя"><input class="phone" type="text" placeholder="Номер телефона"><input class="email" type="text" placeholder="Электронный адрес"><textarea placeholder="Укажите пожалуйста вкратце тему сотрудничества"></textarea><input class="btn border" type="submit" value="ОТПРАВИТЬ">
-            </form>
-        </div>
-    </div>
-    <div id="search-shop" class="popup">
-        <div class="popup-head"></div>
-        <div class="popup-content">
-            <div class="title">
-                ЗАПОЛНИТЕ ВСЕ ПОЛЯ ДЛЯ ЭФФЕКТИВНОГО ПОИСКА<br>ВАШЕГО МАГАЗИНА
-            </div>
-            <form>
-                <input class="contry" type="text" placeholder="Страна"><input class="shop-name" type="text" placeholder="Название магазина"><input class="city" type="text" placeholder="Город"><input class="name" type="text" placeholder="ФИО"><input class="adress" type="text" placeholder="Адрес"><input class="phone" type="text" placeholder="Номер телефона"><input class="work-time" type="text" placeholder="Режим работы"><input class="email" type="text" placeholder="Электронный адрес">
-                <div class="added-imgs">
-                    <img src="/images/popups/added-img.png" alt=""><img src="/images/popups/added-img.png" alt=""><img src="/images/popups/added-img.png" alt="">
-                </div>
-                <p>
-                    <a href="#">Загрузите</a> три фотографии: общий вид магазина<br>и наша продукция на полке
-                </p>
-                <input class="btn border" type="submit" value="ДОБАВИТЬ">
-            </form>
-        </div>
-    </div>
-</div>
+<?= $this->render('/partials/_forms', [
+    'model' => new \frontend\models\CooperationForm(),
+    'backCall' => new \frontend\models\BackCallForm()
+])?>
 <?php $this->endBody() ?>
 </body>
 </html>

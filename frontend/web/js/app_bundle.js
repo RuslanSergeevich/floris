@@ -19,6 +19,15 @@ $(function () {
         $(this).addClass('active');
         sortable();
     });
+
+    setTimeout('$(".flash_message").fadeOut()', 5000);
+
+
+    $('form').submit(function(){
+        if($(this).find('div').hasClass('has-error')){
+            $(this).find('div.has-error').effect( "shake" );
+        }
+    });
     $('body').ready(function() {
         return $('.cataloge-menu li a').on('click', function(e) {
             e.preventDefault();

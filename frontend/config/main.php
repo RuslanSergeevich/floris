@@ -30,6 +30,8 @@ return [
             'enableStrictParsing' => true,
             'rules' => [
                 '/' => 'site',
+                'send' => 'site/send',
+                'back-call' => 'site/backcall',
                 '<alias[\wd-]+>' => 'site/page',
                 'blog/<alias[\wd-]+>' => 'blog/view',
                 'product/<alias[\wd-]+>' => 'product/view',

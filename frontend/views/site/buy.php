@@ -101,7 +101,7 @@ $this->registerMetaTag([
             </ul>
         </div>
         <div class="inner add-mag">
-            <a class="btn green" href="#">ДОБАВИТЬ МАГАЗИН</a>
+            <a class="btn green fancybox" href="#search-shop">ДОБАВИТЬ МАГАЗИН</a>
             <p>
                 или свяжитесь с нашим <a href="#">отделом продаж</a>
             </p>

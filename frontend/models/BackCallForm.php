@@ -6,15 +6,13 @@ use Yii;
 use yii\base\Model;
 
 /**
- * CooperationForm is the model behind the contact form.
+ * BackCallForm is the model behind the contact form.
  */
-class CooperationForm extends Model
+class BackCallForm extends Model
 {
     public $name;
-    public $email;
     public $phone;
-    public $subject;
-    public $body;
+    public $subject = 'Форма заказа обратного звонка';
 
     /**
      * @inheritdoc
@@ -22,8 +20,7 @@ class CooperationForm extends Model
     public function rules()
     {
         return [
-            [['name', 'email', 'phone', 'body'], 'required'],
-            ['email', 'email'],
+            [['name', 'phone'], 'required'],
             ['phone', 'safe'],
         ];
     }
@@ -38,9 +35,9 @@ class CooperationForm extends Model
     {
         return Yii::$app->mailer->compose()
             ->setTo($email)
-            ->setFrom([$this->email => $this->name])
+            ->setFrom([$email => $this->name])
             ->setSubject($this->subject)
-            ->setHtmlBody($this->phone . '<br />' .$this->body)
+            ->setHtmlBody($this->phone)
             ->send();
     }
 }

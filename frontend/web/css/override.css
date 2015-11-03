@@ -22,3 +22,16 @@ footer menu li a {
 .preload{
     opacity: .5;
 }
+
+.field-cooperationform-email {
+    float: left;
+}
+
+.flash_message{
+    border: 1px solid #fff;
+    margin: 8em 10em;
+    padding: 1em 0;
+    position: absolute;
+    text-align: center;
+    width: 75%;
+}

@@ -19,7 +19,7 @@ class BlogController extends SiteController
     {
         $model = Blog::findOne(['alias' => $alias]);
         return $this->render('single_view', [
-            'model' => $model
+            'model' => $model,
         ]);
     }
 

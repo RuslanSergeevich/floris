@@ -23,7 +23,7 @@ class ProductController extends SiteController
             }
         ])->one();
         return $this->render('single_view', [
-            'model' => $model
+            'model' => $model,
         ]);
     }
 
