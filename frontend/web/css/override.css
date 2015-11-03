@@ -23,8 +23,15 @@ footer menu li a {
     opacity: .5;
 }
 
-.field-cooperationform-phone {
+.field-cooperationform-phone, .field-geography-country, .field-geography-city, .field-geography-address, .field-geography-mode, .field-geography-shop_name, .field-geography-fio, .field-geography-phone, .field-geography-email {
     float: left;
+}
+.clear{
+    clear: both;
+}
+
+#search-shop form input[type="text"] {
+    width: 215px;
 }
 
 .flash_message{

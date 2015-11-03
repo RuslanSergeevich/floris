@@ -189,3 +189,23 @@
 #thumbs img.main_image {
     border: 3px solid #5E91C4;
 }
+
+#geography__form .box-i{
+    float: left;
+    margin: 5px;
+    width: 100px;
+    height: auto;
+}
+#geography__form .box-i:after{
+    clear: both;
+    content: '';
+}
+
+
+.geography_images{
+    width: 70px;
+    height: auto;
+    border: 3px solid #ccc;
+    padding: 5px;
+    border-radius: 3px;
+}

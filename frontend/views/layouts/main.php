@@ -83,7 +83,9 @@ AppAsset::register($this);?>
 </div>
 <?= $this->render('/partials/_forms', [
     'model' => new \frontend\models\CooperationForm(),
-    'backCall' => new \frontend\models\BackCallForm()
+    'backCall' => new \frontend\models\BackCallForm(),
+    'shopAdd' => new \common\models\Geography(),
+    'images' => new \common\models\GeographyImages()
 ])?>
 <?php $this->endBody() ?>
 </body>

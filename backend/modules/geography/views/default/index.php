@@ -31,27 +31,15 @@ $this->title = 'География точек продаж';
                     'summary' => false,
                     'tableOptions' => ['class' => 'table table-hover'],
                     'columns' => [
-                        'id',
-                        [
-                            'attribute' => 'name',
-                            'header' => 'Название',
-                            'value' => function ($model) {
-                                return $model->name;
-                            },
-                            'format' => 'html'
-                        ],
+                        'country',
+                        'city',
+                        'address',
+                        'shop_name',
                         [
                             'attribute' => 'created_at',
-                            'header' => 'Создан',
+                            'header' => 'Создана',
                             'value' => function ($model) {
                                 return Yii::$app->formatter->asDate($model->created_at);
-                            },
-                        ],
-                        [
-                            'attribute' => 'updated_at',
-                            'header' => 'Обновлен',
-                            'value' => function ($model) {
-                                return Yii::$app->formatter->asRelativeTime($model->updated_at);
                             },
                         ],
                         [
@@ -72,9 +60,6 @@ $this->title = 'География точек продаж';
                             ],
                         ],
                     ],
-                ]);
-                echo Html::tag('div', Html::a('Добавить', Url::toRoute(['/geography/add']), ['class' => 'btn btn-block btn-primary']), [
-                    'class' => 'button-add'
                 ]);
                 ?>
             </div>

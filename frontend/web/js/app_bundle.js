@@ -3,11 +3,11 @@
  |   поиск адреса Яндекс-api
  |-----------------------------------------------------------
  */
-$(function () {
+(function() {
     $('[name="city"]').kladr({
         oneString: true
     });
-});
+}).call(this);
 
 (function() {
 
@@ -18,6 +18,11 @@ $(function () {
         $('.cataloge-filter .weight ul li').removeClass('active');
         $(this).addClass('active');
         sortable();
+    });
+
+    $('#fileInputTrigger').click(function(e){
+        e.preventDefault();
+        $('#search-shop input[type=file]').click();
     });
 
     setTimeout('$(".flash_message").fadeOut()', 5000);

@@ -1,12 +1,15 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\Geography;
+use common\models\GeographyImages;
 use frontend\models\BackCallForm;
 use frontend\models\CooperationForm;
 use Yii;
 use yii\web\Controller;
 use common\models\Pages;
 use yii\web\NotFoundHttpException;
+use yii\web\UploadedFile;
 
 /**
  * Site controller
@@ -69,6 +72,18 @@ class SiteController extends Controller
             Yii::$app->session->setFlash('message', 'Спасибо! МЫ с Вами свяжемся в ближайшее время!');
         } else {
             Yii::$app->session->setFlash('message', 'Error!');
+        }
+        return $this->redirect(Yii::$app->request->referrer);
+    }
+
+    public function actionShopadd()
+    {
+        $model = new Geography();
+        $modelImages = new GeographyImages();
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $model->save();
+            $modelImages->files = UploadedFile::getInstances($modelImages, 'files');
+            $modelImages->upload($model->id);
         }
         return $this->redirect(Yii::$app->request->referrer);
     }

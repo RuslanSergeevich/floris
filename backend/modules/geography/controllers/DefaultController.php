@@ -2,6 +2,7 @@
 
 namespace backend\modules\geography\controllers;
 
+use common\models\GeographyImages;
 use Yii;
 use yii\filters\AccessControl;
 use backend\controllers\SiteController;
@@ -21,7 +22,7 @@ class DefaultController extends SiteController
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'add', 'update', 'delete'],
+                        'actions' => ['index', 'update', 'delete', 'delete-img'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -31,6 +32,7 @@ class DefaultController extends SiteController
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['post'],
+                    'delete-img' => ['post'],
                 ],
             ],
         ];
@@ -45,17 +47,6 @@ class DefaultController extends SiteController
         Url::remember();
         return $this->render('index', [
             'dataProvider' => $this->findData($query)
-        ]);
-    }
-
-    /**
-     * @return string|\yii\web\Response
-     */
-    public function actionAdd()
-    {
-        $this->loadData($model = new Geography());
-        return $this->render('form', [
-            'model' => new Geography()
         ]);
     }
 
@@ -77,7 +68,18 @@ class DefaultController extends SiteController
      */
     public function actionDelete($id)
     {
+        GeographyImages::deleteAll(['geography' => $id]);
         Geography::findOne(['id' => $id])->delete();
         return $this->redirect(Url::previous());
+    }
+
+    /**
+     * @param $id
+     * @return false|int
+     * @throws \Exception
+     */
+    public function actionDeleteImg($id)
+    {
+        return GeographyImages::findOne(['id' => $id])->delete();
     }
 }

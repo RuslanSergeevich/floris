@@ -10,6 +10,8 @@ use yii\widgets\ActiveForm;
 /* @var $this \yii\web\View */
 /* @var $model frontend\models\CooperationForm */
 /* @var $backCall frontend\models\BackCallForm */
+/* @var $shopAdd common\models\Geography */
+/* @var $images common\models\GeographyImages */
 ?>
 <div class="popups" style="display: none;">
     <div id="sotrudnichestvo" class="popup">
@@ -50,16 +52,28 @@ use yii\widgets\ActiveForm;
             <div class="title">
                 ЗАПОЛНИТЕ ВСЕ ПОЛЯ ДЛЯ ЭФФЕКТИВНОГО ПОИСКА<br>ВАШЕГО МАГАЗИНА
             </div>
-            <form>
-                <input class="contry" type="text" placeholder="Страна"><input class="shop-name" type="text" placeholder="Название магазина"><input class="city" type="text" placeholder="Город"><input class="name" type="text" placeholder="ФИО"><input class="adress" type="text" placeholder="Адрес"><input class="phone" type="text" placeholder="Номер телефона"><input class="work-time" type="text" placeholder="Режим работы"><input class="email" type="text" placeholder="Электронный адрес">
-                <div class="added-imgs">
-                    <img src="/images/popups/added-img.png" alt=""><img src="/images/popups/added-img.png" alt=""><img src="/images/popups/added-img.png" alt="">
-                </div>
-                <p>
-                    <a href="#">Загрузите</a> три фотографии: общий вид магазина<br>и наша продукция на полке
-                </p>
-                <input class="btn border" type="submit" value="ДОБАВИТЬ">
-            </form>
+            <?php $form = ActiveForm::begin([
+                'action' => \yii\helpers\Url::toRoute('site/shopadd'),
+                'options' => ['enctype' => 'multipart/form-data']
+            ])?>
+            <?= $form->field($shopAdd, 'country')->textInput(['placeholder' => 'Страна', 'class' => 'contry'])->label(false)->error(false)?>
+            <?= $form->field($shopAdd, 'shop_name')->textInput(['placeholder' => 'Название магазина', 'class' => 'shop-name'])->label(false)->error(false)?>
+            <?= $form->field($shopAdd, 'city')->textInput(['placeholder' => 'Город', 'class' => 'city'])->label(false)->error(false)?>
+            <?= $form->field($shopAdd, 'fio')->textInput(['placeholder' => 'ФИО', 'class' => 'name'])->label(false)->error(false)?>
+            <?= $form->field($shopAdd, 'address')->textInput(['placeholder' => 'Адрес', 'class' => 'adress'])->label(false)->error(false)?>
+            <?= $form->field($shopAdd, 'phone')->textInput(['placeholder' => 'Номер телефона', 'class' => 'phone'])->label(false)->error(false)?>
+            <?= $form->field($shopAdd, 'mode')->textInput(['placeholder' => 'Режим работы', 'class' => 'work-time'])->label(false)->error(false)?>
+            <?= $form->field($shopAdd, 'email')->textInput(['placeholder' => 'Электронный адрес', 'class' => 'email'])->label(false)->error(false)?>
+            <?= $form->field($images, 'files[]')->fileInput(['class' => 'hidden', 'multiple' => true, 'accept' => 'image/*'])->label(false)->error(false)?>
+            <div class="clear"></div>
+            <div class="added-imgs">
+                <img src="/images/popups/added-img.png" alt=""><img src="/images/popups/added-img.png" alt=""><img src="/images/popups/added-img.png" alt="">
+            </div>
+            <p>
+                <a href="#" id="fileInputTrigger">Загрузите</a> три фотографии: общий вид магазина<br>и наша продукция на полке
+            </p>
+            <input class="btn border" type="submit" value="ДОБАВИТЬ">
+            <?php ActiveForm::end(); ?>
         </div>
     </div>
 </div>

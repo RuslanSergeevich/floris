@@ -32,6 +32,7 @@ return [
                 '/' => 'site',
                 'send' => 'site/send',
                 'back-call' => 'site/backcall',
+                'shop-add' => 'site/shopadd',
                 '<alias[\wd-]+>' => 'site/page',
                 'blog/<alias[\wd-]+>' => 'blog/view',
                 'product/<alias[\wd-]+>' => 'product/view',

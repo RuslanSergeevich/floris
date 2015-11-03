@@ -19,21 +19,27 @@ $this->title = 'Добавление/Редактирование географ
                 <div class="box-header with-border">
                     <h3 class="box-title"><?= Html::encode($this->title)?></h3>
                 </div><!-- /.box-header -->
-                    <?php $form = ActiveForm::begin(['method' => 'post', 'options' => ['role' => 'form', 'enctype' => 'multipart/form-data']]); ?>
+                    <?php $form = ActiveForm::begin(['method' => 'post', 'options' => ['role' => 'form', 'enctype' => 'multipart/form-data', 'id' => 'geography__form']]); ?>
                         <div class="box-body">
-                            <?= $form->field($model, 'name') ?>
+                            <?= $form->field($model, 'country') ?>
+                            <?= $form->field($model, 'city') ?>
                             <?= $form->field($model, 'address') ?>
-                            <?= $form->field($model, 'file')->fileInput() ?>
-                            <?php if($model->image){?>
-                                <div class="image-box">
-                                    <?= Html::img('@geography/'.$model->image, [
-                                        'alt' => $model->name,
-                                        'width' => '150',
-                                        'data-blog_id' => $model->id
-                                    ]) ?>
-                                </div>
+                            <?= $form->field($model, 'mode') ?>
+                            <?= $form->field($model, 'shop_name') ?>
+                            <?= $form->field($model, 'fio') ?>
+                            <?= $form->field($model, 'phone') ?>
+                            <?= $form->field($model, 'email') ?>
+                            <?php if ($images = \common\models\GeographyImages::getImages($model->id)): ?>
                                 <hr />
-                            <?php } ?>
+                                <?php foreach ($images as $img): ?>
+                                    <div class="box-i">
+                                    <?= Html::img('@geography/' . $img['basename'] . '.' . $img['ext'], ['class' => 'geography_images'])?>
+                                    <?= Html::a('<i class="fa fa-fw fa-remove"></i>',\yii\helpers\Url::toRoute(['delete-img', 'id' => $img['id']]), ['class' => 'delete-img'])?>
+                                    </div>
+                                <?php endforeach; ?>
+                                <div class="clear"></div>
+                                <hr />
+                            <?php endif; ?>
                             <div class="form-group">
                                 <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
                             </div>
@@ -43,3 +49,4 @@ $this->title = 'Добавление/Редактирование географ
         </div>
     </div>
 </div>
+<?php $this->registerJs('$(".delete-img").click(function(e){e.preventDefault(); var _this = $(this); $.post(_this.attr("href"), function(){_this.closest("div.box-i").fadeOut();});});');?>

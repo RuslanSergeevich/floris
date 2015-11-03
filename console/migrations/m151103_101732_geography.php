@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m151029_090110_geography extends Migration
+class m151103_101732_geography extends Migration
 {
     public function up()
     {
@@ -13,11 +13,23 @@ class m151029_090110_geography extends Migration
 
         $this->createTable('{{%geography}}', [
             'id' => $this->primaryKey(),
-            'name' => $this->string()->notNull(),
+            'country' => $this->text()->notNull(),
+            'city' => $this->text()->notNull(),
             'address' => $this->text()->notNull(),
-            'image' => $this->text()->notNull(),
+            'mode' => $this->text()->notNull(),
+            'shop_name' => $this->text()->notNull(),
+            'fio' => $this->text()->notNull(),
+            'phone' => $this->string()->notNull(),
+            'email' => $this->string()->notNull(),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull()
+        ], $tableOptions);
+
+        $this->createTable('{{%geography_images}}', [
+            'id' => $this->primaryKey(),
+            'geography_id' => $this->integer()->notNull(),
+            'basename' => $this->string()->notNull(),
+            'ext' => $this->string()->notNull(),
         ], $tableOptions);
 
         $this->insert('modules', [
@@ -31,6 +43,7 @@ class m151029_090110_geography extends Migration
     public function down()
     {
         $this->dropTable('{{%geography}}');
+        $this->dropTable('{{%geography_images}}');
     }
 
     /*
