@@ -22,8 +22,8 @@ use yii\widgets\ActiveForm;
                 'action' => \yii\helpers\Url::toRoute('site/send'),
             ])?>
             <?= $form->field($model, 'name')->textInput(['placeholder' => 'Введите имя', 'class' => 'name'])->label(false)->error(false)?>
-            <?= $form->field($model, 'email')->textInput(['placeholder' => 'Номер телефона', 'class' => 'phone'])->label(false)->error(false)?>
-            <?= $form->field($model, 'phone')->textInput(['placeholder' => 'Электронный адрес', 'class' => 'email'])->label(false)->error(false)?>
+            <?= $form->field($model, 'phone')->textInput(['placeholder' => 'Номер телефона', 'class' => 'phone'])->label(false)->error(false)?>
+            <?= $form->field($model, 'email')->textInput(['placeholder' => 'Электронный адрес', 'class' => 'email'])->label(false)->error(false)?>
             <?= $form->field($model, 'body')->textarea(['placeholder' => 'Укажите пожалуйста вкратце тему сотрудничества'])->label(false)->error(false)?>
             <input class="btn border" type="submit" value="ОТПРАВИТЬ">
             <?php ActiveForm::end(); ?>

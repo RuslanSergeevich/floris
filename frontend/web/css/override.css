@@ -23,15 +23,15 @@ footer menu li a {
     opacity: .5;
 }
 
-.field-cooperationform-email {
+.field-cooperationform-phone {
     float: left;
 }
 
 .flash_message{
     border: 1px solid #fff;
-    margin: 8em 10em;
+    margin: 20% 25%;
     padding: 1em 0;
-    position: absolute;
+    position: fixed;
     text-align: center;
-    width: 75%;
+    width: 50%;
 }
