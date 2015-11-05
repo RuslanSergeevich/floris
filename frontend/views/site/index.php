@@ -15,11 +15,20 @@ $this->registerMetaTag([
     'content' => Html::encode($model->keywords)
 ]);
 ?>
+<div class="video">
+    <a class="close-video">X</a>
+    <video controls>
+        <source src="/video/tea.mp4" type="video/mp4;" codecs="avc1.42E01E, mp4a.40.2">
+        <source src="/video/tea.webm" type="video/webm">
+        <source src="/video/tea.ogv" type="video/ogg">
+    </video>
+</div>
 <main>
     <section class="b1 b-top-section top-section" style="background-image: url('<?= Yii::getAlias('@boxes') .'/'. $model->boxes['we_produce']['image']?>')">
         <div class="title">
             <?= $model->boxes['we_produce']['title']?>
             <?= Html::a('ПОДРОБНО О КОМПАНИИ', Url::to($model->boxes['we_produce']['link']),['class' => 'btn'])?>
+            <a class="play-video"></a>
         </div>
     </section>
     <section class="b2">
@@ -215,14 +224,17 @@ $this->registerMetaTag([
             </div>
         </div>
     </section>
+    <?php if(isset($model->boxes['tea_production'])):?>
     <section class="b3" style="background-image: url('<?= Yii::getAlias('@boxes') .'/'. $model->boxes['tea_production']['image']?>')">
         <div class="title">
             <?= $model->boxes['tea_production']['title']?>
         </div>
         <div class="btns">
-            <a class="btn btn-ico" href="#">ПОДРОБНЕЕ</a>
+            <?= Html::a('ПОДРОБНЕЕ', Url::to($model->boxes['tea_production']['link']),['class' => 'btn btn-ico'])?>
         </div>
     </section>
+    <?php endif;?>
+    <?php if(isset($model->boxes['interesting_article'])):?>
     <section class="b4" style="background-image: url('<?= Yii::getAlias('@boxes') .'/'. $model->boxes['interesting_article']['image']?>')">
         <div class="b-left">
             <div class="title left">
@@ -243,11 +255,13 @@ $this->registerMetaTag([
             }]) ?>
         </div>
     </section>
+    <?php endif;?>
     <section class="b5" style="background-image: url('<?= Yii::getAlias('@boxes') .'/'. $model->boxes['geography']['image']?>')">
         <div class="title">
             ГЕОГРАФИЯ ТОЧЕК ПРОДАЖ
         </div>
         <ul>
+            <?php if(isset($model->boxes['geography'])):?>
             <li>
                 <div class="title">
                     <?= $model->boxes['geography']['title']?>
@@ -255,6 +269,8 @@ $this->registerMetaTag([
                 <?= $model->boxes['geography']['text']?>
                 <?= Html::a('Найти', Url::to($model->boxes['geography']['link']),['class' => 'btn'])?>
             </li>
+            <?php endif;?>
+            <?php if(isset($model->boxes['geography_02'])):?>
             <li>
                 <div class="title">
                     <?= $model->boxes['geography_02']['title']?>
@@ -262,6 +278,7 @@ $this->registerMetaTag([
                 <?= $model->boxes['geography_02']['text']?>
                 <?= Html::a('ДОБАВИТЬ МАГАЗИН', Url::to($model->boxes['geography_02']['link']),['class' => 'btn'])?>
             </li>
+            <?php endif;?>
         </ul>
     </section>
 </main>

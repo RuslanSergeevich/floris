@@ -58,8 +58,8 @@ class QuickEmail extends \yii\db\ActiveRecord
     public function sendEmail($email)
     {
         return Yii::$app->mailer->compose()
-            ->setTo($email)
-            ->setFrom([$this->email_to => Yii::$app->user->identity->name])
+            ->setTo($this->email_to)
+            ->setFrom([$email => Yii::$app->user->identity->name])
             ->setSubject($this->subject)
             ->setHtmlBody($this->message)
             ->send();

@@ -185,7 +185,7 @@ input[type=submit]:hover {
 
 h3 {
   font: 26px "open_sanssemibold";
-  color: #16171c;
+  color: #353535;
   margin-bottom: 30px;
 }
 
@@ -264,18 +264,23 @@ header {
   z-index: 10;
 }
 header a.logo {
-  background: url('../images/logo_white.png') 0 0 no-repeat;
+  background: url('../images/logo.svg') 0 0 no-repeat;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
   position: absolute;
   top: 32px;
   left: 35px;
   display: block;
   width: 100px;
-  height: 50px;
+  height: 40px;
 }
 header menu {
   position: relative;
-  margin: 20px 0 0 310px;
+  margin: 25px 0 0 310px;
   list-style: none;
+  transition: linear 0.4s;
 }
 header menu li {
   position: absolute;
@@ -285,7 +290,7 @@ header menu li {
 header menu li a {
   font: 15px "open_sansregular";
   color: #fff;
-  text-decoration: underline;
+  text-decoration: none;
   position: relative;
   padding-left: 45px;
 }
@@ -438,7 +443,7 @@ footer a.vacation {
   font: 12px "open_sanssemibold";
   border-bottom: 1px solid #fff;
   right: 35px;
-  top: 41px;
+  top: 50px;
   text-decoration: none !important;
 }
 footer a.vacation:hover {
@@ -3233,14 +3238,57 @@ body .ui-tooltip {
   padding-left: 60px;
 }
 
+.video {
+  position: fixed;
+  top: 15%;
+  bottom: 15%;
+  width: auto;
+  height: auto;
+  max-width: 80%;
+  max-height: 80%;
+  left: 110%;
+  right: auto;
+  transition: linear 0.4s;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.video a.close-video {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font: 25px "open_sansregular";
+  color: #1ad2d1;
+  width: 25px;
+  height: 25px;
+  display: block;
+  z-index: 6;
+  text-decoration: none !important;
+  border: none;
+}
+.video a.close-video:hover {
+  cursor: pointer;
+}
+.video video {
+  width: 100%;
+  height: 100%;
+}
+.video.active {
+  left: 10%;
+  right: 10%;
+}
+
 section {
   min-height: 660px;
   padding-bottom: 50px;
 }
 section .title {
   text-align: center;
-  font: 40px "espuma_proregular";
-  line-height: 60px;
+  font: 30px "espuma_proregular" !important;
+  line-height: 36px !important;
   vertical-align: middle;
   display: block;
   height: auto;
@@ -3273,11 +3321,52 @@ section.b1 .title a.btn {
   margin: 50px auto 0;
   display: block;
   width: 280px;
-  font: 15px "open_sanssemibold";
+  font: 15px "open_sansregular";
   padding-left: 54px;
-  background: url('../images/main/ico-btn-1.png') no-repeat 17px 8px;
   line-height: 44px;
   text-transform: uppercase;
+  position: relative;
+}
+section.b1 .title a.btn:after {
+  background: url("../images/icons/menu/about_normal.svg") no-repeat 0 0;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 27px;
+  width: 22px;
+  top: 7px;
+  left: 16px;
+  content: '';
+  position: absolute;
+}
+section.b1 .title a.btn:hover:after {
+  background: url("../images/icons/menu/about_hover.svg") no-repeat 0 0;
+  background-size: cover;
+  height: 27px;
+  width: 22px;
+}
+section.b1 .title a.play-video {
+  margin: 50px auto 0;
+  display: block;
+  background: url("../images/icons/play.svg") no-repeat 0 0;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 80px;
+  width: 80px;
+  z-index: 20;
+}
+section.b1 .title a.play-video:hover {
+  background: url("../images/icons/play_on.svg") no-repeat 0 0;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 80px;
+  width: 80px;
+  cursor: pointer;
 }
 section.b2 {
   background: url('../images/main/bg-2.png') no-repeat 50% 50%;
@@ -3361,7 +3450,7 @@ section.b2 .choise-product.active {
   display: block;
 }
 section.b2 .b-left {
-  width: 60%;
+  width: 49%;
   float: left;
   background: rgba(0, 0, 0, 0.5);
   height: 100%;
@@ -3382,11 +3471,28 @@ section.b2 .b-left .b-text .sub-title {
 }
 section.b2 .b-left .b-text p {
   font: 16px "open_sansregular";
+  padding-right: 30px;
 }
 section.b2 .b-left .b-text .btn {
-  background: url('../images/main/ico-btn-4.png') no-repeat 17px 8px;
   padding-left: 60px;
   margin-top: 44px;
+  position: relative;
+}
+section.b2 .b-left .b-text .btn:after {
+  background: url("../images/icons/menu/cataloge_normal.svg") no-repeat 0 0;
+  background-size: cover;
+  height: 27px;
+  width: 29px;
+  top: 6px;
+  left: 16px;
+  content: '';
+  position: absolute;
+}
+section.b2 .b-left .b-text .btn:hover:after {
+  background: url("../images/icons/menu/cataloge_hover.svg") no-repeat 0 0;
+  background-size: cover;
+  height: 27px;
+  width: 29px;
 }
 section.b3 {
   background: url('../images/main/bg-3.png') no-repeat 50% 50%;
@@ -3398,7 +3504,23 @@ section.b3 .btns {
   margin-top: 45px;
 }
 section.b3 .btns a.btn {
-  background: url('../images/main/ico-btn-2.png') no-repeat 17px 8px;
+  position: relative;
+}
+section.b3 .btns a.btn:after {
+  background: url("../images/icons/menu/privat_normal.svg") no-repeat 0 0;
+  background-size: cover;
+  height: 24px;
+  width: 27px;
+  top: 7px;
+  left: 16px;
+  content: '';
+  position: absolute;
+}
+section.b3 .btns a.btn:hover:after {
+  background: url("../images/icons/menu/privat_hover.svg") no-repeat 0 0;
+  background-size: cover;
+  height: 24px;
+  width: 27px;
 }
 section.b4 {
   background: url('../images/main/bg-4.png') no-repeat 50% 50%;
@@ -3423,7 +3545,23 @@ section.b4 .b-left .btns {
   text-align: left;
 }
 section.b4 .b-left .btns a.blog {
-  background: url('../images/main/ico-btn-3.png') no-repeat 17px 8px;
+  position: relative;
+}
+section.b4 .b-left .btns a.blog:after {
+  background: url("../images/icons/menu/blog_normal.svg") no-repeat 0 0;
+  background-size: cover;
+  height: 28px;
+  width: 24px;
+  top: 7px;
+  left: 16px;
+  content: '';
+  position: absolute;
+}
+section.b4 .b-left .btns a.blog:hover:after {
+  background: url("../images/icons/menu/blog_hover.svg") no-repeat 0 0;
+  background-size: cover;
+  height: 28px;
+  width: 24px;
 }
 section.b4 .b-right {
   width: 50%;
@@ -3433,7 +3571,7 @@ section.b4 .b-right {
   padding: 145px 0 0 113px;
 }
 section.b4 .b-right .title {
-  font-size: 26px;
+  font: 26px "open_sanssemibold";
   text-align: left;
 }
 section.b4 .b-right ul {
@@ -3502,7 +3640,7 @@ section.b5 ul li .btn {
   padding: 20px 25px 0;
 }
 .cataloge-menu menu li a {
-  font: 15px "open_sanssemibold";
+  font: 15px "open_sansregular";
   color: #fff;
   text-decoration: none;
 }
@@ -3604,7 +3742,7 @@ section.cataloge .b-cataloge-content .b-product-list ul li:nth-child(4n+4) {
 section.cataloge .b-cataloge-content .b-product-list ul li a {
   text-decoration: none;
   font: 14px "open_sanslight";
-  color: #16171c;
+  color: #353535;
   -moz-transition: linear 0.2s;
   -o-transition: linear 0.2s;
   -webkit-transition: linear 0.2s;
@@ -3614,7 +3752,7 @@ section.cataloge .b-cataloge-content .b-product-list ul li a img {
   margin-bottom: 20px;
 }
 section.cataloge .b-cataloge-content .b-product-list ul li a:hover {
-  color: #13a8a6;
+  color: #1ad2d1;
 }
 
 section.about .top-block {
@@ -3623,6 +3761,10 @@ section.about .top-block {
   min-height: 300px;
   display: table;
   width: 100%;
+  height: 435px;
+}
+section.about .top-block .title {
+  padding-top: 90px;
 }
 section.about .b-content {
   padding-top: 80px;
@@ -3632,20 +3774,20 @@ section.about .b-content .inner {
 }
 section.about .b-content p {
   font: 20px "open_sansregular";
-  color: #272830;
+  color: #353535;
   line-height: 30px;
 }
 section.about .b-content .b-local {
   margin-top: 80px;
 }
 section.about .b-content .b-local .title {
-  color: #272830;
+  color: #353535;
   font: 17px "open_sanssemibold";
   float: left;
   width: auto;
 }
 section.about .b-content .b-local p {
-  color: #272830;
+  color: #353535;
   margin-left: 235px;
   margin-bottom: 15px;
   font-size: 16px;
@@ -3771,7 +3913,7 @@ section.about .b-content-promo ul li .circle span {
 }
 .geography-sale .text {
   font: 25px "espuma_prosemibold";
-  color: #272830;
+  color: #353535;
   text-align: center;
   display: inline-block;
   padding-top: 48px;
@@ -3788,6 +3930,7 @@ main.privat section.top {
   background-size: cover;
   width: 100%;
   display: table;
+  height: 732px;
 }
 main.privat section.top .sub-title {
   text-align: center;
@@ -3800,7 +3943,7 @@ main.privat section.type-of-tea {
 }
 main.privat section.type-of-tea .title {
   font: 26px "open_sanssemibold";
-  color: #282830;
+  color: #353535;
   padding-top: 71px;
 }
 main.privat section.type-of-tea ul {
@@ -3830,7 +3973,7 @@ main.privat section.type-of-tea ul li .img img {
 main.privat section.type-of-tea ul li p {
   font: 14px "open_sansregular";
   font-style: italic;
-  color: #000;
+  color: #353535;
 }
 main.privat section.type-of-tea ul li:last-child {
   margin-right: 0;
@@ -3871,7 +4014,7 @@ main.privat section.type-of-product {
 }
 main.privat section.type-of-product .title {
   font: 26px "open_sanssemibold";
-  color: #282830;
+  color: #353535;
   padding-top: 71px;
 }
 main.privat section.type-of-product ul {
@@ -3899,7 +4042,7 @@ main.privat section.type-of-product ul li .img img {
 main.privat section.type-of-product ul li p {
   font: 14px "open_sansregular";
   font-style: italic;
-  color: #000;
+  color: #353535;
 }
 main.privat section.type-of-product ul li:nth-child(3n+3) {
   margin-right: 0;
@@ -3936,11 +4079,11 @@ main.privat section.privat-label ul.slider li .count {
   padding-top: 23px;
 }
 main.privat section.privat-label ul.slider li .text {
-  font: 38px "open_sansregular";
+  font: 38px "open_sanslight";
   position: absolute;
-  top: 0;
+  top: -5px;
   left: 410px;
-  line-height: 36px;
+  line-height: 44px;
   color: #fff;
 }
 main.privat section.privat-label ul.slider li .text:after {
@@ -3949,14 +4092,14 @@ main.privat section.privat-label ul.slider li .text:after {
   content: '';
   background: #fff;
   position: absolute;
-  top: 158px;
+  top: 178px;
   left: 0px;
 }
 main.privat section.privat-label ul.slider li .text p {
   font-style: italic;
   font-size: 20px;
   margin-top: 95px;
-  line-height: 20px;
+  line-height: 36px;
   color: #fff;
 }
 main.privat section.privat-label .bx-wrapper {
@@ -3968,10 +4111,10 @@ main.privat section.privat-label .bx-wrapper .bx-viewport {
   margin: 120px auto 0;
 }
 main.privat section.privat-label .bx-wrapper .bx-controls-direction a {
-  width: 23px;
-  height: 39px;
+  width: 67px;
+  height: 67px;
   top: 50%;
-  margin-top: -80px;
+  margin-top: -129px;
 }
 main.privat section.privat-label .bx-wrapper .bx-controls-direction a.bx-prev {
   background: url('../images/privat/arrow-left.png') no-repeat 0 0;
@@ -4038,7 +4181,7 @@ main.privat section.geography-sale {
 }
 main.privat section.geography-sale .text {
   font: 25px "espuma_prosemibold";
-  color: #272830;
+  color: #353535;
   text-align: center;
   font-weight: bold;
   display: inline-block;
@@ -4056,7 +4199,7 @@ main.privat section.tasks {
 }
 main.privat section.tasks .title {
   font: 26px "open_sanssemibold";
-  color: #282830;
+  color: #353535;
   padding-top: 0;
 }
 main.privat section.tasks ul {
@@ -4074,14 +4217,14 @@ main.privat section.tasks ul li:last-child {
 }
 main.privat section.tasks ul li p {
   font: 16px "open_sansregular";
-  color: #282830;
+  color: #353535;
 }
 main.privat section.cases {
   padding-top: 80px;
 }
 main.privat section.cases .title {
   font: 26px "open_sanssemibold";
-  color: #282830;
+  color: #353535;
   padding-top: 0;
 }
 main.privat section.cases ul {
@@ -4106,12 +4249,12 @@ main.privat section.cases ul li .desc {
   margin-left: 250px;
 }
 main.privat section.cases ul li .desc h3 {
-  color: #000;
+  color: #353535;
   font: 20px "open_sanssemibold";
   text-transform: uppercase;
 }
 main.privat section.cases ul li .desc p {
-  color: #000;
+  color: #353535;
   font: 16px "open_sansregular";
 }
 
@@ -4164,15 +4307,15 @@ section.blog aside.side-right .b-module input[type=submit] {
   display: block;
 }
 section.blog article {
-  padding: 50px 30px 50px 0px;
+  padding: 50px 90px 50px 40px;
   border-bottom: 1px solid #d4d4d6;
 }
 section.blog article h2 {
-  color: #16171c;
+  color: #353535;
   font: 26px "open_sanssemibold";
 }
 section.blog article h2 a {
-  color: #16171c;
+  color: #353535;
   font: 26px "open_sanssemibold";
 }
 section.blog article h2 a:hover {
@@ -4194,7 +4337,7 @@ section.blog article .media img {
 }
 section.blog article p {
   font: 16px "open_sansregular";
-  color: #16171c;
+  color: #353535;
 }
 
 section.product .product-header {
@@ -4331,7 +4474,7 @@ section.product .product-card .description .top {
 }
 section.product .product-card .description .top h2 {
   font: 26px "open_sanssemibold";
-  color: #16171c;
+  color: #353535;
   margin: 0;
 }
 section.product .product-card .description .top h2 span {
@@ -4345,7 +4488,7 @@ section.product .product-card .description .b-text {
   margin-bottom: 25px;
 }
 section.product .product-card .description .b-text p {
-  color: #16171c;
+  color: #353535;
   font: 14px "open_sansregular";
   margin-top: 10px;
 }
@@ -4389,9 +4532,9 @@ section.product .product-card .description a.btn.green {
 section.contacts .contacts-header {
   background: url('../images/contacts-header.png') no-repeat 50% 50%;
   background-size: cover;
-  min-height: 300px;
+  min-height: 107px;
   width: 100%;
-  display: table;
+  display: block;
 }
 section.contacts .geography-sale {
   border-top: none;
@@ -4417,7 +4560,7 @@ section.contacts .b-info ul li:nth-child(2) {
 }
 section.contacts .b-info ul li h2 {
   font: 26px "open_sanssemibold";
-  color: #16171c;
+  color: #353535;
   text-align: left;
   padding: 0;
   margin: 0 0 10px;
@@ -4425,13 +4568,14 @@ section.contacts .b-info ul li h2 {
 }
 section.contacts .b-info ul li p {
   margin-bottom: 0;
+  color: #353535;
 }
 section.contacts .b-info ul li span {
   display: block;
   position: relative;
   padding-left: 25px;
   font: 16px "open_sansregular";
-  color: #16171c;
+  color: #353535;
   margin-top: 5px;
 }
 section.contacts .b-info ul li span:after {
@@ -4468,7 +4612,7 @@ section.contacts .b-info ul li span.phone:after {
 }
 section.contacts .b-info h2 {
   font: 26px "open_sanssemibold";
-  color: #16171c;
+  color: #353535;
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -4535,12 +4679,12 @@ section.map .map-content {
   text-align: center;
 }
 section.map .map-content h2 {
-  color: #16171c;
+  color: #353535;
   font: 26px "open_sanssemibold";
   margin-top: 45px;
 }
 section.map .map-content h3 {
-  color: #16171c;
+  color: #353535;
   font: 16px "open_sansregular";
   margin-top: 25px;
 }
@@ -4772,39 +4916,26 @@ a.fancybox-close {
   text-decoration: underline;
 }
 
+@media screen and (max-width: 1500px) {
+  section.blog .inner {
+    padding: 0 0 0 20px;
+  }
+
+  .cataloge-filter .inner {
+    padding-left: 50px;
+  }
+}
 @media screen and (max-width: 1330px) {
   section.blog aside.side-right + .b-content {
     max-width: 1000px;
   }
 }
 @media screen and (max-width: 1280px) {
-  header .phone {
-    display: none;
-  }
-  header a.mobile-phone {
-    display: block;
-    background: url('../images/sprite.png') 0 -768px;
-    height: 47px;
-    width: 47px;
-    position: absolute;
-    top: 30px;
-    right: 250px;
-  }
-  header a.mobile-phone:hover {
-    cursor: pointer;
+  header menu {
+    margin-left: 180px;
   }
 }
 @media screen and (max-width: 1210px) {
-  header a.deal {
-    display: none;
-  }
-  header a.mobile-phone {
-    right: 50px;
-  }
-  header menu.active {
-    display: block;
-  }
-
   section.b2 .b-left {
     width: 70%;
   }
@@ -4832,57 +4963,11 @@ a.fancybox-close {
     min-width: 623px;
   }
 
-  a.mobile-menu {
-    background: url('../images/mobile-menu.png') 0 0 no-repeat;
-    width: 44px;
-    height: 34px;
-    position: absolute;
-    top: 36px;
-    left: 32px;
-  }
-  a.mobile-menu:hover {
-    cursor: pointer;
-  }
-
-  header a.logo {
-    top: 38px;
-    left: 111px;
-  }
-  header a.mobile-menu {
-    display: block;
-  }
   header a.mobile-phone {
     right: 250px;
   }
   header a.deal {
     display: block;
-  }
-  header menu {
-    width: 325px;
-    background: rgba(0, 0, 0, 0.85);
-    position: fixed;
-    height: 100%;
-    top: 107px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 0;
-    padding-top: 50px;
-    display: none;
-  }
-  header menu li {
-    display: block;
-    width: 100%;
-    position: relative;
-    left: auto !important;
-    top: auto !important;
-    text-align: left;
-    height: 20px;
-    width: 250px;
-    margin: 0 auto 55px;
-  }
-  header menu li:last-child {
-    margin-bottom: 0;
   }
 
   section.b1 {
@@ -5444,7 +5529,76 @@ a.fancybox-close {
     left: 475px;
   }
 }
+@media screen and (max-width: 1140px) {
+  header a.mobile-phone {
+    right: 50px;
+  }
+  header a.logo {
+    left: 111px;
+  }
+  header a.mobile-menu {
+    display: block;
+  }
+  header menu {
+    width: 325px;
+    background: rgba(0, 0, 0, 0.85);
+    position: fixed;
+    height: 100%;
+    top: 107px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding-top: 50px;
+    display: none;
+  }
+  header menu li {
+    display: block;
+    width: 100%;
+    position: relative;
+    left: auto !important;
+    top: auto !important;
+    text-align: left;
+    height: 20px;
+    width: 250px;
+    margin: 0 auto 55px;
+  }
+  header menu li:last-child {
+    margin-bottom: 0;
+  }
+  header menu.active {
+    display: block;
+  }
+  header a.mobile-menu {
+    background: url('../images/mobile-menu.png') 0 0 no-repeat;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 37px;
+    height: 29px;
+    position: absolute;
+    top: 40px;
+    left: 32px;
+  }
+  header a.mobile-menu:hover {
+    cursor: pointer;
+  }
+}
 @media screen and (max-width: 768px) {
+  header .phone {
+    display: none;
+  }
+  header a.mobile-phone {
+    display: block;
+    background: url("../images/sprite.png") 0 -768px;
+    height: 47px;
+    width: 47px;
+    position: absolute;
+    top: 30px;
+    right: 250px;
+  }
+
   section.b1 .title {
     font-size: 40px;
     line-height: 70px;
@@ -5481,7 +5635,7 @@ a.fancybox-close {
   section.b5 ul li {
     display: inline-block;
     text-align: left;
-    width: 100%;
+    width: 40%;
   }
   section.b5 ul li .title {
     text-align: left;
@@ -5490,7 +5644,7 @@ a.fancybox-close {
     text-align: left;
   }
   section.b5 ul li:first-child {
-    margin-right: 35px;
+    margin-right: -5px;
   }
 
   section.about .b-content-promo ul li {
@@ -5510,7 +5664,7 @@ a.fancybox-close {
     margin-right: 0;
   }
   section.cataloge .b-cataloge-content .b-product-list ul li:nth-child(4n+4) {
-    margin-right: 29px;
+    margin-right: 0;
   }
 
   section.product .product-card {
@@ -5540,7 +5694,7 @@ a.fancybox-close {
     padding: 0 20px;
   }
   section.blog aside.side-right .screen {
-    display: block;
+    display: none;
   }
   section.blog aside.side-right .rss {
     text-align: center;
@@ -5629,6 +5783,9 @@ a.fancybox-close {
 
   main.privat section.privat-label {
     background: url('../images/privat/bg-3_mobile.png') no-repeat 50% 50%;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
     background-size: cover;
     height: 1550px;
   }
@@ -5641,6 +5798,9 @@ a.fancybox-close {
   }
   main.privat section.privat-label ul.slider li .text {
     left: 310px;
+  }
+  main.privat section.privat-label ul.slider li .text p {
+    margin-top: 65px;
   }
   main.privat section.privat-label .bottom-text {
     top: 422px;
@@ -5743,19 +5903,24 @@ a.fancybox-close {
     width: 24px;
     height: 24px;
     background: url('../images/mobile-phone.png') no-repeat 50% 50%;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
     background-size: cover;
   }
   header a.mobile-menu {
     width: 22px;
     height: 17px;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
     background-size: cover;
     top: 19px;
     left: 10px;
   }
   header a.logo {
     width: 71px;
-    height: 24px;
-    background-size: cover;
+    height: 25px;
     top: 14px;
     left: 51px;
   }
@@ -6101,6 +6266,9 @@ a.fancybox-close {
   section.blog .screen {
     display: none !important;
   }
+  section.blog .blog-header {
+    height: 53px;
+  }
   section.blog aside.side-right {
     min-height: 100px;
     background: #ebebeb;
@@ -6152,7 +6320,9 @@ a.fancybox-close {
   }
 
   section.contacts .contacts-header {
-    padding-top: 120px;
+    padding-top: 0;
+    height: 53px;
+    min-height: 53px;
   }
   section.contacts .contacts-header .title {
     font-size: 19px;

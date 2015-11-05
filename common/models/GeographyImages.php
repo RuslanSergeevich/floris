@@ -37,10 +37,7 @@ class GeographyImages extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['geography_id', 'basename', 'ext'], 'required'],
-            [['geography_id'], 'integer'],
-            [['basename', 'ext'], 'string', 'max' => 255],
-            [['files'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, jpeg, gif', 'maxFiles' => 3],
+            [['files'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg, jpeg, gif', 'maxFiles' => 3],
         ];
     }
 
@@ -62,7 +59,7 @@ class GeographyImages extends \yii\db\ActiveRecord
      */
     public function upload($id)
     {
-        if ($this->files) {
+        if ($this->validate()) {
             foreach ($this->files as $file) {
                 $file->saveAs('userfiles/geography/' . $file->baseName . '_' . time() . '.' . $file->extension);
                 $model = new GeographyImages();

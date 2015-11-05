@@ -25,24 +25,30 @@ $this->registerMetaTag([
     <div class="b-content">
         <div class="inner">
             <?= $model->text?>
+            <?php if(isset($model->boxes['ingredients'])):?>
             <div class="b-local">
                 <div class="title">
                     <?= $model->boxes['ingredients']['title']?>
                 </div>
                     <?= $model->boxes['ingredients']['text']?>
             </div>
+            <?php endif;?>
+            <?php if(isset($model->boxes['recipes'])):?>
             <div class="b-local">
                 <div class="title">
                     <?= $model->boxes['recipes']['title']?>
                 </div>
                     <?= $model->boxes['recipes']['text']?>
             </div>
+            <?php endif;?>
+            <?php if(isset($model->boxes['production'])):?>
             <div class="b-local">
                 <div class="title">
                     <?= $model->boxes['production']['title']?>
                 </div>
                     <?= $model->boxes['production']['text']?>
             </div>
+            <?php endif;?>
         </div>
     </div>
     <div class="b-content-promo screen">
@@ -101,12 +107,14 @@ $this->registerMetaTag([
     </div>
     <div class="b-content clients">
         <div class="inner">
+            <?php if(isset($model->boxes['our_clients'])):?>
             <div class="b-local">
                 <div class="title">
                     <?= $model->boxes['our_clients']['title']?>
                 </div>
                     <?= $model->boxes['our_clients']['text']?>
             </div>
+            <?php endif;?>
             <div class="logos">
                 <ul>
                     <li>
@@ -137,14 +145,16 @@ $this->registerMetaTag([
             </div>
         </div>
     </div>
+    <?php if(isset($model->boxes['geography_points'])):?>
     <div class="geography-sale">
         <div class="inner center">
             <div class="text">
                 <?= $model->boxes['geography_points']['title']?>
             </div>
-            <?= Html::a('НАЙТИ', Url::to($model->boxes['geography_points']['link']),['class' => 'btn border'])?>
+            <?= Html::a('НАЙТИ', Url::to($model->boxes['geography_points']['link']),['class' => 'btn green'])?>
         </div>
     </div>
+    <?php endif;?>
     <div class="b-content employees">
         <div class="inner">
             <div class="b-local">
@@ -158,13 +168,15 @@ $this->registerMetaTag([
                     Html::tag('div', Html::img('@workers' .'/'. $item['image']), [ 'class' => 'img']) . Html::tag('p',$item['name'] . Html::tag('span', $item['appointment']))
                 );
             }]) ?>
+            <?php if(isset($model->boxes['vacancy'])):?>
             <div class="b-local vacations">
                 <div class="title fleft">
                     <?= $model->boxes['vacancy']['title']?>
                 </div>
                     <?= $model->boxes['vacancy']['text']?>
-                <?= Html::a('ВАКАНСИИ', Url::to($model->boxes['geography_points']['link']),['class' => 'btn border'])?>
+                <?= Html::a('ВАКАНСИИ', Url::to($model->boxes['geography_points']['link']),['class' => 'btn green'])?>
             </div>
+            <?php endif;?>
         </div>
     </div>
 </section>

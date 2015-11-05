@@ -1,3 +1,19 @@
+<?php
+
+use yii\helpers\Html;
+
+/* @var $this yii\web\View */
+/* @var $model common\models\Pages */
+$this->title = Html::encode($model->title);
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => Html::encode($model->description),
+]);
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => Html::encode($model->keywords)
+]);
+?>
 <main class="privat">
     <section class="top b-top-section top-section">
         <div class="title">
@@ -231,7 +247,7 @@
             <div class="text">
                 УЗНАТЬ БОЛЬШЕ
             </div>
-            <a class="btn border" href="#">ПОДРОБНЕЕ</a>
+            <a class="btn green" href="#">ПОДРОБНЕЕ</a>
         </div>
     </section>
     <section class="cases">
