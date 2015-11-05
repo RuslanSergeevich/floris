@@ -30,7 +30,7 @@ AppAsset::register($this);?>
 <div id="wrapper">
     <a class="go-top"></a>
     <header role="banner">
-        <a class="mobile-menu mobile fancybox" href="#backcall"></a>
+        <a class="mobile-menu mobile" href="#backcall"></a>
         <?= Html::a('','#backcall', ['class' => 'fancybox mobile-phone mobile'])?>
         <?= Html::a('', Url::home(),['class' => 'logo'])?>
         <?= MenuWidget::widget([
