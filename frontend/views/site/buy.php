@@ -29,7 +29,7 @@ $this->registerMetaTag([
             </form>
         </div>
         <div class="b-map">
-            <script src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=HFA-Yxd_lNu8zY8JwFTv3r1Aj-iAaFM0&width=100%&height=100%&lang=ru_RU&sourceType=constructor" type="text/javascript"></script>
+            <div id="myMap" style="width: 100%; height: 100%"></div>
         </div>
         <div class="gallerey-magazine">
             <div class="inner">
@@ -108,3 +108,4 @@ $this->registerMetaTag([
         </div>
     </div>
 </section>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>

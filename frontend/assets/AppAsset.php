@@ -17,10 +17,9 @@ class AppAsset extends AssetBundle
         'js/lib/jquery-ui.js',
         'js/lib/jquery.fancybox.js',
         'js/lib/selectbox.js',
-        'js/lib/device.js',
         'js/lib/bxslider.js',
         'js/script.js',
-        'js/jquery.kladr.min.js',
+        //'js/jquery.kladr.min.js',
         'js/app_bundle.js',
     ];
     public $depends = [
