@@ -6,8 +6,6 @@ use Yii;
 use yii\filters\AccessControl;
 use backend\controllers\SiteController;
 use common\models\Blog;
-use yii\data\ActiveDataProvider;
-use yii\data\Pagination;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 

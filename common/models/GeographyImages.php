@@ -72,6 +72,14 @@ class GeographyImages extends \yii\db\ActiveRecord
     }
 
     /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGeography()
+    {
+        return $this->hasOne(Geography::className(), ['id' => 'geography_id']);
+    }
+
+    /**
      * @param $id
      * @return static[]
      */

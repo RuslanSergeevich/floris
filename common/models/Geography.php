@@ -103,4 +103,20 @@ class Geography extends \yii\db\ActiveRecord
     {
         return self::find()->asArray()->all();
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGeographyImages()
+    {
+        return $this->hasMany(GeographyImages::className(), ['geography_id' => 'id']);
+    }
+
+    /**
+     * @return array|\yii\db\ActiveRecord[]
+     */
+    public static function getDataJSON()
+    {
+        return self::find()->select(['id','country','city','address','mode','shop_name','phone'])->with('geographyImages')->asArray()->all();
+    }
 }

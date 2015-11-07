@@ -68,7 +68,7 @@ class DefaultController extends SiteController
      */
     public function actionDelete($id)
     {
-        GeographyImages::deleteAll(['geography' => $id]);
+        GeographyImages::deleteAll(['geography_id' => $id]);
         Geography::findOne(['id' => $id])->delete();
         return $this->redirect(Url::previous());
     }

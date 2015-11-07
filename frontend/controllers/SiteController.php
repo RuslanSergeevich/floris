@@ -10,6 +10,7 @@ use yii\web\Controller;
 use common\models\Pages;
 use yii\web\NotFoundHttpException;
 use yii\web\UploadedFile;
+use yii\filters\VerbFilter;
 
 /**
  * Site controller
@@ -18,6 +19,18 @@ class SiteController extends Controller
 {
 
     const ROOT_PATH = 'index';
+
+    public function behaviors()
+    {
+        return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'geocode-tool' => ['post'],
+                ],
+            ],
+        ];
+    }
 
     /**
      * @inheritdoc
@@ -28,6 +41,9 @@ class SiteController extends Controller
             'error' => [
                 'class' => 'yii\web\ErrorAction',
             ],
+            'geocode-tool' => [
+                'class' => 'frontend\components\YandexMapApi',
+            ]
         ];
     }
 
@@ -76,6 +92,9 @@ class SiteController extends Controller
         return $this->redirect(Yii::$app->request->referrer);
     }
 
+    /**
+     * @return \yii\web\Response
+     */
     public function actionShopadd()
     {
         $model = new Geography();

@@ -29,7 +29,7 @@ $this->registerMetaTag([
             </form>
         </div>
         <div class="b-map">
-            <div id="myMap" style="width: 100%; height: 100%"></div>
+            <div id="myMap"></div>
         </div>
         <div class="gallerey-magazine">
             <div class="inner">
@@ -38,36 +38,6 @@ $this->registerMetaTag([
                 </h2>
             </div>
             <ul>
-                <li>
-                    <a href="#"><img src="/images/map/map-magazine.png" alt=""></a><a href="#"><img src="/images/map/map-magazine.png" alt=""></a>
-                </li>
-                <li>
-                    <a href="#"><img src="/images/map/map-magazine.png" alt=""></a><a href="#"><img src="/images/map/map-magazine.png" alt=""></a>
-                </li>
-                <li>
-                    <a href="#"><img src="/images/map/map-magazine.png" alt=""></a><a href="#"><img src="/images/map/map-magazine.png" alt=""></a>
-                </li>
-                <li>
-                    <a href="#"><img src="/images/map/map-magazine.png" alt=""></a><a href="#"><img src="/images/map/map-magazine.png" alt=""></a>
-                </li>
-                <li>
-                    <a href="#"><img src="/images/map/map-magazine.png" alt=""></a><a href="#"><img src="/images/map/map-magazine.png" alt=""></a>
-                </li>
-                <li>
-                    <a href="#"><img src="/images/map/map-magazine.png" alt=""></a><a href="#"><img src="/images/map/map-magazine.png" alt=""></a>
-                </li>
-                <li>
-                    <a href="#"><img src="/images/map/map-magazine.png" alt=""></a><a href="#"><img src="/images/map/map-magazine.png" alt=""></a>
-                </li>
-                <li>
-                    <a href="#"><img src="/images/map/map-magazine.png" alt=""></a><a href="#"><img src="/images/map/map-magazine.png" alt=""></a>
-                </li>
-                <li>
-                    <a href="#"><img src="/images/map/map-magazine.png" alt=""></a><a href="#"><img src="/images/map/map-magazine.png" alt=""></a>
-                </li>
-                <li>
-                    <a href="#"><img src="/images/map/map-magazine.png" alt=""></a><a href="#"><img src="/images/map/map-magazine.png" alt=""></a>
-                </li>
                 <li>
                     <a href="#"><img src="/images/map/map-magazine.png" alt=""></a><a href="#"><img src="/images/map/map-magazine.png" alt=""></a>
                 </li>
@@ -108,4 +78,5 @@ $this->registerMetaTag([
         </div>
     </div>
 </section>
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<?php $this->registerJsFile('https://api-maps.yandex.ru/2.1/?lang=ru_RU');?>
+<?php $this->registerJsFile('js/yandex_map.js',['depends'=>'yii\web\JqueryAsset']);?>

@@ -33,6 +33,7 @@ return [
                 'send' => 'site/send',
                 'back-call' => 'site/backcall',
                 'shop-add' => 'site/shopadd',
+                'api/geocode-tool' => 'site/geocode-tool',
                 '<alias[\wd-]+>' => 'site/page',
                 'blog/<alias[\wd-]+>' => 'blog/view',
                 'product/<alias[\wd-]+>' => 'product/view',
