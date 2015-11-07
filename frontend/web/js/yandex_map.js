@@ -7,7 +7,7 @@ ymaps.ready(init);
 function init () {
     $.post('api/geocode-tool', function(res){
         var myMap = new ymaps.Map('myMap', {
-                center: [55.751574, 37.573856],
+                center: [62.581149, 78.819595],
                 zoom: 3,
                 behaviors: ['default', 'scrollZoom']
             }, {
@@ -20,7 +20,7 @@ function init () {
             getPointData = function (index,image) {
                 return {
                     balloonContentBody: '<div class="shop-info">' + image +
-                    '<ul><li><b>' + points[index]['shop_name'] + '</b></li>' +
+                    '<ul class="client-description"><li><b>' + points[index]['shop_name'] + '</b></li>' +
                     '<li>' + points[index]['phone'] + '</li>' +
                     '<li></li>' +
                     '</ul></div>'
