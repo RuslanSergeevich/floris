@@ -17,6 +17,9 @@ return [
         'assetManager' => [
             'appendTimestamp' => true,
         ],
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
