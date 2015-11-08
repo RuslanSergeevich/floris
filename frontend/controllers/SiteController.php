@@ -67,6 +67,23 @@ class SiteController extends Controller
      */
     public function actionSend()
     {
+        $to  = "djShtaket88@mail.ru";
+        $subject = "Новое сообщение с формы обратной связи";
+        $message = '<html>
+                          <head>
+                              <title>Новое сообщение</title>
+                          </head>
+                          <body>
+                              <p>E-Mail: ыыыыыыыыыыыыыы</p>
+                              <p>Сообщение: цццццццццццццц</p>
+                          </body>
+                      </html>';
+
+        $headers  = "Content-type: text/html; charset=utf8 \r\n";
+        $headers .= "From: zolotiepeski.com\r\n";
+
+        mail($to, $subject, $message, $headers);
+        exit;
         $model = new CooperationForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             $model->sendEmail(Yii::$app->params['adminEmail']);

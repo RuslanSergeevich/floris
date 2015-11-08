@@ -40,7 +40,7 @@ class CooperationForm extends Model
             ->setTo($email)
             ->setFrom([$this->email => $this->name])
             ->setSubject($this->subject)
-            ->setHtmlBody($this->phone . '<br />' .$this->body)
+            ->setTextBody($this->phone . $this->body)
             ->send();
     }
 }

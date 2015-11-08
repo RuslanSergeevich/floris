@@ -28,6 +28,8 @@ function init () {
             },
             geoObjects = [];
 
+        myMap.behaviors.disable('scrollZoom');
+
         for(var i = 0, len = points.length; i < len; i++){
             var image = (typeof points[i]['images'][0] !== "undefined")
                 ? '<div class="image-shop"><img src="/userfiles/geography/' + points[i]['images'][0]['basename'] + '.' + points[i]['images'][0]['ext'] + '"></div>'
