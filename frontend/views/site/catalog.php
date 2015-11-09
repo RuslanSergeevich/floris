@@ -8,6 +8,7 @@ use common\models\Composition;
 use common\models\Packing;
 use common\models\CatalogItems;
 use common\models\Catalog;
+use common\models\Weight;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Pages */
@@ -50,45 +51,11 @@ $this->registerMetaTag([
                 'css_class' => 'pack',
                 'entity_db' => 'data-packing_id'
             ])?>
-            <div class="weight fleft">
-                <div class="slider filter-weight">
-                    <select>
-                        <option disabled selected>
-                            Масса упаковки нетто
-                        </option>
-                        <option value="30">
-                            30
-                        </option>
-                        <option value="40">
-                            40
-                        </option>
-                        <option value="45">
-                            45
-                        </option>
-                        <option value="60">
-                            60
-                        </option>
-                        <option value="75">
-                            75
-                        </option>
-                        <option value="80">
-                            80
-                        </option>
-                        <option value="100">
-                            100
-                        </option>
-                        <option value="160">
-                            160
-                        </option>
-                        <option value="190">
-                            190
-                        </option>
-                        <option value="350">
-                            350
-                        </option>
-                    </select>
-                </div>
-            </div>
+            <?= DDWidget::widget([
+                'model' => Weight::getList(),
+                'css_class' => 'slider filter-weight',
+                'entity_db' => 'data-weight_id'
+            ])?>
         </div>
     </div>
     <div class="b-cataloge-content">

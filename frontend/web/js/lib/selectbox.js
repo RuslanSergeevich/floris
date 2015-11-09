@@ -390,6 +390,7 @@
            */
           html += $op.attr('data-composition_id') ?  'data-composition_id="' + $op.attr('data-composition_id') + '"' : '';
           html += $op.attr('data-packing_id')     ?  'data-packing_id="' + $op.attr('data-packing_id') + '"'         : '';
+          html += $op.attr('data-weight_id')     ?  'data-weight_id="' + $op.attr('data-weight_id') + '"'         : '';
         }
         html += '>' + $("<span></span>").text( _trim($op.text(), data.trim) ).html() + '</' + itemTag + '>';
         j++;
@@ -729,7 +730,8 @@
         isDisabled = $item.hasClass("disabled");
 
     var dc_id = $item.attr('data-composition_id'),
-        dp_id = $item.attr('data-packing_id');
+        dp_id = $item.attr('data-packing_id'),
+        fw_id = $item.attr('data-weight_id');
 
     /*
      |-------------------------------------------------------------------------------------------
@@ -738,6 +740,7 @@
      */
     $('.comp .selecter-selected').attr('data-composition_id', dc_id);
     $('.pack .selecter-selected').attr('data-packing_id', dp_id);
+    $('.filter-weight .selecter-selected').attr('data-weight_id', fw_id);
 
 
     // Check for disabled options

@@ -42,7 +42,7 @@ function sortable()
         'type_id'        : parseInt($('.cataloge-menu .active a').attr('data-type_id')) || 0,
         'composition_id' : parseInt($('.comp .selecter-selected').attr('data-composition_id')),
         'packing_id'     : parseInt($('.pack .selecter-selected').attr('data-packing_id')),
-        'weight_id'      : parseInt($('.cataloge-filter .weight li.active').attr('data-weight_id'))
+        'weight_id'      : parseInt($('.filter-weight .selecter-selected').attr('data-weight_id'))
         },
         prop,
         result = true,
