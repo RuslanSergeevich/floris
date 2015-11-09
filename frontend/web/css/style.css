@@ -3287,8 +3287,8 @@ section {
 }
 section .title {
   text-align: center;
-  font: 30px "espuma_proregular" !important;
-  line-height: 36px !important;
+  font: 30px "espuma_proregular";
+  line-height: 36px;
   vertical-align: middle;
   display: block;
   height: auto;
@@ -5586,19 +5586,6 @@ a.fancybox-close {
   }
 }
 @media screen and (max-width: 768px) {
-  header .phone {
-    display: none;
-  }
-  header a.mobile-phone {
-    display: block;
-    background: url("../images/sprite.png") 0 -768px;
-    height: 47px;
-    width: 47px;
-    position: absolute;
-    top: 30px;
-    right: 250px;
-  }
-
   section.b1 .title {
     font-size: 40px;
     line-height: 70px;
@@ -5852,6 +5839,19 @@ a.fancybox-close {
   }
 }
 @media screen and (max-width: 568px) {
+  header .phone {
+    display: none;
+  }
+  header a.mobile-phone {
+    display: block;
+    background: url("../images/sprite.png") 0 -768px;
+    height: 47px;
+    width: 47px;
+    position: absolute;
+    top: 30px;
+    right: 250px;
+  }
+
   .selecter {
     width: 270px;
   }
@@ -5925,6 +5925,10 @@ a.fancybox-close {
     left: 51px;
   }
 
+  section.b1 {
+    min-height: 300px;
+    height: 540px;
+  }
   section.b1 .title {
     font-size: 19px;
     line-height: 35px;
@@ -6032,6 +6036,7 @@ a.fancybox-close {
     border-bottom: 1px solid #fff;
     text-align: center;
     margin: 0 auto !important;
+    width: 100%;
   }
   section.b5 ul li .title {
     font-size: 13px;
