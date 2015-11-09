@@ -51,20 +51,42 @@ $this->registerMetaTag([
                 'entity_db' => 'data-packing_id'
             ])?>
             <div class="weight fleft">
-                <div class="spinner">
-                    <p>
-                        Масса упаковки нетто
-                    </p>
-                    <div class="slider filter-weight">
-                        <?= Html::ul(\common\models\Weight::find()->orderBy('pos ASC')->all(), ['item' => function($item, $index) {
-                            return Html::tag(
-                                'li',
-                                $item['name'],
-                                ['class' => $index == 0 ? 'active' : '',
-                                'data-weight_id' => $item['name'] == 0 ? 0 : $item['id']]
-                            );
-                        }]) ?>
-                    </div>
+                <div class="slider filter-weight">
+                    <select>
+                        <option disabled selected>
+                            Масса упаковки нетто
+                        </option>
+                        <option value="30">
+                            30
+                        </option>
+                        <option value="40">
+                            40
+                        </option>
+                        <option value="45">
+                            45
+                        </option>
+                        <option value="60">
+                            60
+                        </option>
+                        <option value="75">
+                            75
+                        </option>
+                        <option value="80">
+                            80
+                        </option>
+                        <option value="100">
+                            100
+                        </option>
+                        <option value="160">
+                            160
+                        </option>
+                        <option value="190">
+                            190
+                        </option>
+                        <option value="350">
+                            350
+                        </option>
+                    </select>
                 </div>
             </div>
         </div>

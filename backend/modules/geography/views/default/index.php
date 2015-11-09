@@ -31,10 +31,38 @@ $this->title = 'География точек продаж';
                     'summary' => false,
                     'tableOptions' => ['class' => 'table table-hover'],
                     'columns' => [
-                        'country',
-                        'city',
-                        'address',
-                        'shop_name',
+                        [
+                            'attribute' => 'country',
+                            'header' => 'Название',
+                            'value' => function ($model) {
+                                return $model->publish ? $model->country : Html::tag('s', $model->country);
+                            },
+                            'format' => 'html'
+                        ],
+                        [
+                            'attribute' => 'city',
+                            'header' => 'Название',
+                            'value' => function ($model) {
+                                return $model->publish ? $model->city : Html::tag('s', $model->city);
+                            },
+                            'format' => 'html'
+                        ],
+                        [
+                            'attribute' => 'address',
+                            'header' => 'Название',
+                            'value' => function ($model) {
+                                return $model->publish ? $model->address : Html::tag('s', $model->address);
+                            },
+                            'format' => 'html'
+                        ],
+                        [
+                            'attribute' => 'shop_name',
+                            'header' => 'Название',
+                            'value' => function ($model) {
+                                return $model->publish ? $model->shop_name : Html::tag('s', $model->shop_name);
+                            },
+                            'format' => 'html'
+                        ],
                         [
                             'attribute' => 'created_at',
                             'header' => 'Создана',

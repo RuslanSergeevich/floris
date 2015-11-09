@@ -76,4 +76,11 @@ use yii\widgets\ActiveForm;
             <?php ActiveForm::end(); ?>
         </div>
     </div>
+    <div id="video">
+        <video controls>
+            <source src="/video/tea.mp4" type="video/mp4; codecs="avc1.42E01E, mp4a.40.2"">
+            <source src="/video/tea.webm" type="video/webm">
+            <source src="/video/tea.ogv" type="video/ogg">
+        </video>
+    </div>
 </div>

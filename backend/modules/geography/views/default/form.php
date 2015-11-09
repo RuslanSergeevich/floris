@@ -29,6 +29,7 @@ $this->title = 'Добавление/Редактирование географ
                             <?= $form->field($model, 'fio') ?>
                             <?= $form->field($model, 'phone') ?>
                             <?= $form->field($model, 'email') ?>
+                            <?= $form->field($model, 'publish')->checkbox(['class' => 'minimal']) ?>
                             <?php if ($images = \common\models\GeographyImages::getImages($model->id)): ?>
                                 <hr />
                                 <?php foreach ($images as $img): ?>
@@ -49,4 +50,7 @@ $this->title = 'Добавление/Редактирование географ
         </div>
     </div>
 </div>
-<?php $this->registerJs('$(".delete-img").click(function(e){e.preventDefault(); var _this = $(this); $.post(_this.attr("href"), function(){_this.closest("div.box-i").fadeOut();});});');?>
+<?php $this->registerJs('$(".delete-img").click(function(e){e.preventDefault(); var _this = $(this); $.post(_this.attr("href"), function(){_this.closest("div.box-i").fadeOut();});});$(\'input[type="checkbox"].minimal, input[type="radio"].minimal\').iCheck({
+        checkboxClass: "icheckbox_minimal-blue",
+        radioClass: "iradio_minimal-blue"
+    });');?>

@@ -4,7 +4,6 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use backend\components\SidebarWidget;
 use common\models\Orders;
-use common\models\Reviews;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -41,35 +40,6 @@ AppAsset::register($this);
                 </a>
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                        <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle">
-                                Сегодня <?= Yii::$app->formatter->asDate(date('Y-m-d'))?>
-                            </a>
-                        </li>
-                        <li class="dropdown notifications-menu">
-                            <a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="true">
-                                Отзывы
-                                <span class="label label-warning"><?= Reviews::getNewReviews()?></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">Новые отзывы</li>
-                                <li>
-                                    <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
-                                        <?php if($reviews = Reviews::getNewReviewsList()){
-                                            foreach($reviews as $review){?>
-                                                <li>
-                                                    <a href="<?= Url::toRoute('/reviews/update/'.$review['id'])?>">
-                                                        <i class="fa fa-user text-red"></i> Отзывы от: «<?= $review['name']?>»
-                                                    </a>
-                                                </li>
-                                            <?php }
-                                        }?>
-                                    </ul>
-                                </li>
-                                <li class="footer"><a href="<?= Url::toRoute('/reviews')?>">Смотреть все</a></li>
-                            </ul>
-                        </li>
                         <li class="dropdown notifications-menu">
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="true">
                                 Заявки

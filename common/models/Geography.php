@@ -17,6 +17,7 @@ use yii\behaviors\TimestampBehavior;
  * @property string $fio
  * @property string $phone
  * @property string $email
+ * @property integer $publish
  * @property integer $created_at
  * @property integer $updated_at
  */
@@ -58,7 +59,7 @@ class Geography extends \yii\db\ActiveRecord
         return [
             [['country', 'city', 'address', 'mode', 'shop_name', 'fio', 'phone', 'email'], 'required'],
             [['country', 'city', 'address', 'mode', 'shop_name', 'fio'], 'string'],
-            [['created_at', 'updated_at'], 'integer'],
+            [['created_at', 'publish', 'updated_at'], 'integer'],
             [['phone', 'email'], 'string', 'max' => 255],
         ];
     }
@@ -91,6 +92,7 @@ class Geography extends \yii\db\ActiveRecord
             'fio' => 'ФИО',
             'phone' => 'Номер телефона',
             'email' => 'Электронный адрес',
+            'publish' => 'Публикация',
             'created_at' => 'Создан',
             'updated_at' => 'Обновлён',
         ];
@@ -117,6 +119,10 @@ class Geography extends \yii\db\ActiveRecord
      */
     public static function getDataJSON()
     {
-        return self::find()->select(['id','country','city','address','mode','shop_name','phone'])->with('geographyImages')->asArray()->all();
+        return self::find()->select(['id','country','city','address','mode','shop_name','phone'])
+                           ->where(['publish' => self::PUBLISH])
+                           ->with('geographyImages')
+                           ->asArray()
+                           ->all();
     }
 }

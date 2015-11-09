@@ -31,11 +31,11 @@ AppAsset::register($this);?>
     <a class="go-top"></a>
     <header role="banner">
         <a class="mobile-menu mobile" href="#backcall"></a>
-        <?= Html::a('','#backcall', ['class' => 'fancybox mobile-phone mobile'])?>
+        <?= Html::a('','#backcall', ['class' => 'mobile-phone mobile fancybox'])?>
         <?= Html::a('', Url::home(),['class' => 'logo'])?>
         <?= MenuWidget::widget([
             'attach_icon' => true,
-            'class_name' => 'screen'
+            'class_name' => ''
         ])?>
         <div class="phone">
             0 800 1111-00-00<?= Html::a('Перезвоните мне', '#backcall',['class' => 'fancybox'])?>

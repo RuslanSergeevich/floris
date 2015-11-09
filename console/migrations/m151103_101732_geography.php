@@ -22,6 +22,7 @@ class m151103_101732_geography extends Migration
             'phone' => $this->string()->notNull(),
             'email' => $this->string()->notNull(),
             'created_at' => $this->integer()->notNull(),
+            'publish' => $this->integer()->defaultValue(0),
             'updated_at' => $this->integer()->notNull()
         ], $tableOptions);
 

@@ -3,11 +3,11 @@ $(document).ready(function(){
 
 	$('a.fancybox').fancybox({
 		helpers: {
-        overlay: {
-         locked: false
-      }
-    }
-  });
+			overlay: {
+				locked: false
+			}
+		}
+	});
 
 	$('.phone').bind("change keyup input click", function() {
 		if (this.value.match(/[^0-9]/g)) {
@@ -40,14 +40,6 @@ $(document).ready(function(){
 		pager: false,
 		nextText: '',
 		prevText: ''
-	});
-
-	$('.filter-weight').slider({
-		min: 0,
-		max: 525,
-		step: 175,
-		value: 175,
-		range: 'min'
 	});
 
 	$(window).on('scroll', function(){
