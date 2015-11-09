@@ -37,7 +37,7 @@ AppAsset::register($this);?>
             'attach_icon' => true,
             'class_name' => 'screen'
         ])?>
-        <div class="phone screen">
+        <div class="phone">
             0 800 1111-00-00<?= Html::a('Перезвоните мне', '#backcall',['class' => 'fancybox'])?>
         </div>
         <?= Html::a('Сотрудничество', '#sotrudnichestvo',['class' => 'deal btn fancybox'])?>
