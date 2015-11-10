@@ -42,6 +42,14 @@ $this->title = 'Упаковки для чая';
                             'format' => 'html'
                         ],
                         [
+                            'attribute' => 'image',
+                            'header' => 'Изображение',
+                            'value' => function ($model) {
+                                return $model->image ? Html::img(Packing::PATH . $model->image, ['width' => 35]) : '';
+                            },
+                            'format' => 'html'
+                        ],
+                        [
                             'attribute' => 'publish',
                             'header' => 'Публикация',
                             'format' => 'html',

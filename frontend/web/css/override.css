@@ -55,3 +55,9 @@ footer menu li a {
     width: 150px;
     height: auto;
 }
+
+.privat .components .inner .text > p:first-child{
+    font: 34px/36px "open_sansregular";
+    left: 575px;
+    top: 131px;
+}

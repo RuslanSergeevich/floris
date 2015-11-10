@@ -21,14 +21,15 @@ $this->registerMetaTag([
     <div class="inner">
         <aside class="side-right">
             <div class="b-module">
-                <img src="/images/banner.jpg" alt="">
+                <?= Html::img('@boxes/' . $model->boxes['banner']['image'])?>
             </div>
             <div class="b-module rss">
                 <h3>
-                    Подписывайтесь на наш блог
+                    <?= $model->boxes['banner']['title']?>
                 </h3>
                 <form>
-                    <input type="text" placeholder="Введите ваш e-mail"><input class="btn border" type="submit" value="ПОДПИСАТЬСЯ">
+                    <input type="text" placeholder="Введите ваш e-mail">
+                    <input class="btn border" type="submit" value="ПОДПИСАТЬСЯ">
                 </form>
             </div>
             <div class="b-module rss screen">

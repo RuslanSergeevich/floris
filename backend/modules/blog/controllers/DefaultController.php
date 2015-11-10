@@ -11,9 +11,6 @@ use yii\filters\VerbFilter;
 
 class DefaultController extends SiteController
 {
-
-    const PAGE_SIZE = 25;
-
     public function behaviors()
     {
         return [

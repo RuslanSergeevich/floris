@@ -14,6 +14,8 @@ class m151020_145128_packing extends Migration
         $this->createTable('{{%packing}}', [
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
+            'title_main' => $this->string()->notNull(),
+            'text' => $this->text()->notNull(),
             'declination' => $this->string()->notNull(),
             'publish' => $this->integer(1)->defaultValue(1),
             'pos' => $this->integer()->defaultValue(0),

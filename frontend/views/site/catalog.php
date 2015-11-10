@@ -53,7 +53,7 @@ $this->registerMetaTag([
             ])?>
             <?= DDWidget::widget([
                 'model' => Weight::getList(),
-                'css_class' => 'slider filter-weight',
+                'css_class' => 'slider filter-weight weight',
                 'entity_db' => 'data-weight_id'
             ])?>
         </div>

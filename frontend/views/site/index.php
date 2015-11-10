@@ -25,196 +25,33 @@ $this->registerMetaTag([
     </section>
     <section class="b2">
         <div class="b-list-product">
-            <ul>
-                <li class="active" data-product="product-1">
-                    <img src="/images/choise-product.png" alt="">
-                </li>
-                <li data-product="product-2">
-                    <img src="/images/choise-product.png" alt="">
-                </li>
-                <li data-product="product-3">
-                    <img src="/images/choise-product.png" alt="">
-                </li>
-                <li data-product="product-4">
-                    <img src="/images/choise-product.png" alt="">
-                </li>
-                <li data-product="product-5">
-                    <img src="/images/choise-product.png" alt="">
-                </li>
-                <li data-product="product-6">
-                    <img src="/images/choise-product.png" alt="">
-                </li>
-                <li data-product="product-7">
-                    <img src="/images/choise-product.png" alt="">
-                </li>
-                <li data-product="product-8">
-                    <img src="/images/choise-product.png" alt="">
-                </li>
-                <li data-product="product-9">
-                    <img src="/images/choise-product.png" alt="">
-                </li>
-                <li data-product="product-10">
-                    <img src="/images/choise-product.png" alt="">
-                </li>
-                <li data-product="product-11">
-                    <img src="/images/choise-product.png" alt="">
-                </li>
-            </ul>
+            <?= Html::ul(\common\models\Packing::getListMain(), ['item' => function($item, $index) {
+                return Html::tag(
+                    'li',
+                    Html::img('@packing/' . $item['image']),
+                    [
+                        'data-product' => 'product-' . $index,
+                        'class'        => $index == 0 ? 'active' : ''
+                    ]
+                );
+            }]) ?>
         </div>
-        <div class="choise-product b-left product-1 active">
-            <div class="title">
-                ВЫБИРАЙТЕ<br>НАТУРАЛЬНУЮ<br>ПРОДУКЦИЮ 1
-            </div>
-            <div class="b-text">
-                <div class="sub-title">
-                    Чай в фильтр-пакетах
+        <?php if ($models = \common\models\Packing::getListMain()): ?>
+            <?php foreach ($models as $key => $value): ?>
+                <div class="choise-product b-left product-<?= $key?> <?= $key == 0 ? 'active' : ''?>">
+                    <div class="title">
+                        <?= $value['title_main']?>
+                    </div>
+                    <div class="b-text">
+                        <div class="sub-title">
+                            <?= $value['declination']?>
+                        </div>
+                        <?= $value['text']?>
+                        <?= Html::a('В КАТАЛОГ', Url::to('cataloge'),['class' => 'btn'])?>
+                    </div>
                 </div>
-                <p>
-                    Аналог классического чая Floris в измельченном формате и герметично упакованный в фильрт-пакет. Чай заваривается за пять минут не теряя при этом неповторимый вкус чаев Floris.
-                </p>
-                <a class="btn" href="#">В КАТАЛОГ</a>
-            </div>
-        </div>
-        <div class="choise-product b-left product-2">
-            <div class="title">
-                ВЫБИРАЙТЕ<br>НАТУРАЛЬНУЮ<br>ПРОДУКЦИЮ 2
-            </div>
-            <div class="b-text">
-                <div class="sub-title">
-                    Чай в фильтр-пакетах
-                </div>
-                <p>
-                    Аналог классического чая Floris в измельченном формате и герметично упакованный в фильрт-пакет. Чай заваривается за пять минут не теряя при этом неповторимый вкус чаев Floris.
-                </p>
-                <a class="btn" href="#">В КАТАЛОГ</a>
-            </div>
-        </div>
-        <div class="choise-product b-left product-3">
-            <div class="title">
-                ВЫБИРАЙТЕ<br>НАТУРАЛЬНУЮ<br>ПРОДУКЦИЮ 3
-            </div>
-            <div class="b-text">
-                <div class="sub-title">
-                    Чай в фильтр-пакетах
-                </div>
-                <p>
-                    Аналог классического чая Floris в измельченном формате и герметично упакованный в фильрт-пакет. Чай заваривается за пять минут не теряя при этом неповторимый вкус чаев Floris.
-                </p>
-                <a class="btn" href="#">В КАТАЛОГ</a>
-            </div>
-        </div>
-        <div class="choise-product b-left product-4">
-            <div class="title">
-                ВЫБИРАЙТЕ<br>НАТУРАЛЬНУЮ<br>ПРОДУКЦИЮ 4
-            </div>
-            <div class="b-text">
-                <div class="sub-title">
-                    Чай в фильтр-пакетах
-                </div>
-                <p>
-                    Аналог классического чая Floris в измельченном формате и герметично упакованный в фильрт-пакет. Чай заваривается за пять минут не теряя при этом неповторимый вкус чаев Floris.
-                </p>
-                <a class="btn" href="#">В КАТАЛОГ</a>
-            </div>
-        </div>
-        <div class="choise-product b-left product-5">
-            <div class="title">
-                ВЫБИРАЙТЕ<br>НАТУРАЛЬНУЮ<br>ПРОДУКЦИЮ 5
-            </div>
-            <div class="b-text">
-                <div class="sub-title">
-                    Чай в фильтр-пакетах
-                </div>
-                <p>
-                    Аналог классического чая Floris в измельченном формате и герметично упакованный в фильрт-пакет. Чай заваривается за пять минут не теряя при этом неповторимый вкус чаев Floris.
-                </p>
-                <a class="btn" href="#">В КАТАЛОГ</a>
-            </div>
-        </div>
-        <div class="choise-product b-left product-6">
-            <div class="title">
-                ВЫБИРАЙТЕ<br>НАТУРАЛЬНУЮ<br>ПРОДУКЦИЮ 6
-            </div>
-            <div class="b-text">
-                <div class="sub-title">
-                    Чай в фильтр-пакетах
-                </div>
-                <p>
-                    Аналог классического чая Floris в измельченном формате и герметично упакованный в фильрт-пакет. Чай заваривается за пять минут не теряя при этом неповторимый вкус чаев Floris.
-                </p>
-                <a class="btn" href="#">В КАТАЛОГ</a>
-            </div>
-        </div>
-        <div class="choise-product b-left product-7">
-            <div class="title">
-                ВЫБИРАЙТЕ<br>НАТУРАЛЬНУЮ<br>ПРОДУКЦИЮ 7
-            </div>
-            <div class="b-text">
-                <div class="sub-title">
-                    Чай в фильтр-пакетах
-                </div>
-                <p>
-                    Аналог классического чая Floris в измельченном формате и герметично упакованный в фильрт-пакет. Чай заваривается за пять минут не теряя при этом неповторимый вкус чаев Floris.
-                </p>
-                <a class="btn" href="#">В КАТАЛОГ</a>
-            </div>
-        </div>
-        <div class="choise-product b-left product-8">
-            <div class="title">
-                ВЫБИРАЙТЕ<br>НАТУРАЛЬНУЮ<br>ПРОДУКЦИЮ 8
-            </div>
-            <div class="b-text">
-                <div class="sub-title">
-                    Чай в фильтр-пакетах
-                </div>
-                <p>
-                    Аналог классического чая Floris в измельченном формате и герметично упакованный в фильрт-пакет. Чай заваривается за пять минут не теряя при этом неповторимый вкус чаев Floris.
-                </p>
-                <a class="btn" href="#">В КАТАЛОГ</a>
-            </div>
-        </div>
-        <div class="choise-product b-left product-9">
-            <div class="title">
-                ВЫБИРАЙТЕ<br>НАТУРАЛЬНУЮ<br>ПРОДУКЦИЮ 9
-            </div>
-            <div class="b-text">
-                <div class="sub-title">
-                    Чай в фильтр-пакетах
-                </div>
-                <p>
-                    Аналог классического чая Floris в измельченном формате и герметично упакованный в фильрт-пакет. Чай заваривается за пять минут не теряя при этом неповторимый вкус чаев Floris.
-                </p>
-                <a class="btn" href="#">В КАТАЛОГ</a>
-            </div>
-        </div>
-        <div class="choise-product b-left product-10">
-            <div class="title">
-                ВЫБИРАЙТЕ<br>НАТУРАЛЬНУЮ<br>ПРОДУКЦИЮ 10
-            </div>
-            <div class="b-text">
-                <div class="sub-title">
-                    Чай в фильтр-пакетах
-                </div>
-                <p>
-                    Аналог классического чая Floris в измельченном формате и герметично упакованный в фильрт-пакет. Чай заваривается за пять минут не теряя при этом неповторимый вкус чаев Floris.
-                </p>
-                <a class="btn" href="#">В КАТАЛОГ</a>
-            </div>
-        </div>
-        <div class="choise-product b-left product-11">
-            <div class="title">
-                ВЫБИРАЙТЕ<br>НАТУРАЛЬНУЮ<br>ПРОДУКЦИЮ 11
-            </div>
-            <div class="b-text">
-                <div class="sub-title">
-                    Чай в фильтр-пакетах
-                </div>
-                <p>
-                    Аналог классического чая Floris в измельченном формате и герметично упакованный в фильрт-пакет. Чай заваривается за пять минут не теряя при этом неповторимый вкус чаев Floris.
-                </p>
-                <a class="btn" href="#">В КАТАЛОГ</a>
-            </div>
-        </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
     </section>
     <?php if(isset($model->boxes['tea_production'])):?>
     <section class="b3" style="background-image: url('<?= Yii::getAlias('@boxes') .'/'. $model->boxes['tea_production']['image']?>')">

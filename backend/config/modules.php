@@ -52,4 +52,16 @@ return [
     'geography' => [
         'class' => 'backend\modules\geography\Geography',
     ],
+    'varieties_of_tea' => [
+        'class' => 'backend\modules\varieties_of_tea\Varieties_of_tea',
+    ],
+    'variety_of_products' => [
+        'class' => 'backend\modules\variety_of_products\Variety_of_products',
+    ],
+    'carusel_private_label' => [
+        'class' => 'backend\modules\carusel_private_label\Carusel_private_label',
+    ],
+    'our_case' => [
+        'class' => 'backend\modules\our_case\Our_case',
+    ],
 ];

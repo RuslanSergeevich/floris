@@ -96,7 +96,10 @@ $this->registerMetaTag([
                 ПРИСОЕДИНЯЙТЕСЬ
             </h2>
             <div class="social">
-                <a class="fb" href="#" target="_blank"></a><a class="insta" href="#" target="_blank"></a><a class="vk" href="#" target="_blank"></a><a class="youtube" href="#" target="_blank"></a>
+                <?= Html::a('','https://www.facebook.com/floristea/',['class' => 'fb', 'target' => '_blank'])?>
+                <a class="insta" href="#" target="_blank"></a>
+                <?= Html::a('','http://vk.com/floristea',['class' => 'vk', 'target' => '_blank'])?>
+                <a class="youtube" href="#" target="_blank"></a>
             </div>
         </div>
     </div>
@@ -107,7 +110,7 @@ $this->registerMetaTag([
                 <?= $model->boxes['promotional_material']['title']?>
             </h2>
                 <?= $model->boxes['promotional_material']['text']?>
-                <a class="btn green" href="#">СКАЧАТЬ</a>
+            <?= Html::a('СКАЧАТЬ', \yii\helpers\Url::to($model->boxes['promotional_material']['link']),['class' => 'btn green'])?>
         </div>
     </div>
     <?php endif;?>
