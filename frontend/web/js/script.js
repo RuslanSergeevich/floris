@@ -95,7 +95,13 @@ $(document).ready(function(){
 		$('.b-search').toggleClass('active');
 	});
 
-	$('a.play-video, a.close-video').on('click', function(){
-		$('.video').toggleClass('active');
+	$('a.play-video').on('click', function(){
+		$('#video').addClass('active');
+		$('#video-frame').trigger('play');
+	});
+
+	$('a.close').on('click', function(){
+		$('#video').removeClass('active');
+		$('#video-frame').trigger('pause');
 	});
 });

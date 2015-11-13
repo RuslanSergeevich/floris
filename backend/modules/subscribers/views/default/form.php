@@ -21,20 +21,8 @@ $this->title = 'Добавление/Редактирование статьи �
                 </div><!-- /.box-header -->
                     <?php $form = ActiveForm::begin(['method' => 'post', 'options' => ['role' => 'form', 'enctype' => 'multipart/form-data']]); ?>
                         <div class="box-body">
-
-                            <?= $form->field($model, 'name') ?>
-                            <?php if($model->image){?>
-                                <div class="image-box">
-                                    <?= Html::img('@varieties_of_tea/'.$model->image, [
-                                        'alt' => $model->name,
-                                        'width' => '150'
-                                    ]) ?>
-                                </div>
-                            <?php } ?>
-                            <?= $form->field($model, 'file')->fileInput() ?>
-                            <?php if(!$model->isNewRecord):?>
-                                <?= $form->field($model, 'publish')->checkbox(['class' => 'minimal']) ?>
-                            <?php endif;?>
+                            <?= $form->field($model, 'email') ?>
+                            <?= $form->field($model, 'publish')->checkbox(['class' => 'minimal']) ?>
                             <div class="form-group">
                                 <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
                             </div>

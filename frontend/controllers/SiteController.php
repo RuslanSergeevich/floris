@@ -3,6 +3,7 @@ namespace frontend\controllers;
 
 use common\models\Geography;
 use common\models\GeographyImages;
+use common\models\Subscribers;
 use frontend\models\BackCallForm;
 use frontend\models\CooperationForm;
 use Yii;
@@ -27,6 +28,7 @@ class SiteController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'geocode-tool' => ['post'],
+                    'subscribe'    => ['post']
                 ],
             ],
         ];
@@ -60,6 +62,19 @@ class SiteController extends Controller
         return $this->render($model['template'], [
             'model' => $model
         ]);
+    }
+
+    public function actionSubscribe()
+    {
+        $model = new Subscribers();
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $model->sendEmail(Yii::$app->params['adminEmail']);
+            Yii::$app->session->setFlash('message', 'Подписка офрилена!');
+            $model->save();
+        } else {
+            Yii::$app->session->setFlash('message', 'Error!');
+        }
+        return $this->redirect(Yii::$app->request->referrer);
     }
 
     /**

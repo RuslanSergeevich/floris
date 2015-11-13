@@ -17,12 +17,14 @@ $this->registerMetaTag([
 <section class="contacts">
     <div class="contacts-header"></div>
     <div class="geography-sale">
+        <?php if(isset($model->boxes['leave_your_request'])):?>
         <div class="inner center">
             <div class="text">
-                ОСТАВЬТЕ СВОЮ ЗАЯВКУ
+                <?= $model->boxes['leave_your_request']['title']?>
             </div>
-            <a class="btn green" href="#">ЗАЯВКА</a>
+            <?= Html::a('ЗАЯВКА', \yii\helpers\Url::to($model->boxes['leave_your_request']['link']),['class' => 'btn green fancyboxnewsletter'])?>
         </div>
+        <?php endif;?>
     </div>
     <div class="b-info">
         <div class="inner">

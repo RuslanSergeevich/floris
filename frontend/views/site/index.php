@@ -15,8 +15,16 @@ $this->registerMetaTag([
     'content' => Html::encode($model->keywords)
 ]);
 ?>
+<div id="video">
+    <a class="close"></a>
+    <video id="video-frame" autostart loop>
+        <source src="/video/tea.mp4" type="video/mp4; codecs="avc1.42E01E, mp4a.40.2"">
+        <source src="/video/tea.webm" type="video/webm">
+        <source src="/video/tea.ogv" type="video/ogg">
+    </video>
+</div>
 <main>
-    <section class="b1 b-top-section top-section" style="background-image: url('<?= Yii::getAlias('@boxes') .'/'. $model->boxes['we_produce']['image']?>')">
+    <section class="b1 top-section" style="background-image: url('<?= Yii::getAlias('@boxes') .'/'. $model->boxes['we_produce']['image']?>')">
         <div class="title">
             <?= $model->boxes['we_produce']['title']?>
             <?= Html::a('ПОДРОБНО О КОМПАНИИ', Url::to($model->boxes['we_produce']['link']),['class' => 'btn'])?>

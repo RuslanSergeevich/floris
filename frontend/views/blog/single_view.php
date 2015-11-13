@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use common\models\Subscribers;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Pages */
@@ -19,16 +20,17 @@ $this->registerMetaTag([
     <div class="blog-header"></div>
     <div class="inner">
         <aside class="side-right">
+            <?php if(isset($model->boxes['banner'])):?>
             <div class="b-module">
-                <img src="/images/banner.jpg" alt="">
+                <?= Html::img('@boxes/' . $model->boxes['banner']['image'])?>
             </div>
+            <?php endif;?>
             <div class="b-module rss">
+                <?= Yii::$app->session->hasFlash('message') ? Html::tag('legend', Yii::$app->session->getFlash('message'), ['class' => 'flash_message']) : ''?>
                 <h3>
                     Подписывайтесь на наш блог
                 </h3>
-                <form>
-                    <input type="text" placeholder="Введите ваш e-mail"><input class="btn border" type="submit" value="ПОДПИСАТЬСЯ">
-                </form>
+                <?= $this->render('/partials/_subscribe_form', ['model' => new Subscribers()])?>
             </div>
             <div class="b-module rss screen">
                 <h3>

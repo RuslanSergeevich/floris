@@ -64,4 +64,7 @@ return [
     'our_case' => [
         'class' => 'backend\modules\our_case\Our_case',
     ],
+    'subscribers' => [
+        'class' => 'backend\modules\subscribers\Subscribers',
+    ],
 ];

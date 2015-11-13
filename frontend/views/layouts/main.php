@@ -44,7 +44,6 @@ AppAsset::register($this);?>
     </header>
 
     <div id="main">
-        <?= Yii::$app->session->hasFlash('message') ? Html::tag('legend', Yii::$app->session->getFlash('message'), ['class' => 'flash_message']) : ''?>
         <?= $content?>
     </div>
     <footer role="contentinfo">

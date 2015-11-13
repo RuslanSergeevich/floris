@@ -6,6 +6,7 @@ use Yii;
 use backend\components\FileBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
+use frontend\components\BoxesBehavior;
 
 /**
  * This is the model class for table "blog".
@@ -60,6 +61,9 @@ class Blog extends \yii\db\ActiveRecord
                 'class' => FileBehavior::className(),
                 'path' => self::PATH,
                 'entity' => self::IMAGE_ENTITY
+            ],
+            [
+                'class' => BoxesBehavior::className(),
             ]
         ];
     }

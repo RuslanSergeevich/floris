@@ -14,7 +14,7 @@
         $('#search-shop input[type=file]').click();
     });
 
-    setTimeout('$(".flash_message").fadeOut()', 5000);
+    //setTimeout('$(".flash_message").fadeOut()', 5000);
 
 
     $('form').submit(function(){

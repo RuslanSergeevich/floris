@@ -35,12 +35,10 @@ footer menu li a {
 }
 
 .flash_message{
-    border: 1px solid #fff;
-    margin: 20% 25%;
-    padding: 1em 0;
-    position: fixed;
+    display: inline-block;
+    color: #353535;
     text-align: center;
-    width: 50%;
+    font-size: 12px;
 }
 
 #myMap{
@@ -60,4 +58,16 @@ footer menu li a {
     font: 34px/36px "open_sansregular";
     left: 575px;
     top: 131px;
+}
+
+#subscribe-form .help-block{
+    color: #353535;
+    text-align: center;
+    font-size: 12px;
+}
+
+section.search .search-header {
+    background: url('../images/search/top-bg.jpg') no-repeat 50% 50%;
+    background-size: cover;
+    height: 107px;
 }
