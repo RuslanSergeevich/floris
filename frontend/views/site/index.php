@@ -28,7 +28,7 @@ $this->registerMetaTag([
         <div class="title">
             <?= $model->boxes['we_produce']['title']?>
             <?= Html::a('ПОДРОБНО О КОМПАНИИ', Url::to($model->boxes['we_produce']['link']),['class' => 'btn'])?>
-            <a class="play-video fancybox" href="#video"></a>
+            <a class="play-video" href="#video"></a>
         </div>
     </section>
     <section class="b2">
