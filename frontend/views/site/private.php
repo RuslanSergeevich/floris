@@ -47,7 +47,7 @@ $this->registerMetaTag([
                 <?= $model->boxes['65_different_components']['text']?>
             </div>
             <div class="center">
-                <?= Html::a('ПОДРОБНЕЕ', Url::to($model->boxes['65_different_components']['link']),['class' => 'btn'])?>
+                <?= Html::a('ПОДРОБНЕЕ', Url::to($model->boxes['65_different_components']['link']),['class' => 'btn fancybox'])?>
             </div>
             <?php endif;?>
         </div>
@@ -119,7 +119,7 @@ $this->registerMetaTag([
             <div class="text">
                 <?= $model->boxes['learn_more_private']['title']?>
             </div>
-            <?= Html::a('ПОДРОБНЕЕ', Url::to($model->boxes['learn_more_private']['link']),['class' => 'btn green'])?>
+            <?= Html::a('ПОДРОБНЕЕ', Url::to($model->boxes['learn_more_private']['link']),['class' => 'btn green fancybox'])?>
         </div>
     </section>
     <section class="cases">
