@@ -113,7 +113,7 @@ $this->registerMetaTag([
                     <?= $model->boxes['geography_02']['title']?>
                 </div>
                 <?= $model->boxes['geography_02']['text']?>
-                <?= Html::a('ДОБАВИТЬ МАГАЗИН', Url::to($model->boxes['geography_02']['link']),['class' => 'btn'])?>
+                <?= Html::a('ДОБАВИТЬ МАГАЗИН', Url::to($model->boxes['geography_02']['link']),['class' => 'btn fancybox'])?>
             </li>
             <?php endif;?>
         </ul>
