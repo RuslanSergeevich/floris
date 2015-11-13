@@ -6028,13 +6028,13 @@ a.fancybox-close {
     -o-background-size: cover;
     -webkit-background-size: cover;
     background-size: cover;
-    top: 19px;
+    top: 19px !important;
     left: 10px;
   }
   header a.logo {
     width: 71px;
     height: 25px;
-    top: 14px;
+    top: 14px !important;
     left: 51px;
   }
 
