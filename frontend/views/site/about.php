@@ -174,7 +174,7 @@ $this->registerMetaTag([
                     <?= $model->boxes['vacancy']['title']?>
                 </div>
                     <?= $model->boxes['vacancy']['text']?>
-                <?= Html::a('ВАКАНСИИ', Url::to($model->boxes['geography_points']['link']),['class' => 'btn green'])?>
+                <?= Html::a('ВАКАНСИИ', Url::to($model->boxes['vacancy']['link']),['class' => 'btn green'])?>
             </div>
             <?php endif;?>
         </div>

@@ -55,7 +55,9 @@ AppAsset::register($this);?>
         <div class="b-search">
             <?= $this->render('/partials/_search_form',['model' => new \frontend\models\SearchModel()])?>
         </div>
-        <a class="vacation" href="#">Вакансии</a>
+        <?php if(isset($model->boxes['vacancy'])):?>
+                <?= Html::a('Вакансии', Url::to($model->boxes['vacancy']['link']),['class' => 'vacation'])?>
+        <?php endif;?>
         <div class="footer-bottom">
             <div class="copy">
                 © 2011–<?= date('Y')?>. Флорис.<br>Крым, г. Симферополь, ул. Данилова, 43
