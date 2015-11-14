@@ -22,7 +22,7 @@ $this->registerMetaTag([
             <div class="text">
                 <?= $model->boxes['leave_your_request']['title']?>
             </div>
-            <?= Html::a('ЗАЯВКА', \yii\helpers\Url::to($model->boxes['leave_your_request']['link']),['class' => 'btn green fancyboxnewsletter'])?>
+            <?= Html::a('ЗАЯВКА', \yii\helpers\Url::to($model->boxes['leave_your_request']['link']),['class' => 'btn green fancybox newsletter'])?>
         </div>
         <?php endif;?>
     </div>
