@@ -49,15 +49,11 @@ AppAsset::register($this);?>
     <footer role="contentinfo">
        <?= MenuWidget::widget()?>
         <div class="footer-search mobile">
-            <form role="search">
-                <input type="text" name="" placeholder="Поиск..."><input type="submit" value="">
-            </form>
+            <?= $this->render('/partials/_search_form',['model' => new \frontend\models\SearchModel()])?>
         </div>
         <a class="search"></a>
         <div class="b-search">
-            <form>
-                <input type="text" name="" placeholder="Поиск..."><input type="submit" value="">
-            </form>
+            <?= $this->render('/partials/_search_form',['model' => new \frontend\models\SearchModel()])?>
         </div>
         <a class="vacation" href="#">Вакансии</a>
         <div class="footer-bottom">
@@ -83,7 +79,7 @@ AppAsset::register($this);?>
 
 </div>
 <?= $this->render('/partials/_forms', [
-    'model' => new \frontend\models\CooperationForm(),
+    'model' => new \common\models\Orders(),
     'backCall' => new \frontend\models\BackCallForm(),
     'shopAdd' => new \common\models\Geography(),
     'images' => new \common\models\GeographyImages()

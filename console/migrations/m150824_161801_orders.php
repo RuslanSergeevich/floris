@@ -13,10 +13,12 @@ class m150824_161801_orders extends Migration
 
         $this->createTable('{{%orders}}', [
             'id' => $this->primaryKey(),
-            'room_id' => $this->integer()->notNull(),
+            //'room_id' => $this->integer()->notNull(),
+            'name' => $this->string()->notNull(),
+            'phone' => $this->string()->notNull(),
             'email' => $this->string()->notNull(),
             'message' => $this->text()->notNull(),
-            'status' => $this->integer(1)->defaultValue(0),
+            //'status' => $this->integer(1)->defaultValue(0),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull()
         ], $tableOptions);

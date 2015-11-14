@@ -14,9 +14,6 @@
         $('#search-shop input[type=file]').click();
     });
 
-    //setTimeout('$(".flash_message").fadeOut()', 5000);
-
-
     $('form').submit(function(){
         if($(this).find('div').hasClass('has-error')){
             $(this).find('div.has-error').effect( "shake" );
@@ -44,10 +41,20 @@ function sortable()
         'packing_id'     : parseInt($('.pack .selecter-selected').attr('data-packing_id')),
         'weight_id'      : parseInt($('.filter-weight .selecter-selected').attr('data-weight_id'))
         },
+        box_preloader = $('#catalog-box'),
+        preloader = {
+            'css' : 'preloader'
+        },
+        off = function(){
+            return box_preloader.removeClass(preloader.css);
+        },
         prop,
         result = true,
         box = $('.b-product-list'),
         box_li = $('.b-product-list li');
+
+    box_preloader.addClass(preloader.css);
+    setTimeout(off, 400);
 
     box_li.each(function(){
         var li = $(this);

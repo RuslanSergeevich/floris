@@ -3,9 +3,11 @@ namespace frontend\controllers;
 
 use common\models\Geography;
 use common\models\GeographyImages;
+use common\models\Orders;
 use common\models\Subscribers;
 use frontend\models\BackCallForm;
 use frontend\models\CooperationForm;
+use frontend\models\SearchModel;
 use Yii;
 use yii\web\Controller;
 use common\models\Pages;
@@ -82,9 +84,11 @@ class SiteController extends Controller
      */
     public function actionSend()
     {
-        $model = new CooperationForm();
+        $model = new Orders();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             $model->sendEmail(Yii::$app->params['adminEmail']);
+            $model->status = 0;
+            $model->save();
             Yii::$app->session->setFlash('message', 'Спасибо');
         } else {
             Yii::$app->session->setFlash('message', 'Error!');
@@ -120,6 +124,19 @@ class SiteController extends Controller
             $modelImages->upload($model->id);
         }
         return $this->redirect(Yii::$app->request->referrer);
+    }
+
+    public function actionSearch($alias = 'search')
+    {
+        $searchModel = new SearchModel();
+        if(Yii::$app->request->isPost){
+            $dataProvider = $searchModel->search(Yii::$app->request->post());
+        }
+        $model = $this->_queryOrException(Pages::findOne(['alias' => $alias, 'publish' => Pages::PUBLISH]));
+        return $this->render($model['template'], [
+            'model' => $model,
+            'data'  => isset($dataProvider) ? $dataProvider : false
+        ]);
     }
 
     private function _queryOrException($model)

@@ -30,6 +30,7 @@ use yii\helpers\ArrayHelper;
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $type
+ * @property string $sub_link
  */
 class CatalogItems extends \yii\db\ActiveRecord
 {
@@ -43,6 +44,7 @@ class CatalogItems extends \yii\db\ActiveRecord
     public static $composition = [];
     public static $packing = [];
     public static $weight = [];
+    public $sub_link;
 
     public function init()
     {

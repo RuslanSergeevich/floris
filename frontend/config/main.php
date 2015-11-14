@@ -38,6 +38,7 @@ return [
                 'shop-add' => 'site/shopadd',
                 'subscribe' => 'site/subscribe',
                 'api/geocode-tool' => 'site/geocode-tool',
+                'search' => 'site/search',
                 '<alias[\wd-]+>' => 'site/page',
                 'blog/<alias[\wd-]+>' => 'blog/view',
                 'product/<alias[\wd-]+>' => 'product/view',

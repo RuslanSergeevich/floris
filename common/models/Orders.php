@@ -9,7 +9,8 @@ use yii\behaviors\TimestampBehavior;
  * This is the model class for table "orders".
  *
  * @property integer $id
- * @property integer $room_id
+ * @property string $name
+ * @property string $phone
  * @property string $email
  * @property string $message
  * @property integer $status
@@ -21,6 +22,7 @@ class Orders extends \yii\db\ActiveRecord
     const ACTIVE = 1;
     const DISABLE = 0;
     const LIMIT = 7;
+    const THEME = 'Заявка на сотрудничество';
 
     /**
      * @inheritdoc
@@ -47,9 +49,8 @@ class Orders extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['room_id', 'email', 'message'], 'required'],
-            [['room_id', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['message'], 'string'],
+            [['phone', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['message', 'name'], 'string'],
             [['email'], 'string', 'max' => 255]
         ];
     }
@@ -61,10 +62,11 @@ class Orders extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'room_id' => 'Room ID',
+            'name' => 'Имя',
             'email' => 'Email',
-            'message' => 'Message',
-            'status' => 'Статус',
+            'phone' => 'Номер телефона',
+            'message' => 'Тема сотрудничества',
+            'status' => 'Обработана?',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
         ];
@@ -107,5 +109,21 @@ class Orders extends \yii\db\ActiveRecord
     public static function getNewOrdersList()
     {
         return static::find()->where(['status' => self::DISABLE])->limit(self::LIMIT)->asArray()->all();
+    }
+
+    /**
+     * Sends an email to the specified email address using the information collected by this model.
+     *
+     * @param  string  $email the target email address
+     * @return boolean whether the email was sent
+     */
+    public function sendEmail($email)
+    {
+        return Yii::$app->mailer->compose()
+            ->setTo($email)
+            ->setFrom([$this->email => $this->name])
+            ->setSubject(self::THEME)
+            ->setTextBody($this->phone . $this->message)
+            ->send();
     }
 }

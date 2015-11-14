@@ -32,6 +32,8 @@ class Blog extends \yii\db\ActiveRecord
     const UNPUBLISHED = 0;
     const SHOW_MAIN = 1;
 
+    public $sub_link;
+
     /**
      * directory to save
      */

@@ -23,7 +23,7 @@ footer menu li a {
     opacity: .5;
 }
 
-.field-cooperationform-phone, .field-geography-country, .field-geography-city, .field-geography-address, .field-geography-mode, .field-geography-shop_name, .field-geography-fio, .field-geography-phone, .field-geography-email {
+.field-orders-phone, .field-geography-country, .field-geography-city, .field-geography-address, .field-geography-mode, .field-geography-shop_name, .field-geography-fio, .field-geography-phone, .field-geography-email {
     float: left;
 }
 .clear{
@@ -70,4 +70,8 @@ section.search .search-header {
     background: url('../images/search/top-bg.jpg') no-repeat 50% 50%;
     background-size: cover;
     height: 107px;
+}
+
+.list-view{
+    color: #353535;
 }

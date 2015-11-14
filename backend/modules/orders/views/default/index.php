@@ -4,18 +4,17 @@
 /* @var $dataProvider common\models\Orders */
 
 use yii\helpers\Html;
-use yii\helpers\Url;
 use yii\grid\GridView;
 use common\models\Orders;
 
-$this->title = 'Список заявок на бронирование';
+$this->title = 'Список заявок на сотрудничество';
 ?>
 
 <div class="row">
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Список заявок</h3>
+                <h3 class="box-title"><?= $this->title?></h3>
                 <div class="box-tools">
                     <div class="input-group" style="width: 150px;">
                         <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Поиск" />
@@ -33,14 +32,8 @@ $this->title = 'Список заявок на бронирование';
                     'tableOptions' => ['class' => 'table table-hover'],
                     'columns' => [
                         'id',
-                        [
-                            'attribute' => 'room_id',
-                            'header' => 'Номер',
-                            'value' => function ($model) {
-                                return Orders::getRoomName($model->room_id);
-                            },
-                            'format' => 'html'
-                        ],
+                        'name',
+                        'phone',
                         [
                             'attribute' => 'publish',
                             'header' => 'Статус',

@@ -54,7 +54,7 @@ AppAsset::register($this);
                                             foreach($orders as $order){?>
                                                 <li>
                                                     <a href="<?= Url::toRoute('/orders/update/'.$order['id'])?>">
-                                                        <i class="fa fa-user text-red"></i> Заявка на: «<?= Html::tag('b', Orders::getRoomName($order['room_id']))?>»
+                                                        <i class="fa fa-user text-red"></i> Заявка от: «<?= Html::tag('b',$order['name'])?>»
                                                     </a>
                                                 </li>
                                             <?php }
