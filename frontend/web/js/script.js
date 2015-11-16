@@ -104,4 +104,8 @@ $(document).ready(function(){
 		$('#video').removeClass('active');
 		$('#video-frame').trigger('pause');
 	});
+
+	$('a.toggle-view-comments').on('click', function(){
+		$('.b-comments').toggleClass('closed');
+	});
 });
