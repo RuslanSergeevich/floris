@@ -14,16 +14,5 @@ return [
                 ],
             ],
         ],
-        'db' => [
-            'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=floris',
-            'username' => 'root',
-            'password' => 'toor',
-            'charset' => 'utf8',
-        ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            'viewPath' => '@common/mail',
-        ],
     ],
 ];
