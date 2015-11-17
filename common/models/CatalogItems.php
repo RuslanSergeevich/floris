@@ -177,4 +177,18 @@ class CatalogItems extends \yii\db\ActiveRecord
         ];
         return $statuses[$status];
     }
+
+    /**
+     * @param $packing_id
+     * @param $id
+     * @return array|\yii\db\ActiveRecord[]
+     */
+    public static function getItemsByPacking($packing_id,$id)
+    {
+        return self::find()->where(['packing_id' => $packing_id])->andWhere(['<>','id',$id])->with([
+            'galleryImages' => function ($query) {
+                $query->where(['main' => self::MAIN_IMAGE]);
+            },
+        ])->all();
+    }
 }

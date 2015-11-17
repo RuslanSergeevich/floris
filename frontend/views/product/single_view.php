@@ -38,35 +38,19 @@ $this->registerMetaTag([
             <?= \common\models\Packing::getValueById($model->packing_id)?>
         </div>
         <div class="inner">
-            <ul>
-                <li>
-                    <img src="/images/product/slider-img-prod.png" alt="">
-                </li>
-                <li>
-                    <img src="/images/product/slider-img-prod.png" alt="">
-                </li>
-                <li>
-                    <img src="/images/product/slider-img-prod.png" alt="">
-                </li>
-                <li>
-                    <img src="/images/product/slider-img-prod.png" alt="">
-                </li>
-                <li>
-                    <img src="/images/product/slider-img-prod.png" alt="">
-                </li>
-                <li>
-                    <img src="/images/product/slider-img-prod.png" alt="">
-                </li>
-                <li>
-                    <img src="/images/product/slider-img-prod.png" alt="">
-                </li>
-            </ul>
+            <?= Html::ul(\common\models\CatalogItems::getItemsByPacking($model->packing_id,$model->id), ['item' => function($item) {
+                $img = isset($item['galleryImages'][0]['basename']) ? Html::img('@gallery/'.$item['galleryImages'][0]['basename'].'.'.$item['galleryImages'][0]['ext']) : '';
+                return Html::tag(
+                    'li',
+                    $img
+                );
+            }]) ?>
         </div>
     </div>
     <div class="inner">
         <div class="product-card">
             <div class="img">
-                <?= Html::ul($model['galleryImages'], ['item' => function($item, $index) {
+                <?= Html::ul($model['galleryImages'], ['item' => function($item) {
                     return Html::tag(
                         'li',
                         Html::a(Html::img('@gallery/' . $item['basename'] .'.'. $item['ext'],
