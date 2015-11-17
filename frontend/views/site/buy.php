@@ -79,4 +79,4 @@ $this->registerMetaTag([
     </div>
 </section>
 <?php $this->registerJsFile('https://api-maps.yandex.ru/2.1/?lang=ru_RU');?>
-<?php $this->registerJsFile('js/yandex_map.js',['depends'=>'yii\web\JqueryAsset']);?>
+<?php $this->registerJsFile('js/_yandex_map.js',['depends'=>'yii\web\JqueryAsset']);?>

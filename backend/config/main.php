@@ -1,9 +1,7 @@
 <?php
 $params = array_merge(
     require(__DIR__ . '/../../common/config/params.php'),
-    require(__DIR__ . '/../../common/config/params-local.php'),
-    require(__DIR__ . '/params.php'),
-    require(__DIR__ . '/params-local.php')
+    require(__DIR__ . '/params.php')
 );
 
 return [
@@ -24,6 +22,7 @@ return [
         ],
         'request' => [
             'baseUrl' => '/_root',
+            'cookieValidationKey' => 'Yq8xA_vyc2l3tLS2GfqC61Zo6vY7M0Xr',
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,

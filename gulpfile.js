@@ -1,11 +1,11 @@
-var gulp = require('gulp'),
+var gulp      = require('gulp'),
     minifyCss = require('gulp-minify-css'),
-    rename = require('gulp-rename'),
-    uglify = require('gulp-uglify'),
-    concat = require('gulp-concat'),
+    rename    = require('gulp-rename'),
+    uglify    = require('gulp-uglify'),
+    concat    = require('gulp-concat'),
     concatCss = require('gulp-concat-css');
 
-gulp.task('default', ['css']);
+gulp.task('default', ['css','js']);
 
 
 gulp.task('css', function () {
@@ -16,10 +16,10 @@ gulp.task('css', function () {
         .pipe(gulp.dest('frontend/web/min/'));
 });
 
-//gulp.task('js', function() {
-//    return gulp.src('frontend/web/js/*.js')
-//        .pipe(concat('application.js'))
-//        .pipe(uglify())
-//        .pipe(rename('application.min.js'))
-//        .pipe(gulp.dest('frontend/web/min/'));
-//});
+gulp.task('js', function() {
+    return gulp.src('frontend/web/js/lib/*.js')
+        .pipe(concat('application.js'))
+        .pipe(uglify())
+        .pipe(rename('application.min.js'))
+        .pipe(gulp.dest('frontend/web/min/'));
+});
