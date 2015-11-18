@@ -76,12 +76,14 @@ $this->registerMetaTag([
                 <div class="b-text">
                     <?= $model->text?>
                     <ul>
+                        <?php if($model->weight_id):?>
                         <li>
                             <img src="/images/icons/kartochka/ves.svg" alt="" height="50">
                             <p>
                                 <?= \common\models\Weight::getValueById($model->weight_id)?> г
                             </p>
                         </li>
+                        <?php endif;?>
                         <?php if($model->time):?>
                             <li>
                                 <img src="/images/icons/kartochka/min.svg" alt="" height="50">
