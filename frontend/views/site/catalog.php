@@ -61,7 +61,7 @@ $this->registerMetaTag([
     <div class="b-cataloge-content">
         <div class="inner" id="catalog-box">
 
-            <?php if ($catalogs = Catalog::find()->select('id,name')->publish()->asArray()->all()):?>
+            <?php if ($catalogs = Catalog::find()->select('id,name')->publish()->orderBy('pos ASC')->asArray()->all()):?>
                 <?php foreach ($catalogs as $catalog): ?>
                     <div class="b-product-list">
                         <h3>
