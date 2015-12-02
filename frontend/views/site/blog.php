@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use common\models\Blog;
 use yii\helpers\Url;
 use common\models\Subscribers;
+use yii\helpers\StringHelper;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Pages */
@@ -54,7 +55,7 @@ $this->registerMetaTag([
                             <?= Html::img('@blog/' . $blog['image'], ['alt' => '', 'title' => ''])?>
                         </div>
                     <?php endif;?>
-                    <?= str_replace('[image]','',$blog['text'])?>
+                    <?= StringHelper::truncate(str_replace('[image]','',$blog['text']), 700)?>
                 </article>
             <?php endforeach; ?>
         <?php endif; ?>
