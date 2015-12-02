@@ -252,6 +252,16 @@ a:hover {
   bottom: 0;
   overflow: hidden;
 }
+#video .video-logo {
+  background: url('../images/logo.svg') 0 0 no-repeat;
+  position: absolute;
+  top: 32px;
+  left: 35px;
+  display: block;
+  width: 100px;
+  height: 40px;
+  z-index: 152;
+}
 #video video {
   min-width: 100%;
   min-height: 100%;
@@ -330,7 +340,7 @@ header menu li {
 header menu li a {
   font: 15px "open_sansregular";
   color: #fff;
-  text-decoration: none;
+  text-decoration: none !important;
   position: relative;
   padding-left: 45px;
 }
@@ -3391,6 +3401,12 @@ section.b2 .b-list-product ul li {
   height: 49px;
   position: relative;
   margin: 3px auto 22px;
+  overflow: hidden;
+  background: #fff;
+}
+section.b2 .b-list-product ul li img {
+  max-width: 100%;
+  max-height: 100%;
 }
 section.b2 .b-list-product ul li:hover {
   cursor: pointer;
@@ -3744,16 +3760,17 @@ section.cataloge .b-cataloge-content {
 section.cataloge .b-cataloge-content .b-product-list ul li {
   display: inline-block;
   width: 200px;
-  margin-right: 26px;
+  margin-right: 21px;
   margin-bottom: 50px;
+  text-align: center;
 }
 section.cataloge .b-cataloge-content .b-product-list ul li:nth-child(4n+4) {
-  margin-right: 0;
+  margin-right: 21px;
 }
 section.cataloge .b-cataloge-content .b-product-list ul li a {
   text-decoration: none;
   font: 14px "open_sanslight";
-  color: #353535;
+  color: #16171c;
   -moz-transition: linear 0.2s;
   -o-transition: linear 0.2s;
   -webkit-transition: linear 0.2s;
@@ -3761,6 +3778,7 @@ section.cataloge .b-cataloge-content .b-product-list ul li a {
 }
 section.cataloge .b-cataloge-content .b-product-list ul li a img {
   margin-bottom: 20px;
+  max-width: 100%;
 }
 section.cataloge .b-cataloge-content .b-product-list ul li a:hover {
   color: #1ad2d1;
@@ -4375,6 +4393,10 @@ section.product .product-selecter ul li {
   margin: 0 10px;
   text-align: center;
 }
+section.product .product-selecter ul li img {
+  max-width: 100%;
+  max-height: 100%;
+}
 section.product .product-selecter .bx-controls-direction a {
   width: 23px;
   height: 39px;
@@ -4504,16 +4526,26 @@ section.product .product-card .description .b-text p.bold {
   font: 14px "open_sanssemibold";
 }
 section.product .product-card .description .b-text ul {
-  margin-top: 30px;
+  padding-left: 35px;
+  list-style-type: disc;
 }
 section.product .product-card .description .b-text ul li {
+  color: #353535;
+  font: 14px "open_sansregular";
+}
+section.product .product-card .description .b-text ul.logistic-info {
+  margin-top: 30px;
+  padding-left: 0;
+  list-style: none;
+}
+section.product .product-card .description .b-text ul.logistic-info li {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
   width: 142px;
   height: 60px;
 }
-section.product .product-card .description .b-text ul li:nth-child(2) {
+section.product .product-card .description .b-text ul.logistic-info li:nth-child(2) {
   border-left: 1px solid #d1d1d1;
   border-right: 1px solid #d1d1d1;
 }
@@ -5015,7 +5047,8 @@ a.fancybox-close {
   width: 100%;
   max-width: 790px;
   margin: 65px auto 0;
-  transition: linear 1s;
+  transition: linear 0.1s;
+  height: 100%;
 }
 .b-comments a.settings {
   position: absolute;
@@ -5025,6 +5058,7 @@ a.fancybox-close {
   width: 16px;
   height: 17px;
   background: url('../images/product/comment_settings.jpg') 0 0 no-repeat;
+  display: block;
 }
 .b-comments a.settings:hover {
   cursor: pointer;
@@ -5141,7 +5175,7 @@ a.fancybox-close {
 .b-comments.closed {
   height: 25px;
   overflow: hidden;
-  transition: linear 1s;
+  transition: linear 0.1s;
 }
 .b-comments.closed a.toggle-view-comments {
   background: url('../images/product/down.jpg') 0 0 no-repeat;

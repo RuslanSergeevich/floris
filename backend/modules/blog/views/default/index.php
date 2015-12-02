@@ -71,7 +71,6 @@ $this->title = 'Список статей блога';
                                 return Yii::$app->formatter->asRelativeTime($model->updated_at);
                             },
                         ],
-                        'pos',
                         [
                             'class' => 'yii\grid\ActionColumn',
                             'header' => 'Редактирование',

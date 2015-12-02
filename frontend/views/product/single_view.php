@@ -75,7 +75,7 @@ $this->registerMetaTag([
                 </div>
                 <div class="b-text">
                     <?= $model->text?>
-                    <ul>
+                    <ul class="logistic-info">
                         <?php if($model->weight_id):?>
                         <li>
                             <img src="/images/icons/kartochka/ves.svg" alt="" height="50">

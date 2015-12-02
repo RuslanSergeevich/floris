@@ -44,7 +44,7 @@ $this->title = 'Добавление/Редактирование статьи �
                                 <?= $form->field($model, 'publish')->checkbox(['class' => 'minimal']) ?>
                             <?php endif;?>
                             <?= $form->field($model, 'show_main')->checkbox(['class' => 'minimal']) ?>
-                            <?= $form->field($model, 'pos') ?>
+                            <?= $form->field($model, 'pos')->hiddenInput() ?>
                             <div class="form-group">
                                 <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
                             </div>

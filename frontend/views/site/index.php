@@ -16,6 +16,7 @@ $this->registerMetaTag([
 ]);
 ?>
 <div id="video">
+    <div class="video-logo"></div>
     <a class="close"></a>
     <video id="video-frame" autostart loop>
         <source src="/video/tea.mp4" type="video/mp4; codecs="avc1.42E01E, mp4a.40.2"">
