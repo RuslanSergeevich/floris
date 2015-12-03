@@ -4403,6 +4403,7 @@ section.product .product-selecter ul li {
 section.product .product-selecter ul li img {
   max-width: 100%;
   max-height: 100%;
+  margin: 0 auto;
 }
 section.product .product-selecter .bx-controls-direction a {
   width: 23px;
