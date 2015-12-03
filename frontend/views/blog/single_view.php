@@ -19,6 +19,7 @@ $this->registerMetaTag([
 <section class="blog">
     <div class="blog-header"></div>
     <div class="inner">
+        <aside class="side-left"></aside>
         <aside class="side-right">
             <?php if(isset($model->boxes['banner'])):?>
             <div class="b-module">
