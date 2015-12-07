@@ -4465,6 +4465,7 @@ section.product .product-card .description {
   margin-left: 725px;
   position: relative;
   width: 610px;
+  padding-bottom: 20px;
 }
 section.product .product-card .description .social {
   position: absolute;
@@ -5034,6 +5035,9 @@ a.fancybox-close {
 }
 #search-shop form input[type=submit] {
   margin-top: 20px;
+}
+#search-shop form .form-group:nth-child(odd) {
+  margin-right: 28px;
 }
 #search-shop .added-imgs {
   text-align: center;
