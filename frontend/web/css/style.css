@@ -237,7 +237,6 @@ a:hover {
   margin: 0 auto;
   background: #fff url('../images/preloader.gif') 50% 50% no-repeat;
   height: 228px;
-  border-top: 1px solid #d4d4d6;
 }
 
 #video {
@@ -504,7 +503,7 @@ footer .b-search {
   position: absolute;
   height: 34px;
   top: 33px;
-  right: 122px;
+  right: 32px;
   opacity: 0;
   transition: linear 0.3s;
   z-index: 1;
@@ -551,7 +550,7 @@ footer a.search {
   height: 32px;
   width: 32px;
   top: 35px;
-  right: 124px;
+  right: 34px;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
@@ -4371,6 +4370,7 @@ section.blog article .media img {
 section.blog article p {
   font: 16px "open_sansregular";
   color: #16171c;
+  margin-top: 15px;
 }
 
 section.product .product-header {
@@ -4428,6 +4428,9 @@ section.product .product-card .img {
   height: 600px;
   border-right: 1px solid #d1d1d1;
   float: left;
+}
+section.product .product-card .img img {
+  margin: 0 auto !important;
 }
 section.product .product-card .bx-controls-direction a {
   width: 17px;
