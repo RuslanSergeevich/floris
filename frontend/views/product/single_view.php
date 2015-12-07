@@ -42,7 +42,7 @@ $this->registerMetaTag([
                 $img = isset($item['galleryImages'][0]['basename']) ? Html::img('@gallery/'.$item['galleryImages'][0]['basename'].'.'.$item['galleryImages'][0]['ext']) : '';
                 return Html::tag(
                     'li',
-                    $img
+                    Html::a($img, \yii\helpers\Url::to(['product/view', 'alias' => $item['alias']]))
                 );
             }]) ?>
         </div>
@@ -113,56 +113,6 @@ $this->registerMetaTag([
                     </select>
                 </div>
                 <a class="btn green" href="#">КУПИТЬ ОПТОМ</a>
-            </div>
-        </div>
-        <div class="b-comments-inner">
-
-            <div class="b-comments">
-                <a class="toggle-view-comments"></a>
-                <h3>
-                    Комментарии<span>(36)</span>
-                </h3>
-                <a class="settings"></a>
-                <div class="b-comments-whrite">
-                    <div class="b-comments-whrite-author-img">
-                        <img src="/images/product/ava_1.jpg" alt="">
-                    </div>
-                    <div class="b-comments-whrite-content">
-                        <form>
-                            <textarea placeholder="Введите текст сообщения"></textarea><a class="del"></a><a class="attach"></a><input type="submit" value="Отправить комментарий">
-                        </form>
-                    </div>
-                </div>
-                <div class="b-comments-whrite">
-                    <div class="b-comments-whrite-author-img">
-                        <img src="/images/product/ava_2.jpg" alt="">
-                    </div>
-                    <div class="b-comments-whrite-content">
-                        <div class="b-comments-whrite-content-name">
-                            Иван Иванов<span>15 часов назад</span>
-                        </div>
-                        <div class="b-comments-whrite-content-text">
-                            <img src="/images/product/img.jpg" alt="">
-                        </div>
-                        <a class="answer">Ответить</a>
-                    </div>
-                </div>
-                <div class="b-comments-whrite">
-                    <div class="b-comments-whrite-author-img">
-                        <img src="/images/product/ava_3.jpg" alt="">
-                    </div>
-                    <div class="b-comments-whrite-content">
-                        <div class="b-comments-whrite-content-name">
-                            Людмила Любмилина<span>15 часов назад</span>
-                        </div>
-                        <div class="b-comments-whrite-content-text">
-                            <p>
-                                Какой-то комментарий
-                            </p>
-                        </div>
-                        <a class="answer">Ответить</a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
