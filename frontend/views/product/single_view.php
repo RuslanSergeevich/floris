@@ -17,22 +17,6 @@ $this->registerMetaTag([
 ?>
 <section class="product">
     <div class="product-header"></div>
-    <div class="cataloge-menu">
-        <menu>
-            <li>
-                <a href="#">Весь ассортимент</a>
-            </li>
-            <?php if ($types = \common\models\Types::getList()):
-                ArrayHelper::remove($types, 0);?>
-                <?php foreach ($types as $key => $value): ?>
-                <?= Html::tag('li', Html::tag('a', $value, [
-                    'href' => '#']), [
-                    'class' => $key == $model->type_id ? 'active' : ''
-                ])?>
-            <?php endforeach; ?>
-            <?php endif; ?>
-        </menu>
-    </div>
     <div class="product-selecter">
         <div class="b-top">
             <?= \common\models\Packing::getValueById($model->packing_id)?>
