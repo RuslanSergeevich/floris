@@ -4344,11 +4344,11 @@ section.blog article {
   border-bottom: 1px solid #d4d4d6;
 }
 section.blog article h2 {
-  color: #353535;
+  color: #16171c;
   font: 26px "open_sanssemibold";
 }
 section.blog article h2 a {
-  color: #353535;
+  color: #16171c;
   font: 26px "open_sanssemibold";
 }
 section.blog article h2 a:hover {
@@ -4370,7 +4370,7 @@ section.blog article .media img {
 }
 section.blog article p {
   font: 16px "open_sansregular";
-  color: #353535;
+  color: #16171c;
 }
 
 section.product .product-header {
