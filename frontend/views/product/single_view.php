@@ -102,17 +102,7 @@ $this->registerMetaTag([
                         <?php endif;?>
                     </ul>
                 </div>
-                <div class="logistic-info fright">
-                    <select>
-                        <option value="">
-                            Логистическая информация 1
-                        </option>
-                        <option value="">
-                            Логистическая информация 2
-                        </option>
-                    </select>
-                </div>
-                <a class="btn green" href="#">КУПИТЬ ОПТОМ</a>
+                <a class="btn green fancybox" href="#sotrudnichestvo">КУПИТЬ ОПТОМ</a>
             </div>
         </div>
     </div>
