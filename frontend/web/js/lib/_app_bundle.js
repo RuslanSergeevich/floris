@@ -54,7 +54,6 @@ function sortable()
         box_li = $('.b-product-list li');
 
     box_preloader.addClass(preloader.css);
-    setTimeout(off, 400);
 
     box_li.each(function(){
         var li = $(this);
@@ -73,4 +72,6 @@ function sortable()
         var _this = $(this);
         _this.find('li').not('li.hidden').length == 0 ? _this.addClass('hidden') : _this.removeClass('hidden');
     });
+
+    return off();
 }
