@@ -235,7 +235,7 @@ a:hover {
 .preloader {
   display: block;
   margin: 0 auto;
-  background: #fff url('../images/preloader.gif') 50% 50%;
+  background: #fff url('../images/preloader.gif') 50% 50% no-repeat;
   height: 228px;
   border-top: 1px solid #d4d4d6;
 }
@@ -3768,7 +3768,7 @@ section.cataloge .b-cataloge-content .b-product-list ul li:nth-child(4n+4) {
   margin-right: 21px;
 }
 section.cataloge .b-cataloge-content .b-product-list ul li a {
-  text-decoration: none;
+  text-decoration: none !important;
   font: 14px "open_sanslight";
   color: #16171c;
   -moz-transition: linear 0.2s;
@@ -4340,7 +4340,7 @@ section.blog aside.side-right .b-module input[type=submit] {
   display: block;
 }
 section.blog article {
-  padding: 50px 90px 50px 40px;
+  padding: 50px 40px 50px 40px;
   border-bottom: 1px solid #d4d4d6;
 }
 section.blog article h2 {

@@ -19,10 +19,6 @@ footer menu li a {
     display: none !important;
 }
 
-.preload{
-    opacity: .5;
-}
-
 .field-orders-phone, .field-geography-country, .field-geography-city, .field-geography-address, .field-geography-mode, .field-geography-shop_name, .field-geography-fio, .field-geography-phone, .field-geography-email {
     float: left;
 }
