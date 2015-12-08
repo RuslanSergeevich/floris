@@ -23,16 +23,12 @@ footer menu li a {
     float: left;
 }
 
-#search-shop form input[type="text"] {
+#wrapper #search-shop form input[type="text"] {
     width: 200px;
 }
 
 .clear{
     clear: both;
-}
-
-#search-shop form input[type="text"] {
-    width: 215px;
 }
 
 .flash_message{
