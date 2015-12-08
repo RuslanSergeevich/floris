@@ -23,10 +23,6 @@ footer menu li a {
     float: left;
 }
 
-#wrapper #search-shop form input[type="text"] {
-    width: 200px;
-}
-
 .clear{
     clear: both;
 }
@@ -36,6 +32,10 @@ footer menu li a {
     color: #353535;
     text-align: center;
     font-size: 12px;
+}
+
+.fancybox-wrap #search-shop form input[type="text"] {
+    width: 200px;
 }
 
 #myMap{
