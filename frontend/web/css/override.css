@@ -23,7 +23,7 @@ footer menu li a {
     float: left;
 }
 
-#search-shop .field-orders-phone input,#search-shop .field-geography-country input,#search-shop .field-geography-city input,#search-shop .field-geography-address input,#search-shop .field-geography-mode input,#search-shop .field-geography-shop_name input,#search-shop .field-geography-fio input,#search-shop .field-geography-phone input,#search-shop .field-geography-email input {
+#search-shop form input[type="text"] {
     width: 200px;
 }
 
