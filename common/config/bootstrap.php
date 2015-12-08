@@ -8,6 +8,7 @@ Yii::setAlias('blog', '/userfiles/blog');
 Yii::setAlias('varieties_of_tea', '/userfiles/varieties_of_tea');
 Yii::setAlias('variety_of_products', '/userfiles/variety_of_products');
 Yii::setAlias('our_case', '/userfiles/our_case');
+Yii::setAlias('ourclients', '/userfiles/ourclients');
 Yii::setAlias('packing', '/userfiles/packing');
 Yii::setAlias('boxes', '/userfiles/boxes');
 Yii::setAlias('workers', '/userfiles/workers');

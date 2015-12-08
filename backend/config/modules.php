@@ -67,4 +67,7 @@ return [
     'subscribers' => [
         'class' => 'backend\modules\subscribers\Subscribers',
     ],
+    'ourclients' => [
+        'class' => 'backend\modules\ourclients\Ourclients',
+    ],
 ];

@@ -116,32 +116,12 @@ $this->registerMetaTag([
             </div>
             <?php endif;?>
             <div class="logos">
-                <ul>
-                    <li>
-                        <img src="/images/about/logo.png" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/about/logo.png" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/about/logo.png" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/about/logo.png" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/about/logo.png" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/about/logo.png" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/about/logo.png" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/about/logo.png" alt="">
-                    </li>
-                </ul>
+                <?= Html::ul(\common\models\Ourclients::getList(), ['item' => function($item) {
+                    return Html::tag(
+                        'li',
+                        Html::img('@ourclients/'.$item['image'])
+                    );
+                }])?>
             </div>
         </div>
     </div>
