@@ -22,6 +22,11 @@ footer menu li a {
 .field-orders-phone, .field-geography-country, .field-geography-city, .field-geography-address, .field-geography-mode, .field-geography-shop_name, .field-geography-fio, .field-geography-phone, .field-geography-email {
     float: left;
 }
+
+.field-orders-phone input, .field-geography-country input, .field-geography-city input, .field-geography-address input, .field-geography-mode input, .field-geography-shop_name input, .field-geography-fio input, .field-geography-phone input, .field-geography-email input {
+    width: 200px;
+}
+
 .clear{
     clear: both;
 }
