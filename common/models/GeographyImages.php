@@ -90,6 +90,14 @@ class GeographyImages extends \yii\db\ActiveRecord
     }
 
     /**
+     * @return array|\yii\db\ActiveRecord[]
+     */
+    public static function getList()
+    {
+        return self::find()->asArray()->all();
+    }
+
+    /**
      * @return bool
      */
     public function beforeDelete()
