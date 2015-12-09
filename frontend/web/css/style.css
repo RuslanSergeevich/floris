@@ -4426,7 +4426,6 @@ section.product .product-card {
 section.product .product-card .img {
   width: 675px;
   height: 600px;
-  border-right: 1px solid #d1d1d1;
   float: left;
 }
 section.product .product-card .img img {
@@ -4462,10 +4461,12 @@ section.product .product-card .bx-controls .bx-pager-item a.active {
   background: #272830;
 }
 section.product .product-card .description {
-  margin-left: 725px;
+  margin-left: 675px;
   position: relative;
   width: 610px;
   padding-bottom: 20px;
+  border-left: 1px solid #d1d1d1;
+  padding-left: 50px;
 }
 section.product .product-card .description .social {
   position: absolute;
