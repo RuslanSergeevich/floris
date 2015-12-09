@@ -4540,6 +4540,7 @@ section.product .product-card .description .b-text p.bold {
 section.product .product-card .description .b-text ul {
   padding-left: 35px;
   list-style-type: disc;
+  margin-top: 10px;
 }
 section.product .product-card .description .b-text ul li {
   color: #353535;
@@ -4785,6 +4786,10 @@ section.map .gallerey-magazine ul {
 }
 section.map .gallerey-magazine ul li {
   width: 240px !important;
+}
+section.map .gallerey-magazine ul li img {
+  width: 240px;
+  height: 160px;
 }
 section.map .gallerey-magazine .bx-controls .bx-controls-direction a {
   width: 92px;
