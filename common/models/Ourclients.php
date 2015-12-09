@@ -95,6 +95,6 @@ class Ourclients extends \yii\db\ActiveRecord
      */
     public static function getList()
     {
-        return self::find()->asArray()->all();
+        return self::find()->orderBy('pos')->asArray()->all();
     }
 }
