@@ -90,6 +90,6 @@ class Composition extends \yii\db\ActiveRecord
      */
     public static function getList()
     {
-        return ArrayHelper::map(ArrayHelper::merge([['id' => '0', 'name' => 'Не выбрано']],self::find()->where(['publish' => self::PUBLISH])->orderBy('pos ASC')->asArray()->all()),'id','name');
+        return ArrayHelper::map(ArrayHelper::merge([['id' => '0', 'name' => 'Упаковка']],self::find()->where(['publish' => self::PUBLISH])->orderBy('pos ASC')->asArray()->all()),'id','name');
     }
 }
