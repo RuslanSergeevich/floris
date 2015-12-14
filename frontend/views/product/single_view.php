@@ -49,9 +49,9 @@ $this->registerMetaTag([
             <div class="description">
                 <div class="top">
                     <div class="social">
-                        <a class="fb" href="#" target="_blank"></a>
-                        <a class="insta" href="#" target="_blank"></a>
-                        <a class="vk" href="#" target="_blank"></a>
+                        <?= Html::a('','https://www.facebook.com/floristea/',['class' => 'fb', 'target' => '_blank'])?>
+                        <?= Html::a('','https://www.instagram.com/floristea/',['class' => 'insta', 'target' => '_blank'])?>
+                        <?= Html::a('','http://vk.com/floristea',['class' => 'vk', 'target' => '_blank'])?>
                     </div>
                     <h2>
                         <?= $model->name?><span><?= \common\models\Packing::getValueById($model->packing_id)?></span>
