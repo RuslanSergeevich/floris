@@ -99,7 +99,7 @@ $this->registerMetaTag([
             </h2>
             <div class="social">
                 <?= Html::a('','https://www.facebook.com/floristea/',['class' => 'fb', 'target' => '_blank'])?>
-                <a class="insta" href="#" target="_blank"></a>
+                <?= Html::a('','https://www.instagram.com/floristea/',['class' => 'insta', 'target' => '_blank'])?>
                 <?= Html::a('','http://vk.com/floristea',['class' => 'vk', 'target' => '_blank'])?>
                 <a class="youtube" href="#" target="_blank"></a>
             </div>
