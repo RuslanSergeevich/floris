@@ -4372,6 +4372,14 @@ section.blog article p {
   color: #16171c;
   margin-top: 15px;
 }
+section.blog ul, section.blog ol {
+  padding-left: 24px;
+  margin-top: 15px;
+}
+section.blog ul li, section.blog ol li {
+  color: #16171c;
+  font: 16px "open_sansregular";
+}
 
 section.product .product-header {
   background: url('../images/product-header.jpg') no-repeat 50% 50%;
