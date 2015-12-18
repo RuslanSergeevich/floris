@@ -28,8 +28,8 @@ $this->registerMetaTag([
     <section class="b1 top-section" style="background-image: url('<?= Yii::getAlias('@boxes') .'/'. $model->boxes['we_produce']['image']?>')">
         <div class="title">
             <?= $model->boxes['we_produce']['title']?>
-            <?= Html::a('ПОДРОБНО О КОМПАНИИ', Url::to($model->boxes['we_produce']['link']),['class' => 'btn'])?>
-            <a class="play-video" href="#video"></a>
+            <?= Html::a('<i class="fi fi-menu_about"></i>ПОДРОБНО О КОМПАНИИ', Url::to($model->boxes['we_produce']['link']),['class' => 'btn'])?>
+            <a class="play-video" href="#video"><i class="fi fi-play"></i></a>
         </div>
     </section>
     <section class="b2">
@@ -56,7 +56,7 @@ $this->registerMetaTag([
                             <?= $value['declination']?>
                         </div>
                         <?= $value['text']?>
-                        <?= Html::a('В КАТАЛОГ', Url::to('cataloge'),['class' => 'btn'])?>
+                        <?= Html::a('<i class="fi fi-menu_cataloge"></i>В КАТАЛОГ', Url::to('cataloge'),['class' => 'btn'])?>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -68,7 +68,7 @@ $this->registerMetaTag([
             <?= $model->boxes['tea_production']['title']?>
         </div>
         <div class="btns">
-            <?= Html::a('ПОДРОБНЕЕ', Url::to($model->boxes['tea_production']['link']),['class' => 'btn btn-ico'])?>
+            <?= Html::a('<i class="fi fi-menu_privat"></i>ПОДРОБНЕЕ', Url::to($model->boxes['tea_production']['link']),['class' => 'btn btn-ico'])?>
         </div>
     </section>
     <?php endif;?>
@@ -78,7 +78,7 @@ $this->registerMetaTag([
             <div class="title left">
                 <?= $model->boxes['interesting_article']['title']?>
                 <div class="btns">
-                    <?= Html::a('ЧИТАТЬ БЛОГ', Url::to($model->boxes['interesting_article']['link']),['class' => 'btn blog btn-ico'])?>
+                    <?= Html::a('<i class="fi fi-menu_blog"></i>ЧИТАТЬ БЛОГ', Url::to($model->boxes['interesting_article']['link']),['class' => 'btn blog btn-ico'])?>
                 </div>
             </div>
         </div>

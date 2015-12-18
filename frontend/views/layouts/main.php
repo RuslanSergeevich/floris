@@ -69,9 +69,9 @@ AppAsset::register($this);?>
                 Отдел продаж:<br>+7 3652 583-577
             </div>
             <div class="socials">
-                <?= Html::a('','https://www.facebook.com/floristea/',['class' => 'fb', 'target' => '_blank'])?>
-                <a class="yt" href="#"></a>
-                <?= Html::a('','http://vk.com/floristea',['class' => 'vk', 'target' => '_blank'])?>
+                <?= Html::a('<i class="fi fi-footer_social_fb"></i>','https://www.facebook.com/floristea/',['class' => 'fb', 'target' => '_blank'])?>
+                <a class="yt" href="#"><i class="fi fi-footer_social_yt"></i></a>
+                <?= Html::a('<i class="fi fi-footer_social_vk"></i>','http://vk.com/floristea',['class' => 'vk', 'target' => '_blank'])?>
             </div>
             <div class="design">
                 Дизайн шаблонов сайта<br>разработан в

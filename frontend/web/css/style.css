@@ -356,88 +356,23 @@ header menu li.about {
   top: 0;
   left: 0;
 }
-header menu li.about a:after {
-  background: url('../images/icons/menu/about_normal.svg') no-repeat 0 0;
-  background-size: cover;
-  height: 27px;
-  width: 22px;
-  top: -5px;
-}
-header menu li.about a:hover:after {
-  background: url('../images/icons/menu/about_hover.svg') no-repeat 0 0;
-  background-size: cover;
-}
 header menu li.cataloge {
   left: 0;
   top: 35px;
 }
-header menu li.cataloge a:after {
-  background: url('../images/icons/menu/cataloge_normal.svg') no-repeat 0 0;
-  background-size: cover;
-  height: 27px;
-  width: 29px;
-  top: -4px;
-}
-header menu li.cataloge a:hover:after {
-  background: url('../images/icons/menu/cataloge_hover.svg') no-repeat 0 0;
-  background-size: cover;
-}
 header menu li.privat {
   left: 200px;
-}
-header menu li.privat a:after {
-  background: url('../images/icons/menu/privat_normal.svg') no-repeat 0 0;
-  background-size: cover;
-  height: 24px;
-  width: 27px;
-  top: -3px;
-}
-header menu li.privat a:hover:after {
-  background: url('../images/icons/menu/privat_hover.svg') no-repeat 0 0;
-  background-size: cover;
 }
 header menu li.blog {
   top: 35px;
   left: 200px;
 }
-header menu li.blog a:after {
-  background: url('../images/icons/menu/blog_normal.svg') no-repeat 0 0;
-  background-size: cover;
-  height: 28px;
-  width: 24px;
-  top: -3px;
-}
-header menu li.blog a:hover:after {
-  background: url('../images/icons/menu/blog_hover.svg') no-repeat 0 0;
-  background-size: cover;
-}
 header menu li.buy {
   left: 420px;
-}
-header menu li.buy a:after {
-  background: url('../images/icons/menu/buy_normal.svg') no-repeat 0 0;
-  background-size: cover;
-  height: 28px;
-  width: 24px;
-  top: -3px;
-}
-header menu li.buy a:hover:after {
-  background: url('../images/icons/menu/buy_hover.svg') no-repeat 0 0;
-  background-size: cover;
 }
 header menu li.contacts {
   top: 35px;
   left: 420px;
-}
-header menu li.contacts a:after {
-  background: url('../images/icons/menu/contacts_normal.svg') no-repeat 0 0;
-  background-size: cover;
-  height: 24px;
-  width: 27px;
-}
-header menu li.contacts a:hover:after {
-  background: url('../images/icons/menu/contacts_hover.svg') no-repeat 0 0;
-  background-size: cover;
 }
 header .phone {
   position: absolute;
@@ -593,35 +528,12 @@ footer .footer-bottom .socials a {
   vertical-align: middle;
   margin-right: 14px;
 }
-footer .footer-bottom .socials a.fb {
-  background: url('../images/icons/footer/social_fb_normal.svg') no-repeat 0 0;
-  background-size: cover;
-  height: 22px;
-  width: 10px;
+footer .footer-bottom .socials a i:before {
+  font-size: 23px;
+  color: #a2a2a4;
 }
-footer .footer-bottom .socials a.fb:hover {
-  background: url('../images/icons/footer/social_fb_HOVER.svg') no-repeat 0 0;
-  background-size: cover;
-}
-footer .footer-bottom .socials a.yt {
-  background: url('../images/icons/footer/social_yt_normal.svg') no-repeat 0 0;
-  background-size: cover;
-  height: 22px;
-  width: 18px;
-}
-footer .footer-bottom .socials a.yt:hover {
-  background: url('../images/icons/footer/social_yt_HOVER.svg') no-repeat 0 0;
-  background-size: cover;
-}
-footer .footer-bottom .socials a.vk {
-  background: url('../images/icons/footer/social_vk_normal.svg') no-repeat 0 -2px;
-  background-size: cover;
-  height: 22px;
-  width: 22px;
-}
-footer .footer-bottom .socials a.vk:hover {
-  background: url('../images/icons/footer/social_vk_HOVER.svg') no-repeat 0 -2px;
-  background-size: cover;
+footer .footer-bottom .socials a:hover i:before {
+  color: #fff;
 }
 footer .footer-bottom .design {
   position: absolute;
@@ -3286,6 +3198,145 @@ body .ui-tooltip {
   padding-left: 60px;
 }
 
+@font-face {
+  font-family: "icons";
+  src: url("../fonts/icons.eot");
+  src: url("../fonts/icons.eot?#iefix") format("eot"), url("../fonts/icons.woff") format("woff"), url("../fonts/icons.ttf") format("truetype"), url("../fonts/icons.svg#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.fi {
+  display: inline-block;
+}
+
+.fi:before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+  text-decoration: inherit;
+}
+
+.fi-contacts_Phone:before {
+  content: "\EA01";
+}
+
+.fi-contacts_email:before {
+  content: "\EA02";
+}
+
+.fi-contacts_fb:before {
+  content: "\EA03";
+}
+
+.fi-contacts_in:before {
+  content: "\EA04";
+}
+
+.fi-contacts_skype:before {
+  content: "\EA05";
+}
+
+.fi-contacts_viber:before {
+  content: "\EA06";
+}
+
+.fi-contacts_vk:before {
+  content: "\EA07";
+}
+
+.fi-contacts_yt:before {
+  content: "\EA08";
+}
+
+.fi-footer_search:before {
+  content: "\EA09";
+}
+
+.fi-footer_social_fb:before {
+  content: "\EA0A";
+}
+
+.fi-footer_social_vk:before {
+  content: "\EA0B";
+}
+
+.fi-footer_social_yt:before {
+  content: "\EA0C";
+}
+
+.fi-kartochka_fb:before {
+  content: "\EA0D";
+}
+
+.fi-kartochka_inst:before {
+  content: "\EA0E";
+}
+
+.fi-kartochka_min:before {
+  content: "\EA0F";
+}
+
+.fi-kartochka_porcii:before {
+  content: "\EA10";
+}
+
+.fi-kartochka_ves:before {
+  content: "\EA11";
+}
+
+.fi-kartochka_vk:before {
+  content: "\EA12";
+}
+
+.fi-menu_about:before {
+  content: "\EA13";
+}
+
+.fi-menu_blog:before {
+  content: "\EA14";
+}
+
+.fi-menu_buy:before {
+  content: "\EA15";
+}
+
+.fi-menu_cataloge:before {
+  content: "\EA16";
+}
+
+.fi-menu_contacts:before {
+  content: "\EA17";
+}
+
+.fi-menu_privat:before {
+  content: "\EA18";
+}
+
+.fi-play:before {
+  content: "\EA19";
+  font-size: 80px;
+}
+
+menu li a i.fi:before,
+.b1 a.btn i:before,
+.b2 a.btn i:before,
+.b3 a.btn i:before,
+.b4 a.btn i:before {
+  font-size: 25px;
+  position: absolute;
+  left: 1px;
+  top: -4px;
+}
+
+menu li:hover a i:before {
+  color: #1ad2d1;
+}
+
 section {
   min-height: 660px;
   padding-bottom: 50px;
@@ -3332,29 +3383,16 @@ section.b1 .title a.btn {
   text-transform: uppercase;
   position: relative;
 }
-section.b1 .title a.btn:after {
-  background: url("../images/icons/menu/about_normal.svg") no-repeat 0 0;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  -webkit-background-size: cover;
-  background-size: cover;
-  height: 27px;
-  width: 22px;
-  top: 7px;
-  left: 16px;
-  content: '';
-  position: absolute;
+section.b1 .title a.btn i:before {
+  left: 17px;
+  top: 8px;
 }
-section.b1 .title a.btn:hover:after {
-  background: url("../images/icons/menu/about_hover.svg") no-repeat 0 0;
-  background-size: cover;
-  height: 27px;
-  width: 22px;
+section.b1 .title a.btn:hover i:before {
+  color: #1ad2d1;
 }
 section.b1 .title a.play-video {
   margin: 50px auto 0;
   display: block;
-  background: url("../images/icons/play.svg") no-repeat 0 0;
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;
@@ -3364,14 +3402,10 @@ section.b1 .title a.play-video {
   z-index: 20;
 }
 section.b1 .title a.play-video:hover {
-  background: url("../images/icons/play_on.svg") no-repeat 0 0;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  -webkit-background-size: cover;
-  background-size: cover;
-  height: 80px;
-  width: 80px;
   cursor: pointer;
+}
+section.b1 .title a.play-video:hover i:before {
+  color: #1ad2d1;
 }
 section.b2 {
   background: url('../images/main/bg-2.png') no-repeat 50% 50%;
@@ -3489,21 +3523,12 @@ section.b2 .b-left .b-text .btn {
   margin-top: 44px;
   position: relative;
 }
-section.b2 .b-left .b-text .btn:after {
-  background: url("../images/icons/menu/cataloge_normal.svg") no-repeat 0 0;
-  background-size: cover;
-  height: 27px;
-  width: 29px;
-  top: 6px;
-  left: 16px;
-  content: '';
-  position: absolute;
+section.b2 .b-left .b-text .btn i:before {
+  left: 17px;
+  top: 8px;
 }
-section.b2 .b-left .b-text .btn:hover:after {
-  background: url("../images/icons/menu/cataloge_hover.svg") no-repeat 0 0;
-  background-size: cover;
-  height: 27px;
-  width: 29px;
+section.b2 .b-left .b-text .btn:hover i:before {
+  color: #1ad2d1;
 }
 section.b3 {
   background: url('../images/main/bg-3.png') no-repeat 50% 50%;
@@ -3517,21 +3542,12 @@ section.b3 .btns {
 section.b3 .btns a.btn {
   position: relative;
 }
-section.b3 .btns a.btn:after {
-  background: url("../images/icons/menu/privat_normal.svg") no-repeat 0 0;
-  background-size: cover;
-  height: 24px;
-  width: 27px;
-  top: 7px;
-  left: 16px;
-  content: '';
-  position: absolute;
+section.b3 .btns a.btn i:before {
+  left: 17px;
+  top: 8px;
 }
-section.b3 .btns a.btn:hover:after {
-  background: url("../images/icons/menu/privat_hover.svg") no-repeat 0 0;
-  background-size: cover;
-  height: 24px;
-  width: 27px;
+section.b3 .btns a.btn:hover i:before {
+  color: #1ad2d1;
 }
 section.b4 {
   background: url('../images/main/bg-4.png') no-repeat 50% 50%;
@@ -3558,21 +3574,12 @@ section.b4 .b-left .btns {
 section.b4 .b-left .btns a.blog {
   position: relative;
 }
-section.b4 .b-left .btns a.blog:after {
-  background: url("../images/icons/menu/blog_normal.svg") no-repeat 0 0;
-  background-size: cover;
-  height: 28px;
-  width: 24px;
-  top: 7px;
-  left: 16px;
-  content: '';
-  position: absolute;
+section.b4 .b-left .btns a.blog i:before {
+  left: 17px;
+  top: 8px;
 }
-section.b4 .b-left .btns a.blog:hover:after {
-  background: url("../images/icons/menu/blog_hover.svg") no-repeat 0 0;
-  background-size: cover;
-  height: 28px;
-  width: 24px;
+section.b4 .b-left .btns a.blog:hover i:before {
+  color: #1ad2d1;
 }
 section.b4 .b-right {
   width: 50%;
