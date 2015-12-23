@@ -32,7 +32,7 @@ $this->registerMetaTag([
             <a class="play-video" href="#video"><i class="fi fi-play"></i></a>
         </div>
     </section>
-    <section class="b2">
+    <section class="b2" style="background-image: url('<?= Yii::getAlias('@boxes') .'/'. $model->boxes['main_second']['image']?>')">
         <div class="b-list-product">
             <?= Html::ul(\common\models\Packing::getListMain(), ['item' => function($item, $index) {
                 return Html::tag(
