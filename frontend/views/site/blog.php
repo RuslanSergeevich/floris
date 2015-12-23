@@ -56,7 +56,7 @@ $this->registerMetaTag([
                             <?= Html::img('@blog/' . $blog['image'], ['alt' => '', 'title' => ''])?>
                         </div>
                     <?php endif;?>
-                    <?= StringHelper::truncate(str_replace('[image]','',$blog['text']), 700)?>
+                    <?= StringHelper::truncate(str_replace('[image]','', strip_tags($blog['text'])), 700)?>
                 </article>
             <?php endforeach; ?>
         <?php endif; ?>
