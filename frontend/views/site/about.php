@@ -139,7 +139,7 @@ $this->registerMetaTag([
         <div class="inner">
             <div class="b-local">
                 <div class="title">
-                    Сотрудники компании
+                    Сертификаты
                 </div>
             </div>
             <?= Html::ul(Workers::getList(), ['item' => function($item, $index) {
