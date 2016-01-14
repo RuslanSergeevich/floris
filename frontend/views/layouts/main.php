@@ -61,7 +61,7 @@ AppAsset::register($this);?>
         <?php endif;?>
         <div class="footer-bottom">
             <div class="copy">
-                © 2011–<?= date('Y')?>. Флорис.<br>Крым, г. Симферополь, ул. Данилова, 43
+                <?= \common\models\Boxes::getBox('footer_address')?>
             </div>
             <div class="info">
                 <?= \common\models\Boxes::getBox('footer_phone_email')?>

@@ -73,7 +73,7 @@ section.search .search-header {
     color: #353535;
 }
 
-.footer-bottom .info p, .footer-bottom .sales p{
+.footer-bottom .info p, .footer-bottom .sales p, .footer-bottom .copy p{
     color: #FFFFFF;
     font-size: 12px;
 }
