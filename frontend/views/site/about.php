@@ -143,9 +143,10 @@ $this->registerMetaTag([
                 </div>
             </div>
             <?= Html::ul(Workers::getList(), ['item' => function($item, $index) {
+                $image = Html::a(Html::img('@workers' .'/'. $item['image']), Url::to('@workers' .'/'. $item['image']), ['class' => 'fancybox']);
                 return Html::tag(
                     'li',
-                    Html::tag('div', Html::img('@workers' .'/'. $item['image']), [ 'class' => 'img']) . Html::tag('p',$item['name'] . Html::tag('span', $item['appointment']))
+                    Html::tag('div', $image, [ 'class' => 'img']) . Html::tag('p',$item['name'] . Html::tag('span', $item['appointment']))
                 );
             }]) ?>
             <?php if(isset($model->boxes['vacancy'])):?>

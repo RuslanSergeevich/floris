@@ -18,6 +18,7 @@ use backend\components\FileBehavior;
  * @property string $declination
  * @property integer $publish
  * @property integer $pos
+ * @property string $link
  * @property integer $created_at
  * @property integer $updated_at
  */
@@ -77,7 +78,7 @@ class Packing extends \yii\db\ActiveRecord
             [['name'], 'required'],
             [['publish', 'pos', 'created_at', 'updated_at'], 'integer'],
             [['name','declination','image','title_main'], 'string', 'max' => 255],
-            [['text'],'string'],
+            [['text','link'],'string'],
             ['pos', 'default', 'value' => 0]
         ];
     }
@@ -97,6 +98,7 @@ class Packing extends \yii\db\ActiveRecord
             'declination' => 'Склонение',
             'publish' => 'Публикация',
             'pos' => 'Позиция',
+            'link' => 'Ссылка',
             'created_at' => 'Создана',
             'updated_at' => 'Обновлена',
         ];

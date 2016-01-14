@@ -7,7 +7,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\GridView;
 
-$this->title = 'Сотрудники компании';
+$this->title = 'Сертификаты';
 ?>
 
 <div class="row">

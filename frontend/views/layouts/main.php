@@ -38,7 +38,8 @@ AppAsset::register($this);?>
             'class_name' => ''
         ])?>
         <div class="phone">
-            0 800 1111-00-00<?= Html::a('Перезвоните мне', '#backcall',['class' => 'fancybox'])?>
+            <?= strip_tags(\common\models\Boxes::getBox('header_phone'))?>
+            <?= Html::a('Перезвоните мне', '#backcall',['class' => 'fancybox'])?>
         </div>
         <?= Html::a('Сотрудничество', '#sotrudnichestvo',['class' => 'deal btn fancybox'])?>
     </header>
@@ -63,10 +64,10 @@ AppAsset::register($this);?>
                 © 2011–<?= date('Y')?>. Флорис.<br>Крым, г. Симферополь, ул. Данилова, 43
             </div>
             <div class="info">
-                +7 978 049-96-11<br><?= Yii::$app->formatter->asEmail('info@floristea.com')?>
+                <?= \common\models\Boxes::getBox('footer_phone_email')?>
             </div>
             <div class="sales">
-                Отдел продаж:<br>+7 3652 583-577
+                <?= \common\models\Boxes::getBox('footer_sales')?>
             </div>
             <div class="socials">
                 <?= Html::a('<i class="fi fi-footer_social_fb"></i>','https://www.facebook.com/floristea/',['class' => 'fb', 'target' => '_blank'])?>

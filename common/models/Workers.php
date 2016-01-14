@@ -96,8 +96,8 @@ class Workers extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'ФИО',
-            'appointment' => 'Должность',
+            'name' => 'Название',
+            'appointment' => 'Описание',
             'file' => 'Изображение',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',

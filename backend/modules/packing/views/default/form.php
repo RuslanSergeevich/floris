@@ -35,6 +35,7 @@ $this->title = 'Добавление/Редактирование вариант
                         <?= $form->field($model, 'file')->fileInput() ?>
                         <?= $form->field($model, 'text')->textarea() ?>
                         <?= $form->field($model, 'pos') ?>
+                        <?= $form->field($model, 'link') ?>
                         <?php if(!$model->isNewRecord):?>
                             <?= $form->field($model, 'publish')->checkbox(['class' => 'minimal']) ?>
                         <?php endif;?>

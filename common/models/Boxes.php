@@ -115,4 +115,14 @@ class Boxes extends \yii\db\ActiveRecord
     {
         return self::find()->select(['sys_name','title','name','text','link','image'])->where(['publish' => self::PUBLISH])->asArray()->all();
     }
+
+    /**
+     * @param $sys_name
+     * @return array|null|\yii\db\ActiveRecord
+     */
+    public static function getBox($sys_name)
+    {
+        $model = self::find()->select(['sys_name','text'])->where(['publish' => self::PUBLISH, 'sys_name' => $sys_name])->asArray()->one();
+        return $model['text'];
+    }
 }

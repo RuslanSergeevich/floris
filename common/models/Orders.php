@@ -49,6 +49,7 @@ class Orders extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['name', 'message'], 'required'],
             [['phone', 'status', 'created_at', 'updated_at'], 'integer'],
             [['message', 'name'], 'string'],
             [['email'], 'string', 'max' => 255]

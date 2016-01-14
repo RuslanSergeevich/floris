@@ -55,7 +55,7 @@ $this->registerMetaTag([
                                 <?= $value['declination']?>
                             </div>
                             <?= $value['text']?>
-                            <?= Html::a('<i class="fi fi-menu_cataloge"></i>В КАТАЛОГ', Url::to('cataloge'),['class' => 'btn'])?>
+                            <?= Html::a('<i class="fi fi-menu_cataloge"></i>ПОДРОБНЕЕ', Url::to($value['link']),['class' => 'btn'])?>
                         </div>
                     </div>
                 <?php endforeach; ?>

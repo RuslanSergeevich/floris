@@ -72,3 +72,8 @@ section.search .search-header {
 .list-view{
     color: #353535;
 }
+
+.footer-bottom .info p, .footer-bottom .sales p{
+    color: #FFFFFF;
+    font-size: 12px;
+}

@@ -6,7 +6,6 @@ use common\models\GeographyImages;
 use common\models\Orders;
 use common\models\Subscribers;
 use frontend\models\BackCallForm;
-use frontend\models\CooperationForm;
 use frontend\models\SearchModel;
 use Yii;
 use yii\web\Controller;
