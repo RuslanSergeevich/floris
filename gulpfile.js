@@ -3,9 +3,15 @@ var gulp      = require('gulp'),
     rename    = require('gulp-rename'),
     uglify    = require('gulp-uglify'),
     concat    = require('gulp-concat'),
+    watch = require('gulp-watch'),
     concatCss = require('gulp-concat-css');
 
-gulp.task('default', ['css','js']);
+gulp.task('default',['watch']);
+
+gulp.task('watch', function(){
+    gulp.watch('frontend/web/css/*.css', ['css']);
+    gulp.watch('frontend/web/js/lib/*.js', ['js']);
+});
 
 
 gulp.task('css', function () {
