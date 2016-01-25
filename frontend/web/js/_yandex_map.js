@@ -40,3 +40,34 @@ function init () {
         myMap.geoObjects.add(clusterer);
     });
 }
+
+/*
+ |-----------------------------------------------------------
+ |   city search form
+ |-----------------------------------------------------------
+ */
+(function(){
+
+    //$('form input[name=city]').keyup(function(){
+    //    var map = $('#myMap'),
+    //        _this = $(this),
+    //        value = _this.val(),
+    //        mask = '-search__suggest-list';
+    //    map.find('input').val(value).focus();
+    //    var suggest_list = map.find('[class*='+mask+']').html();
+    //    _this.focus();
+    //    suggest_list = suggest_list.replace(/ymaps/g,'div');
+    //});
+
+    $('#city__search').submit(function(e){
+        e.preventDefault();
+        var _this = $(this),
+            map = $('#myMap'),
+            mask = '-search__button',
+            city = _this.find('input').val();
+        map.find('input').val(city);
+        map.find('[class*='+mask+']').click();
+
+    });
+
+})();

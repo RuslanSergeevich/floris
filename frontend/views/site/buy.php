@@ -24,7 +24,7 @@ $this->registerMetaTag([
             <h3>
                 Введите в поиске название города
             </h3>
-            <form>
+            <form id="city__search">
                 <input type="text" name="city" placeholder="Город"><input type="submit" value="">
             </form>
         </div>
