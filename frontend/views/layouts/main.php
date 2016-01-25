@@ -87,8 +87,8 @@ AppAsset::register($this);?>
     'shopAdd' => new \common\models\Geography(),
     'images' => new \common\models\GeographyImages()
 ])?>
-<!-- mailget.net start --><script>var mgv = mgv || [];_mgv["id"] = "387e96631a74584f89fd0c0a65d72a88";(function () {var mg = document.createElement("script");mg.type = "text/javascript";mg.async = true; mg.src = ("https:" == document.location.protocol ? "https://" : "http://") + "mailget.net/mgjs/mg.min.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(mg, s);})();</script><!-- mailget.net end -->
 <?php $this->endBody() ?>
 </body>
+<!-- mailget.net start --><script>var mgv = mgv || [];_mgv["id"] = "387e96631a74584f89fd0c0a65d72a88";(function () {var mg = document.createElement("script");mg.type = "text/javascript";mg.async = true; mg.src = ("https:" == document.location.protocol ? "https://" : "http://") + "mailget.net/mgjs/mg.min.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(mg, s);})();</script><!-- mailget.net end -->
 </html>
 <?php $this->endPage()?>
