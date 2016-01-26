@@ -88,6 +88,12 @@ AppAsset::register($this);?>
     'images' => new \common\models\GeographyImages()
 ])?>
 <?php $this->endBody() ?>
+<script type="text/javascript" src="https://app.getresponse.com/view_webform_v2.js?u=B2fsA&webforms_id=2408506"></script>
+<!-- BEGIN JIVOSITE CODE {literal} -->
+<script type='text/javascript'>
+    (function(){ var widget_id = 'EIPuYm5eF7';
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);})();</script>
+<!-- {/literal} END JIVOSITE CODE -->
 </body>
 <!-- mailget.net start --><script>var mgv = mgv || [];_mgv["id"] = "387e96631a74584f89fd0c0a65d72a88";(function () {var mg = document.createElement("script");mg.type = "text/javascript";mg.async = true; mg.src = ("https:" == document.location.protocol ? "https://" : "http://") + "mailget.net/mgjs/mg.min.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(mg, s);})();</script><!-- mailget.net end -->
 </html>
