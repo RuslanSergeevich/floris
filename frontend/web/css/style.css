@@ -4961,6 +4961,204 @@ section.search ul li p {
   }
 }
 
+section.price {
+  margin: 107px auto 0;
+  padding-top: 70px;
+  width: 940px;
+}
+section.price h1 {
+  color: #272830;
+  font: 25px "espuma_prosemibold";
+}
+section.price h1 span {
+  font-size: 12px;
+}
+section.price h1 span i {
+  font-style: normal;
+  font-size: 16px;
+}
+section.price table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 35px;
+}
+section.price table tr td {
+  color: #333333;
+  text-align: center;
+  vertical-align: middle;
+  height: 40px;
+}
+section.price table tr td.col-img {
+  width: 220px;
+}
+section.price table tr td.col-name {
+  width: 320px;
+}
+section.price table tr td.col-massa {
+  width: 80px;
+}
+section.price table tr td.col-up {
+  width: 90px;
+}
+section.price table tr td.col-count {
+  width: 82px;
+}
+section.price table tr td.col-price {
+  width: 90px;
+}
+section.price table tr td.col-sum {
+  width: 90px;
+}
+section.price table tr td a {
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: url('../images/price/minus.png') no-repeat 50% 50%;
+}
+section.price table tr td a:hover {
+  cursor: pointer;
+}
+section.price table tr td a.plus {
+  background: url('../images/price/plus.png') no-repeat 50% 50%;
+}
+section.price table tr td input.count {
+  width: 28px;
+  height: 22px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: inset 0px 1px 4px #ccc;
+  -webkit-box-shadow: inset 0px 1px 4px #ccc;
+  box-shadow: inset 0px 1px 4px #ccc;
+  border: 1px solid #dcdcdc;
+  font: 14px "open_sansregular";
+  color: #333;
+  text-align: center;
+}
+section.price table tr.head td {
+  color: #333333;
+  background: #f4f4f4;
+  vertical-align: middle;
+  font: 12px "open_sansregular";
+}
+section.price table tr.head td.col-name {
+  text-align: left;
+}
+section.price table tr.pos-title td {
+  font: 16px "open_sanssemibold";
+  padding: 0 0 0 220px;
+  text-align: left;
+  vertical-align: middle;
+}
+section.price table tr.product.active td, section.price table tr.product.active td input.count, section.price table tr.product.active td .product-name {
+  color: #1ad2d1 !important;
+}
+section.price table tr.product td {
+  height: 30px;
+}
+section.price table tr.product td.col-img {
+  height: auto;
+}
+section.price table tr.product td.col-name {
+  text-align: left;
+}
+section.price table tr.product td.col-name .product-name {
+  font: 14px "open_sansregular";
+  color: #222;
+  cursor: pointer;
+}
+section.price table tr.product td.col-name span {
+  font: 12px "open_sansregular";
+  color: #777;
+  display: block;
+  padding-left: 10px;
+}
+section.price table tr.itogo td {
+  color: #333333;
+  background: #f4f4f4;
+  text-align: center;
+  height: 40px;
+  vertical-align: middle;
+  font: 16px "open_sanssemibold";
+  padding-left: 20px;
+}
+section.price table tr.itogo td:first-child {
+  width: 340px;
+  text-align: left;
+  padding-left: 222px;
+}
+section.price table tr.itogo td.count-sum {
+  width: 90px;
+  color: #1ad2d1;
+  font: 14px "open_sanssemibold";
+}
+section.price table tr.itogo td.sum-rub {
+  width: 90px;
+  font: 14px "open_sanssemibold";
+}
+section.price table .b-img {
+  width: 220px;
+  background: #fff url('../images/price/ajax-loader.gif') no-repeat 50% 50%;
+  min-height: 50px;
+}
+
+.price-hidden {
+  display: none;
+}
+.price-bottom {
+  overflow: hidden;
+  padding: 19px 0;
+}
+.price-loginfo {
+  color: #333;
+  float: left;
+  max-width: 510px;
+  padding: 0 10px 0 0;
+  font-family: "open_sansregular";
+  font-size: 14px;
+  line-height: 21px;
+}
+.price-loginfo b {
+  font-family: "open_sanssemibold";
+}
+.price-checks {
+  float: left;
+  width: 210px;
+}
+.price-checks label {
+  font-family: "open_sansregular";
+  font-size: 12px;
+  color: #666;
+}
+.price-checks input {
+  position: relative;
+  top: 2px;
+}
+.price-submit {
+  float: right;
+}
+
+.form-submit {
+  background: #1ad2d1;
+  padding: 10px 35px;
+  border: 0;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "open_sanssemibold";
+  font-size: 15px;
+  box-shadow: 0 2px 0 #099;
+  border-radius: 3px;
+}
+
+.price-count-inp {
+  position: relative;
+  overflow: hidden;
+}
+
+.price-hidden table tr td.col-img {
+  display: none;
+}
+
 .fancybox-overlay {
   background: rgba(0, 0, 0, 0.5);
 }
@@ -7372,7 +7570,7 @@ a.fancybox-close {
   }
 
   footer .footer-bottom .socials {
-    left: 315px;
+    left: 305px;
   }
 }
 @media screen and (max-width: 380px) {
@@ -7382,6 +7580,6 @@ a.fancybox-close {
 }
 @media screen and (max-width: 320px) {
   footer .footer-bottom .socials {
-    left: 221px;
+    left: 219px;
   }
 }
