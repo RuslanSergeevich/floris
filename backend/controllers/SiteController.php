@@ -115,9 +115,7 @@ class SiteController extends Controller
      */
     public function actionProfile()
     {
-        $model = User::getDb()->cache(function ($db) {
-            return User::findOne(['id' => 1]);
-        });
+        $model = User::findOne(['id' => 1]);
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             $model->update();
