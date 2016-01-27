@@ -94,6 +94,10 @@ AppAsset::register($this);?>
     (function(){ var widget_id = 'EIPuYm5eF7';
         var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);})();</script>
 <!-- {/literal} END JIVOSITE CODE -->
+<!-- Malerex script -->
+<script src="//b1.malerex.ru/service/main.js?c=ivideus.at.gmail.com" async="async" type="text/javascript" id="malerex-script">
+</script>
+<!-- End of Malerex script -->
 </body>
 <!-- mailget.net start --><script>var mgv = mgv || [];_mgv["id"] = "387e96631a74584f89fd0c0a65d72a88";(function () {var mg = document.createElement("script");mg.type = "text/javascript";mg.async = true; mg.src = ("https:" == document.location.protocol ? "https://" : "http://") + "mailget.net/mgjs/mg.min.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(mg, s);})();</script><!-- mailget.net end -->
 </html>
