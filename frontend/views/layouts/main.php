@@ -15,6 +15,7 @@ AppAsset::register($this);?>
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name = "format-detection" content = "telephone=no" />
     <?= Html::csrfMetaTags() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='shortcut icon' href='favicon.ico'>
@@ -74,9 +75,9 @@ AppAsset::register($this);?>
                 <a class="yt" href="#"><i class="fi fi-footer_social_yt"></i></a>
                 <?= Html::a('<i class="fi fi-footer_social_vk"></i>','http://vk.com/floristea',['class' => 'vk', 'target' => '_blank'])?>
             </div>
-            <div class="design">
+<!--             <div class="design">
                 Дизайн шаблонов сайта<br>разработан в
-            </div>
+            </div> -->
         </div>
     </footer>
 
@@ -89,6 +90,7 @@ AppAsset::register($this);?>
 ])?>
 <!-- mailget.net start --><script>var mgv = mgv || [];_mgv["id"] = "c3a7cd794da3aaec137f3f4bf35857ea";(function () {var mg = document.createElement("script");mg.type = "text/javascript";mg.async = true; mg.src = ("https:" == document.location.protocol ? "https://" : "http://") + "mailget.net/mgjs/mg.min.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(mg, s);})();</script><!-- mailget.net end -->
 <?php $this->endBody() ?>
+<!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter34978440 = new Ya.Metrika({ id:34978440, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/34978440" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
 </body>
 </html>
 <?php $this->endPage()?>

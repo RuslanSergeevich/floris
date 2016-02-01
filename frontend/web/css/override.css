@@ -81,3 +81,6 @@ section.search .search-header {
 #city__search {
     color: #8a8b8d;
 }
+section.contacts .b-info ul li span {
+    color: #353535 !important;
+}
