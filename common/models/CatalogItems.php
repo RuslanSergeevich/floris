@@ -17,6 +17,8 @@ use yii\helpers\ArrayHelper;
  * @property integer $weight_id
  * @property integer $parent_id
  * @property integer $gallery_cat_id
+ * @property integer $price
+ * @property string $in_package
  * @property string $time
  * @property string $portions
  * @property string $alias
@@ -84,10 +86,11 @@ class CatalogItems extends \yii\db\ActiveRecord
     {
         return [
             [['parent_id', 'alias', 'name', 'text', 'title'], 'required'],
-            [['parent_id', 'gallery_cat_id', 'publish', 'pos', 'created_at', 'updated_at', 'type_id', 'composition_id', 'packing_id', 'weight_id'], 'integer'],
+            [['parent_id', 'gallery_cat_id', 'publish', 'pos', 'created_at', 'updated_at', 'type_id', 'composition_id', 'packing_id', 'weight_id', 'price'], 'integer'],
             [['text', 'title', 'description', 'keywords', 'time', 'portions'], 'string'],
-            [['alias', 'name'], 'string', 'max' => 255],
+            [['alias', 'name', 'in_package'], 'string', 'max' => 255],
             ['pos', 'default', 'value' => 0],
+            ['price', 'default', 'value' => 0],
             ['alias', 'unique'],
         ];
     }
@@ -105,6 +108,8 @@ class CatalogItems extends \yii\db\ActiveRecord
             'packing_id' => 'Упаковка',
             'weight_id' => 'Масса(нетто)',
             'gallery_cat_id' => 'Галерея',
+            'price' => 'Цена',
+            'in_package' => 'В упаковке',
             'alias' => 'Alias',
             'time' => 'Время приготовления',
             'portions' => 'Порции',

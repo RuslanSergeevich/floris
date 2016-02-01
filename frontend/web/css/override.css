@@ -81,3 +81,8 @@ section.search .search-header {
 #city__search {
     color: #8a8b8d;
 }
+
+table .col-img .b-img img{
+    width: auto;
+    max-width: 150px;
+}

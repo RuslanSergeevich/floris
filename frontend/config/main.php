@@ -33,6 +33,7 @@ return [
             'rules' => [
                 '/' => 'site',
                 'send' => 'site/send',
+                'send-order' => 'site/send-order',
                 'back-call' => 'site/backcall',
                 'shop-add' => 'site/shopadd',
                 'subscribe' => 'site/subscribe',

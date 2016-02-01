@@ -34,6 +34,8 @@ $this->title = 'Добавление/Редактирование товара';
                             <?= $form->field($model, 'packing_id')->dropDownList(CatalogItems::$packing, ['class' => 'form-control select2'])?>
                             <?= $form->field($model, 'weight_id')->dropDownList(CatalogItems::$weight, ['class' => 'form-control select2'])?>
                             <?= $form->field($model, 'gallery_cat_id')->dropDownList(CatalogItems::$galleries, ['class' => 'form-control select2'])?>
+                            <?= $form->field($model, 'price') ?>
+                            <?= $form->field($model, 'in_package') ?>
                             <hr />
                             <?= $form->field($model, 'name') ?>
                             <?= $form->field($model, 'title') ?>

@@ -16,4 +16,5 @@ Yii::setAlias('actions', '/userfiles/actions');
 Yii::setAlias('lte_images', '/_root/lte/img');
 Yii::setAlias('gallery', '/userfiles/gallery');
 Yii::setAlias('geography', '/userfiles/geography');
+Yii::setAlias('catalog', '/userfiles/catalog');
 Yii::setAlias('templates', dirname(dirname(__DIR__)) . '/frontend/views/site');

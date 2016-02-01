@@ -4,6 +4,7 @@ namespace frontend\controllers;
 use common\models\Geography;
 use common\models\GeographyImages;
 use common\models\Orders;
+use common\models\OrderSend;
 use common\models\Subscribers;
 use frontend\models\BackCallForm;
 use frontend\models\SearchModel;
@@ -28,8 +29,9 @@ class SiteController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'geocode-tool' => ['post'],
-                    'subscribe'    => ['post']
+                    'geocode-tool'  => ['post'],
+                    'subscribe'     => ['post'],
+                    'send-order'    => ['post'],
                 ],
             ],
         ];
@@ -136,6 +138,15 @@ class SiteController extends Controller
             'model' => $model,
             'data'  => isset($dataProvider) ? $dataProvider : false
         ]);
+    }
+
+    /**
+     * @return bool
+     */
+    public function actionSendOrder()
+    {
+        $model = new OrderSend();
+        return $model->send();
     }
 
     private function _queryOrException($model)

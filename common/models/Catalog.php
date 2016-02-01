@@ -11,6 +11,7 @@ use yii\db\ActiveQuery;
  *
  * @property integer $id
  * @property string $name
+ * @property string $image
  * @property integer $publish
  * @property integer $pos
  * @property integer $created_at
@@ -29,7 +30,7 @@ class Catalog extends \yii\db\ActiveRecord
                 'class' => TimestampBehavior::className(),
                 'createdAtAttribute' => 'created_at',
                 'updatedAtAttribute' => 'updated_at',
-            ],
+            ]
         ];
     }
 
