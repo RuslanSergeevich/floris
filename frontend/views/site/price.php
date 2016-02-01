@@ -55,7 +55,7 @@ $this->registerMetaTag([
                     <?php if ($items = CatalogItems::loadItemsOneImage($catalog['id'])): $step = 1;?>
                         <?php foreach($items as $item):?>
                             <tr class="product<?= $step == 1 ? ' col-with-img' : ''?>">
-                                <?php $path_preview = isset($item['galleryImages'][0]['basename']) ? $item['galleryImages'][0]['basename'].'.'.$item['galleryImages'][0]['ext'] : '';?>
+                                <?php $path_preview = isset($item['galleryImages'][0]['basename']) ? $item['galleryImages'][0]['basename'].'_thumb.'.$item['galleryImages'][0]['ext'] : '';?>
                                 <?php if($step == 1):?>
                                     <td class="col-img" rowspan="<?= count($items)?>">
                                         <div class="b-img">
