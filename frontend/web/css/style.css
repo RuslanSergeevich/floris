@@ -4662,7 +4662,7 @@ section.contacts .b-info ul li span {
   position: relative;
   padding-left: 25px;
   font: 16px "open_sansregular";
-  color: #353535 !important;
+  color: #353535;
   margin-top: 5px;
 }
 section.contacts .b-info ul li span:after {
@@ -5450,10 +5450,6 @@ a.fancybox-close {
 @media screen and (max-width: 1280px) {
   header menu {
     margin-left: 180px;
-  }
-
-  section.blog aside.side-left {
-    display: none;
   }
 }
 @media screen and (max-width: 1210px) {
@@ -6773,9 +6769,6 @@ a.fancybox-close {
   main.privat section.components .text {
     left: 72px;
     top: 40px;
-  }
-  main.privat section.components .text p {
-    font-size: 8px !important;
   }
   main.privat section.components a.btn {
     margin: 200px 0 0 70px;
