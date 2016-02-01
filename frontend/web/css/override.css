@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .alert-message {
     text-align: center;
     font-size: 2em;
@@ -85,4 +86,91 @@ section.search .search-header {
 table .col-img .b-img img{
     width: auto;
     max-width: 150px;
+=======
+.alert-message {
+    text-align: center;
+    font-size: 2em;
+}
+
+.alert-message p {
+    margin-top: 1em;
+}
+
+footer menu li a {
+    text-transform: uppercase;
+}
+
+#kladr_autocomplete a{
+    color: #8a8b8d;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.field-orders-phone, .field-geography-country, .field-geography-city, .field-geography-address, .field-geography-mode, .field-geography-shop_name, .field-geography-fio, .field-geography-phone, .field-geography-email {
+    float: left;
+}
+
+.clear{
+    clear: both;
+}
+
+.flash_message{
+    display: inline-block;
+    color: #353535;
+    text-align: center;
+    font-size: 12px;
+}
+
+.fancybox-wrap #search-shop form input[type="text"] {
+    width: 200px;
+}
+
+#myMap{
+    width: 100%; height: 100%
+}
+
+.client-description{
+
+}
+
+.image-shop img{
+    width: 150px;
+    height: auto;
+}
+
+.privat .components .inner .text > p:first-child{
+    font: 34px/36px "open_sansregular";
+    left: 575px;
+    top: 131px;
+}
+
+#subscribe-form .help-block{
+    color: #353535;
+    text-align: center;
+    font-size: 12px;
+}
+
+section.search .search-header {
+    background: url('../images/search/top-bg.jpg') no-repeat 50% 50%;
+    background-size: cover;
+    height: 107px;
+}
+
+.list-view{
+    color: #353535;
+}
+
+.footer-bottom .info p, .footer-bottom .sales p, .footer-bottom .copy p{
+    color: #FFFFFF;
+    font-size: 12px;
+}
+
+#city__search {
+    color: #8a8b8d;
+}
+section.contacts .b-info ul li span {
+    color: #353535 !important;
+>>>>>>> 778ed0a8fbe764dd5714318a81957134e6c96f9c
 }

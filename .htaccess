@@ -4,9 +4,6 @@
   Options -Indexes
 </IfModule>
 
-
-
-
 # Mod_Rewrite
 <IfModule mod_rewrite.c>
   Options +FollowSymlinks
@@ -16,13 +13,13 @@
   # Перенаправляем _root на входной скрипт админки
   RewriteRule ^_root(.*)?$ /backend/web/$1 [L,PT]
   # Перенаправляем все запросы на входной скрипт
-  RewriteRule ^([^/].*)?$ /frontend/web/$1
-  
+#  RewriteRule ^([^/].*)?$ /frontend/web/$1
+ RewriteRule ^(.*)?$ /frontend/web/$1 
 
 </IfModule>
 
-   Order allow,deny
-   Allow from all
+#   Order allow,deny
+#   Allow from all
 
 
 

@@ -27,8 +27,13 @@ use yii\widgets\ActiveForm;
             <?= $form->field($model, 'phone')->textInput(['placeholder' => 'Номер телефона', 'class' => 'phone'])->label(false)->error(false)?>
             <?= $form->field($model, 'email')->textInput(['placeholder' => 'Электронный адрес', 'class' => 'email'])->label(false)->error(false)?>
             <?= $form->field($model, 'message')->textarea(['placeholder' => 'Укажите пожалуйста вкратце тему сотрудничества'])->label(false)->error(false)?>
-            <input class="btn border" type="submit" value="ОТПРАВИТЬ">
+            <input class="btn border" type="submit" onclick="yaCounter17114080.reachGoal('submit_opt'); return true;" value="ОТПРАВИТЬ">
             <?php ActiveForm::end(); ?>
+            <script type="text/javascript">
+                window.onload = function() {
+                    yaCounter17114080.reachGoal('submit_opt');
+                }
+            </script>
         </div>
     </div>
     <div id="backcall" class="popup">
