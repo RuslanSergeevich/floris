@@ -114,10 +114,10 @@ $this->registerMetaTag([
                 </div>
                 <div class="price-checks">
                     <div class="form-item">
-                        <label><input type="checkbox" checked><span>Выслать рекламные материалы</span></label>
+                        <label><input type="checkbox" name="reklama" checked><span>Выслать рекламные материалы</span></label>
                     </div>
                     <div class="form-item">
-                        <label><input type="checkbox"><span>Выслать образцы</span></label>
+                        <label><input type="checkbox" name="obrazci"><span>Выслать образцы</span></label>
                     </div>
                 </div>
                 <div class="price-submit">

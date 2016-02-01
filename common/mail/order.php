@@ -51,5 +51,15 @@
                 </tr>
             <?php endforeach; ?>
         <?php endif; ?>
+        <?php if($model['reklama'] == 'true'):?>
+            <tr>
+                <td colspan="6"><p>Выслать рекламные материалы: ДА</p></td>
+            </tr>
+        <?php endif;?>
+        <?php if($model['obrazci'] == 'true'):?>
+            <tr>
+                <td colspan="6"><p>Выслать образцы: ДА</p></td>
+            </tr>
+        <?php endif;?>
     </tbody>
 </table>
