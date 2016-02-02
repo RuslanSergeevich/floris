@@ -25,7 +25,8 @@
          data = data.filter(function(x) {
             return x !== undefined;
         });
-        console.log(data);
+        if(!data)
+            return false;
 
         var reklama = $('#reklama').prop('checked');
         var obrazci = $('#obrazci').prop('checked');
