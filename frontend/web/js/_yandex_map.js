@@ -54,11 +54,11 @@ function init () {
             };
         suggestView.events.add('select', function (event) {
             var name = event.get("item");
-            geo.start(name.displayName);
+            return geo.start(name.displayName);
         });
         $('#city__search').submit(function(e){
             e.preventDefault();
-            geo.start($(this).find('#suggest').val());
+            return geo.start($(this).find('#suggest').val());
         });
 
     });

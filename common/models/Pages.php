@@ -13,6 +13,7 @@ use frontend\components\BoxesBehavior;
  * @property integer $id
  * @property integer $template
  * @property integer $parent_id
+ * @property integer $price_id
  * @property string $alias
  * @property string $name
  * @property string $menu_name
@@ -71,7 +72,7 @@ class Pages extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['parent_id', 'publish', 'pos', 'show_menu'], 'integer'],
+            [['parent_id', 'publish', 'pos', 'show_menu','price_id'], 'integer'],
             [['alias', 'name', 'title', 'description'], 'required'],
             [['text', 'title', 'description', 'keywords'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
@@ -91,6 +92,7 @@ class Pages extends \yii\db\ActiveRecord
             'id' => 'ID',
             'template' => 'Выберите шаблон страницы',
             'parent_id' => 'Родительская страница',
+            'price_id' => 'Прайс',
             'alias' => 'Alias',
             'name' => 'Название',
             'menu_name' => 'Название в меню',

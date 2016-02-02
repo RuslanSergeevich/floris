@@ -196,4 +196,13 @@ class CatalogItems extends \yii\db\ActiveRecord
             },
         ])->all();
     }
+
+    /**
+     * @param $id
+     * @return array|\yii\db\ActiveRecord[]
+     */
+    public static function getItemsByParentId($id)
+    {
+        return self::find()->where(['parent_id' => $id])->asArray()->all();
+    }
 }

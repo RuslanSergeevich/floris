@@ -70,4 +70,7 @@ return [
     'ourclients' => [
         'class' => 'backend\modules\ourclients\Ourclients',
     ],
+    'prices' => [
+        'class' => 'backend\modules\prices\Prices',
+    ],
 ];

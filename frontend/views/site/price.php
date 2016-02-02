@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use common\models\Catalog;
 use common\models\CatalogItems;
+use common\models\PricesValues;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Pages */
@@ -80,7 +81,7 @@ $this->registerMetaTag([
                                     </div>
                                 </td>
                                 <td class="col-price">
-                                    <?= $item['price']?>
+                                    <?= PricesValues::getPriceValue($model->price_id, $item['id'])?>
                                 </td>
                                 <td class="col-sum">
                                     0

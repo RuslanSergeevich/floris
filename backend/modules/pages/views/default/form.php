@@ -46,6 +46,7 @@ $this->title = 'Добавление/Редактирование страниц
                         ArrayHelper::remove(Pages::$pages,$model->id);
                         echo $form->field($model, 'parent_id')->dropDownList(Pages::$pages, ['class' => 'form-control select2']);
                     }?>
+                    <?= $form->field($model, 'price_id')->dropDownList(\common\models\Prices::getPrices(),['class' => 'form-control select2']) ?>
                     <?= $form->field($model, 'name') ?>
                     <?= $form->field($model, 'menu_name') ?>
                     <?= $form->field($model, 'title') ?>
