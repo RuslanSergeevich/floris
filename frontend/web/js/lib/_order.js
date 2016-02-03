@@ -38,7 +38,7 @@
             url: '/send-order',
             data: {data: data, 'reklama': reklama, 'obrazci': obrazci, 'name': name, 'email': email},
             success: function(data, textStatus, jqXHR) {
-                document.location.href = '/price';
+                document.location.href = '/order-ok';
             }
         });
     });
