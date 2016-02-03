@@ -5,8 +5,8 @@
 
 ?>
 <h1>Оформление заявки</h1>
-<p><?= $model['name']?></p>
-<p><?= $model['email']?></p>
+<p>ФИО: <?= $model['name']?></p>
+<p>Email: <?= $model['email']?></p>
 <p></p>
 <table border="1">
     <tbody>
@@ -53,6 +53,9 @@
                     </td>
                 </tr>
             <?php endforeach; ?>
+                <tr>
+                    <td colspan="6"><p>Итого: <?= $model['itogo']?></p></td>
+                </tr>
         <?php endif; ?>
         <?php if($model['reklama'] == 'true'):?>
             <tr>
