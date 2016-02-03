@@ -202,4 +202,12 @@ class User extends ActiveRecord implements IdentityInterface
         ];
     }
 
+    /**
+     * @return string
+     */
+    public static function getEmail()
+    {
+        return self::findOne(['id' => 1])->email;
+    }
+
 }

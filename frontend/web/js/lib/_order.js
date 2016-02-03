@@ -6,9 +6,9 @@
      |-----------------------------------------------------------
      */
 
-    var data = [];
     $('#order form').submit(function (e) {
         e.preventDefault();
+        var data = [];
         $('table tr.product').each(function (i) {
             var _this = $(this);
             if(_this.find('.price-count-inp input').val() > 0){
