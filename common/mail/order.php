@@ -5,6 +5,9 @@
 
 ?>
 <h1>Оформление заявки</h1>
+<p><?= $model['name']?></p>
+<p><?= $model['email']?></p>
+<p></p>
 <table border="1">
     <tbody>
         <tr>
@@ -27,8 +30,8 @@
                 Сумма
             </td>
         </tr>
-        <?php if ($model): ?>
-            <?php foreach ($model as $item): ?>
+        <?php if ($model['data']): ?>
+            <?php foreach ($model['data'] as $item): ?>
                 <tr>
                     <td>
                         <?= $item['name']?>

@@ -99,3 +99,36 @@ section.price table tr.product.active:hover td input.count {
 section.cataloge .b-cataloge-content .b-product-list ul li {
     vertical-align: top;
 }
+
+#order {
+    width: 690px;
+    display: none;
+}
+#order .popup-head {
+    background: url('../images/popups/sotrudnichestvo-bg.png') 50% 50% no-repeat;
+}
+#order form {
+    width: 490px;
+    margin: 0 auto;
+}
+
+#order form input.email{
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    background: none;
+    font: 16px "open_sansregular";
+    height: 25px;
+    margin-bottom: 23px;
+    border-bottom: 1px solid #5c5d60;
+    width: 100%;
+}
+#order form input[type=text].phone {
+    margin-right: 28px;
+}
+#order form input[type=submit] {
+    margin-top: 20px;
+}
+.price-bottom .form-submit{
+    text-decoration: none !important;
+}

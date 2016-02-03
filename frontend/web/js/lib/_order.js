@@ -7,7 +7,7 @@
      */
 
     var data = [];
-    $('.form-submit').click(function (e) {
+    $('#order form').submit(function (e) {
         e.preventDefault();
         $('table tr.product').each(function (i) {
             var _this = $(this);
@@ -28,15 +28,17 @@
         if(!data)
             return false;
 
-        var reklama = $('#reklama').prop('checked');
-        var obrazci = $('#obrazci').prop('checked');
+        var reklama = $('#reklama').prop('checked'),
+            obrazci = $('#obrazci').prop('checked'),
+            name    = $(this).find('.name').val(),
+            email   = $(this).find('.email').val();
 
         return $.ajax({
             type: 'post',
             url: '/send-order',
-            data: {data: data, 'reklama': reklama, 'obrazci': obrazci},
+            data: {data: data, 'reklama': reklama, 'obrazci': obrazci, 'name': name, 'email': email},
             success: function(data, textStatus, jqXHR) {
-                //aaaa
+                document.location.href = '/price';
             }
         });
     });

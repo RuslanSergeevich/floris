@@ -13,7 +13,7 @@ class OrderSend extends \yii\db\ActiveRecord
      */
     public function send()
     {
-        return Yii::$app->mailer->compose('order', ['model' => Yii::$app->request->post('data')])
+        return Yii::$app->mailer->compose('order', ['model' => Yii::$app->request->post()])
             ->setFrom(self::FROM)
             ->setTo('djShtaket88@mail.ru')
             ->setSubject(self::SUBJECT)

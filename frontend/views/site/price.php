@@ -122,7 +122,7 @@ $this->registerMetaTag([
                     </div>
                 </div>
                 <div class="price-submit">
-                    <input class="form-submit" type="submit" value="Оформить">
+                    <a href="#order" class="form-submit fancybox">Оформить</a>
                 </div>
             </div>
             <div class="price-hidden">
@@ -131,3 +131,17 @@ $this->registerMetaTag([
         </form>
     </div>
 </section>
+
+<div id="order" class="popup">
+    <div class="popup-head"></div>
+    <div class="popup-content">
+        <div class="title">
+            ЗАПОЛНИТЕ ЗАЯВКУ
+        </div>
+        <form>
+            <input class="name" type="text" placeholder="Введите имя">
+            <input class="email" type="email" placeholder="Электронный адрес">
+            <input class="btn border" type="submit" value="ОТПРАВИТЬ">
+        </form>
+    </div>
+</div>
