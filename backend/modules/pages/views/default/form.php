@@ -36,7 +36,8 @@ $this->title = 'Добавление/Редактирование страниц
                         'buy' => 'Где купить',
                         'contacts' => 'Контакты',
                         'search' => 'Поиск',
-                        'price' => 'Прайс'
+                        'price' => 'Прайс',
+                        'page' => 'Информациооные страницы'
                     ];
                     echo $form->field($model, 'template')->dropDownList($templates, ['class' => 'form-control select2']);?>
 
