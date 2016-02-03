@@ -80,6 +80,7 @@ class DefaultController extends SiteController
      */
     public function actionDelete($id)
     {
+        PricesValues::deleteAll(['price_id' => $id]);
         Prices::findOne(['id' => $id])->delete();
         return $this->redirect(Url::previous());
     }

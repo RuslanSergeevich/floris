@@ -89,3 +89,9 @@ table .product .b-img img {
     width: auto;
     max-width: 150px;
 }
+
+section.price table tr.product.active:hover td,
+section.price table tr.product.active:hover td .product-name,
+section.price table tr.product.active:hover td input.count {
+    color: #1ad2d1 !important;
+}
