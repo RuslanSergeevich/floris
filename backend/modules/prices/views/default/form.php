@@ -25,6 +25,7 @@ $this->title = 'Добавление/Редактирование прайса';
                     <?php $form = ActiveForm::begin(['method' => 'post', 'options' => ['role' => 'form', 'enctype' => 'multipart/form-data']]); ?>
                         <div class="box-body">
                             <?= $form->field($model, 'name') ?>
+                            <?= $form->field($model, 'email') ?>
 
                             <?php if (!$model->isNewRecord && $catalogs = Catalog::find()->select('id,name')->publish()->orderBy('pos ASC')->asArray()->all()):?>
                             <table id="price">
