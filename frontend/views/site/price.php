@@ -140,6 +140,7 @@ $this->registerMetaTag([
         </div>
         <form>
             <input class="name" type="text" placeholder="Введите имя">
+            <input type="hidden" name="email_to" id="email_to" value="<?= \common\models\Prices::getEmail($model->price_id)?>">
             <input class="email" type="email" placeholder="Электронный адрес">
             <input class="btn border" type="submit" value="ОТПРАВИТЬ">
         </form>

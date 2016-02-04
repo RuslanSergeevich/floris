@@ -11,7 +11,7 @@ use yii\helpers\ArrayHelper;
  *
  * @property integer $id
  * @property string $name
- * @property string $email_to
+ * @property string $email
  * @property integer $created_at
  * @property integer $updated_at
  */
@@ -72,4 +72,14 @@ class Prices extends \yii\db\ActiveRecord
     {
         return ArrayHelper::map(ArrayHelper::merge([['id' => '0', 'name' => 'Не выбрано']],self::find()->select(['id','name'])->asArray()->all()),'id','name');
     }
+
+    /**
+     * @param $id
+     * @return string
+     */
+    public static function getEmail($id)
+    {
+        return self::findOne(['id' => $id])->email;
+    }
+
 }

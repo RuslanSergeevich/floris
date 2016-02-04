@@ -10,8 +10,11 @@ use yii\db\ActiveQuery;
  * This is the model class for table "catalog".
  *
  * @property integer $id
+ * @property string $title
+ * @property string $description
+ * @property string $keywords
+ * @property string $alias
  * @property string $name
- * @property string $image
  * @property integer $publish
  * @property integer $pos
  * @property integer $created_at
@@ -57,6 +60,7 @@ class Catalog extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['publish', 'pos', 'created_at', 'updated_at'], 'integer'],
+            [['title', 'description', 'keywords','alias'], 'string'],
             ['pos', 'default', 'value' => 0],
         ];
     }
@@ -69,6 +73,10 @@ class Catalog extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Название',
+            'title' => 'title',
+            'description' => 'description',
+            'keywords' => 'keywords',
+            'alias' => 'alias',
             'publish' => 'Публикация',
             'pos' => 'Позиция',
             'created_at' => 'Создана',

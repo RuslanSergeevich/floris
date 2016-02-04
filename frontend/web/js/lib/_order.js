@@ -28,16 +28,17 @@
         if(!data)
             return false;
 
-        var reklama = $('#reklama').prop('checked'),
-            obrazci = $('#obrazci').prop('checked'),
-            name    = $(this).find('.name').val(),
-            email   = $(this).find('.email').val(),
-            itogo   = parseInt($('.itogo .sum-rub span').text().trim());
+        var reklama  = $('#reklama').prop('checked'),
+            obrazci  = $('#obrazci').prop('checked'),
+            name     = $(this).find('.name').val(),
+            email    = $(this).find('.email').val(),
+            email_to = $(this).find('.email_to').val(),
+            itogo    = parseInt($('.itogo .sum-rub span').text().trim());
 
         return $.ajax({
             type: 'post',
             url: '/send-order',
-            data: {data: data, 'reklama': reklama, 'obrazci': obrazci, 'name': name, 'email': email, 'itogo': itogo},
+            data: {data: data, 'reklama': reklama, 'obrazci': obrazci, 'name': name, 'email': email, 'itogo': itogo, 'email_to': email_to},
             success: function(data, textStatus, jqXHR) {
                 document.location.href = '/order-ok';
             }

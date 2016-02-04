@@ -132,3 +132,14 @@ section.cataloge .b-cataloge-content .b-product-list ul li {
 .price-bottom .form-submit{
     text-decoration: none !important;
 }
+
+#catalog-box .b-product-list a.cat__name{
+    color: #353535;
+    font: 26px open_sanssemibold;
+    margin-bottom: 30px;
+    text-decoration: none !important;
+}
+
+#catalog-box .b-product-list a.cat__name:hover{
+    text-decoration: underline !important;
+}

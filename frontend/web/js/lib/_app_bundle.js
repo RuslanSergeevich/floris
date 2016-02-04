@@ -3,11 +3,11 @@
     $('.cataloge-menu').on('click', 'a', function(){
         sortable();
     });
-    $('.cataloge-filter .weight ul').on('click', 'li', function(){
-        $('.cataloge-filter .weight ul li').removeClass('active');
-        $(this).addClass('active');
-        sortable();
-    });
+    //$('.cataloge-filter .weight ul').on('click', 'li', function(){
+    //    $('.cataloge-filter .weight ul li').removeClass('active');
+    //    $(this).addClass('active');
+    //    sortable();
+    //});
 
     $('#fileInputTrigger').click(function(e){
         e.preventDefault();

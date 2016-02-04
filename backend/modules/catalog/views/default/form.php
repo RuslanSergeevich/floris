@@ -22,6 +22,10 @@ $this->title = 'Добавление/Редактирование статьи �
                     <?php $form = ActiveForm::begin(['method' => 'post', 'options' => ['role' => 'form', 'enctype' => 'multipart/form-data']]); ?>
                         <div class="box-body">
                             <?= $form->field($model, 'name') ?>
+                            <?= $form->field($model, 'title') ?>
+                            <?= $form->field($model, 'description') ?>
+                            <?= $form->field($model, 'keywords') ?>
+                            <?= $form->field($model, 'alias') ?>
                             <?= $form->field($model, 'pos') ?>
                             <div class="form-group">
                                 <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
