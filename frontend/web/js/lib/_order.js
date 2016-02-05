@@ -7,7 +7,6 @@ $(document).ready(function () {
 
     $("#order form input[type=submit]").click(function (e) {
         e.preventDefault();
-        alert('d');
         var data = [];
         $('table tr.product').each(function (i) {
             var _this = $(this);
