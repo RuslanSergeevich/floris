@@ -1,13 +1,13 @@
-(function() {
-
+$(document).ready(function () {
     /*
      |-----------------------------------------------------------
      |   сбор данных из формы
      |-----------------------------------------------------------
      */
 
-    $('#order form').submit(function (e) {
+    $("#order form input[type=submit]").click(function (e) {
         e.preventDefault();
+        alert('d');
         var data = [];
         $('table tr.product').each(function (i) {
             var _this = $(this);
@@ -22,7 +22,7 @@
             }
         });
 
-         data = data.filter(function(x) {
+        data = data.filter(function(x) {
             return x !== undefined;
         });
         if(!data)
@@ -41,10 +41,9 @@
                 url: $(this).attr('action'),
                 data: {data: data, 'reklama': reklama, 'obrazci': obrazci, 'name': name, 'email': email, 'itogo': itogo, 'email_to': email_to},
                 success: function(data, textStatus, jqXHR) {
-                    //document.location.href = '/order-ok';
+                    document.location.href = '/order-ok';
                 }
             });
         }
     });
-
-}).call(this);
+});
