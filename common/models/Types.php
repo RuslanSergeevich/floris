@@ -10,6 +10,10 @@ use yii\helpers\ArrayHelper;
  * This is the model class for table "types".
  *
  * @property integer $id
+ * @property string $title
+ * @property string $description
+ * @property string $keywords
+ * @property string $alias
  * @property string $name
  * @property integer $publish
  * @property integer $pos
@@ -49,6 +53,7 @@ class Types extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['publish', 'pos', 'created_at', 'updated_at'], 'integer'],
+            [['title', 'description', 'keywords','alias'], 'string'],
             [['name'], 'string', 'max' => 255],
             ['pos', 'default', 'value' => 0],
         ];
@@ -70,6 +75,10 @@ class Types extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Название',
+            'title' => 'title',
+            'description' => 'description',
+            'keywords' => 'keywords',
+            'alias' => 'alias',
             'publish' => 'Публикация',
             'pos' => 'Позиция',
             'created_at' => 'Created At',
@@ -95,6 +104,6 @@ class Types extends \yii\db\ActiveRecord
      */
     public static function getList()
     {
-        return ArrayHelper::map(ArrayHelper::merge([['id' => '0', 'name' => 'Не выбрано']],self::find()->where(['publish' => self::PUBLISH])->orderBy('pos ASC')->asArray()->all()),'id','name');
+        return self::find()->where(['publish' => self::PUBLISH])->orderBy('pos ASC')->asArray()->all();
     }
 }

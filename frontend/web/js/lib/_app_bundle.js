@@ -1,8 +1,8 @@
 (function() {
 
-    $('.cataloge-menu').on('click', 'a', function(){
-        sortable();
-    });
+    //$('.cataloge-menu').on('click', 'a', function(){
+    //    sortable();
+    //});
     //$('.cataloge-filter .weight ul').on('click', 'li', function(){
     //    $('.cataloge-filter .weight ul li').removeClass('active');
     //    $(this).addClass('active');
@@ -19,13 +19,13 @@
             $(this).find('div.has-error').effect( "shake" );
         }
     });
-    $('body').ready(function() {
-        return $('.cataloge-menu li a').on('click', function(e) {
-            e.preventDefault();
-            $('.cataloge-menu li').removeClass('active');
-            return $(this).parent('li').addClass('active');
-        });
-    });
+    //$('body').ready(function() {
+    //    return $('.cataloge-menu li a').on('click', function(e) {
+    //        e.preventDefault();
+    //        $('.cataloge-menu li').removeClass('active');
+    //        return $(this).parent('li').addClass('active');
+    //    });
+    //});
 
 }).call(this);
 /*
@@ -36,7 +36,7 @@
 function sortable()
 {
     var data = {
-        'type_id'        : parseInt($('.cataloge-menu .active a').attr('data-type_id')) || 0,
+        //'type_id'        : parseInt($('.cataloge-menu .active a').attr('data-type_id')) || 0,
         'composition_id' : parseInt($('.comp .selecter-selected').attr('data-composition_id')),
         'packing_id'     : parseInt($('.pack .selecter-selected').attr('data-packing_id')),
         'weight_id'      : parseInt($('.filter-weight .selecter-selected').attr('data-weight_id'))
@@ -70,7 +70,7 @@ function sortable()
 
     box.each(function(){
         var _this = $(this);
-        _this.find('li').not('li.hidden').length == 0 ? _this.addClass('hidden') : _this.removeClass('hidden');
+        return _this.find('li').not('li.hidden').length == 0 ? _this.addClass('hidden') : _this.removeClass('hidden');
     });
 
     return off();

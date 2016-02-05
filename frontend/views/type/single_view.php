@@ -1,14 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
-use frontend\components\DDWidget;
-use common\models\Composition;
-use common\models\Packing;
 use common\models\CatalogItems;
-use common\models\Catalog;
-use common\models\Weight;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Pages */
@@ -24,12 +18,14 @@ $this->registerMetaTag([
 ?>
 <section class="cataloge">
     <div class="cataloge-header"></div>
-    <?= $this->render('/partials/_catalog_menu')?>
+    <?= $this->render('/partials/_catalog_menu',[
+        'alias' => $model->alias
+    ])?>
     <?= $this->render('/partials/_catalog_filter')?>
     <div class="b-cataloge-content">
         <div class="inner" id="catalog-box">
 
-            <?php if ($items = CatalogItems::loadItemsOneImage($model['id'])): ?>
+            <?php if ($items = CatalogItems::loadItemsOneImageByType($model['id'])): ?>
                 <div class="b-product-list">
                     <h3><?= $model['name']?></h3>
                     <?= Html::ul($items, ['item' => function($item, $index) {

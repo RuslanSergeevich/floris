@@ -168,6 +168,19 @@ class CatalogItems extends \yii\db\ActiveRecord
     }
 
     /**
+     * @param $parent_id
+     * @return array|\yii\db\ActiveRecord[]
+     */
+    public static function loadItemsOneImageByType($parent_id)
+    {
+        return self::find()->where(['type_id' => $parent_id])->with([
+            'galleryImages' => function ($query) {
+                $query->where(['main' => self::MAIN_IMAGE]);
+            },
+        ])->all();
+    }
+
+    /**
      * @param $status
      * @return mixed
      */

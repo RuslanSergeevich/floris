@@ -43,6 +43,7 @@ return [
                 'blog/<alias[\wd-]+>' => 'blog/view',
                 'product/<alias[\wd-]+>' => 'product/view',
                 'cataloge/<alias[\wd-]+>' => 'catalog/view',
+                'type/<alias[\wd-]+>' => 'type/view',
             ],
         ],
         'log' => [
