@@ -146,7 +146,10 @@ class SiteController extends Controller
     public function actionSendOrder()
     {
         $model = new OrderSend();
-        return $model->send();
+        if($model->validate()){
+            return $model->send();
+        }
+        return false;
     }
 
     private function _queryOrException($model)

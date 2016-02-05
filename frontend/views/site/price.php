@@ -147,7 +147,6 @@ $this->registerMetaTag([
         <?= $form->field($order, 'name')->textInput(['placeholder' => 'Введите имя', 'class' => 'name'])->label(false)->error(false)?>
         <?= $form->field($order, 'email')->textInput(['placeholder' => 'Электронный адрес', 'class' => 'email'])->label(false)->error(false)?>
         <?= Html::submitInput('ОТПРАВИТЬ', ['class' => 'btn border'])?>
+        <?php ActiveForm::end(); ?>
     </div>
 </div>
-
-<?php ActiveForm::end(); ?>
