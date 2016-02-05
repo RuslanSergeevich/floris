@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 use common\models\Catalog;
 use common\models\CatalogItems;
 use common\models\PricesValues;
@@ -138,11 +139,15 @@ $this->registerMetaTag([
         <div class="title">
             ЗАПОЛНИТЕ ЗАЯВКУ
         </div>
-        <form>
-            <input class="name" type="text" placeholder="Введите имя">
-            <input type="hidden" name="email_to" id="email_to" value="<?= \common\models\Prices::getEmail($model->price_id)?>">
-            <input class="email" type="email" placeholder="Электронный адрес">
-            <input class="btn border" type="submit" value="ОТПРАВИТЬ">
-        </form>
+        <?php $order = new \common\models\OrderSend();
+        $form = ActiveForm::begin([
+            'action' => \yii\helpers\Url::toRoute('site/send-order'),
+        ])?>
+        <?= Html::input('hidden', 'email_to', \common\models\Prices::getEmail($model->price_id))?>
+        <?= $form->field($order, 'name')->textInput(['placeholder' => 'Введите имя', 'class' => 'name'])->label(false)->error(false)?>
+        <?= $form->field($order, 'email')->textInput(['placeholder' => 'Электронный адрес', 'class' => 'email'])->label(false)->error(false)?>
+        <?= Html::submitInput('ОТПРАВИТЬ', ['class' => 'btn border'])?>
     </div>
 </div>
+
+<?php ActiveForm::end(); ?>
