@@ -38,7 +38,7 @@ $(document).ready(function () {
         if(name && email){
             return $.ajax({
                 type: 'post',
-                url: $(this).attr('action'),
+                url: _form.attr('action'),
                 data: {data: data, 'reklama': reklama, 'obrazci': obrazci, 'name': name, 'email': email, 'itogo': itogo, 'email_to': email_to},
                 success: function(data, textStatus, jqXHR) {
                     //document.location.href = '/order-ok';
