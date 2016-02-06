@@ -16,15 +16,17 @@ $this->registerMetaTag([
     'content' => Html::encode($model->keywords)
 ]);
 ?>
-<section class="about">
-    <div class="top-block b-top-section top-section">
-        <div class="title">
-            <?= $model->name?>
-        </div>
-    </div>
-    <div class="b-content">
-        <div class="inner">
-            <?= $model->text?>
+<section class="blog">
+    <div class="blog-header"></div>
+    <div class="inner">
+        <aside class="side-left"></aside>
+        <aside class="side-right"></aside>
+        <div class="b-content">
+            <article>
+                <h2>
+                    <?= $model->name?>
+                </h2>
+            </article>
         </div>
     </div>
 </section>

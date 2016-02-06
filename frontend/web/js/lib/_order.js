@@ -5,19 +5,20 @@ $(document).ready(function () {
      |-----------------------------------------------------------
      */
 
-    $("#order form input[type=submit]").click(function (e) {
+    $("#price_form input[type=submit]").click(function (e) {
         e.preventDefault();
-        var data = [];
+        var data  = [],
+            _form = $(this).parent('#price_form');
         $('table tr.product').each(function (i) {
-            var _this = $(this);
+            var _this= $(this);
             if(_this.find('.price-count-inp input').val() > 0){
                 data[i] = {};
-                data[i].name = _this.find('.col-name div').text().trim();
-                data[i].weight = _this.find('td:eq(2)').text().trim();
-                data[i].count_box = _this.find('td:eq(3)').text().trim();
-                data[i].count = _this.find('.price-count-inp input').val();
-                data[i].price = _this.find('.col-price').text().trim();
-                data[i].sum = _this.find('.col-sum').text().trim();
+                data[i].name      = _this.find('.col-name div').text().trim();
+                data[i].weight    = _this.find('.col-massa').text().trim();
+                data[i].count_box = _this.find('.col-up').text().trim();
+                data[i].count     = _this.find('.price-count-inp input').val();
+                data[i].price     = _this.find('.col-price').text().trim();
+                data[i].sum       = _this.find('.col-sum').text().trim();
             }
         });
 
@@ -29,9 +30,9 @@ $(document).ready(function () {
 
         var reklama  = $('#reklama').prop('checked'),
             obrazci  = $('#obrazci').prop('checked'),
-            name     = $(this).find('.name').val(),
-            email    = $(this).find('.email').val(),
-            email_to = $(this).find('.email_to').val(),
+            name     = _form.find('.name').val(),
+            email    = _form.find('.email').val(),
+            email_to = _form.find('.email_to').val(),
             itogo    = parseInt($('.itogo .sum-rub span').text().trim());
 
         if(name && email){

@@ -142,6 +142,7 @@ $this->registerMetaTag([
         <?php $order = new \common\models\OrderSend();
         $form = ActiveForm::begin([
             'action' => \yii\helpers\Url::toRoute('site/send-order'),
+            'id' => 'price_form'
         ])?>
         <?= Html::input('hidden', 'email_to', \common\models\Prices::getEmail($model->price_id))?>
         <?= $form->field($order, 'name')->textInput(['placeholder' => 'Введите имя', 'class' => 'name'])->label(false)->error(false)?>
