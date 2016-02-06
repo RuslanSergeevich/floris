@@ -18,10 +18,6 @@ return [
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
         ],
-        'user' => [
-            'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
-        ],
         'request' => [
             'baseUrl' => '',
             'cookieValidationKey' => 'wlS7Ipf4HtXoZytJCXxogKNUAA_60dwK',
