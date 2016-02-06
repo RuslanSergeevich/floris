@@ -146,11 +146,11 @@ class SiteController extends Controller
     public function actionSendOrder()
     {
         $model = new OrderSend();
+        $model->name  = Yii::$app->request->post('name');
+        $model->email = Yii::$app->request->post('email');
         if($model->validate()){
-            echo '1';
             return $model->send();
         }
-        echo '0';
         return false;
     }
 
