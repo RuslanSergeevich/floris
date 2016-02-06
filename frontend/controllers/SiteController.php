@@ -147,8 +147,10 @@ class SiteController extends Controller
     {
         $model = new OrderSend();
         if($model->validate()){
+            echo '1';
             return $model->send();
         }
+        echo '0';
         return false;
     }
 
