@@ -144,7 +144,7 @@ $this->registerMetaTag([
             'action' => \yii\helpers\Url::toRoute('site/send-order'),
             'id' => 'price_form'
         ])?>
-        <?= Html::input('hidden', 'email_to', \common\models\Prices::getEmail($model->price_id))?>
+        <?= Html::input('hidden', 'email_to', \common\models\Prices::getEmail($model->price_id), ['class' => 'email_to'])?>
         <?= $form->field($order, 'name')->textInput(['placeholder' => 'Введите имя', 'class' => 'name'])->label(false)->error(false)?>
         <?= $form->field($order, 'email')->textInput(['placeholder' => 'Электронный адрес', 'class' => 'email'])->label(false)->error(false)?>
         <?= Html::submitInput('ОТПРАВИТЬ', ['class' => 'btn border'])?>
