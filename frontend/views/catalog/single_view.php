@@ -50,7 +50,7 @@ $this->registerMetaTag([
             <?php endif;?>
 
         </div>
-        <div id="seo_text">
+        <div class="seo_text">
             <?= $model->text?>
         </div>
     </div>
