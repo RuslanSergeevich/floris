@@ -4,7 +4,6 @@ namespace common\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
-use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "types".
@@ -15,6 +14,7 @@ use yii\helpers\ArrayHelper;
  * @property string $keywords
  * @property string $alias
  * @property string $name
+ * @property string $text
  * @property integer $publish
  * @property integer $pos
  * @property integer $created_at
@@ -53,7 +53,7 @@ class Types extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['publish', 'pos', 'created_at', 'updated_at'], 'integer'],
-            [['title', 'description', 'keywords','alias'], 'string'],
+            [['title', 'description', 'keywords','alias','text'], 'string'],
             [['name'], 'string', 'max' => 255],
             ['pos', 'default', 'value' => 0],
         ];
@@ -75,6 +75,7 @@ class Types extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Название',
+            'text' => 'Текст',
             'title' => 'title',
             'description' => 'description',
             'keywords' => 'keywords',

@@ -12,7 +12,7 @@ $this->title = 'Добавление/Редактирование типа';
 ?>
 
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
 
         <div class="box">
             <div class="box box-info">
@@ -28,6 +28,7 @@ $this->title = 'Добавление/Редактирование типа';
                             <?= $form->field($model, 'keywords') ?>
                             <?= $form->field($model, 'alias') ?>
                             <?= $form->field($model, 'pos') ?>
+                            <?= $form->field($model, 'text')->textarea() ?>
                             <?php if(!$model->isNewRecord):?>
                                 <?= $form->field($model, 'publish')->checkbox(['class' => 'minimal']) ?>
                             <?php endif;?>
@@ -43,4 +44,4 @@ $this->title = 'Добавление/Редактирование типа';
 <?php $this->registerJs('(function(){$("input[type=\'checkbox\'].minimal, input[type=\'radio\'].minimal").iCheck({
     checkboxClass: "icheckbox_minimal-blue",
     radioClass: "iradio_minimal-blue"
-})})();');?>
+}); jQuery("textarea").ckeditor();})();');?>

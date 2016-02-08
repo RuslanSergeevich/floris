@@ -26,6 +26,7 @@ $this->title = 'Добавление/Редактирование статьи �
                             <?= $form->field($model, 'description') ?>
                             <?= $form->field($model, 'keywords') ?>
                             <?= $form->field($model, 'alias') ?>
+                            <?= $form->field($model, 'text')->textarea() ?>
                             <?= $form->field($model, 'pos') ?>
                             <div class="form-group">
                                 <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
@@ -39,4 +40,4 @@ $this->title = 'Добавление/Редактирование статьи �
 <?php $this->registerJs('(function(){$("input[type=\'checkbox\'].minimal, input[type=\'radio\'].minimal").iCheck({
     checkboxClass: "icheckbox_minimal-blue",
     radioClass: "iradio_minimal-blue"
-})})();');?>
+}); jQuery("textarea").ckeditor();})();');?>
