@@ -32,7 +32,7 @@ class DefaultController extends SiteController
      */
     public function actionIndex()
     {
-        $query = Orders::find();
+        $query = Orders::find()->orderBy('id DESC');
         return $this->render('index', [
             'dataProvider' => $this->findData($query)
         ]);

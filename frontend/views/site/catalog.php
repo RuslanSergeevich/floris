@@ -47,7 +47,6 @@ $this->registerMetaTag([
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>
-
         </div>
     </div>
 </section>
