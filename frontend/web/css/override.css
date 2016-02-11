@@ -143,3 +143,7 @@ section.cataloge .b-cataloge-content .b-product-list ul li {
 #catalog-box .b-product-list a.cat__name:hover{
     text-decoration: underline !important;
 }
+
+.product-card .bx-viewport ul {
+    width: 1000% !important;
+}
