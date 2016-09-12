@@ -164,7 +164,7 @@ class CatalogItems extends \yii\db\ActiveRecord
             'galleryImages' => function ($query) {
                                         $query->where(['main' => self::MAIN_IMAGE]);
                                     },
-        ])->all();
+        ])->orderBy('pos ASC')->all();
     }
 
     /**

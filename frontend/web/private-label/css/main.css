@@ -1,0 +1,485 @@
+body{
+    font-family: "Tahoma";
+    background: #e9e9e9 url("../images/bkg/body.gif") repeat;
+    padding-bottom: 145px;
+
+}
+
+
+div#container{
+    background: url("../images/bkg/header.png") repeat-x center top;
+    min-height: 447px;
+}
+
+div.site-size{
+    width: 962px;
+    margin: 0 auto;
+}
+
+#header div.site-size{
+    position: relative;
+}
+
+#header div.phone{
+    color: #171717;
+    font-size: 27px;
+    padding-bottom: 16px;
+}
+
+#header div.logo{
+    float: left;
+    padding-top: 45px;
+}
+
+#header div.callback{
+    float: left;
+    padding-top: 46px;
+    padding-left: 130px;
+}
+
+#header div.callback a.button{
+    margin-left: 20px;
+}
+
+
+#header div.banner{
+    width: 392px;
+    height: 144px;
+    background: url("../images/bkg/header-banner.png") no-repeat;
+    float: right;
+}
+
+#header div.schema{
+    clear: left;
+    padding-top: 62px;
+    padding-left: 5px;
+}
+
+#header div.proposal{
+    position: absolute;
+    top:280px;
+    right: 0;
+}
+
+#header div.form-bkg{
+
+}
+
+div#about{
+    padding-top: 65px;
+}
+
+div#about p{
+    font-size: 16px;
+    line-height: 19px;
+    color: #000;
+    width: 900px;
+    padding: 35px 0 0 12px;
+}
+
+div#about div.banners{
+    margin-top: 40px;
+    height: 245px;
+    background: url("../images/bkg/about.png") no-repeat;
+    border-top:#ffdd00 solid 3px;
+    border-bottom:#ffdd00 solid 3px;
+}
+
+div#about div.banners div.banner-1{
+    width: 320px;
+    height: 245px;
+    float: left;
+    text-align: center;
+    background: url("../images/banner/banner-1.png") no-repeat center 48px;
+}
+
+div#about div.banners div.banner-1 h1{
+    font-size: 51px;
+    line-height: 51px;
+    font-weight: bold;
+    color: #3a3f43;
+    padding-top: 65px;
+}
+
+div#about div.banners div.banner-1 h2{
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: bold;
+    color: #3a3f43;
+}
+
+
+div#about div.banners div.banner-1 p{
+    width: auto;
+    font-size: 22px;
+    line-height: 22px;
+    padding:40px 0 0 0;
+    color: #3a3f43;
+}
+
+div#about div.banners div.banner-2{
+    width: 320px;
+    height: 245px;
+    float: left;
+    background: url("../images/banner/banner-2.png") no-repeat center 67px;
+    text-align: center;
+    color: #3a3f43;
+}
+
+div#about div.banners div.banner-2 h1{
+    font-size: 47px;
+    line-height: 47px;
+    font-weight: bold;
+    padding-top: 35px;
+}
+
+div#about div.banners div.banner-2 div{
+    font-size: 22px;
+    line-height: 22px;
+}
+
+div#about div.banners div.banner-2 .div-1{
+    padding-top: 28px;
+}
+div#about div.banners div.banner-2 .div-2{
+    padding-top: 28px;
+}
+
+div#about div.banners div.banner-3{
+    width: 320px;
+    height: 245px;
+    float: left;
+    background: url("../images/banner/banner-3.png") no-repeat center 55px;
+    text-align: center;
+    color: #3a3f43;
+}
+
+div#about div.banners div.banner-3 h1{
+    font-size: 23px;
+    line-height: 21px;
+    font-weight: bold;
+    padding-top: 33px;
+}
+
+div#about div.banners div.banner-3 div{
+    font-size: 22px;
+    line-height: 22px;
+}
+
+div#about div.banners div.banner-3 .div-1{
+    line-height: 25px;
+    padding-top: 28px;
+}
+div#about div.banners div.banner-3 .div-2{
+    padding-top: 40px;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+div#how-we-works{
+    padding-top: 54px;
+}
+
+div#how-we-works div.banner{
+    height: 80px;
+    background: url("../images/bkg/how-we-works.png") no-repeat;
+    margin-top: 45px;
+    color: #ffdf09;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+div#how-we-works div.banner td{
+    height: 80px;
+    vertical-align: middle;
+}
+
+div#how-we-works div.banner td p{
+    padding-left: 20px;
+}
+
+
+div#private-label-desc{
+    margin-top: 73px;
+    background: #0b0b08;
+    border-top:#ffdd00 solid 3px;
+    border-bottom:#ffdd00 solid 3px;
+    color: #fff;
+    font-size: 16px;
+    padding: 60px 0;
+}
+
+div#private-label-desc h1{
+    font-size: 30px;
+    line-height: 33px;
+    font-weight: normal;
+    color: #fff;
+}
+
+div#private-label-desc h1 span.quote{
+    display: inline-block;
+    color: #ffb400;
+    font-size: 60px;
+    line-height: 50px;
+    vertical-align: text-top;
+}
+
+div#private-label-desc span{
+    display: inline-block;
+}
+
+div#private-label-desc div.title h1{
+    font-size: 24px;
+    line-height: 30px;
+    padding:0;
+}
+
+div#private-label-desc p.slogan{
+    line-height: 17px;
+    padding-top: 31px;
+    padding-left: 72px;
+}
+
+div#private-label-desc ul.slogan{
+    border-left: #ffb400 solid 3px;
+    padding-left: 20px;
+    line-height: 17px;
+    margin-left: 50px;
+    margin-top: 45px;
+    margin-bottom: 57px;
+}
+
+div#private-label-desc ul.slogan li{
+    padding:10px 0;
+}
+
+div#private-label-desc table{
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 17px;
+    margin-left: 12px;
+}
+
+div#private-label-desc table td{
+    width: 240px;
+}
+
+div#private-label-desc table td p{
+    width: 220px;
+}
+
+div#problems{
+    padding-top: 48px;
+}
+
+div#problems div.site-size{
+    padding-bottom: 60px;
+}
+
+
+div#problems div.title h1{
+    line-height: 30px;
+}
+div#problems table{
+    margin-top: 50px;
+    margin-left: 12px;
+}
+div#problems table td{
+    width: 470px;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+div#problems table td p{
+    width: 450px;
+}
+
+div#problems table td p.space{
+    padding-bottom: 25px;
+}
+
+div#problems table td p strong{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+div#problems div.site-size{
+    border-bottom: #aac7de solid 3px;
+}
+
+div#difference{
+    padding-top: 54px;
+}
+
+div#difference table{
+
+}
+
+div#difference table td.image{
+    width: 252px;
+}
+div#difference table td.image img{
+    margin-left: 10px;
+}
+
+div#difference table td.text{
+    line-height: 18px;
+    vertical-align: middle;
+}
+
+div#difference table td.text h3{
+    font-weight: bold;
+}
+
+/*div#difference div.proposal{*/
+    /*width: 547px;*/
+    /*margin: 0 auto;*/
+    /*padding-top: 60px;*/
+/*}*/
+
+/*div#difference div.proposal div.form-bkg{*/
+    /*width: 547px;*/
+    /*height: 340px;*/
+    /*background: url("../images/bkg/form-longer.png") no-repeat;*/
+/*}*/
+
+/*div#difference div.proposal table{*/
+    /*margin: 84px 0 0 71px;*/
+/*}*/
+
+/*div#difference div.proposal table input{*/
+    /*height: 39px;*/
+    /*width: 400px;*/
+/*}*/
+
+div#presenter{
+    padding-top: 93px;
+}
+
+div#presenter div.container{
+    border-top: #ffdd00 solid 3px;
+    border-bottom: #ffdd00 solid 3px;
+    height: 249px;
+    background: url("../images/bkg/presenter.png") no-repeat top center;
+}
+
+div#presenter div.site-size{
+    height: 249px;
+}
+
+div#presenter div.title{
+    padding-top: 53px;
+}
+
+div#presenter ul{
+    font-size: 16px;
+    line-height: 35px;
+    padding-left: 40px;
+    padding-top: 55px;
+    text-align: left;
+}
+
+div#presenter ul li{
+    float: left;
+    background: url("../images/bkg/bullet.png") no-repeat left 12px;
+    padding-left: 34px;
+    padding-right: 58px;
+    min-width: 206px;
+}
+
+div#manufactory{
+    padding-top: 74px;
+}
+
+div#manufactory div.title{
+    padding-bottom: 56px;
+}
+
+div#manufactory div.content{
+    position: relative;
+    height: 677px;
+    background: url("../images/bkg/manufactory.png") no-repeat;
+}
+
+div#manufactory div.content p{
+    font-size: 12px;
+    line-height: 14px;
+}
+
+div#manufactory div.content p.p1{
+    position: absolute;
+    top:45px;
+    left: 120px;
+    width: 280px;
+}
+
+div#manufactory div.content p.p2{
+    position: absolute;
+    top:45px;
+    left: 422px;
+    width: 250px;
+}
+
+div#manufactory div.content p.p3{
+    position: absolute;
+    top:355px;
+    left: 304px;
+    width: 255px;
+}
+
+div#manufactory div.content p.p4{
+    position: absolute;
+    top:355px;
+    left: 602px;
+    width: 210px;
+}
+
+div#cases{
+    padding-top: 68px;
+}
+
+div#cases table{
+    margin-top: 87px;
+}
+
+div#cases table td{
+    vertical-align: middle;
+}
+
+div#cases table h1{
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: bold;
+}
+div#cases table p{
+    padding-top: 30px;
+    font-size: 14px;
+    line-height: 18px;
+    width: 340px;
+}
+
+/*div#cases div.proposal table{*/
+    /*margin:0;*/
+/*}*/
+
+/*div#cases div.proposal{*/
+    /*width: 547px;*/
+    /*margin: 0 auto;*/
+    /*padding-top: 60px;*/
+/*}*/
+
+/*div#cases div.proposal div.form-bkg{*/
+    /*width: 547px;*/
+    /*height: 340px;*/
+    /*background: url("../images/bkg/form-longer.png") no-repeat;*/
+/*}*/
+
+/*div#cases div.proposal table{*/
+    /*margin: 84px 0 0 71px;*/
+/*}*/
+
+/*div#cases div.proposal table input{*/
+    /*height: 39px;*/
+    /*width: 400px;*/
+/*}*/

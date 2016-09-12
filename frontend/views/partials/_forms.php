@@ -27,13 +27,8 @@ use yii\widgets\ActiveForm;
             <?= $form->field($model, 'phone')->textInput(['placeholder' => 'Номер телефона', 'class' => 'phone'])->label(false)->error(false)?>
             <?= $form->field($model, 'email')->textInput(['placeholder' => 'Электронный адрес', 'class' => 'email'])->label(false)->error(false)?>
             <?= $form->field($model, 'message')->textarea(['placeholder' => 'Укажите пожалуйста вкратце тему сотрудничества'])->label(false)->error(false)?>
-            <input class="btn border" type="submit" onclick="yaCounter17114080.reachGoal('submit_opt'); return true;" value="ОТПРАВИТЬ">
+            <input class="btn border" type="submit" onclick="yaCounter34978440.reachGoal('cooperation'); return true;" value="ОТПРАВИТЬ">
             <?php ActiveForm::end(); ?>
-            <script type="text/javascript">
-                window.onload = function() {
-                    yaCounter17114080.reachGoal('submit_opt');
-                }
-            </script>
         </div>
     </div>
     <div id="backcall" class="popup">
@@ -47,7 +42,7 @@ use yii\widgets\ActiveForm;
             ])?>
             <?= $form->field($backCall, 'name')->textInput(['placeholder' => 'Введите имя', 'class' => 'name'])->label(false)->error(false)?>
             <?= $form->field($backCall, 'phone')->textInput(['placeholder' => 'Номер телефона', 'class' => 'phone'])->label(false)->error(false)?>
-            <input class="btn border" type="submit" value="ОТПРАВИТЬ">
+            <input class="btn border" onclick="yaCounter34978440.reachGoal('callback'); return true;" type="submit" value="ОТПРАВИТЬ">
             <?php ActiveForm::end(); ?>
         </div>
     </div>
@@ -77,7 +72,7 @@ use yii\widgets\ActiveForm;
             <p>
                 <a href="#" id="fileInputTrigger">Загрузите</a> три фотографии: общий вид магазина<br>и наша продукция на полке
             </p>
-            <input class="btn border" type="submit" value="ДОБАВИТЬ">
+            <input class="btn border" onclick="yaCounter34978440.reachGoal('addshop'); return true;" type="submit" value="ДОБАВИТЬ">
             <?php ActiveForm::end(); ?>
         </div>
     </div>

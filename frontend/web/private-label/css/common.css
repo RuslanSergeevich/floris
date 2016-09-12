@@ -1,0 +1,254 @@
+a.button{
+    display: inline-block;
+    position: relative;
+    height: 34px;
+    line-height: 30px;
+    color: #fff;
+    text-decoration: none;
+    padding: 0 5px;
+    font-size: 17px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #99043b;
+    background: url("../images/bkg/button.png") repeat-x;
+}
+a.button span.left, a.button span.right{
+    position: absolute;
+    top:0;
+    right: -15px;
+    height: 34px;
+    width: 15px;
+    background: url("../images/bkg/button-right.png") no-repeat;
+}
+
+a.button span.left{
+    left: -15px;
+    background: url("../images/bkg/button-left.png") no-repeat;
+
+}
+div.proposal{
+    width: 405px;
+}
+
+div.proposal h3{
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 40px;
+    line-height: 14px;
+}
+div.proposal div.text{
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+    width: 330px;
+    padding-bottom: 22px;
+    margin: 0 auto;
+}
+
+div.form-bkg{
+    width: 405px;
+    height: 340px;
+    position: relative;
+    background: url("../images/bkg/form.png") no-repeat;
+}
+
+div.proposal table{
+    margin: 34px 0 0 33px;
+    float: left;
+}
+div.proposal table input{
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    height: 53px;
+    line-height: 53px;
+    width: 330px;
+    color: #919191;
+    font-size: 18px;
+    margin-bottom: 1px;
+    text-indent: 30px;
+}
+
+div.proposal table input.error{
+    border-bottom: red solid 1px;
+}
+
+
+div.proposal td.submit-container{
+    text-align: center;
+}
+div.proposal a.button{
+    margin-top: 18px;
+}
+
+
+div.proposal-big{
+    width: 547px;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
+div.proposal-big div.form-bkg{
+    width: 547px;
+    height: 340px;
+    background: url("../images/bkg/form-longer.png") no-repeat;
+}
+
+div.proposal-big table{
+    margin: 85px 0 0 65px;
+}
+
+div.proposal-big table input{
+    height: 39px;
+    line-height: 39px;
+    width: 400px;
+}
+
+div.title{
+ text-align: center;
+}
+div.title h1{
+    display: inline-block;
+    position: relative;
+    font-size: 24px;
+    line-height: 26px;
+    color: #000;
+}
+
+div.title h1 span.left{
+    position: absolute;
+    top:0;
+    left: -31px;
+    display: block;
+    width: 23px;
+    height: 26px;
+    background: url("../images/bkg/title-left.png") no-repeat;
+}
+
+div.title h1 span.right{
+    display: block;
+    position: absolute;
+    top:0;
+    right: -31px;
+    width: 23px;
+    height: 26px;
+    float: right;
+    background: url("../images/bkg/title-right.png") no-repeat;
+}
+
+div.popup{
+    display: none;
+}
+
+div.popup div.popup-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.5;
+    filter: alpha("opacity=50");
+    z-index: 10;
+}
+
+div.popup div.popup-container{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    z-index: 11;
+}
+
+div.popup div.popup-container div.content{
+    width: 530px;
+    margin: 0 auto;
+    position: relative;
+}
+
+div.popup a.close{
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url("../images/icons/close-icon.png") no-repeat;
+    position: absolute;
+    right:4px;
+    top:60px;
+    z-index: 22;
+}
+
+div.popup table{
+
+}
+
+
+/**/
+div.proposal  div.success{
+    float: left;
+    width: 325px;
+    height: 124px;
+    margin: 50px 0 0 32px;
+    background-color: #fff;
+    border: #ff3e00 solid 3px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 12;
+    text-align: center;
+    display: none;
+}
+
+div.proposal  div.success h4{
+    font-size: 17px;
+    line-height: 18px;
+    color: #000;
+    font-weight: bold;
+    padding: 20px 0 12px 0;
+}
+
+div.proposal  div.success p{
+    font-size: 21px;
+    line-height: 25px;
+    color: #ff3e00;
+}
+
+
+div.proposal-big  div.success{
+    float: left;
+    width: 405px;
+    height: 124px;
+    margin: 78px 0 0 64px;
+    background-color: #fff;
+    border: #ff3e00 solid 3px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 12;
+    text-align: center;
+    display: none;
+}
+
+div.proposal-big  div.success h4{
+    font-size: 17px;
+    line-height: 18px;
+    color: #000;
+    font-weight: bold;
+    padding: 20px 0 12px 0;
+}
+
+div.proposal-big  div.success p{
+    font-size: 21px;
+    line-height: 25px;
+    color: #ff3e00;
+}
+
+
+
+
+
+

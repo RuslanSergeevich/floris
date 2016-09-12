@@ -1,0 +1,435 @@
+div.size{
+    width: 1172px;
+    margin: 0 auto;
+}
+div.clearfix{
+    width: 100%;
+    clear: both;
+}
+
+/* Header */
+div#header{
+    width: 100%;
+    height: 577px;
+}
+
+div#header div.logo{
+    padding-top: 40px;
+    padding-bottom: 33px;
+    text-align: center;
+}
+
+div#header div.left{
+    width: 400px;
+    font-family: mirtabold;
+    padding-left: 140px;
+}
+
+div#header div.left h1{
+    padding-top: 40px;
+    padding-bottom: 15px;
+}
+
+div#header div.left h2{
+    padding-top: 15px;
+}
+
+div#header div.left div.phone{
+    padding-top: 16px;
+}
+
+div#header div.left div.phone a.callback{
+    display: inline-block;
+}
+
+div#header div.left a.button{
+    display: block;
+    width: 249px;
+    height: 70px;
+    margin: 17px auto 0 auto;
+
+}
+
+/* end Header */
+
+/* Navigation */
+div#navigation{
+    height: 68px;
+}
+div#navigation ul{
+    padding-top: 30px;
+}
+div#navigation ul li{
+    display: inline-block;
+    padding-right: 60px;
+}
+div#navigation ul li.download{
+    padding: 0;
+}
+/* end Navigation */
+
+/* Products */
+div#products{
+
+}
+
+div#products h1{
+    padding-top: 14px;
+    padding-bottom: 16px;
+}
+
+div#products p{
+    padding-top: 15px;
+}
+
+div#products td.container{
+    width: 586px;
+}
+
+div#products td.container table.product-table{
+    width: 100%;
+    height: 365px;
+}
+
+div#products td.container td.image{
+    width: 270px;
+}
+
+div#products td.container td.content div{
+    width: 300px;
+}
+/* end Products */
+
+/* More Clients */
+div#more-clients{
+    height: 564px;
+}
+
+div#more-clients h1{
+    padding-top: 45px;
+}
+
+div#more-clients div.tooltip-1{
+    left: 100px;
+    top:117px;
+    width: 300px;
+}
+
+div#more-clients div.tooltip-2{
+    left: 100px;
+    top: 282px;
+    width: 300px;
+}
+
+div#more-clients div.tooltip-3{
+    left: 418px;
+    top: 446px;
+    width: 340px;
+}
+
+div#more-clients div.tooltip-4{
+    left: 771px;
+    top: 278px;
+    width: 340px;
+}
+
+div#more-clients div.tooltip-4 p{
+    padding-top: 15px;
+}
+
+div#more-clients div.tooltip-5{
+    left: 800px;
+    top: 130px;
+    width: 330px;
+}
+/* end More Clients */
+
+/* Why Floris */
+div#why-floris{
+    height: 465px;
+}
+
+div#why-floris div.b-container{
+    padding-top: 17px;
+}
+
+div#why-floris a.button, div#why-floris-desc a.button, div#image-gallery div.bottom a.button{
+    width: 242px;
+    height: 68px;
+}
+
+div#why-floris h1{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+div#why-floris table h2{
+    padding: 10px 10px;
+}
+
+
+div#why-floris table{
+    width: 1100px;
+}
+div#why-floris table td.cell{
+    width: 398px;
+}
+
+div#why-floris div.title-wrapper{
+    height: 70px;
+}
+
+div#why-floris table p{
+    width: 320px;
+    margin-top: 10px;
+    padding-top: 15px;
+}
+
+/* end Why Floris */
+
+/* Why Floris Desc */
+div#why-floris-desc{
+    height: 1299px;
+}
+div#why-floris-desc div.tooltips{
+    height: 535px;
+}
+
+
+div#why-floris-desc div#sales div.tooltip{
+    width: 290px;
+}
+div#why-floris-desc div.tooltip p{
+    padding-top: 13px;
+}
+
+div#why-floris-desc div.tooltips div.tooltip-1{
+    top:62px;
+    left:425px;
+}
+
+div#why-floris-desc div.tooltips div.tooltip-2{
+    top:245px;
+    left:159px;
+}
+
+div#why-floris-desc div.tooltips div.tooltip-3{
+    top:245px;
+    left:500px;
+}
+div#why-floris-desc div.tooltips div.tooltip-4{
+    top:245px;
+    left:850px;
+}
+div#why-floris-desc div.tooltips div.tooltip-4 p, div#why-floris-desc div.tooltips div.tooltip-4 h2{
+    text-align: left;
+}
+
+div#why-floris-desc div.tooltips div.tooltip-3, div#why-floris-desc div.tooltips div.tooltip-4{
+    text-align: center;
+}
+
+div#why-floris-desc div#sales div.tooltip h1{
+    padding-bottom: 15px;
+}
+
+div#why-floris-desc div#sales div.tooltip-1{
+    left: 30px;
+    top: 156px;
+}
+
+div#why-floris-desc div#sales div.tooltip-2{
+    left: 855px;
+    top: 156px;
+}
+
+div#why-floris-desc div#sales div.tooltip-3{
+    left: 30px;
+    top: 590px;
+}
+
+div#why-floris-desc div#sales div.tooltip-4{
+    left: 855px;
+    top: 590px;
+}
+/* end Why Floris Desc */
+
+/* You are */
+div#you-are{
+    height: 950px;
+}
+
+div#you-are h1{
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+div#you-are ul{
+    width: 1135px;
+    padding-top: 30px;
+}
+div#you-are ul li{
+    padding-left: 35px;
+}
+div#you-are ul li p{
+    width: 300px;
+}
+
+div#you-are table.clients{
+    width: 1080px;
+    margin: 30px auto 0 auto;
+}
+div#you-are table.clients tr.separator td{
+    height: 60px;
+}
+div#you-are table.clients td.container{
+    width: 300px;
+}
+div#you-are table.clients td.separator{
+    width: 100px;
+}
+div#you-are table.clients table.client td.desc p{
+    padding-top: 10px;
+}
+/* edn You are */
+
+/* Image Gallery */
+div#image-gallery{
+
+}
+
+div#image-gallery div.top{
+    height: 120px;
+}
+div#image-gallery div.center{
+    height: 430px;
+}
+div#image-gallery div.bottom{
+    height: 160px;
+}
+/* end Image Gallery */
+
+/* Footer */
+div#footer{
+    height: 899px;
+}
+div#footer h1{
+    padding-top: 55px;
+    padding-bottom: 40px;
+}
+div#footer div.video{
+
+}
+div#footer div.bottom{
+    padding-top: 45px;
+}
+/* end Footer */
+
+/* Popup Form */
+.popup{
+    display: none;
+}
+
+.popup .popup-overlay{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: 0.5;
+    filter: alpha("opacity=50");
+    z-index: 1;
+}
+
+.popup .popup-container{
+    position: absolute;
+    top:195px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.popup .form{
+    width: 600px;
+    height: 300px;
+    background: url("../images/bkg/form.png") no-repeat;
+    margin: 0 auto;
+    position: relative;
+}
+.popup.callback .form{
+    width: 600px;
+    height: 255px;
+    background: url("../images/bkg/form-callback.png") no-repeat;
+}
+
+.popup div.success{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    font-family: mirtaitalic;
+    font-size: 22px;
+    color: #dc1130;
+    text-align: center;
+    line-height: 27px;
+}
+
+.popup div.success p{
+    padding-top: 100px;
+}
+
+.popup .form a.close{
+    display: block;
+    width: 39px;
+    height: 39px;
+    background: url("../images/icons/close.png") no-repeat;
+    position: absolute;
+    right: -20px;
+    top:-20px;
+}
+
+.popup .form h1{
+    font-size: 17px;
+    font-family: mirtaitalic;
+    color: #000;
+    text-align: center;
+    padding: 25px 0;
+}
+.popup .form div.input{
+    padding-bottom: 8px;
+    text-align: center;
+}
+.popup .form div.input input{
+    width: 338px;
+    height: 41px;
+    background: url("../images/bkg/input.png") no-repeat;
+    font-family: "tahoma";
+    font-size: 21px;
+    color: #d2d2d2;
+    text-indent: 10px;
+    border:0;
+}
+
+.popup .form div.input input.error{
+    border-bottom: red solid 1px;
+}
+
+.popup .form div.submit{
+    text-align: center;
+    padding-top: 15px;
+}
+.popup .form div.submit a.button{
+    display: inline-block;
+    width: 172px;
+    height: 45px;
+    background: url("../images/bkg/form-button.png") no-repeat;
+    font-family: "tahoma";
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    text-shadow: #892005 0 1px 2px;
+}
+/* end Popup Form */

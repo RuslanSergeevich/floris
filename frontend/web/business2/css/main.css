@@ -1,0 +1,403 @@
+body{
+    font-family: mirtaregular, tahoma, arial, san-serif;
+}
+/* Header */
+div#header{
+    background: url("../images/bkg/header.jpg") no-repeat center top;
+    /*background-size: 2570px 596px;*/
+}
+
+div#header div.left h1{
+    font-size: 31px;
+    color: #fff;
+    line-height: 36px;
+    text-align: center;
+    background: url("../images/bkg/logo-top.png") no-repeat center top;
+    border-bottom: #fff dashed  1px;
+}
+
+div#header div.left h2{
+    font-size: 21px;
+    line-height: 26px;
+    color: #fff;
+    text-align: center;
+}
+
+div#header div.left div.phone{
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+div#header div.left a.callback{
+    font-size: 15px;
+    color: #94a502;
+}
+
+div#header div.left a.button{
+    font-family: tahoma, arial, san-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    background: url("../images/bkg/top-button.png") no-repeat;
+    text-align: center;
+    line-height: 60px;
+    text-shadow: 0 1px 2px #334a02;
+}
+/* end Header */
+
+/* Navigation */
+div#navigation{
+    font-family: mirtabold;
+    background: #000;
+    text-align: center;
+    position: relative;
+    height: 68px;
+}
+div#navigation a{
+    font-size: 20px;
+    color: #ffffff;
+}
+
+div#navigation a:hover, div#navigation a.active{
+    color: #94a502;
+}
+div#navigation li.download a, div#navigation li.download a:hover{
+    color: #ff5400;
+}
+
+div#navigation.fixed{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+/* end Navigation */
+
+/* Products */
+div#products{
+    color: #000;
+    font-size: 15px;
+    font-family: "mirtaregular";
+    background: #fff;
+    padding-top: 50px;
+}
+
+div#products h1{
+    font-size: 20px;
+    line-height: 25px;
+    border-bottom: #000 dotted 1px;
+}
+
+div#products p{
+    line-height: 22px;
+}
+
+div#products table.products-table, div#products table.products-table td{
+    vertical-align: top;
+}
+div#products table.products-table table.product-table{
+
+}
+div#products ul{
+    line-height: 22px;
+    font-family: mirtaitalic;
+}
+/* end Products */
+
+/* More Clients */
+div#more-clients{
+    background: url("../images/bkg/more-clients.jpg") no-repeat center top;
+    font-family: mirtaitalic;
+    color: #fff;
+    font-size: 19px;
+    line-height: 22px;
+}
+
+div#more-clients div.icon{
+    padding-top: 60px;
+    text-align: center;
+}
+
+div#more-clients div.size{
+    position: relative;
+}
+div#more-clients h1{
+    font-family: mirtabold;
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+div#more-clients div.tooltip{
+    position: absolute;
+}
+
+div#more-clients div.tooltip-1{
+    font-size: 18px;
+}
+
+div#more-clients div.tooltip-3{
+    text-align: center;
+}
+div#more-clients div.tooltip-4{
+    text-align: center;
+}
+div#more-clients div.tooltip-4 p{
+    font-family: tahoma, arial, san-serif;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 22px;
+}
+/* end More Clients */
+
+/* Why Floris */
+div#why-floris{
+    background: url("../images/bkg/why-floris.jpg") no-repeat center top;
+}
+
+div#why-floris a.button{
+    display: block;
+    margin: 0 auto;
+    font:bold 20px "Tahoma";
+    color: #ffffff;
+    text-decoration: none;
+    background: url("../images/bkg/why-button.png") no-repeat;
+    text-align: center;
+    line-height: 54px;
+    text-shadow: #892005 0px 1px 2px;
+}
+div#why-floris{
+    font-family: mirtabold;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+div#why-floris table{
+    margin: 0 auto;
+}
+div#why-floris table td{
+    text-align: left;
+    vertical-align: top;
+}
+
+div#why-floris table h2{
+    font-family: mirtabold;
+    font-size: 20px;
+    color: #00fffc;
+    line-height: 25px;
+    background-color: #000;
+    display: inline-block;
+    text-align: left;
+
+}
+
+div#why-floris table p{
+    border-top:#fff dotted 2px;
+    font-family: mirtaitalic;
+    font-size: 17px;
+    line-height: 22px;
+}
+
+div#why-floris table a{
+    color: #ff5400;
+    font-size: 17px;
+    font-family: mirtaregular;
+}
+
+/* end Why Floris */
+
+/* Why Floris Desc */
+div#why-floris-desc{
+    background: url("../images/bkg/why-floris-bottom.jpg") no-repeat center top;
+}
+
+div#why-floris-desc div.icon{
+    position: absolute;
+    width: 100%;
+    top:145px;
+    left: 0;
+    text-align: center;
+}
+
+div#why-floris-desc div.tooltips{
+    position: relative;
+}
+
+div#why-floris-desc div.tooltip{
+    position: absolute;
+}
+div#why-floris-desc div.tooltip h1{
+    font-family: nerissemibold;
+    font-size: 85px;
+    color: #ffffff;
+}
+div#why-floris-desc div.tooltip p{
+    font-family: mirtabold_italic;
+    font-size: 27px;
+    color: #fff;
+}
+
+div#why-floris-desc a.button{
+    display: block;
+    margin: 0 auto;
+    font:bold 20px "Tahoma";
+    color: #ffffff;
+    text-decoration: none;
+    background: url("../images/bkg/why-button.png") no-repeat;
+    text-align: center;
+    line-height: 54px;
+    text-shadow: #892005 0px 1px 2px;
+    position: relative;
+    top:420px;
+}
+
+div#why-floris-desc div#sales{
+    position: relative;
+}
+
+
+div#why-floris-desc div#sales h1{
+    font-size: 30px;
+    text-align: center;
+    font-family: mirtabold;
+    color: #fff;
+    line-height: 35px;
+    padding-top: 30px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top:0
+}
+div#why-floris-desc div#sales div.r-align{
+    text-align: right;
+}
+
+div#why-floris-desc div#sales div.tooltip h2{
+    font-family: mirtabold;
+    font-size: 25px;
+    line-height: 25px;
+    color: #3399cc;
+    border-bottom: #fff dashed 1px;
+    padding-bottom: 10px;
+
+}
+
+div#why-floris-desc div#sales div.tooltip p{
+    font-size: 16px;
+    line-height: 22px;
+}
+
+/* end Why Floris Desc */
+
+/* You are */
+div#you-are{
+    background: #fff;
+}
+div#you-are h1{
+    font-family: mirtabold;
+    font-size: 30px;
+    color: #000;
+}
+div#you-are ul{
+    font-family: mirtaitalic;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000;
+    margin: 0 auto;
+}
+div#you-are ul li{
+    float: left;
+    background: url("../images/bkg/list-item.png") no-repeat;
+}
+div#you-are ul li.space{
+    padding-right: 60px;
+}
+div#you-are table.clients{
+    font-family: mirtaitalic;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+
+div#you-are table.clients table.client td.client-logo{
+    text-align: center;
+    vertical-align: middle;
+}
+
+div#you-are div.sales-photo-container{
+    padding-top: 45px;
+    text-align: center;
+}
+div#you-are a.sales-photo{
+    color: #ff5400;
+    font-size: 17px;
+}
+/* edn You are */
+
+/* Image Gallery */
+
+div#image-gallery div.top{
+    background: #000 url("../images/bkg/black.jpg") repeat;
+    font-family: mirtabold;
+    font-size: 30px;
+    color: #fff;
+    line-height: 120px;
+    text-align: center;
+}
+div#image-gallery div.center{
+
+}
+
+div#image-gallery div.bottom{
+    background: #000 url("../images/bkg/black.jpg") repeat;
+}
+
+div#image-gallery div.bottom a.button{
+    display: block;
+    margin: 0 auto;
+    font:bold 20px "Tahoma";
+    color: #ffffff;
+    text-decoration: none;
+    background: url("../images/bkg/why-button.png") no-repeat;
+    text-align: center;
+    line-height: 54px;
+    text-shadow: #892005 0px 1px 2px;
+    position: relative;
+    top:55px;
+}
+/* end Image Gallery */
+
+/* Footer */
+div#footer{
+    background: url("../images/bkg/footer.jpg") no-repeat center top;
+}
+div#footer h1{
+    font-family: mirtabold;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+}
+div#footer div.video{
+    text-align: center;
+}
+div#footer div.bottom{
+    font-family: mirtaitalic;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+}
+/* end Footer */
+
+#products .legendy-kryma{
+    margin-bottom: 50px;
+}
+
+#products .legendy-kryma h1{
+    padding-top: 11px;
+}

@@ -1,0 +1,118 @@
+
+h1{
+    font-size: 30px;
+    font-weight: normal;
+    padding: 45px 0 45px 0;
+    text-align: center;
+}
+
+h2{
+    font-size: 25px;
+    font-weight: normal;
+    padding: 20px 0 20px 0;
+    text-align: center;
+}
+
+
+div.send-form{
+    width: 780px;
+    height: 250px;
+    margin: 0 auto;
+    border: #ffe433 solid 30px;
+    background: url("../images/send-form/content.jpg") no-repeat;
+}
+
+div.send-form h2{
+    text-align: left;
+    font-size: 25px;
+    text-shadow: 0 1px 1px #1f301f;
+}
+
+div.send-form div.content{
+    padding: 0 0 0 30px;
+}
+div.send-form div.content table{
+    font-size: 17px;
+    color: #686868;
+}
+div.send-form input.text{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-bottom: #cbcbcb solid 1px;
+    width: 245px;
+    font-size: 17px;
+    color: #686868;
+}
+
+div.send-form input.error{
+    border-bottom: red solid 1px;
+}
+
+div.send-form a.button{
+    display: inline;
+    width: 140px;
+    height: 44px;
+    background: url("../images/send-form/button.jpg") no-repeat;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #628e08;
+    line-height: 44px;
+    font-size: 17px;
+    text-align: center;
+    float: right;
+    margin: 25px 85px 0 0;
+}
+
+div.send-form div.progress{
+    font-size: 17px;
+    width: 140px;
+    display: none;
+    float: right;
+    color: green;
+    margin: 35px 85px 0 0;
+}
+
+div.send-form div.content div.bottom{
+    font-size: 17px;
+    width: 100%;
+}
+
+div.send-form div.content div.bottom div.text{
+    float: left;
+    padding: 34px 0 0 0;
+    color: #686868;
+}
+
+
+div.modal-overlay{
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 10;
+    background: #fff;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+div.modal{
+    width: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 11;
+    display: none;
+}
+
+
+div.modal div.close{
+    width: 780px;
+    height: 20px;
+    margin: 0 auto;
+}
+div.modal div.close a{
+    float: right;
+    color: red;
+}
