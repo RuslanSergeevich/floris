@@ -37,6 +37,13 @@ class DefaultController extends SiteController
         ];
     }
 
+    public function beforeAction($action)
+    {
+            $this->enableCsrfValidation = false;
+
+        return parent::beforeAction($action);
+    }
+
     /**
      * @return string
      */

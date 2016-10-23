@@ -82,4 +82,6 @@ class Prices extends \yii\db\ActiveRecord
         return self::findOne(['id' => $id])->email;
     }
 
+
+
 }

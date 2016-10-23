@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\ViewPrice;
 use Yii;
 use common\models\CatalogItems;
 
@@ -22,8 +23,10 @@ class ProductController extends SiteController
                 $query->andWhere(['<>', 'main', CatalogItems::MAIN_IMAGE]);
             }
         ])->one();
+        $price = new ViewPrice($model->id);
         return $this->render('single_view', [
             'model' => $model,
+            'price' => $price
         ]);
     }
 

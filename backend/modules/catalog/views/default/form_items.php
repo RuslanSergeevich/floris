@@ -42,9 +42,16 @@ $this->title = 'Добавление/Редактирование товара';
                             <?= $form->field($model, 'keywords') ?>
                             <?= $form->field($model, 'alias') ?>
                             <?= $form->field($model, 'text')->textarea() ?>
+                            <?= $form->field($model, 'compositions')->textarea() ?>
+                            <?= $form->field($model, 'logistic_info')->textarea() ?>
                             <?= $form->field($model, 'time') ?>
                             <?= $form->field($model, 'portions') ?>
                             <?= $form->field($model, 'pos') ?>
+                            <?= $form->field($model, 'status')->dropDownList([
+                                '0' => 'В наличии',
+                                '1' => 'Заканчивается',
+                                '2' => 'В производстве'
+                            ], ['class' => 'form-control select2'])?>
 
                             <?php if(!$model->isNewRecord):?>
                                 <?= $form->field($model, 'publish')->checkbox(['class' => 'minimal']) ?>

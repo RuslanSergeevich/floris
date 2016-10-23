@@ -85,8 +85,8 @@ class CatalogItems extends \yii\db\ActiveRecord
     {
         return [
             [['parent_id', 'alias', 'name', 'text', 'title'], 'required'],
-            [['parent_id', 'gallery_cat_id', 'publish', 'pos', 'created_at', 'updated_at', 'type_id', 'composition_id', 'packing_id', 'weight_id'], 'integer'],
-            [['text', 'title', 'description', 'keywords', 'time', 'portions'], 'string'],
+            [['parent_id', 'status', 'gallery_cat_id', 'publish', 'pos', 'created_at', 'updated_at', 'type_id', 'composition_id', 'packing_id', 'weight_id'], 'integer'],
+            [['text', 'title', 'compositions', 'logistic_info', 'description', 'keywords', 'time', 'portions'], 'string'],
             [['alias', 'name', 'in_package'], 'string', 'max' => 255],
             ['pos', 'default', 'value' => 0],
             ['alias', 'unique'],
@@ -112,6 +112,9 @@ class CatalogItems extends \yii\db\ActiveRecord
             'portions' => 'Порции',
             'name' => 'Наименование',
             'text' => 'Контент',
+            'compositions' => 'Состав',
+            'logistic_info' => 'Логистическая информация',
+            'status' => 'Наличие',
             'title' => 'Title',
             'description' => 'Description',
             'keywords' => 'Keywords',

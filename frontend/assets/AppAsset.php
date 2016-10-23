@@ -10,6 +10,8 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'min/application.min.css'
+        // подключил этот не min, потом ужать
+        //'css/new_style.css'
     ];
     public $js = [
         'min/application.min.js'
