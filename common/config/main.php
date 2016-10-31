@@ -2,7 +2,7 @@
 return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
-        'cache' => [
+        /*'cache' => [
             'class' => 'yii\caching\MemCache',
             'useMemcached' => true,
             'keyPrefix' => 'floris_',
@@ -13,6 +13,6 @@ return [
                     'weight' => 60,
                 ],
             ],
-        ],
+        ],*/
     ],
 ];

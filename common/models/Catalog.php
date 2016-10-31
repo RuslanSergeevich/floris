@@ -61,7 +61,7 @@ class Catalog extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['publish', 'pos', 'created_at', 'updated_at'], 'integer'],
-            [['title', 'description', 'keywords','alias', 'text'], 'string'],
+            [['title', 'description', 'keywords','alias', 'text', 'text_on_top', 'title_on_top', 'text_under_name'], 'string'],
             ['pos', 'default', 'value' => 0],
         ];
     }
@@ -74,6 +74,9 @@ class Catalog extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Название',
+            'text_under_name' => 'Текст под названием',
+            'title_on_top' => 'Заголовок на изображении',
+            'text_on_top' => 'Текст на изображении',
             'text' => 'Текст',
             'title' => 'title',
             'description' => 'description',
