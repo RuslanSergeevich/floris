@@ -23,7 +23,7 @@ $this->registerMetaTag([
 ]);
 ?>
 <section class="cataloge">
-    <div class="cataloge-header cataloge-header2" <?php if(!empty($model->image)):?> style="background:url(/userfiles/catalog/<?=$model->image;?>) 50% 50% no-repeat"<?php endif;?>>
+    <div class="cataloge-header cataloge-header2" <?php if(!empty($model->image)):?> style="background:url(/userfiles/catalog/<?=$model->image;?>) 50% 50% no-repeat; background-size: cover; height: 300px;"<?php endif;?>>
         <div class="cataloge-header__text">
         <div class="cataloge-header__title"><?=$model->title_on_top?></div>
         <!-- /.cataloge-header__title -->
