@@ -16,12 +16,28 @@ $this->registerMetaTag([
     'content' => Html::encode($model->keywords)
 ]);
 ?>
-<section class="about">
-    <div class="top-block b-top-section top-section">
-        <div class="title">
-            <?= $model->name?>
-        </div>
+
+<section class="b1 top-section" style="background-image: url('<?= Yii::getAlias('@boxes') .'/'. $model->boxes['we_produce']['image']?>')">
+    <div id="video">
+        <div class="video-logo"></div>
+        <a class="close"></a>
+        <video id="video-frame" autostart loop>
+            <source src="/video/tea.mp4" type="video/mp4; codecs="avc1.42E01E, mp4a.40.2""><source src="/video/tea.webm" type="video/webm"><source src="/video/tea.ogv" type="video/ogg">
+        </video>
     </div>
+    <div class="title">
+        <?= $model->name?>
+        <?//= $model->boxes['we_produce']['title']?>
+        <?//= Html::a('<i class="fi fi-menu_about"></i>ПОДРОБНО О КОМПАНИИ', Url::to($model->boxes['we_produce']['link']),['class' => 'btn'])?>
+        <a class="play-video"><i class="fi fi-play"></i></a>
+    </div>
+</section>
+<section class="about">
+    <!--<div class="top-block b-top-section top-section">
+        <div class="title">
+            <?//= $model->name?>
+        </div>
+    </div>-->
     <div class="b-content">
         <div class="inner">
             <?= $model->text?>

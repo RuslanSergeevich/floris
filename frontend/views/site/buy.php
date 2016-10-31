@@ -31,31 +31,31 @@ $this->registerMetaTag([
         <div class="b-map">
             <div id="myMap"></div>
         </div>
-        <div class="gallerey-magazine">
+        <!--<div class="gallerey-magazine">
             <div class="inner">
                 <h2>
                     Галлерея продукции на полке
                 </h2>
             </div>
-            <?php if($images = \common\models\GeographyImages::getList()):
-                $count = 1;?>
+            <?php// if($images = \common\models\GeographyImages::getList()):
+                //$count = 1;?>
             <ul>
                 <li>
-                    <?php foreach($images as $i):?>
-                        <?php if (($count % 2) == 1 && $count > 1) echo '<li></li>';
-                            echo Html::a(Html::img('@geography/'.$i['basename'] . '.' . $i['ext']), '#');
-                        $count++;?>
-                    <?php endforeach;?>
+                    <?php// foreach($images as $i):?>
+                        <?php// if (($count % 2) == 1 && $count > 1) echo '<li></li>';
+                            //echo Html::a(Html::img('@geography/'.$i['basename'] . '.' . $i['ext']), '#');
+                        //$count++;?>
+                    <?php //endforeach;?>
                 </li>
             </ul>
-            <?php endif;?>
+            <?php //endif;?>
         </div>
         <div class="inner add-mag">
             <a class="btn green fancybox" href="#search-shop">ДОБАВИТЬ МАГАЗИН</a>
             <p>
                 или свяжитесь с нашим <a href="#">отделом продаж</a>
             </p>
-        </div>
+        </div>-->
     </div>
 </section>
 <?php $this->registerJsFile('https://api-maps.yandex.ru/2.1/?lang=ru_RU');?>

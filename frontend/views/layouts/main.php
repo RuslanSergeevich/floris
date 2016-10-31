@@ -32,6 +32,29 @@ AppAsset::register($this);?>
 <body>
 <?php $this->beginBody()?>
 <div id="wrapper">
+    <div class="city">
+       <!-- <div class="city__position">
+            Регион:
+            <div class="city__menu">
+                <a class="city__link" href="#">Симферополь</a>
+                <div class="city__items">
+                    <ul>
+                        <li><a href="#">Севастополь</a></li>
+                        <li><a href="#">Москва</a></li>
+                        <li><a href="#">Краснодар</a></li>
+                        <li><a href="#">Петербуг</a></li>
+                        <li><a href="#">Киев</a></li>
+                    </ul>
+                </div> -->
+                <!-- /.city__items -->
+           <!-- </div>-->
+            <!-- /.city__menu -->
+
+        <!--</div>-->
+        <!-- /.city__position -->
+    </div>
+    <!-- /.city -->
+
     <a class="go-top"></a>
     <header role="banner">
         <a class="mobile-menu mobile" href="#backcall"></a>
