@@ -14,10 +14,9 @@ $this->registerMetaTag([
     'name' => 'keywords',
     'content' => Html::encode($model->keywords)
     ]);
-
 $this->registerMetaTag([
     'property' => 'og:image',
-    'content' => '/userfiles/gallery/_BIG_1449211660.jpg'
+    'content' => '/userfiles/gallery/'.$model['galleryImages'][0]->basename.'.'.$model['galleryImages'][0]->ext,
     ]);
     ?> 
 
@@ -77,7 +76,6 @@ $this->registerMetaTag([
                                 <div class="card-text clr">
 
                                 <div class="card-text__right">
-
                                         <?php if($model->status == 0):?>
                                             <div class="card-text__title card-text__title--stock ">В наличии</div>
                                             <!-- /.card-text__title -->

@@ -30,6 +30,16 @@ $this->title = 'Добавление/Редактирование статьи �
                             <?= $form->field($model, 'title_on_top') ?>
                             <?= $form->field($model, 'text_on_top') ?>
                             <?= $form->field($model, 'text')->textarea() ?>
+                            <?php if($model->image){?>
+                                <div class="image-box">
+                                    <?= Html::img('@catalog/'.$model->image, [
+                                        'alt' => $model->name,
+                                        'width' => '150',
+                                        'data-blog_id' => $model->id
+                                    ]) ?>
+                                </div>
+                            <?php } ?>
+                            <?= $form->field($model, 'file')->fileInput() ?>
                             <?= $form->field($model, 'pos') ?>
                             <div class="form-group">
                                 <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
