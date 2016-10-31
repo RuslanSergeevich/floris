@@ -16,6 +16,8 @@ AppAsset::register($this);?>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name = "format-detection" content = "telephone=no" />
+    <!--<meta property="fb:app_id" content="267024307026803"/>-->
+    <meta property="fb:admins" content="100001623475851" />
     <?= Html::csrfMetaTags() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='shortcut icon' href='favicon.ico'>
@@ -24,6 +26,7 @@ AppAsset::register($this);?>
     <![endif]-->
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <script type="text/javascript" src="//vk.com/js/api/openapi.js?135"></script>
 </head>
 
 <body>
