@@ -24,10 +24,13 @@ $this->registerMetaTag([
     <div class="b-cataloge-content">
         <div class="inner" id="catalog-box">
 
-            <?php if ($catalogs = Catalog::find()->select('id,name,alias')->publish()->orderBy('pos ASC')->asArray()->all()):?>
+            <?php if ($catalogs = Catalog::find()->select('id,name,alias,text_under_name')->publish()->orderBy('pos ASC')->asArray()->all()):?>
                 <?php foreach ($catalogs as $catalog): ?>
                     <div class="b-product-list">
-                    <?= Html::a($catalog['name'], Url::toRoute(['catalog/view', 'alias' => $catalog['alias']]), ['class' => 'cat__name'])?>
+                        <h1 class="title-page title-page2">
+                             <a href="/cataloge/<?=$catalog['alias'];?>"><?=$catalog['name'];?>
+                            <span><?=$catalog['text_under_name'];?></span></a>
+                        </h1>
                         <ul>
                         <?php if ($items = CatalogItems::loadItemsOneImage($catalog['id'])): ?>
                             <?php foreach($items as $item):?>

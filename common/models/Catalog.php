@@ -4,7 +4,9 @@ namespace common\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use backend\components\FileBehavior;
 use yii\db\ActiveQuery;
+
 
 /**
  * This is the model class for table "catalog".
@@ -26,6 +28,10 @@ class Catalog extends \yii\db\ActiveRecord
 
     const PUBLISH = 1;
     const UNPUBLISHED = 0;
+    const IMAGE_ENTITY = 'image';
+    const PATH = '/userfiles/catalog/';
+
+    public $file;
 
     public function behaviors()
     {
@@ -34,7 +40,12 @@ class Catalog extends \yii\db\ActiveRecord
                 'class' => TimestampBehavior::className(),
                 'createdAtAttribute' => 'created_at',
                 'updatedAtAttribute' => 'updated_at',
-            ]
+            ],
+            [
+                'class' => FileBehavior::className(),
+                'path' => self::PATH,
+                'entity' => self::IMAGE_ENTITY
+            ],
         ];
     }
 
@@ -61,7 +72,7 @@ class Catalog extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['publish', 'pos', 'created_at', 'updated_at'], 'integer'],
-            [['title', 'description', 'keywords','alias', 'text'], 'string'],
+            [['image', 'title', 'description', 'keywords','alias', 'text', 'text_on_top', 'title_on_top', 'text_under_name'], 'string'],
             ['pos', 'default', 'value' => 0],
         ];
     }
@@ -74,6 +85,11 @@ class Catalog extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Название',
+            'image' => 'Изображение (загружать размером 1400px на 300px)',
+            'file' => 'Изображение (загружать размером 1400px на 300px)',
+            'text_under_name' => 'Текст под названием',
+            'title_on_top' => 'Заголовок на изображении',
+            'text_on_top' => 'Текст на изображении',
             'text' => 'Текст',
             'title' => 'title',
             'description' => 'description',
@@ -106,6 +122,16 @@ class Catalog extends \yii\db\ActiveRecord
         ];
         return $statuses[$status];
     }
+
+    public static function unlinkImage($id)
+    {
+        $model = self::findOne(['id' => $id]);
+        if(unlink($model->getFileDir() . $model->image)){
+            $model->image = '';
+            return $model->update();
+        }
+    }
+
 }
 
 class ScopesCatalog extends ActiveQuery{
