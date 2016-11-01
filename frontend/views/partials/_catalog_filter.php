@@ -23,6 +23,14 @@ use common\models\Weight;
             'css_class' => 'slider filter-weight weight',
             'entity_db' => 'data-weight_id'
         ])?>
-        <a href="#" class="pdf--button">Скачать каталог</a>
+        <?php $pdf = \common\models\Pdf::find()->where(['id' => 1])->one(); ?>
+        <?php if($pdf):?>
+            <?php $uploaddir = Yii::getAlias('@frontend').'/web/userfiles/pdf/';?>
+            <?php $pdf_file = $uploaddir . $pdf->name;?>
+            <?php if(file_exists($pdf_file)):?>
+                <a href="/userfiles/pdf/<?php echo $pdf->name?>" class="pdf--button">Скачать каталог</a>
+            <?php endif;?>
+        <?php endif;?>
+
     </div>
 </div>
