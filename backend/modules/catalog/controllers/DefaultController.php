@@ -2,6 +2,7 @@
 
 namespace backend\modules\catalog\controllers;
 
+use common\models\Pdf;
 use Yii;
 use yii\filters\AccessControl;
 use backend\controllers\SiteController;
@@ -21,7 +22,7 @@ class DefaultController extends SiteController
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'add', 'update', 'delete', 'items', 'item-add', 'item-update', 'item-delete'],
+                        'actions' => ['index', 'add', 'update', 'delete', 'items', 'item-add', 'item-update', 'item-delete', 'addpdf'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -128,5 +129,25 @@ class DefaultController extends SiteController
     {
         CatalogItems::findOne(['id' => $id])->delete();
         return $this->redirect(Url::previous());
+    }
+
+    public function actionAddpdf(){
+
+
+        $uploaddir = Yii::getAlias('@frontend').'/web/userfiles/pdf/';
+        $uploadfile = $uploaddir . basename($_FILES['pdf']['name']);
+        if(move_uploaded_file($_FILES['pdf']['tmp_name'], $uploadfile)){
+            $pdf = Pdf::find()->where(['id' => 1])->one();
+            $oldFile = $uploaddir . $pdf->name;
+            if(file_exists($oldFile)){
+                unlink($oldFile);
+            }
+            $pdf->name = $_FILES['pdf']['name'];
+            $pdf->save();
+            header('Location: /_root/catalog');
+            die();
+        }else{
+
+        }
     }
 }

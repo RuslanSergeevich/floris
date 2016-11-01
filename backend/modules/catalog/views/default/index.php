@@ -97,6 +97,19 @@ $this->title = 'Каталог';
                     'class' => 'button-add'
                 ]);
                 ?>
+
+                <div style="padding: 20px">
+                    <p>Прайс в PDF</p>
+                    <?php $pdf = \common\models\Pdf::find()->where(['id' => 1])->one();?>
+                    <?php if($pdf && $pdf->name != ''):?>
+                        <p><?php echo $pdf->name; ?></p>
+                    <?php endif;?>
+                    <form method="post" enctype="multipart/form-data" action="<?php echo Url::toRoute(['/catalog/addpdf'])?>">
+                        <input type="file" name="pdf">
+                        <button style="margin-left:0px" class="button-add btn btn-primary" type="submit">Загрузить</button>
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>
