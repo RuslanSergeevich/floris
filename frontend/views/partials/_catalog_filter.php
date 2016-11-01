@@ -23,5 +23,6 @@ use common\models\Weight;
             'css_class' => 'slider filter-weight weight',
             'entity_db' => 'data-weight_id'
         ])?>
+        <a href="#" class="pdf--button">Скачать каталог</a>
     </div>
 </div>

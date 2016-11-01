@@ -70,14 +70,8 @@ $this->registerMetaTag([
                             <div class="b-text b-text--no-border ">
                                 <?= $model->text?>
                                 <div class="card-text clr">
-                                    <div class="card-text__left">
-                                        <?php if(!empty($model->compositions)):?>
-                                            <p><strong>Состав:</strong></p>
-                                            <?php echo $model->compositions?>
-                                        <?php endif;?>
-                                    </div>
-                                    <!-- /.card-text__left -->
-                                    <div class="card-text__right">
+
+                                <div class="card-text__right">
 
                                         <?php if($model->status == 0):?>
                                             <div class="card-text__title card-text__title--stock ">В наличии</div>
@@ -113,6 +107,14 @@ $this->registerMetaTag([
                                     </div>
                                     <!-- /.card-text__right -->
 
+                                    <div class="card-text__left">
+                                        <?php if(!empty($model->compositions)):?>
+                                            <p><strong>Состав:</strong></p>
+                                            <?php echo $model->compositions?>
+                                        <?php endif;?>
+                                    </div>
+                                    <!-- /.card-text__left -->
+                                    
                                 </div>
                                 <!-- /.card-text -->
                                 <p>&nbsp;</p>

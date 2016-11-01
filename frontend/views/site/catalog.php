@@ -27,22 +27,25 @@ $this->registerMetaTag([
             <?php if ($catalogs = Catalog::find()->select('id,name,alias')->publish()->orderBy('pos ASC')->asArray()->all()):?>
                 <?php foreach ($catalogs as $catalog): ?>
                     <div class="b-product-list">
-                        <?= Html::a($catalog['name'], Url::toRoute(['catalog/view', 'alias' => $catalog['alias']]), ['class' => 'cat__name'])?>
+                    <?= Html::a($catalog['name'], Url::toRoute(['catalog/view', 'alias' => $catalog['alias']]), ['class' => 'cat__name'])?>
+                        <ul>
                         <?php if ($items = CatalogItems::loadItemsOneImage($catalog['id'])): ?>
-                            <?= Html::ul($items, ['item' => function($item, $index) {
-                                $img = isset($item['galleryImages'][0]['basename']) ? Html::img('@gallery/'.$item['galleryImages'][0]['basename'].'.'.$item['galleryImages'][0]['ext']) : '';
-                                return Html::tag(
-                                    'li',
-                                    Html::a($img . $item['name'],
-                                        Url::toRoute(['product/view', 'alias' => $item['alias']])),
-                                    [
-                                        'data-composition_id' => $item['composition_id'],
-                                        'data-packing_id' => $item['packing_id'],
-                                        'data-weight_id' => $item['weight_id'],
-                                        //'data-type_id' => $item['type_id']
-                                    ]
-                                );
-                            }]) ?>
+                            <?php foreach($items as $item):?>
+                                <li data-composition_id="<?=$item['composition_id'];?>" data-packing_id="<?=$item['packing_id'];?>" data-weight_id="<?=$item['weight_id'];?>" class="catd-text-catalog">
+                                    <a href="/product/<?=$item['alias']?>"><img src="<?='/userfiles/gallery/'.$item['galleryImages'][0]['basename'].'.'.$item['galleryImages'][0]['ext']?>" alt=""></a>
+                                    <div class="card-text__prise card-text__prise2"><b><?php echo \common\models\PricesValues::getPriceValue(1, $item['id'])?></b>ваша цена</div>
+                                    <!-- /.card-text__prise -->
+                                    <div class="card-text__name"><?=$item['name'];?></div>
+                                    <!-- /.card-text__name -->
+                                    <div class="card-text__info-card"><span><?= \common\models\Packing::getValueById($item->packing_id)?></span></div>
+                                    <!-- /.card-text__info-card -->
+                                    <div class="card-text__weight"><?= \common\models\Weight::getValueById($item->weight_id)?> г</div>
+                                    <!-- /.card-text__weight -->
+                                    <a href="#sotrudnichestvo" class="card-text__button fancybox">ОПТОМ</a>
+                                    <!-- /.card-text__button -->
+                                </li>    
+                            <?php endforeach;?>
+                        </ul>
                         <?php endif;?>
                     </div>
                 <?php endforeach; ?>
