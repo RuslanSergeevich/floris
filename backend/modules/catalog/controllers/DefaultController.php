@@ -133,16 +133,17 @@ class DefaultController extends SiteController
 
     public function actionAddpdf(){
 
-
         $uploaddir = Yii::getAlias('@frontend').'/web/userfiles/pdf/';
-        $uploadfile = $uploaddir . basename($_FILES['pdf']['name']);
+        //$uploadfile = $uploaddir . basename($_FILES['pdf']['name']);
+        $uploadfile = $uploaddir . basename('Catalog_Floris_'.date('Y-m-d-h-i-s').'.pdf');
         if(move_uploaded_file($_FILES['pdf']['tmp_name'], $uploadfile)){
             $pdf = Pdf::find()->where(['id' => 1])->one();
             $oldFile = $uploaddir . $pdf->name;
             if(file_exists($oldFile)){
                 unlink($oldFile);
             }
-            $pdf->name = $_FILES['pdf']['name'];
+            //$pdf->name = $_FILES['pdf']['name'];
+            $pdf->name = 'Catalog_Floris_'.date('Y-m-d-h-i-s').'.pdf';
             $pdf->save();
             header('Location: /_root/catalog');
             die();

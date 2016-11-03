@@ -53,7 +53,7 @@ class Types extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['publish', 'pos', 'created_at', 'updated_at'], 'integer'],
-            [['title', 'description', 'keywords','alias','text'], 'string'],
+            [['title', 'text_under_name', 'description', 'keywords','alias','text'], 'string'],
             [['name'], 'string', 'max' => 255],
             ['pos', 'default', 'value' => 0],
         ];
@@ -75,6 +75,7 @@ class Types extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Название',
+            'text_under_name' => 'Текст под названием',
             'text' => 'Текст',
             'title' => 'title',
             'description' => 'description',

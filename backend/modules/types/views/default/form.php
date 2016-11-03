@@ -23,6 +23,7 @@ $this->title = 'Добавление/Редактирование типа';
                         <div class="box-body">
 
                             <?= $form->field($model, 'name') ?>
+                            <?= $form->field($model, 'text_under_name') ?>
                             <?= $form->field($model, 'title') ?>
                             <?= $form->field($model, 'description') ?>
                             <?= $form->field($model, 'keywords') ?>

@@ -29,7 +29,7 @@ $this->registerMetaTag([
                 <div class="b-product-list">
                     <h1 class="title-page title-page2">
                         <?= $model['name']?>
-                        <span>Сюда описание смотреть макет</span>
+                        <span><?= $model['text_under_name']?></span>
                     </h1>
                     <?php if($items):?>
                         <ul>

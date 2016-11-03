@@ -54,7 +54,7 @@ $this->registerMetaTag([
                                 <?php $i = 0;?>
                                 <?php if($model['galleryImages']):?>
                                     <?php foreach($model['galleryImages'] as $item):?>
-                                        <a data-slide-index="<?php echo $i;?>" href="<?php echo '/userfiles/gallery/' . $item['basename'] .'.'. $item['ext']?>"><img src="<?php echo '/userfiles/gallery/' . $item['basename'] .'.'. $item['ext']?>" /></a>
+                                        <a style="background-image: url('<?php echo '/userfiles/gallery/' . $item['basename'] .'.'. $item['ext']?>')"  data-slide-index="<?php echo $i;?>" href="<?php echo '/userfiles/gallery/' . $item['basename'] .'.'. $item['ext']?>"></a>
                                         <?php $i++;?>
                                     <?php endforeach;?>
                                 <?php endif;?>

@@ -28,9 +28,9 @@ use common\models\Weight;
             <?php $uploaddir = Yii::getAlias('@frontend').'/web/userfiles/pdf/';?>
             <?php $pdf_file = $uploaddir . $pdf->name;?>
             <?php if(file_exists($pdf_file)):?>
-                <a href="/userfiles/pdf/<?php echo $pdf->name?>" class="pdf--button">Скачать каталог</a>
+                <a href="/userfiles/pdf/<?php echo $pdf->name?>" class="pdf--button">Скачать каталог 
+                (<?=sprintf('%01.2f', @filesize($pdf_file) / 1048576 )?> Мб)</a>
             <?php endif;?>
         <?php endif;?>
-
     </div>
 </div>

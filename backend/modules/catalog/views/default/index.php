@@ -99,7 +99,7 @@ $this->title = 'Каталог';
                 ?>
 
                 <div style="padding: 20px">
-                    <p>Прайс в PDF</p>
+                    <p>Каталог в PDF</p>
                     <?php $pdf = \common\models\Pdf::find()->where(['id' => 1])->one();?>
                     <?php if($pdf && $pdf->name != ''):?>
                         <p><?php echo $pdf->name; ?></p>
