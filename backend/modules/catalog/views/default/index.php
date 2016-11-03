@@ -110,6 +110,15 @@ $this->title = 'Каталог';
                     </form>
                 </div>
 
+                <div style="padding: 20px">
+                    <p>Кнопка покупки</p>
+                    <?php $btn_name = \common\models\Elements::find()->where(['id' => 1])->one();?>
+                    <form method="post" enctype="multipart/form-data" action="<?php echo Url::toRoute(['/catalog/changebutton'])?>">
+                        <input type="text" name="name" value="<?php echo $btn_name?$btn_name->name:''?>">
+                        <button style="margin-left:0px" class="button-add btn btn-primary" type="submit">Обновить</button>
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>

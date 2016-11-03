@@ -50,11 +50,11 @@ $this->registerMetaTag([
                                     <!-- /.card-text__prise -->
                                     <div class="card-text__name"><?=$item['name'];?></div>
                                     <!-- /.card-text__name -->
-                                    <div class="card-text__info-card"><span><?= \common\models\Packing::getValueById($item->packing_id)?></span></div>
+                                    <div class="card-text__info-card"><span><?=$item['short_desc']?></span></div>
                                     <!-- /.card-text__info-card -->
-                                    <div class="card-text__weight"><?= \common\models\Weight::getValueById($item->weight_id)?> г</div>
+                                    <div class="card-text__weight">Вес: <?= \common\models\Weight::getValueById($item->weight_id)?> г</div>
                                     <!-- /.card-text__weight -->
-                                    <a href="#sotrudnichestvo" class="card-text__button fancybox">ОПТОМ</a>
+                                    <a href="#sotrudnichestvo" class="card-text__button fancybox"><?php echo \common\models\Elements::getValue(1);?></a>
                                     <!-- /.card-text__button -->
                                 </li>    
                             <?php endforeach;?>

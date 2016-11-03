@@ -40,6 +40,7 @@ $this->title = 'Добавление/Редактирование товара';
                             <?= $form->field($model, 'title') ?>
                             <?= $form->field($model, 'description') ?>
                             <?= $form->field($model, 'keywords') ?>
+                            <?= $form->field($model, 'short_desc') ?>
                             <?= $form->field($model, 'alias') ?>
                             <?= $form->field($model, 'text')->textarea() ?>
                             <?= $form->field($model, 'compositions')->textarea() ?>

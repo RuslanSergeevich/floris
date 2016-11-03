@@ -2,6 +2,7 @@
 
 namespace backend\modules\catalog\controllers;
 
+use common\models\Elements;
 use common\models\Pdf;
 use Yii;
 use yii\filters\AccessControl;
@@ -22,7 +23,7 @@ class DefaultController extends SiteController
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'add', 'update', 'delete', 'items', 'item-add', 'item-update', 'item-delete', 'addpdf'],
+                        'actions' => ['index', 'add', 'update', 'delete', 'items', 'item-add', 'item-update', 'item-delete', 'addpdf', 'changebutton'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -150,5 +151,19 @@ class DefaultController extends SiteController
         }else{
 
         }
+    }
+
+    public function actionChangebutton(){
+        $element = Elements::find()->where(['id' => 1])->one();
+
+        if($element){
+            $element->name = $_POST['name'];
+        }else{
+            $element = new Elements();
+            $element->name = $_POST['name'];
+        }
+        $element->save();
+        header('Location: /_root/catalog');
+        die();
     }
 }
