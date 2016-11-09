@@ -41,6 +41,9 @@ $this->title = 'Добавление/Редактирование статьи �
                             <?php } ?>
                             <?= $form->field($model, 'file')->fileInput() ?>
                             <?= $form->field($model, 'pos') ?>
+                            <?= $form->field($model, 'bottom_menu_name') ?>
+                            <?= $form->field($model, 'bottom_menu_show')->checkbox(['class' => 'minimal']) ?>
+                            <?= $form->field($model, 'bottom_menu_sort') ?>
                             <div class="form-group">
                                 <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
                             </div>

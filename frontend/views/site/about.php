@@ -27,8 +27,8 @@ $this->registerMetaTag([
     </div>
     <div class="title">
         <?= $model->name?>
-        <?//= $model->boxes['we_produce']['title']?>
-        <?//= Html::a('<i class="fi fi-menu_about"></i>ПОДРОБНО О КОМПАНИИ', Url::to($model->boxes['we_produce']['link']),['class' => 'btn'])?>
+        <?php //= $model->boxes['we_produce']['title']?>
+        <?php //= Html::a('<i class="fi fi-menu_about"></i>ПОДРОБНО О КОМПАНИИ', Url::to($model->boxes['we_produce']['link']),['class' => 'btn'])?>
         <a class="play-video"><i class="fi fi-play"></i></a>
     </div>
 </section>

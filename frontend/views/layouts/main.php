@@ -75,7 +75,14 @@ AppAsset::register($this);?>
         <?= $content?>
     </div>
     <footer role="contentinfo">
-       <?= MenuWidget::widget()?>
+        <menu class="" role="navigation">
+            <?php if(\common\models\BottomMenu::getBottomMenu()):?>
+                <?php foreach(\common\models\BottomMenu::getBottomMenu() as $item):?>
+                    <li><a href="/<?php echo $item['alias']=='index'?'':$item['alias']?>"><?php echo $item['bottom_menu_name']?></a></li>
+                <?php endforeach; ?>
+            <?php endif;?>
+            <li><a href = '/'>Костыль</a></li> <!--TODO Костыль, в меню не отображается последний пункт -->
+        </menu>
         <div class="footer-search mobile">
             <?= $this->render('/partials/_search_form',['model' => new \frontend\models\SearchModel()])?>
         </div>

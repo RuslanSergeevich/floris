@@ -61,6 +61,9 @@ $this->title = 'Добавление/Редактирование страниц
                     <?php endif;?>
                     <?= $form->field($model, 'show_menu')->checkbox(['class' => 'minimal']) ?>
                     <?= $form->field($model, 'pos') ?>
+                    <?= $form->field($model, 'bottom_menu_name') ?>
+                    <?= $form->field($model, 'bottom_menu_show')->checkbox(['class' => 'minimal']) ?>
+                    <?= $form->field($model, 'bottom_menu_sort') ?>
                     <div class="form-group">
                         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
                     </div>

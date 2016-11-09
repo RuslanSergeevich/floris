@@ -72,9 +72,9 @@ class Pages extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['parent_id', 'publish', 'pos', 'show_menu','price_id'], 'integer'],
+            [['parent_id', 'publish', 'pos', 'show_menu','price_id', 'bottom_menu_show', 'bottom_menu_sort'], 'integer'],
             [['alias', 'name', 'title', 'description'], 'required'],
-            [['text', 'title', 'description', 'keywords'], 'string'],
+            [['text', 'title', 'description', 'keywords', 'bottom_menu_name'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
             [['alias', 'name', 'menu_name', 'template'], 'string', 'max' => 255],
             ['pos', 'default', 'value' => 0],
@@ -104,7 +104,10 @@ class Pages extends \yii\db\ActiveRecord
             'pos' => 'Позиция',
             'show_menu' => 'Отображать в меню?',
             'created_at' => 'Создана',
-            'updated_at' => 'Обновлена'
+            'updated_at' => 'Обновлена',
+            'bottom_menu_show' => 'Отображать в нижнем меню',
+            'bottom_menu_name' => 'Название в нижнем меню',
+            'bottom_menu_sort' => 'Позиция в нижнем меню',
         ];
     }
 
