@@ -55,7 +55,7 @@ $this->registerMetaTag([
                                 <?= $value['declination']?>
                             </div>
                             <?= $value['text']?>
-                            <?= Html::a('<i class="fi fi-menu_cataloge"></i>ПОДРОБНЕЕ', Url::to($value['link']),['class' => 'btn'])?>
+                            <?= Html::a('<!--<i class="fi fi-menu_cataloge"></i>-->ПОДРОБНЕЕ', Url::to($value['link']),['class' => 'btn'])?>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -67,7 +67,7 @@ $this->registerMetaTag([
                 <?= $model->boxes['tea_production']['title']?>
             </div>
             <div class="btns">
-                <?= Html::a('<i class="fi fi-menu_privat"></i>ПОДРОБНЕЕ', Url::to($model->boxes['tea_production']['link']),['class' => 'btn btn-ico'])?>
+                <?= Html::a('<!--<i class="fi fi-menu_privat"></i>-->ПОДРОБНЕЕ', Url::to($model->boxes['tea_production']['link']),['class' => 'btn btn-ico'])?>
             </div>
         </section>
         <?php endif;?>
@@ -77,7 +77,7 @@ $this->registerMetaTag([
                 <div class="title left">
                     <?= $model->boxes['interesting_article']['title']?>
                     <div class="btns">
-                        <?= Html::a('<i class="fi fi-menu_blog"></i>ЧИТАТЬ БЛОГ', Url::to($model->boxes['interesting_article']['link']),['class' => 'btn blog btn-ico'])?>
+                        <?= Html::a('<!--<i class="fi fi-menu_blog"></i>-->ЧИТАТЬ БЛОГ', Url::to($model->boxes['interesting_article']['link']),['class' => 'btn blog btn-ico'])?>
                     </div>
                 </div>
             </div>
