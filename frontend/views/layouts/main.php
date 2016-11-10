@@ -76,8 +76,26 @@ AppAsset::register($this);?>
     </div>
 
         <footer role="contentinfo">
+            <menu class="" role="navigation">
+                <?php if(\common\models\BottomMenu::getBottomFirstLevelMenu()):?>
+                    <?php foreach(\common\models\BottomMenu::getBottomFirstLevelMenu() as $fItem):?>
+                        <li class=""><a href="/<?php echo $fItem->alias=='index'?'':$fItem->alias?>"><?php echo $fItem->bottom_menu_name?></a>
+                            <?php if($fItem->id == 3 && \common\models\BottomMenu::getBottomSecondLevelMenu()):?>
 
+                                <?php foreach(\common\models\BottomMenu::getBottomSecondLevelMenu() as $sItem):?>
+                                    <ul>
+                                        <li><a href="/<?php echo $sItem['alias']?>"><?php echo $sItem['bottom_menu_name']?></a></li>
+                                    </ul>
+                                <?php endforeach;?>
 
+                            <?php endif;?>
+                        </li>
+                    <?php endforeach;?>
+                <?php endif;?>
+                <li><a href="#">ВАКАНСИИ</a></li>
+            </menu>
+
+            <!--
         <menu class="" role="navigation">
             <li class=""><a href="/about">О КОМПАНИИ</a></li>
             <li class=""><a href="/cataloge">КАТАЛОГ</a>
@@ -93,6 +111,8 @@ AppAsset::register($this);?>
             <li class=""><a href="/contacts">Контакты</a></li>
             <li><a href="#">ВАКАНСИИ</a></li>
         </menu>
+
+            -->
 
 
         <div class="footer-search mobile">
