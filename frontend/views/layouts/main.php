@@ -79,7 +79,7 @@ AppAsset::register($this);?>
             <menu class="" role="navigation">
                 <?php if(\common\models\BottomMenu::getBottomFirstLevelMenu()):?>
                     <?php foreach(\common\models\BottomMenu::getBottomFirstLevelMenu() as $fItem):?>
-                        <li class=""><a href="/<?php echo $fItem->alias?>"><?php echo $fItem->bottom_menu_name?></a>
+                        <li class=""><a href="/<?php echo $fItem->alias=='index'?'':$fItem->alias?>"><?php echo $fItem->bottom_menu_name?></a>
                             <?php if($fItem->id == 3 && \common\models\BottomMenu::getBottomSecondLevelMenu()):?>
 
                                 <?php foreach(\common\models\BottomMenu::getBottomSecondLevelMenu() as $sItem):?>
