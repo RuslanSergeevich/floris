@@ -54,44 +54,42 @@ AppAsset::register($this);?>
         <!-- /.city__position -->
     </div>
     <!-- /.city -->
+
+    <a class="go-top"></a>
     <header role="banner">
-        <a class="go-top"></a>
         <a class="mobile-menu mobile" href="#backcall"></a>
         <?= Html::a('','#backcall', ['class' => 'mobile-phone mobile fancybox'])?>
         <?= Html::a('', Url::home(),['class' => 'logo'])?>
-                <?= MenuWidget::widget([
-                    'attach_icon' => true,
-                    'class_name' => ''
-                ])?>
+        <?= MenuWidget::widget([
+            'attach_icon' => true,
+            'class_name' => ''
+        ])?>
         <div class="phone">
-            <?= strip_tags(\common\models\Boxes::getBox('header_phone'))?><br>
+            <?= strip_tags(\common\models\Boxes::getBox('header_phone'))?><br/>
             <?= Html::a('Перезвоните мне', '#backcall',['class' => 'fancybox'])?>
             <div class="phone-time">с 9:00  до 18:00</div>
             <!-- /.phone-time -->
         </div>
         <?= Html::a('Сотрудничество', '#sotrudnichestvo',['class' => 'deal btn fancybox'])?>
     </header>
+
     <div id="main">
         <?= $content?>
     </div>
+
+
 
         <footer role="contentinfo">
 
 
         <menu class="" role="navigation">
-            <li class=""><a href="/about">О КОМПАНИИ</a></li>
-            <li class=""><a href="/cataloge">КАТАЛОГ</a>
-                <ul>
-                    <li><a href="#">Ферментированные чаи</a></li>
-                    <li><a href="#">Сладости - Рахат лукум</a></li>
-                    <li><a href="#">Подарочный чай </a></li>
-                </ul>
-            </li>
-            <li class=""><a href="/privat">ПРИВАТ ЛЭЙБЛ</a></li>
-            <li class=""><a href="/blog">Блог</a></li>
-            <li class=""><a href="/buy">Где купить</a></li>
-            <li class=""><a href="/contacts">Контакты</a></li>
-            <li><a href="#">ВАКАНСИИ</a></li>
+        
+            <?php if(\common\models\BottomMenu::getBottomMenu()):?>
+                <?php foreach(\common\models\BottomMenu::getBottomMenu() as $item):?>
+                    <li><a href="/<?php echo $item['alias']=='index'?'':$item['alias']?>"><?php echo $item['bottom_menu_name']?></a></li>
+                <?php endforeach; ?>
+            <?php endif;?>
+            <li></li><!--TODO Костыль, в меню не отображается последний пункт -->
         </menu>
 
 
@@ -103,16 +101,22 @@ AppAsset::register($this);?>
             <?= $this->render('/partials/_search_form',['model' => new \frontend\models\SearchModel()])?>
         </div>
 
+
         <div class="f-call-me">
-            <div class="f-call-me__phone"><?= strip_tags(\common\models\Boxes::getBox('header_phone'))?></div>
+            <div class="f-call-me__phone">0 800 1111-00-00</div>
             <!-- /.f-call-me__phone -->
-            <div class="f-call-me__text"><?= Html::a('Перезвоните мне', '#backcall',['class' => 'fancybox'])?></div>
+            <div class="f-call-me__text">
+                <a href="#" class="">Перезвоните мне</a>
+            </div>
             <!-- /.f-call-me__text -->
-            <div class="phone-time">с 9:00  до 18:00</div>
+            <div class="f-call-me__time">с 9:00  до 18:00</div>
             <!-- /.f-call-me__time -->
         </div>
         <!-- /.f-call-me -->
-
+        
+        
+        
+        
         <div class="footer-bottom">
             <div class="copy">
                 <?= \common\models\Boxes::getBox('footer_address')?>
@@ -124,74 +128,26 @@ AppAsset::register($this);?>
                 <?= \common\models\Boxes::getBox('footer_sales')?>
             </div>
 
+
             <div class="f-phone-box">
                 <a href="skype:floristea?call" class="f-phone-001">floristea</a>
                 <!-- /.f-phone-001 -->
                 <a href="tel:floristea" class="f-phone-002">floristea</a>
                 <!-- /.f-phone-002 -->
                 <a href="tel:floristea" class="f-phone-003">floristea</a>
-                <!-- /.f-phone-003 -->
             </div>
             <!-- /.f-phone-box -->
 
             <div class="socials">
-                <a class="fb" href="https://www.facebook.com/floristea/" target="_blank"><i class="fi fi-footer_social_fb"></i></a>
+                <?= Html::a('<i class="fi fi-footer_social_fb"></i>','https://www.facebook.com/floristea/',['class' => 'fb', 'target' => '_blank'])?>
                 <a class="yt" href="#"><i class="fi fi-footer_social_yt"></i></a>
-                <a class="vk" href="http://vk.com/floristea" target="_blank"><i class="fi fi-footer_social_vk"></i></a>
+                <?= Html::a('<i class="fi fi-footer_social_vk"></i>','http://vk.com/floristea',['class' => 'vk', 'target' => '_blank'])?>
             </div>
-            <!--             <div class="design">
-                            Дизайн шаблонов сайта<br>разработан в
-                        </div> -->
+<!--             <div class="design">
+                Дизайн шаблонов сайта<br>разработан в
+            </div> -->
         </div>
     </footer>
-
-    <!--<footer role="contentinfo">
-
-        <menu class="" role="navigation">
-            <li class=""><a href="/about">О КОМПАНИИ</a></li>
-            <li class=""><a href="/cataloge">КАТАЛОГ</a>
-                <ul>
-                    <li><a href="#">Ферментированные чаи</a></li>
-                    <li><a href="#">Сладости - Рахат лукум</a></li>
-                    <li><a href="#">Подарочный чай </a></li>
-                </ul>
-            </li>
-            <li class=""><a href="/privat">ПРИВАТ ЛЭЙБЛ</a></li>
-            <li class=""><a href="/blog">Блог</a></li>
-            <li class=""><a href="/buy">Где купить</a></li>
-            <li class=""><a href="/contacts">Контакты</a></li>
-            <li><a href="#">ВАКАНСИИ</a></li>
-        </menu>
-
-       <?//= MenuWidget::widget()?>
-        <div class="footer-search mobile">
-            <?//= $this->render('/partials/_search_form',['model' => new \frontend\models\SearchModel()])?>
-        </div>
-        <a class="search"></a>
-        <div class="b-search">
-            <?//= $this->render('/partials/_search_form',['model' => new \frontend\models\SearchModel()])?>
-        </div>
-        <?//php if(isset($model->boxes['vacancy'])):?>
-                <?//= Html::a('Вакансии', Url::to($model->boxes['vacancy']['link']),['class' => 'vacation'])?>
-        <?//php endif;?>
-        <div class="footer-bottom">
-            <div class="copy">
-                <?//= \common\models\Boxes::getBox('footer_address')?>
-            </div>
-            <div class="info">
-                <?//= \common\models\Boxes::getBox('footer_phone_email')?>
-            </div>
-            <div class="sales">
-                <?//= \common\models\Boxes::getBox('footer_sales')?>
-            </div>
-            <div class="socials">
-                <?//= Html::a('<i class="fi fi-footer_social_fb"></i>','https://www.facebook.com/floristea/',['class' => 'fb', 'target' => '_blank'])?>
-                <a class="yt" href="#"><i class="fi fi-footer_social_yt"></i></a>
-                <?//= Html::a('<i class="fi fi-footer_social_vk"></i>','http://vk.com/floristea',['class' => 'vk', 'target' => '_blank'])?>
-            </div>
-        </div>
-    </footer>-->
-
 </div>
 <?= $this->render('/partials/_forms', [
     'model' => new \common\models\Orders(),

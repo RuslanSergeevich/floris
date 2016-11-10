@@ -78,6 +78,7 @@ class Pages extends \yii\db\ActiveRecord
             [['created_at', 'updated_at'], 'safe'],
             [['alias', 'name', 'menu_name', 'template'], 'string', 'max' => 255],
             ['pos', 'default', 'value' => 0],
+            ['bottom_menu_sort', 'default', 'value' => 0],
             ['show_menu', 'default', 'value' => 0],
             ['alias', 'unique'],
         ];

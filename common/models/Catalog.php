@@ -74,6 +74,7 @@ class Catalog extends \yii\db\ActiveRecord
             [['publish', 'pos', 'created_at', 'updated_at', 'bottom_menu_show', 'bottom_menu_sort'], 'integer'],
             [['image', 'title', 'description', 'keywords','alias', 'text', 'text_on_top', 'title_on_top', 'text_under_name', 'bottom_menu_name'], 'string'],
             ['pos', 'default', 'value' => 0],
+            ['bottom_menu_sort', 'default', 'value' => 0],
         ];
     }
 

@@ -89,6 +89,7 @@ class CatalogItems extends \yii\db\ActiveRecord
             [['text', 'title', 'compositions', 'logistic_info', 'description', 'keywords', 'time', 'portions', 'short_desc', 'bottom_menu_name'], 'string'],
             [['alias', 'name', 'in_package'], 'string', 'max' => 255],
             ['pos', 'default', 'value' => 0],
+            ['bottom_menu_sort', 'default', 'value' => 0],
             ['alias', 'unique'],
         ];
     }
