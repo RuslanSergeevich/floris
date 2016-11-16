@@ -48,6 +48,7 @@ $this->title = 'Добавление/Редактирование товара';
                             <?= $form->field($model, 'time') ?>
                             <?= $form->field($model, 'portions') ?>
                             <?= $form->field($model, 'pos') ?>
+                            <?= $form->field($model, 'hit')->checkbox(['class' => 'minimal']) ?>
                             <?= $form->field($model, 'status')->dropDownList([
                                 '0' => 'В наличии',
                                 '1' => 'Заканчивается',

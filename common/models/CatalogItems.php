@@ -85,10 +85,11 @@ class CatalogItems extends \yii\db\ActiveRecord
     {
         return [
             [['parent_id', 'alias', 'name', 'text', 'title'], 'required'],
-            [['parent_id', 'status', 'gallery_cat_id', 'publish', 'pos', 'created_at', 'updated_at', 'type_id', 'composition_id', 'packing_id', 'weight_id', 'bottom_menu_show', 'bottom_menu_sort'], 'integer'],
+            [['parent_id', 'status', 'gallery_cat_id', 'publish', 'pos', 'hit', 'created_at', 'updated_at', 'type_id', 'composition_id', 'packing_id', 'weight_id', 'bottom_menu_show', 'bottom_menu_sort'], 'integer'],
             [['text', 'title', 'compositions', 'logistic_info', 'description', 'keywords', 'time', 'portions', 'short_desc', 'bottom_menu_name'], 'string'],
             [['alias', 'name', 'in_package'], 'string', 'max' => 255],
             ['pos', 'default', 'value' => 0],
+            ['hit', 'default', 'value' => 0],
             ['bottom_menu_sort', 'default', 'value' => 0],
             ['alias', 'unique'],
         ];
@@ -122,6 +123,7 @@ class CatalogItems extends \yii\db\ActiveRecord
             'keywords' => 'Keywords',
             'publish' => 'Публикация',
             'pos' => 'Позиция',
+            'hit' => 'Хит продаж',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'bottom_menu_show' => 'Отображать в нижнем меню',
