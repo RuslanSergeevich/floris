@@ -127,15 +127,16 @@ $this->registerMetaTag([
                     <div class="inner" id="catalog-box">
                         <div class="b-product-list">
                             <div class="title-page3 title-page4"><?= strip_tags(\common\models\Boxes::getBoxName('hit'))?></div>
-                            <?php if   ($catalogs = CatalogItems::find()->where(['hit' => 1])->asArray()->all()):?>
+
+                            <?php if   ($catalogs):?>
                                 <ul>
                                     <?php foreach ($catalogs as $catalog): ?>
-                                        <? print_r($catalog['alias'])?>
-                                        <li data-composition_id="<?=$catalog['composition_id'];?>" data-packing_id="<?=$catalog['packing_id'];?>" data-weight_id="<?=$catalog['weight_id'];?>" class="catd-text-catalog">
-                                            <a href="/product/<?=$catalog['alias']?>"><img src="" alt=""></a>
-                                            <div class="card-text__prise card-text__prise2"><b><?php echo \common\models\PricesValues::getPriceValue(1, $catalog['id'])?></b> ваша цена</div>
+                                        <? print_r($catalog->alias)?>
+                                        <li data-composition_id="<?=$catalog->composition_id;?>" data-packing_id="<?=$catalog->packing_id;?>" data-weight_id="<?=$catalog->weight_id;?>" class="catd-text-catalog">
+                                            <a href="/product/<?=$catalog->alias?>"><img src="/userfiles/gallery/<?php echo $catalog->basename?>.<?php echo $catalog->ext?>" alt=""></a>
+                                            <div class="card-text__prise card-text__prise2"><b><?php echo \common\models\PricesValues::getPriceValue(1, $catalog->id)?></b> ваша цена</div>
                                             <!-- /.card-text__prise -->
-                                            <div class="card-text__name"><?=$catalog['name'];?></div>
+                                            <div class="card-text__name"><?=$catalog->name;?></div>
                                             <!-- /.card-text__name -->
                                             <div class="card-text__info-card">Травяной чай с крымскими ягодами.</div>
                                             <!-- /.card-text__info-card -->

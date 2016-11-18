@@ -46,6 +46,8 @@ class CatalogItems extends \yii\db\ActiveRecord
     public static $packing = [];
     public static $weight = [];
     public $sub_link;
+    public $basename;
+    public $ext;
 
     public function init()
     {
@@ -225,4 +227,16 @@ class CatalogItems extends \yii\db\ActiveRecord
     {
         return self::find()->where(['parent_id' => $id])->asArray()->all();
     }
+
+    public static function getHits(){
+        $catalogs = self::find()
+            ->select('catalog_items.*, gallery_images.basename as basename, gallery_images.ext as ext')
+            ->join('LEFT JOIN', 'gallery_images', 'catalog_items.gallery_cat_id = gallery_images.gallery_cat_id')
+            ->where(['catalog_items.hit' => 1])
+            ->all();
+
+        return $catalogs;
+    }
+
+
 }

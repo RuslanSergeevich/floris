@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\CatalogItems;
 use common\models\Geography;
 use common\models\GeographyImages;
 use common\models\Orders;
@@ -54,8 +55,11 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
+
+        $catalogs = CatalogItems::getHits();
         return $this->render('index', [
-            'model' => $this->_queryOrException(Pages::findOne(['alias' => self::ROOT_PATH, 'publish' => Pages::PUBLISH]))
+            'model' => $this->_queryOrException(Pages::findOne(['alias' => self::ROOT_PATH, 'publish' => Pages::PUBLISH])),
+            'catalogs' => $catalogs
         ]);
     }
 
