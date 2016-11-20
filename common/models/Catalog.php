@@ -72,8 +72,9 @@ class Catalog extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['publish', 'pos', 'created_at', 'updated_at', 'bottom_menu_show', 'bottom_menu_sort'], 'integer'],
-            [['image', 'title', 'description', 'keywords','alias', 'text', 'text_on_top', 'title_on_top', 'text_under_name', 'bottom_menu_name'], 'string'],
+            [['image', 'our_prod','title', 'description', 'keywords','alias', 'text', 'text_on_top', 'title_on_top', 'text_under_name', 'bottom_menu_name'], 'string'],
             ['pos', 'default', 'value' => 0],
+            ['our_prod', 'default', 'value' => 0],
             ['bottom_menu_sort', 'default', 'value' => 0],
         ];
     }
@@ -98,6 +99,7 @@ class Catalog extends \yii\db\ActiveRecord
             'alias' => 'alias',
             'publish' => 'Публикация',
             'pos' => 'Позиция',
+            'our_prod' => 'Отображать в блоке "Наша продукция"?',
             'created_at' => 'Создана',
             'updated_at' => 'Обновлена',
             'bottom_menu_show' => 'Отображать в нижнем меню',

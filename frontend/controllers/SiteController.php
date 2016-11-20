@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 use common\models\CatalogItems;
+use common\models\GalleryImages;
 use common\models\Geography;
 use common\models\GeographyImages;
 use common\models\Orders;
@@ -57,9 +58,11 @@ class SiteController extends Controller
     {
 
         $catalogs = CatalogItems::getHits();
+        $slider = GalleryImages::getSlider();
         return $this->render('index', [
             'model' => $this->_queryOrException(Pages::findOne(['alias' => self::ROOT_PATH, 'publish' => Pages::PUBLISH])),
-            'catalogs' => $catalogs
+            'catalogs' => $catalogs,
+            'slider' => $slider
         ]);
     }
 

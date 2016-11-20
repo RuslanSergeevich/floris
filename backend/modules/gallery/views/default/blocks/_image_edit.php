@@ -15,11 +15,20 @@ use yii\helpers\Html;
             <div class="row">
                 <div class="col-lg-12 form-edit">
                     <div class="box-body">
-                        <?= $form->field($model, 'name') ?>
-                        <?= $form->field($model, 'alt') ?>
-                        <?= $form->field($model, 'title') ?>
-                        <?= $form->field($model, 'publish')->checkbox(['class' => 'minimal'], false)->error(false) ?>
-                        <?= $form->field($model, 'main')->checkbox(['class' => 'minimal'], false)->error(false) ?>
+                        <?if($model->gallery_cat_id == 75):?>
+                            <?= $form->field($model, 'name')->label('Название')?>
+                            <?= $form->field($model, 'title')->label('Описание') ?>
+                            <?= $form->field($model, 'alt')->label('Алиас') ?>
+                            <?= $form->field($model, 'publish')->checkbox(['class' => 'minimal'], false)->error(false) ?>
+                        <?else:?>
+                            <?= $form->field($model, 'name') ?>
+                            <?= $form->field($model, 'alt') ?>
+                            <?= $form->field($model, 'title') ?>
+                            <?= $form->field($model, 'publish')->checkbox(['class' => 'minimal'], false)->error(false) ?>
+                            <?= $form->field($model, 'main')->checkbox(['class' => 'minimal'], false)->error(false) ?>
+                        <?endif;?>
+
+
                     </div>
                 </div>
             </div>

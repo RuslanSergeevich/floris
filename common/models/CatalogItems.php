@@ -1,12 +1,9 @@
 <?php
-
 namespace common\models;
-
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use backend\components\DropDownTreeBehavior;
 use yii\helpers\ArrayHelper;
-
 /**
  * This is the model class for table "catalog_items".
  *
@@ -35,11 +32,9 @@ use yii\helpers\ArrayHelper;
  */
 class CatalogItems extends \yii\db\ActiveRecord
 {
-
     const PUBLISH = 1;
     const UNPUBLISHED = 0;
     const MAIN_IMAGE = 1;
-
     public static $galleries = [];
     public static $types = [];
     public static $composition = [];
@@ -48,7 +43,6 @@ class CatalogItems extends \yii\db\ActiveRecord
     public $sub_link;
     public $basename;
     public $ext;
-
     public function init()
     {
         self::$galleries = $this->getTree(Gallery::find()->asArray()->all());
@@ -57,7 +51,6 @@ class CatalogItems extends \yii\db\ActiveRecord
         self::$packing = Packing::getList();
         self::$weight = Weight::getList();
     }
-
     public function behaviors()
     {
         return [
@@ -71,7 +64,6 @@ class CatalogItems extends \yii\db\ActiveRecord
             ]
         ];
     }
-
     /**
      * @inheritdoc
      */
@@ -79,7 +71,6 @@ class CatalogItems extends \yii\db\ActiveRecord
     {
         return 'catalog_items';
     }
-
     /**
      * @inheritdoc
      */
@@ -96,7 +87,6 @@ class CatalogItems extends \yii\db\ActiveRecord
             ['alias', 'unique'],
         ];
     }
-
     /**
      * @inheritdoc
      */
@@ -133,7 +123,6 @@ class CatalogItems extends \yii\db\ActiveRecord
             'bottom_menu_sort' => 'Позиция в нижнем меню',
         ];
     }
-
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -141,7 +130,6 @@ class CatalogItems extends \yii\db\ActiveRecord
     {
         return $this->hasMany(GalleryImages::className(), ['gallery_cat_id' => 'gallery_cat_id']);
     }
-
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -149,7 +137,6 @@ class CatalogItems extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Types::className(), ['id' => 'type_id']);
     }
-
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -157,7 +144,6 @@ class CatalogItems extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Catalog::className(), ['id' => 'parent_id']);
     }
-
     /**
      * @return array|\yii\db\ActiveRecord[]
      */
@@ -165,7 +151,6 @@ class CatalogItems extends \yii\db\ActiveRecord
     {
         return self::find()->with(['type','catalog','galleryImages'])->all();
     }
-
     /**
      * @param $parent_id
      * @return array|\yii\db\ActiveRecord[]
@@ -178,7 +163,6 @@ class CatalogItems extends \yii\db\ActiveRecord
                                     },
         ])->orderBy('pos ASC')->all();
     }
-
     /**
      * @param $parent_id
      * @return array|\yii\db\ActiveRecord[]
@@ -191,7 +175,6 @@ class CatalogItems extends \yii\db\ActiveRecord
             },
         ])->all();
     }
-
     /**
      * @param $status
      * @return mixed
@@ -204,7 +187,6 @@ class CatalogItems extends \yii\db\ActiveRecord
         ];
         return $statuses[$status];
     }
-
     /**
      * @param $packing_id
      * @param $id
@@ -218,7 +200,6 @@ class CatalogItems extends \yii\db\ActiveRecord
             },
         ])->all();
     }
-
     /**
      * @param $id
      * @return array|\yii\db\ActiveRecord[]
@@ -227,16 +208,12 @@ class CatalogItems extends \yii\db\ActiveRecord
     {
         return self::find()->where(['parent_id' => $id])->asArray()->all();
     }
-
     public static function getHits(){
         $catalogs = self::find()
             ->select('catalog_items.*, gallery_images.basename as basename, gallery_images.ext as ext')
             ->join('LEFT JOIN', 'gallery_images', 'catalog_items.gallery_cat_id = gallery_images.gallery_cat_id')
             ->where(['catalog_items.hit' => 1])
             ->all();
-
         return $catalogs;
     }
-
-
 }

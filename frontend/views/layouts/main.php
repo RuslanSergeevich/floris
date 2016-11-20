@@ -95,26 +95,6 @@ AppAsset::register($this);?>
                 <li><a href="#">ВАКАНСИИ</a></li>
             </menu>
 
-            <!--
-        <menu class="" role="navigation">
-            <li class=""><a href="/about">О КОМПАНИИ</a></li>
-            <li class=""><a href="/cataloge">КАТАЛОГ</a>
-                <ul>
-                    <li><a href="#">Ферментированные чаи</a></li>
-                    <li><a href="#">Сладости - Рахат лукум</a></li>
-                    <li><a href="#">Подарочный чай </a></li>
-                </ul>
-            </li>
-            <li class=""><a href="/privat">ПРИВАТ ЛЭЙБЛ</a></li>
-            <li class=""><a href="/blog">Блог</a></li>
-            <li class=""><a href="/buy">Где купить</a></li>
-            <li class=""><a href="/contacts">Контакты</a></li>
-            <li><a href="#">ВАКАНСИИ</a></li>
-        </menu>
-
-            -->
-
-
         <div class="footer-search mobile">
             <?= $this->render('/partials/_search_form',['model' => new \frontend\models\SearchModel()])?>
         </div>
@@ -153,65 +133,13 @@ AppAsset::register($this);?>
                 <!-- /.f-phone-003 -->
             </div>
             <!-- /.f-phone-box -->
-
             <div class="socials">
                 <a class="fb" href="https://www.facebook.com/floristea/" target="_blank"><i class="fi fi-footer_social_fb"></i></a>
                 <a class="yt" href="#"><i class="fi fi-footer_social_yt"></i></a>
                 <a class="vk" href="http://vk.com/floristea" target="_blank"><i class="fi fi-footer_social_vk"></i></a>
             </div>
-            <!--             <div class="design">
-                            Дизайн шаблонов сайта<br>разработан в
-                        </div> -->
         </div>
     </footer>
-
-    <!--<footer role="contentinfo">
-
-        <menu class="" role="navigation">
-            <li class=""><a href="/about">О КОМПАНИИ</a></li>
-            <li class=""><a href="/cataloge">КАТАЛОГ</a>
-                <ul>
-                    <li><a href="#">Ферментированные чаи</a></li>
-                    <li><a href="#">Сладости - Рахат лукум</a></li>
-                    <li><a href="#">Подарочный чай </a></li>
-                </ul>
-            </li>
-            <li class=""><a href="/privat">ПРИВАТ ЛЭЙБЛ</a></li>
-            <li class=""><a href="/blog">Блог</a></li>
-            <li class=""><a href="/buy">Где купить</a></li>
-            <li class=""><a href="/contacts">Контакты</a></li>
-            <li><a href="#">ВАКАНСИИ</a></li>
-        </menu>
-
-       <?//= MenuWidget::widget()?>
-        <div class="footer-search mobile">
-            <?//= $this->render('/partials/_search_form',['model' => new \frontend\models\SearchModel()])?>
-        </div>
-        <a class="search"></a>
-        <div class="b-search">
-            <?//= $this->render('/partials/_search_form',['model' => new \frontend\models\SearchModel()])?>
-        </div>
-        <?//php if(isset($model->boxes['vacancy'])):?>
-                <?//= Html::a('Вакансии', Url::to($model->boxes['vacancy']['link']),['class' => 'vacation'])?>
-        <?//php endif;?>
-        <div class="footer-bottom">
-            <div class="copy">
-                <?//= \common\models\Boxes::getBox('footer_address')?>
-            </div>
-            <div class="info">
-                <?//= \common\models\Boxes::getBox('footer_phone_email')?>
-            </div>
-            <div class="sales">
-                <?//= \common\models\Boxes::getBox('footer_sales')?>
-            </div>
-            <div class="socials">
-                <?//= Html::a('<i class="fi fi-footer_social_fb"></i>','https://www.facebook.com/floristea/',['class' => 'fb', 'target' => '_blank'])?>
-                <a class="yt" href="#"><i class="fi fi-footer_social_yt"></i></a>
-                <?//= Html::a('<i class="fi fi-footer_social_vk"></i>','http://vk.com/floristea',['class' => 'vk', 'target' => '_blank'])?>
-            </div>
-        </div>
-    </footer>-->
-
 </div>
 <?= $this->render('/partials/_forms', [
     'model' => new \common\models\Orders(),

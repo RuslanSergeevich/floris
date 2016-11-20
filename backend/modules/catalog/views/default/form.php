@@ -40,10 +40,11 @@ $this->title = 'Добавление/Редактирование статьи �
                                 </div>
                             <?php } ?>
                             <?= $form->field($model, 'file')->fileInput() ?>
-                            <?= $form->field($model, 'pos') ?>
                             <?= $form->field($model, 'bottom_menu_name') ?>
                             <?= $form->field($model, 'bottom_menu_show')->checkbox(['class' => 'minimal']) ?>
                             <?= $form->field($model, 'bottom_menu_sort') ?>
+                            <?= $form->field($model, 'our_prod')->checkbox(['class' => 'minimal']) ?>
+                            <?= $form->field($model, 'pos') ?>
                             <div class="form-group">
                                 <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
                             </div>

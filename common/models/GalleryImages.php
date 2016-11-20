@@ -110,4 +110,13 @@ class GalleryImages extends \yii\db\ActiveRecord
             return false;
         }
     }
+
+    public static function getSlider(){
+        $slider = self::find()
+            ->select('gallery_images.*')
+            ->leftJoin('gallery', '`gallery`.`id` = `gallery_images`.`gallery_cat_id`')
+            ->where(['gallery.name' => 'slider'])
+            ->all();
+        return $slider;
+    }   
 }

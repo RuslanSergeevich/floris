@@ -19,44 +19,33 @@ $this->registerMetaTag([
         <main>
             <div class="top-slider">
                 <ul>
+
+                <?php if ($slider):?>
+                    <?php foreach ($slider as $image): ?>
                     <li>
-                        <a class="fancybox" href="/userfiles/gallery/_BIG_1449211662.jpg"><img src="/userfiles/gallery/top-pic.jpg" alt="" rel="product"></a>
+                        <img src="/userfiles/gallery/<?=$image->basename?>.<?=$image->ext?>" alt="" rel="product"></a>
                         <div class="slider-info">
                             <div class="slider-info__title">
-                                ВСТРЕЧАЙТЕ НОВИНКУ СЕЗОНА 2016
+                                <?=$image->name?>
                             </div>
                             <!-- /.slider-info__title -->
                             <div class="slider-info__text">
-                                Чайный набор “На здоровье”
+                                <?=$image->title?>
                             </div>
                             <!-- /.slider-info__text -->
-                            <a href="#" class="slider-info__button">ПОДРОБНЕЙ</a>
+                            <?if ($image->alt!=''):?>
+                                <a href="<?=$image->alt?>" class="slider-info__button">ПОДРОБНЕЙ</a>
+                            <?endif;?>
                             <!-- /.slider-info__button -->
                         </div>
                         <!-- /.slider-info -->
                     </li>
-                    <!--<li><iframe src="https://player.vimeo.com/video/190399562" width="640" height="273" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>-->
-                    <li>
-                        <a class="fancybox" href="/userfiles/gallery/_BIG_1449211662.jpg"><img src="userfiles/gallery/top-pic.jpg" alt="" rel="product"></a>
-                        <div class="slider-info">
-                            <div class="slider-info__title">
-                                ВСТРЕЧАЙТЕ НОВИНКУ СЕЗОНА 2016
-                            </div>
-                            <!-- /.slider-info__title -->
-                            <div class="slider-info__text">
-                                Чайный набор “На здоровье”
-                            </div>
-                            <!-- /.slider-info__text -->
-                            <a href="#" class="slider-info__button">ПОДРОБНЕЙ</a>
-                            <!-- /.slider-info__button -->
-                        </div>
-                        <!-- /.slider-info -->
-                    </li>
-                    <li><a class="fancybox" href="/userfiles/gallery/_BIG_1449211662.jpg"><img src="/userfiles/gallery/top-pic.jpg" alt="" rel="product"></a></li>
-                    <li><a class="fancybox" href="/userfiles/gallery/_BIG_1449211662.jpg"><img src="/userfiles/gallery/top-pic.jpg" alt="" rel="product"></a></li>
-                    <li><a class="fancybox" href="/userfiles/gallery/_BIG_1449211662.jpg"><img src="/userfiles/gallery/top-pic.jpg" alt="" rel="product"></a></li>
+                    <?php endforeach; ?>
+                <?php endif; ?> 
                 </ul>
             </div>
+
+
             <!-- /.top-slider -->
             <div class="title-page3"><?= strip_tags(\common\models\Boxes::getBoxName('our_production'))?></div>
             <div class="prod-block clr">
@@ -123,15 +112,16 @@ $this->registerMetaTag([
             </div>
             <!-- /.prod-block -->
             <section class="cataloge">
-                <div class="b-cataloge-content b-cataloge-content3">
+     
+                                <div class="b-cataloge-content b-cataloge-content3">
                     <div class="inner" id="catalog-box">
                         <div class="b-product-list">
-                            <div class="title-page3 title-page4"><?= strip_tags(\common\models\Boxes::getBoxName('hit'))?></div>
+
+                            <div class="title-page3 title-page4">НАША ПРОДУКЦИЯ</div>
 
                             <?php if   ($catalogs):?>
                                 <ul>
                                     <?php foreach ($catalogs as $catalog): ?>
-                                        <? print_r($catalog->alias)?>
                                         <li data-composition_id="<?=$catalog->composition_id;?>" data-packing_id="<?=$catalog->packing_id;?>" data-weight_id="<?=$catalog->weight_id;?>" class="catd-text-catalog">
                                             <a href="/product/<?=$catalog->alias?>"><img src="/userfiles/gallery/<?php echo $catalog->basename?>.<?php echo $catalog->ext?>" alt=""></a>
                                             <div class="card-text__prise card-text__prise2"><b><?php echo \common\models\PricesValues::getPriceValue(1, $catalog->id)?></b> ваша цена</div>
@@ -147,10 +137,13 @@ $this->registerMetaTag([
                                         </li> 
                                     <?php endforeach; ?>
                                 </ul>
-                            <?php endif; ?>       
+                            <?php endif; ?> 
                         </div>
+
+
                     </div>
                 </div>
+
                 <div class="main-page-text">
                     <h1 class="main-page-title-box"><?= strip_tags(\common\models\Boxes::getBoxTitle('stevia_1'))?></h1>
                     <!-- /.main-page-text-title -->
