@@ -19,7 +19,6 @@ use yii\helpers\Html;
                             <?= $form->field($model, 'name')->label('Название')?>
                             <?= $form->field($model, 'title')->label('Описание') ?>
                             <?= $form->field($model, 'alt')->label('Алиас') ?>
-                            <?= $form->field($model, 'publish')->checkbox(['class' => 'minimal'], false)->error(false) ?>
                         <?else:?>
                             <?= $form->field($model, 'name') ?>
                             <?= $form->field($model, 'alt') ?>

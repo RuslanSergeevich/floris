@@ -22,7 +22,7 @@ $this->registerMetaTag([
                  <?php if ($slider):?>
                     <?php foreach ($slider as $image): ?>
                     <li>
-                        <img src="/userfiles/gallery/<?=$image->basename?>.<?=$image->ext?>" alt="" rel="product"></a>
+                        <img class="img-sl" src="/userfiles/gallery/<?=$image->basename?>.<?=$image->ext?>" alt="" rel="product"></a>
                         <div class="slider-info">
                             <div class="slider-info__title">
                                 <?=$image->name?>
