@@ -19,8 +19,7 @@ $this->registerMetaTag([
         <main>
             <div class="top-slider">
                 <ul>
-
-                <?php if ($slider):?>
+                 <?php if ($slider):?>
                     <?php foreach ($slider as $image): ?>
                     <li>
                         <img src="/userfiles/gallery/<?=$image->basename?>.<?=$image->ext?>" alt="" rel="product"></a>
@@ -117,7 +116,7 @@ $this->registerMetaTag([
                     <div class="inner" id="catalog-box">
                         <div class="b-product-list">
 
-                            <div class="title-page3 title-page4">НАША ПРОДУКЦИЯ</div>
+                            <div class="title-page3 title-page4"><?= strip_tags(\common\models\Boxes::getBoxTitle('hit'))?></div>
 
                             <?php if   ($catalogs):?>
                                 <ul>
@@ -188,3 +187,5 @@ $this->registerMetaTag([
                     <!-- /.map -->
                 </main>
             </div>
+            <?php $this->registerJsFile('https://api-maps.yandex.ru/2.1/?lang=ru_RU');?>
+<?php $this->registerJsFile('js/_yandex_map.js',['depends'=>'yii\web\JqueryAsset']);?>
