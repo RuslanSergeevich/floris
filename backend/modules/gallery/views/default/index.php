@@ -87,12 +87,19 @@ $this->title = 'Галереи';
                                 'update' => function($url){
                                     return Html::a('<i class="fa fa-fw fa-pencil"></i>', $url);
                                 },
-                                'delete' => function($url){
+
+
+                                'delete' => function($url, $model){
+                                    if ($model['name']!='slider' or $model['id']!='75'){
                                     return Html::a('<i class="fa fa-fw fa-remove"></i>', $url, [
                                         'data' => [
                                             'confirm' => 'Вы уверены, что хотите удалить?',
                                             'method' => 'post',
                                         ]]);
+
+
+                                    }
+
                                 }
                             ],
                         ],
