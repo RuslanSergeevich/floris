@@ -48,6 +48,21 @@ $this->registerMetaTag([
             <!-- /.top-slider -->
             <div class="title-page3"><?= strip_tags(\common\models\Boxes::getBoxName('our_production'))?></div>
             <div class="prod-block clr">
+
+                <?php if($items):?>
+                    <?php foreach($items as $item):?>
+                        <div class="prod-block__overflow">
+                            <a href="/cataloge/<?php echo $item->alias?>" class="prod-block__item">
+                                <b style="<?php echo !empty($item->cat_image)?'background:url(/userfiles/catalog/'.$item->cat_image.')':''?>" class="prod-block__img prod-block__img-01"></b>
+                                <!-- /.prod-block__img -->
+                                <span class="prod-block__title"><?php echo $item->name?></span>
+                                <!-- /.prod-block__title -->
+                            </a>
+                            <!-- /.prod-block__item -->
+                        </div>
+                    <?php endforeach;?>
+                <?php else:?>
+
                 <div class="prod-block__overflow">
                     <a href="#" class="prod-block__item">
                         <b class="prod-block__img prod-block__img-01"></b>
@@ -108,6 +123,7 @@ $this->registerMetaTag([
                     <!-- /.prod-block__item -->
                 </div>
                 <!-- /.prod-block__overflow -->
+                <?php endif; ?>
             </div>
             <!-- /.prod-block -->
             <section class="cataloge">

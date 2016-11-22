@@ -5,6 +5,7 @@ namespace common\models;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use backend\components\FileBehavior;
+use backend\components\FileBehavior2;
 use yii\db\ActiveQuery;
 
 
@@ -29,9 +30,11 @@ class Catalog extends \yii\db\ActiveRecord
     const PUBLISH = 1;
     const UNPUBLISHED = 0;
     const IMAGE_ENTITY = 'image';
+    const IMAGE_ENTITY2 = 'cat_image';
     const PATH = '/userfiles/catalog/';
 
     public $file;
+    public $file2;
 
     public function behaviors()
     {
@@ -45,6 +48,11 @@ class Catalog extends \yii\db\ActiveRecord
                 'class' => FileBehavior::className(),
                 'path' => self::PATH,
                 'entity' => self::IMAGE_ENTITY
+            ],
+            [
+                'class' => FileBehavior2::className(),
+                'path' => self::PATH,
+                'entity' => self::IMAGE_ENTITY2
             ],
         ];
     }
@@ -72,7 +80,7 @@ class Catalog extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['publish', 'pos', 'created_at', 'updated_at', 'bottom_menu_show', 'bottom_menu_sort'], 'integer'],
-            [['image', 'our_prod','title', 'description', 'keywords','alias', 'text', 'text_on_top', 'title_on_top', 'text_under_name', 'bottom_menu_name'], 'string'],
+            [['image', 'cat_image', 'our_prod','title', 'description', 'keywords','alias', 'text', 'text_on_top', 'title_on_top', 'text_under_name', 'bottom_menu_name'], 'string'],
             ['pos', 'default', 'value' => 0],
             ['our_prod', 'default', 'value' => 0],
             ['bottom_menu_sort', 'default', 'value' => 0],
@@ -105,6 +113,7 @@ class Catalog extends \yii\db\ActiveRecord
             'bottom_menu_show' => 'Отображать в нижнем меню',
             'bottom_menu_name' => 'Название в нижнем меню',
             'bottom_menu_sort' => 'Позиция в нижнем меню',
+            'file2' => 'Картинка для каталога'
         ];
     }
 
@@ -136,6 +145,12 @@ class Catalog extends \yii\db\ActiveRecord
             $model->image = '';
             return $model->update();
         }
+    }
+
+    public static function getOurProducts()
+    {
+        $items = self::find()->where(['our_prod' => 1])->limit(6)->all();
+        return $items;
     }
 
 }

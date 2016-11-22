@@ -45,6 +45,16 @@ $this->title = 'Добавление/Редактирование статьи �
                             <?= $form->field($model, 'bottom_menu_sort') ?>
                             <?= $form->field($model, 'our_prod')->checkbox(['class' => 'minimal']) ?>
                             <?= $form->field($model, 'pos') ?>
+                            <?php if($model->cat_image){?>
+                                <div class="image-box">
+                                    <?= Html::img('@catalog/'.$model->cat_image, [
+                                        'alt' => $model->name,
+                                        'width' => '150',
+                                        'data-blog_id' => $model->id
+                                    ]) ?>
+                                </div>
+                            <?php } ?>
+                            <?= $form->field($model, 'file2')->fileInput() ?>
                             <div class="form-group">
                                 <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
                             </div>
