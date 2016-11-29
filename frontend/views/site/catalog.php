@@ -28,8 +28,8 @@ $this->registerMetaTag([
                 <?php foreach ($catalogs as $catalog): ?>
                     <div class="b-product-list">
                         <h1 class="title-page title-page2">
-                             <a href="/cataloge/<?=$catalog['alias'];?>"><?=$catalog['name'];?>
-                            <span><?=$catalog['text_under_name'];?></span></a>
+                             <a href="/cataloge/<?=$catalog['alias'];?>"><?=$catalog['name'];?></a>
+                            <span><?=$catalog['text_under_name'];?></span>
                         </h1>
                         <ul>
                         <?php if ($items = CatalogItems::loadItemsOneImage($catalog['id'])): ?>

@@ -95,8 +95,7 @@ class Catalog extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Название',
-            'image' => 'Изображение (загружать размером 1400px на 300px)',
-            'file' => 'Изображение (загружать размером 1400px на 300px)',
+            'file' => 'Изображение (загружать размером 1400 x 300 px)',
             'text_under_name' => 'Текст под названием',
             'title_on_top' => 'Заголовок на изображении',
             'text_on_top' => 'Текст на изображении',
@@ -113,7 +112,7 @@ class Catalog extends \yii\db\ActiveRecord
             'bottom_menu_show' => 'Отображать в нижнем меню',
             'bottom_menu_name' => 'Название в нижнем меню',
             'bottom_menu_sort' => 'Позиция в нижнем меню',
-            'file2' => 'Картинка для каталога'
+            'file2' => 'Картинка для каталога (загружать размером 313 x 314 px)'
         ];
     }
 

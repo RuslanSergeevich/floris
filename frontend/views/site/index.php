@@ -145,7 +145,7 @@ $this->registerMetaTag([
                                             <!-- /.card-text__name -->
                                             <div class="card-text__info-card">Травяной чай с крымскими ягодами.</div>
                                             <!-- /.card-text__info-card -->
-                                            <div class="card-text__weight">Вес: Сюда Достать вес г</div>
+                                            <div class="card-text__weight">Вес: <?= \common\models\Weight::getValueById($catalog->weight_id)?> г</div>
                                             <!-- /.card-text__weight -->
                                             <a href="#sotrudnichestvo" class="card-text__button fancybox"><?php echo \common\models\Elements::getValue(1);?></a>
                                             <!-- /.card-text__button -->
@@ -203,5 +203,3 @@ $this->registerMetaTag([
                     <!-- /.map -->
                 </main>
             </div>
-            <?php $this->registerJsFile('https://api-maps.yandex.ru/2.1/?lang=ru_RU');?>
-<?php $this->registerJsFile('js/_yandex_map.js',['depends'=>'yii\web\JqueryAsset']);?>

@@ -21,48 +21,50 @@ AppAsset::register($this);?>
     <?= Html::csrfMetaTags() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='shortcut icon' href='favicon.ico'>
-    <!--[if lt IE 9]>
-    <script src="/js/ie9.js"></script>
-    <![endif]-->
-    <title><?= Html::encode($this->title) ?></title>
-    <?php $this->head() ?>
-    <script type="text/javascript" src="//vk.com/js/api/openapi.js?135"></script>
+<!--[if lt IE 9]>
+<script src="/js/ie9.js"></script>
+<![endif]-->
+<title><?= Html::encode($this->title) ?></title>
+<?php $this->head() ?>
+<script type="text/javascript" src="//vk.com/js/api/openapi.js?135"></script>
 </head>
 
 <body>
-<?php $this->beginBody()?>
-<div id="wrapper">
-    <div class="city">
-       <!-- <div class="city__position">
-            Регион:
-            <div class="city__menu">
-                <a class="city__link" href="#">Симферополь</a>
-                <div class="city__items">
-                    <ul>
-                        <li><a href="#">Севастополь</a></li>
-                        <li><a href="#">Москва</a></li>
-                        <li><a href="#">Краснодар</a></li>
-                        <li><a href="#">Петербуг</a></li>
-                        <li><a href="#">Киев</a></li>
-                    </ul>
-                </div> -->
-                <!-- /.city__items -->
-           <!-- </div>-->
-            <!-- /.city__menu -->
+    <?php $this->beginBody()?>
+    <div id="wrapper">
+        <div id='order-fld-2'>
 
-        <!--</div>-->
-        <!-- /.city__position -->
-    </div>
-    <!-- /.city -->
-    <header role="banner">
-        <a class="go-top"></a>
-        <a class="mobile-menu mobile" href="#backcall"></a>
-        <?= Html::a('','#backcall', ['class' => 'mobile-phone mobile fancybox'])?>
-        <?= Html::a('', Url::home(),['class' => 'logo'])?>
-                <?= MenuWidget::widget([
-                    'attach_icon' => true,
-                    'class_name' => ''
-                ])?>
+        </div>
+        <div class="city">
+            <div class="city__position">
+                Регион:
+                <div class="city__menu" >
+                    <a class="city__link" id="city" href="#"></a>
+<!--<div class="city__items">
+<ul>
+<li><a href="#">Севастополь</a></li>
+<li><a href="#">Москва</a></li>
+<li><a href="#">Краснодар</a></li>
+<li><a href="#">Петербуг</a></li>
+<li><a href="#">Киев</a></li>
+</ul>
+</div>-->
+<!-- /.city__items -->
+</div>
+<!-- /.city__menu -->
+</div>
+<!-- /.city__position -->
+</div>
+<!-- /.city -->
+<header role="banner">
+    <a class="go-top"></a>
+    <a class="mobile-menu mobile" href="#backcall"></a>
+    <?= Html::a('','#backcall', ['class' => 'mobile-phone mobile fancybox'])?>
+    <?= Html::a('', Url::home(),['class' => 'logo'])?>
+    <?= MenuWidget::widget([
+        'attach_icon' => true,
+        'class_name' => ''
+        ])?>
         <div class="phone">
             <?= strip_tags(\common\models\Boxes::getBox('header_phone'))?><br>
             <?= Html::a('Перезвоните мне', '#backcall',['class' => 'fancybox'])?>
@@ -75,25 +77,25 @@ AppAsset::register($this);?>
         <?= $content?>
     </div>
 
-        <footer role="contentinfo">
-            <menu class="" role="navigation">
-                <?php if(\common\models\BottomMenu::getBottomFirstLevelMenu()):?>
-                    <?php foreach(\common\models\BottomMenu::getBottomFirstLevelMenu() as $fItem):?>
-                        <li class=""><a href="/<?php echo $fItem->alias=='index'?'':$fItem->alias?>"><?php echo $fItem->bottom_menu_name?></a>
-                            <?php if($fItem->id == 3 && \common\models\BottomMenu::getBottomSecondLevelMenu()):?>
+    <footer role="contentinfo">
+        <menu class="" role="navigation">
+            <?php if(\common\models\BottomMenu::getBottomFirstLevelMenu()):?>
+                <?php foreach(\common\models\BottomMenu::getBottomFirstLevelMenu() as $fItem):?>
+                    <li class=""><a href="/<?php echo $fItem->alias=='index'?'':$fItem->alias?>"><?php echo $fItem->bottom_menu_name?></a>
+                        <?php if($fItem->id == 3 && \common\models\BottomMenu::getBottomSecondLevelMenu()):?>
 
-                                <?php foreach(\common\models\BottomMenu::getBottomSecondLevelMenu() as $sItem):?>
-                                    <ul>
-                                        <li><a href="/<?php echo $sItem['alias']?>"><?php echo $sItem['bottom_menu_name']?></a></li>
-                                    </ul>
-                                <?php endforeach;?>
+                            <?php foreach(\common\models\BottomMenu::getBottomSecondLevelMenu() as $sItem):?>
+                                <ul>
+                                    <li><a href="/<?php echo $sItem['alias']?>"><?php echo $sItem['bottom_menu_name']?></a></li>
+                                </ul>
+                            <?php endforeach;?>
 
-                            <?php endif;?>
-                        </li>
-                    <?php endforeach;?>
-                <?php endif;?>
-                <li><a href="#">ВАКАНСИИ</a></li>
-            </menu>
+                        <?php endif;?>
+                    </li>
+                <?php endforeach;?>
+            <?php endif;?>
+            <li><a href="#">ВАКАНСИИ</a></li>
+        </menu>
 
         <div class="footer-search mobile">
             <?= $this->render('/partials/_search_form',['model' => new \frontend\models\SearchModel()])?>
@@ -146,10 +148,29 @@ AppAsset::register($this);?>
     'backCall' => new \frontend\models\BackCallForm(),
     'shopAdd' => new \common\models\Geography(),
     'images' => new \common\models\GeographyImages()
-])?>
-<!-- mailget.net start --><script>var mgv = mgv || [];_mgv["id"] = "c3a7cd794da3aaec137f3f4bf35857ea";(function () {var mg = document.createElement("script");mg.type = "text/javascript";mg.async = true; mg.src = ("https:" == document.location.protocol ? "https://" : "http://") + "mailget.net/mgjs/mg.min.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(mg, s);})();</script><!-- mailget.net end -->
-<?php $this->endBody() ?>
+    ])?>
+    <!-- mailget.net start --><script>var mgv = mgv || [];_mgv["id"] = "c3a7cd794da3aaec137f3f4bf35857ea";(function () {var mg = document.createElement("script");mg.type = "text/javascript";mg.async = true; mg.src = ("https:" == document.location.protocol ? "https://" : "http://") + "mailget.net/mgjs/mg.min.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(mg, s);})();</script><!-- mailget.net end -->
+    <?php $this->endBody() ?>
 <!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter34978440 = new Ya.Metrika({ id:34978440, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/34978440" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+<?php $this->registerJsFile('https://api-maps.yandex.ru/2.1/?lang=ru_RU');?>
+<?php $this->registerJsFile('js/_yandex_map.js',['depends'=>'yii\web\JqueryAsset']);?>
+<script type="text/javascript">
+    $(function(){
+        ymaps.ready(init);
+        function init() {
+            ymaps.geolocation.get({provider:"yandex"})
+            .then(function (res)  {
+                var g = res.geoObjects.get(0);
+                $("#city")
+                //.html(g.getCountry() + ', ' + g.getAdministrativeAreas()[0] + ', ' + g.getLocalities()[0]);
+                .html(g.getLocalities()[0]);
+            })
+            .catch(function (err) {
+                console.log('Не удалось установить местоположение', err);
+            });
+        }
+    });
+</script>
 </body>
 </html>
 <?php $this->endPage()?>
