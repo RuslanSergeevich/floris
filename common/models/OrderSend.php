@@ -10,6 +10,8 @@ class OrderSend extends \yii\db\ActiveRecord
 
     public $email;
     public $name;
+    public $comment;
+    public $phone;
 
     /**
      * @inheritdoc
@@ -17,8 +19,8 @@ class OrderSend extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['email', 'name'], 'required'],
-            [['email', 'name'], 'string'],
+            [['name', 'phone'], 'required'],
+            [['email', 'name', 'phone', 'comment'], 'string'],
             [['email'], 'email']
         ];
     }

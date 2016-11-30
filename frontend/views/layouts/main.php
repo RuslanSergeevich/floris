@@ -171,6 +171,7 @@ AppAsset::register($this);?>
         }
     });
 </script>
+    <script src="/js/lib/_order.js"></script>
 </body>
 </html>
 <?php $this->endPage()?>

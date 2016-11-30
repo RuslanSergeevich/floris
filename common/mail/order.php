@@ -6,7 +6,9 @@
 ?>
 <h1>Оформление заявки</h1>
 <p>ФИО: <?= $model['name']?></p>
-<p>Email: <?= $model['email']?></p>
+<p>Телефон: <?= $model['phone']?></p>
+<p>Комментарий: <?= $model['comment']?></p>
+
 <p></p>
 <table border="1">
     <tbody>
