@@ -15,7 +15,7 @@ use yii\helpers\Html;
             <div class="row">
                 <div class="col-lg-12 form-edit">
                     <div class="box-body">
-                        <?if($model->gallery_cat_id == 75):?>
+                        <?if($model->gallery_cat_id == 91):?>
                             <?= $form->field($model, 'name')->label('Название')?>
                             <?= $form->field($model, 'title')->label('Описание') ?>
                             <?= $form->field($model, 'alt')->label('Алиас') ?>

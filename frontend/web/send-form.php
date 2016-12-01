@@ -26,7 +26,7 @@ if(isset($_POST) && count($_POST) && isset($_POST['data'])){
     if($_POST['obrazci'] == 'true'){
         $html .= '<p>Выслать образцы: ДА</p>';
     }
-    $to = 'vregis@mail.ru';
+    $to = 'djShtaket88@mail.ru';
     $subject = "Заявка";
     $headers  = "Content-type: text/html; charset=utf-8 \r\n";
     $headers .= "From: Birthday Reminder floristea.com\r\n";

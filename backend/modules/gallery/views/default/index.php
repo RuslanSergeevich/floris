@@ -90,7 +90,7 @@ $this->title = 'Галереи';
 
 
                                 'delete' => function($url, $model){
-                                    if ($model['name']!='slider' or $model['id']!='75'){
+                                    if ($model['id']!='91'){
                                     return Html::a('<i class="fa fa-fw fa-remove"></i>', $url, [
                                         'data' => [
                                             'confirm' => 'Вы уверены, что хотите удалить?',

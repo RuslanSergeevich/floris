@@ -5,10 +5,10 @@ $(document).ready(function () {
      |-----------------------------------------------------------
      */
 
-    $("#price_form button.sendordform").click(function (e) {
+    $("#price_form input[type=submit]").click(function (e) {
         e.preventDefault();
         var data  = [],
-            _form = $(this).closest('#price_form');
+            _form = $(this).parent('#price_form');
         $('table tr.product').each(function (i) {
             var _this= $(this);
             if(_this.find('.price-count-inp input').val() > 0){
@@ -30,19 +30,16 @@ $(document).ready(function () {
 
         var reklama  = $('#reklama').prop('checked'),
             obrazci  = $('#obrazci').prop('checked'),
-            name     = _form.find('#name').val(),
-            email    = _form.find('#email').val(),
+            name     = _form.find('.name').val(),
+            email    = _form.find('.email').val(),
             email_to = _form.find('.email_to').val(),
-            phone = _form.find('#phone').val();
-            comment = _form.find('#comment').val();
             itogo    = parseInt($('.itogo .sum-rub span').text().trim());
 
         if(name && email){
-
             return $.ajax({
                 type: 'post',
                 url: _form.attr('action'),
-                data: {data: data, 'reklama': reklama, 'obrazci': obrazci, 'name': name, 'email': email, 'itogo': itogo, 'email_to': email_to, 'phone':phone, 'comment':comment},
+                data: {data: data, 'reklama': reklama, 'obrazci': obrazci, 'name': name, 'email': email, 'itogo': itogo, 'email_to': email_to},
                 success: function(data, textStatus, jqXHR) {
                     document.location.href = '/order-ok';
                 }

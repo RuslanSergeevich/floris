@@ -22,6 +22,7 @@ $this->title = 'Добавление/Редактирование статьи �
                     <?php $form = ActiveForm::begin(['method' => 'post', 'options' => ['role' => 'form', 'enctype' => 'multipart/form-data']]); ?>
                         <div class="box-body">
                             <?= $form->field($model, 'name') ?>
+                            <?= $form->field($model, 'text_on_main') ?>
                             <?= $form->field($model, 'text_under_name') ?>
                             <?= $form->field($model, 'title') ?>
                             <?= $form->field($model, 'description') ?>

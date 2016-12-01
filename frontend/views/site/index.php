@@ -55,80 +55,26 @@ $this->registerMetaTag([
                             <a href="/cataloge/<?php echo $item->alias?>" class="prod-block__item">
                                 <b style="<?php echo !empty($item->cat_image)?'background:url(/userfiles/catalog/'.$item->cat_image.')':''?>" class="prod-block__img prod-block__img-01"></b>
                                 <!-- /.prod-block__img -->
-                                <span class="prod-block__title"><?php echo $item->name?></span>
+                                <span class="prod-block__title">
+                                    <?php if (!empty($item->text_on_main)):?>
+                                        <?php echo $item->text_on_main;?>
+                                    <?php else:?>  
+                                        <?php echo $item->name;?>
+                                    <?php endif;?>          
+                                </span>
                                 <!-- /.prod-block__title -->
                             </a>
                             <!-- /.prod-block__item -->
                         </div>
                     <?php endforeach;?>
                 <?php else:?>
-
-                <div class="prod-block__overflow">
-                    <a href="#" class="prod-block__item">
-                        <b class="prod-block__img prod-block__img-01"></b>
-                        <!-- /.prod-block__img -->
-                        <span class="prod-block__title">ФЕРМЕТИРОВАННЫЕ ЧАИ</span>
-                        <!-- /.prod-block__title -->
-                    </a>
-                    <!-- /.prod-block__item -->
-                </div>
-                <!-- /.prod-block__overflow -->
-                <div class="prod-block__overflow">
-                    <a href="#" class="prod-block__item">
-                        <b class="prod-block__img prod-block__img-02"></b>
-                        <!-- /.prod-block__img -->
-                        <span class="prod-block__title">ФЕРМЕТИРОВАННЫЕ ЧАИ</span>
-                        <!-- /.prod-block__title -->
-                    </a>
-                    <!-- /.prod-block__item -->
-                </div>
-                <!-- /.prod-block__overflow -->
-                <div class="prod-block__overflow">
-                    <a href="#" class="prod-block__item">
-                        <b class="prod-block__img prod-block__img-03"></b>
-                        <!-- /.prod-block__img -->
-                        <span class="prod-block__title">ФЕРМЕТИРОВАННЫЕ ЧАИ</span>
-                        <!-- /.prod-block__title -->
-                    </a>
-                    <!-- /.prod-block__item -->
-                </div>
-                <!-- /.prod-block__overflow -->
-                <div class="prod-block__overflow">
-                    <a href="#" class="prod-block__item">
-                        <b class="prod-block__img prod-block__img-04"></b>
-                        <!-- /.prod-block__img -->
-                        <span class="prod-block__title">ФЕРМЕТИРОВАННЫЕ ЧАИ</span>
-                        <!-- /.prod-block__title -->
-                    </a>
-                    <!-- /.prod-block__item -->
-                </div>
-                <!-- /.prod-block__overflow -->
-                <div class="prod-block__overflow">
-                    <a href="#" class="prod-block__item">
-                        <b class="prod-block__img prod-block__img-05"></b>
-                        <!-- /.prod-block__img -->
-                        <span class="prod-block__title">ФЕРМЕТИРОВАННЫЕ ЧАИ</span>
-                        <!-- /.prod-block__title -->
-                    </a>
-                    <!-- /.prod-block__item -->
-                </div>
-                <!-- /.prod-block__overflow -->
-                <div class="prod-block__overflow">
-                    <a href="#" class="prod-block__item">
-                        <b class="prod-block__img prod-block__img-06"></b>
-                        <!-- /.prod-block__img -->
-                        <span class="prod-block__title">ФЕРМЕТИРОВАННЫЕ ЧАИ</span>
-                        <!-- /.prod-block__title -->
-                    </a>
-                    <!-- /.prod-block__item -->
-                </div>
-                <!-- /.prod-block__overflow -->
+                        <div class="title-page3">Пока нет</div>
                 <?php endif; ?>
             </div>
             <!-- /.prod-block -->
             <section class="cataloge">
      
-                                <div class="b-cataloge-content b-cataloge-content3">
+                <div class="b-cataloge-content b-cataloge-content3">
                     <div class="inner" id="catalog-box">
                         <div class="b-product-list">
 

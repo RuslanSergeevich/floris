@@ -80,7 +80,7 @@ class Catalog extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['publish', 'pos', 'created_at', 'updated_at', 'bottom_menu_show', 'bottom_menu_sort'], 'integer'],
-            [['image', 'cat_image', 'our_prod','title', 'description', 'keywords','alias', 'text', 'text_on_top', 'title_on_top', 'text_under_name', 'bottom_menu_name'], 'string'],
+            [['image', 'text_on_main', 'cat_image', 'our_prod','title', 'description', 'keywords','alias', 'text', 'text_on_top', 'title_on_top', 'text_under_name', 'bottom_menu_name'], 'string'],
             ['pos', 'default', 'value' => 0],
             ['our_prod', 'default', 'value' => 0],
             ['bottom_menu_sort', 'default', 'value' => 0],
@@ -95,6 +95,7 @@ class Catalog extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Название',
+            'text_on_main' => 'Название для главной страницы',
             'file' => 'Изображение (загружать размером 1400 x 300 px)',
             'text_under_name' => 'Текст под названием',
             'title_on_top' => 'Заголовок на изображении',

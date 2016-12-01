@@ -488,7 +488,7 @@ header a.btn {
 footer {
   height: 170px;
   background: #16171c;
-  padding: 39px 35px;
+  padding: 25px 35px;
   position: relative;
 }
 footer menu {
@@ -5291,12 +5291,13 @@ section.conditions h1 {
 @media screen and (max-width: 880px) {
 .discounts-container span {
   padding-left: 10px;
-}
+  }
+
 .discounts-container span:before {
   position: static;
   float: left;
   margin-left: 15px;
-}
+  }
 }
 @media screen and (max-width: 568px) {
 
@@ -8219,6 +8220,10 @@ a.fancybox-close {
     margin: 15px 0 !important;
     font-size: 13px !important;
   }
+  .discounts-container span p {
+    margin: 15px 0 !important;
+    font-size: 13px !important;
+  }
   .opt-description p {
     font: 12px "open_sansregular" !important;
   }
@@ -9808,6 +9813,12 @@ section.conditions h1 {
   color: #272830;
   margin: 25px 0;
 }
+.discounts-container span p {
+  display: block;
+  font-size: 14px;
+  color: #272830;
+  margin: 25px 0;
+}
 .discounts-container span:before {
   content: '';
   position: absolute;
@@ -9822,7 +9833,6 @@ section.conditions h1 {
 
  .opt-conditions {
   min-height: 605px;
-  background: #F3F5F5;
   padding: 25px 0;
    }
  .opt-description {

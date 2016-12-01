@@ -23,6 +23,7 @@ $(document).ready(function(){
 	});
 
 	$('.product-card .img ul').bxSlider({
+		pagerCustom: '#bx-pager',
 		pager: true,
 		nextText: '',
 		prevText: ''
@@ -40,6 +41,15 @@ $(document).ready(function(){
 		pager: false,
 		nextText: '',
 		prevText: ''
+	});
+
+	$('.top-slider ul').bxSlider({
+		// pagerCustom: '#bx-pager',
+		pager: true,
+		video: true,
+		useCSS: false,
+		nextText: '11',
+		prevText: '22'
 	});
 
 	$(window).on('scroll', function () {
@@ -199,3 +209,10 @@ $(document).ready(function(){
 		})
 	}
 });
+
+
+$(document).ready(function(){
+	$(".city__link").click(function(){
+		$(".city__items").toggleClass( "city__open" );
+	})
+})
