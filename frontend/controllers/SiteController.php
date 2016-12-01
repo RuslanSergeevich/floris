@@ -165,6 +165,7 @@ class SiteController extends Controller
         $model = new OrderSend();
         $model->name  = Yii::$app->request->post('name');
         $model->email = Yii::$app->request->post('email');
+        $model->phone = Yii::$app->request->post('phone');
         if($model->validate()){
             return $model->send();
         }
