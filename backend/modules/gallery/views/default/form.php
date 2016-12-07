@@ -36,6 +36,11 @@ $this->title = 'Добавление/Редактирование галереи
                         <div class="form-group">
                             <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
                         </div>
+                        <?php if($model->id =='91'):?>
+                            <p>Для слайдера загужать изображения размером <strong>500 х 500 px</strong></p>
+                        <?php else:?>
+                            <p>Для товаров загужать изображения размером <strong>1400 х 600 px</strong></p>
+                        <?php endif;?>
                     </div>
                 <?php ActiveForm::end(); ?>
 

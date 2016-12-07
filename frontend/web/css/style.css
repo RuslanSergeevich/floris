@@ -381,12 +381,12 @@ header menu li.contacts {
 
 header menu li.price {
 
-  left: 640px;
+  left: 1040px;
 }
 
 header menu li.payment {
   top: 35px;
-  left: 640px;
+  left: 1040px;
 }
 
 
@@ -3888,6 +3888,7 @@ section.b5 ul li .btn {
   border-top: 1px solid #404040;
   border-bottom: 1px solid #404040;
   text-align: center;
+  margin-top: 15px;
 }
 .cataloge-menu menu {
   list-style: none;
@@ -4722,14 +4723,18 @@ section.product .product-header {
 section.product .product-selecter {
   background: #191919;
   height: 175px;
+  padding-top: 15px;
 }
 section.product .product-selecter .b-top {
   height: 25px;
   background: #d4d4d6;
-  text-align: center;
   font: 14px "open_sansregular";
+  text-align: center;
   color: #191919;
   line-height: 24px;
+}
+section.product .product-selecter .b-top a {
+  color: #000;
 }
 section.product .product-selecter .bx-viewport {
   width: 1190px !important;
@@ -6631,7 +6636,12 @@ a.fancybox-close {
   }
 }
 @media screen and (max-width: 768px) {
-  
+  .breadcrumbs-item {
+    margin-left: 0 !important;
+  }
+  .breadcrumbs-link {
+    padding-left: 10px;    
+  }
   .l-inform p {
     text-align: center;
     float: none;
@@ -7914,6 +7924,7 @@ a.fancybox-close {
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 2px;
+    display: none;
   }
   footer .footer-search input[type=submit] {
     width: 23px;
@@ -7922,6 +7933,7 @@ a.fancybox-close {
     background-size: cover;
     top: 4px;
     right: 4px;
+    display: none;
   }
   footer .footer-bottom {
     height: 168px;
@@ -9141,7 +9153,7 @@ footer .footer-bottom .socials {
 
 .f-phone-box {
   position: absolute;
-  top: 42px !important;
+  top: 32px !important;
   left: 580px;
 }
 .f-phone-box a {
@@ -9261,6 +9273,7 @@ footer .footer-bottom .socials {
   .f-call-me {
     top: 10px;
     position: relative;
+    right: 0;
   }
   footer {
     height: 370px;
@@ -9380,10 +9393,16 @@ footer .footer-bottom .socials {
 
 @media screen and (max-width: 568px) {
   footer {
-    height: 220px;
+    height: 350px;
   }
   footer .footer-bottom .copy p {
     font: 10px "open_sansregular";
+  }
+  .cataloge-menu {
+    margin-top: 0;
+  }
+  .breadcrumbs {
+    display: none;
   }
 }
 
@@ -9398,6 +9417,12 @@ footer .footer-bottom .socials {
   section.contacts .contacts-header,
   section.product .product-header {
     height: 106px;
+  }
+  header menu li.price {
+    left: 700px
+  }
+  header menu li.payment {
+    left: 700px;
   }
 }
 
@@ -9853,3 +9878,26 @@ section.conditions h1 {
  .opt-left-block {
   width: 320px;
  }
+ .breadcrumbs {
+    width: 100%;
+    height: 25px;
+    background: #d4d4d6;
+    position: relative;
+    top: 75px;
+ }
+ .breadcrumbs li {
+    display: inline-block;
+ }
+ .breadcrumbs-item {
+  margin-left: 250px;
+  vertical-align: middle;
+ }
+.breadcrumbs-item:nth-child(2),
+.breadcrumbs-item:nth-child(3),
+.breadcrumbs-item:nth-child(4) {
+  margin: 0;
+  padding: 0;
+}
+.breadcrumbs-link {
+  color: #000;
+}
