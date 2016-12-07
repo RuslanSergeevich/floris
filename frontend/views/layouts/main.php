@@ -72,6 +72,20 @@ AppAsset::register($this);?>
             <!-- /.phone-time -->
         </div>
         <?= Html::a('Сотрудничество', '#sotrudnichestvo',['class' => 'deal btn fancybox'])?>
+    <?php if(isset($this->params['bread_type'])):?>
+        <div class="breadcrumbs">
+        <ul>
+        <li class="breadcrumbs-item"><a class="breadcrumbs-link" href="/">Главная /</a></li>
+        <li class="breadcrumbs-item"><a class="breadcrumbs-link" href="/cataloge">Каталог /</a></li>
+        <?php if($this->params['bread_type'] == 'catalog'):?>
+            <li class="breadcrumbs-item"><a class="breadcrumbs-link" style="cursor: default" onclick="return false;"><?php echo $this->params['name']?></a></li>
+        <?php else:?>
+            <li class="breadcrumbs-item"><a class="breadcrumbs-link" href="/cataloge/<?php echo $this->params['parent']->alias?>"><?php echo $this->params['parent']->name?> /</a></li>
+            <li class="breadcrumbs-item"><a class="breadcrumbs-link" style="cursor: default" onclick="return false;"><?php echo $this->params['name']?></a></li>
+        <?php endif;?>
+        </ul>
+        </div>
+    <?php endif;?>
     </header>
     <div id="main">
         <?= $content?>

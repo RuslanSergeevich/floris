@@ -18,6 +18,8 @@ class CatalogController extends SiteController
     public function actionView($alias)
     {
         $model = Catalog::find()->where(['alias' => $alias])->one();
+        $this->view->params['bread_type'] = 'catalog';
+        $this->view->params['name'] = $model->name;
         return $this->render('single_view', [
             'model' => $model,
         ]);

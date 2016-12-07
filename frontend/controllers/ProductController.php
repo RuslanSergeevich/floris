@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\Catalog;
 use common\models\ViewPrice;
 use Yii;
 use common\models\CatalogItems;
@@ -24,6 +25,9 @@ class ProductController extends SiteController
             }
         ])->one();
         $price = new ViewPrice($model->id);
+        $this->view->params['bread_type'] = 'product';
+        $this->view->params['name'] = $model->name;
+        $this->view->params['parent'] = Catalog::find()->where(['id' => $model->parent_id])->one();
         return $this->render('single_view', [
             'model' => $model,
             'price' => $price
