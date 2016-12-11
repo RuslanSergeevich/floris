@@ -18,6 +18,13 @@ $this->registerMetaTag([
 ?>
 <section class="cataloge">
     <div class="cataloge-header"></div>
+    <div class="breadcrumbs">
+        <ul>
+            <li class="breadcrumbs-item"><a class="breadcrumbs-link" href="/">Главная /</a></li>
+            <li class="breadcrumbs-item"><a class="breadcrumbs-link" href="/cataloge">Каталог /</a></li>
+            <li class="breadcrumbs-item"><a class="breadcrumbs-link"><?= $model['name']?></a></li>
+        </ul>
+    </div> 
     <?= $this->render('/partials/_catalog_menu',[
         'alias' => $model->alias
     ])?>
@@ -40,8 +47,10 @@ $this->registerMetaTag([
                                 <!-- /.card-text__prise -->
                                 <div class="card-text__name"><?=$item['name'];?></div>
                                 <!-- /.card-text__name -->
-                                <div class="card-text__info-card"><span><?= \common\models\Packing::getValueById($item->packing_id)?></span></div>
-                                <!-- /.card-text__info-card -->
+                                <?php if(!empty($item['short_desc'])): ?>
+                                    <div class="card-text__info-card"><span><?=$item['short_desc']?></span></div>
+                                    <!-- /.card-text__info-card -->
+                                <?php endif;?>
                                 <div class="card-text__weight">Вес: <?= \common\models\Weight::getValueById($item->weight_id)?> г</div>
                                 <!-- /.card-text__weight -->
                                 <a href="#sotrudnichestvo" class="card-text__button fancybox"><?php echo \common\models\Elements::getValue(1);?></a>

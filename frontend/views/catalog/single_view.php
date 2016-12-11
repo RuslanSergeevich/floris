@@ -25,12 +25,26 @@ $this->registerMetaTag([
 <section class="cataloge">
     <div class="cataloge-header cataloge-header2" <?php if(!empty($model->image)):?> style="background:url(/userfiles/catalog/<?=$model->image;?>) 50% 50% no-repeat; background-size: cover; height: 300px;"<?php endif;?>>
         <div class="cataloge-header__text">
-        <div class="cataloge-header__title"><?=$model->title_on_top?></div>
-        <!-- /.cataloge-header__title -->
-        <?=$model->text_on_top?>
-    </div>
+            <div class="cataloge-header__title"><?=$model->title_on_top?></div>
+            <!-- /.cataloge-header__title -->
+            <?=$model->text_on_top?>
+        </div>
     <!-- /.cataloge-header__text -->
     </div>
+    <?php if(isset($this->params['bread_type'])):?>
+        <div class="breadcrumbs">
+        <ul>
+        <li class="breadcrumbs-item"><a class="breadcrumbs-link" href="/">Главная /</a></li>
+        <li class="breadcrumbs-item"><a class="breadcrumbs-link" href="/cataloge">Каталог /</a></li>
+        <?php if($this->params['bread_type'] == 'catalog'):?>
+            <li class="breadcrumbs-item"><a class="breadcrumbs-link" style="cursor: default" onclick="return false;"><?php echo $this->params['name']?></a></li>
+        <?php else:?>
+            <li class="breadcrumbs-item"><a class="breadcrumbs-link" href="/cataloge/<?php echo $this->params['parent']->alias?>"><?php echo $this->params['parent']->name?> /</a></li>
+            <li class="breadcrumbs-item"><a class="breadcrumbs-link" style="cursor: default" onclick="return false;"><?php echo $this->params['name']?></a></li>
+        <?php endif;?>
+        </ul>
+        </div>
+    <?php endif;?>
     <?//= $this->render('/partials/_catalog_menu')?>
     <?//= $this->render('/partials/_catalog_filter')?>
     <div class="b-cataloge-content">
@@ -50,8 +64,10 @@ $this->registerMetaTag([
                                     <!-- /.card-text__prise -->
                                     <div class="card-text__name"><?=$item['name'];?></div>
                                     <!-- /.card-text__name -->
-                                    <div class="card-text__info-card"><span><?=$item['short_desc']?></span></div>
-                                    <!-- /.card-text__info-card -->
+                                    <?php if(!empty($item['short_desc'])): ?>
+                                        <div class="card-text__info-card"><span><?=$item['short_desc']?></span></div>
+                                        <!-- /.card-text__info-card -->
+                                    <?php endif;?>
                                     <div class="card-text__weight">Вес: <?= \common\models\Weight::getValueById($item->weight_id)?> г</div>
                                     <!-- /.card-text__weight -->
                                     <a href="#sotrudnichestvo" class="card-text__button fancybox"><?php echo \common\models\Elements::getValue(1);?></a>

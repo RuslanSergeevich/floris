@@ -377,22 +377,14 @@ header menu li.contacts {
   top: 35px;
   left: 420px;
 }
-
-
 header menu li.price {
 
-  left: 1040px;
+  left: 600px;
 }
-
 header menu li.payment {
   top: 35px;
-  left: 1040px;
+  left: 600px;
 }
-
-
-
-
-
 @media screen and (max-width: 1390px) {
   header menu li.privat {
     left: 160px;
@@ -3888,7 +3880,6 @@ section.b5 ul li .btn {
   border-top: 1px solid #404040;
   border-bottom: 1px solid #404040;
   text-align: center;
-  margin-top: 15px;
 }
 .cataloge-menu menu {
   list-style: none;
@@ -3930,7 +3921,7 @@ section.cataloge .cataloge-header {
 section.cataloge .cataloge-header2 {
   background: url('../images/bg-cat.jpg') no-repeat 50% 50%;
   background-size: cover;
-  height: 300px ;
+  /*height: 300px ;*/
 }
 
 .cataloge-header__text {
@@ -5939,6 +5930,9 @@ a.fancybox-close {
 
   .cataloge-filter .inner {
     padding-left: 50px;
+  }
+  section.cataloge .cataloge-header2 {
+
   }
 }
 @media screen and (max-width: 1330px) {
@@ -9882,8 +9876,6 @@ section.conditions h1 {
     width: 100%;
     height: 25px;
     background: #d4d4d6;
-    position: relative;
-    top: 75px;
  }
  .breadcrumbs li {
     display: inline-block;

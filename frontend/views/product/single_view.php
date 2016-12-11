@@ -22,8 +22,21 @@ $this->registerMetaTag([
 
 <section class="product">
     <div class="product-header"></div>
+        <?php if(isset($this->params['bread_type'])):?>
+        <div class="breadcrumbs">
+        <ul>
+        <li class="breadcrumbs-item"><a class="breadcrumbs-link" href="/">Главная /</a></li>
+        <li class="breadcrumbs-item"><a class="breadcrumbs-link" href="/cataloge">Каталог /</a></li>
+        <?php if($this->params['bread_type'] == 'catalog'):?>
+            <li class="breadcrumbs-item"><a class="breadcrumbs-link" style="cursor: default" onclick="return false;"><?php echo $this->params['name']?></a></li>
+        <?php else:?>
+            <li class="breadcrumbs-item"><a class="breadcrumbs-link" href="/cataloge/<?php echo $this->params['parent']->alias?>"><?php echo $this->params['parent']->name?> /</a></li>
+            <li class="breadcrumbs-item"><a class="breadcrumbs-link" style="cursor: default" onclick="return false;"><?php echo $this->params['name']?></a></li>
+        <?php endif;?>
+        </ul>
+        </div>
+    <?php endif;?>
     <div class="product-selecter">
-        <div class="b-top"><?= \common\models\Packing::getValueById($model->packing_id)?></div>
         <div class="inner">
             <?= Html::ul(\common\models\CatalogItems::getItemsByPacking($model->packing_id,$model->id), ['item' => function($item) {
             $img = isset($item['galleryImages'][0]['basename']) ? Html::img('@gallery/'.$item['galleryImages'][0]['basename'].'.'.$item['galleryImages'][0]['ext']) : '';

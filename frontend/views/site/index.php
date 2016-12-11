@@ -88,8 +88,10 @@ $this->registerMetaTag([
                       <!-- /.card-text__prise -->
                       <div class="card-text__name"><?=$catalog->name;?></div>
                       <!-- /.card-text__name -->
-                      <div class="card-text__info-card">Травяной чай с крымскими ягодами.</div>
-                      <!-- /.card-text__info-card -->
+                      <?php if(!empty($catalog->short_desc)): ?>
+                          <div class="card-text__info-card"><span><?=$catalog->short_desc;?></span></div>
+                          <!-- /.card-text__info-card -->
+                      <?php endif;?>
                       <div class="card-text__weight">Вес: <?= \common\models\Weight::getValueById($catalog->weight_id)?> г</div>
                       <!-- /.card-text__weight -->
                       <a href="#sotrudnichestvo" class="card-text__button fancybox"><?php echo \common\models\Elements::getValue(1);?></a>
