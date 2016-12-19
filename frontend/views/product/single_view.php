@@ -101,13 +101,12 @@ $this->registerMetaTag([
                         <!-- /.card-text__title -->
 
                     <?php endif;?>
-
                     <?php if($price->getWhole() != 0):?>
                         <div class="card-text__prise"><b><?php echo $price->getWhole()?></b> цена розничная</div>
                     <?php endif;?>
                     <!-- /.card-text__prise -->
                     <?php if($price->getRetail() != 0):?>
-                        <div class="card-text__prise card-text__prise--black"><b><?php echo $price->getRetail()?></b> ваша цена</div>
+                        <div class="card-text__prise card-text__prise--black"><b><?php echo $price->getRetail()?></b> цена оптовая</div>
                     <?php endif;?>
                     <!-- /.card-text__prise -->
                     <!--<div class="card-text__prise"><b></b> цена дилерская</div>-->

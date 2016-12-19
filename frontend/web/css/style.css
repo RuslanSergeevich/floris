@@ -322,7 +322,7 @@ header a.logo {
   -webkit-background-size: cover;
   background-size: cover;
   position: absolute;
-  top: 32px;
+  top: 15px;
   left: 35px;
   display: block;
   width: 100px;
@@ -913,7 +913,7 @@ footer .footer-bottom .design {
 ===================================*/
 .bx-wrapper {
   position: relative;
-  margin: 0 auto 60px;
+  margin: 0 auto;
   padding: 0;
   *zoom: 1;
 }
@@ -4762,7 +4762,7 @@ section.product .product-card {
 }
 section.product .product-card .img {
   width: 675px;
-  height: 600px;
+  /*height: 600px;*/
   float: left;
 }
 section.product .product-card .img img {
@@ -4912,9 +4912,7 @@ section.product .product-card .description .b-text ul.logistic-info li:nth-child
   border-left: 1px solid #d1d1d1;
   border-right: 1px solid #d1d1d1;
 }
-section.product .product-card .description .logistic-info {
-  margin-right: 70px;
-}
+
 section.product .product-card .description .logistic-info .selecter-selected {
   width: 270px;
   -moz-border-radius: 5px;
@@ -6638,7 +6636,8 @@ a.fancybox-close {
   }
   .l-inform p {
     text-align: center;
-    float: none;
+    float: none !important;
+    font: 15px "open_sansregular"
   }
 
   header a.phone.screen {
@@ -6731,15 +6730,23 @@ a.fancybox-close {
     padding-bottom: 20px;
   }
   section.product .product-card .description {
-    margin: 50px auto 0;
+    margin: 0 auto;
     float: none;
     width: 610px;
   }
   section.product .product-card .description .b-text ul {
     text-align: center;
   }
+  section.product .product-card .description .b-text ul.logistic-info {
+    margin-top: 20px;    
+  }
   section.product .product-card .description .b-text ul li {
-    width: 30%;
+   width: auto;
+   text-align: left;
+  }
+  section.product .product-card .description .b-text {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
   }
 
   section.blog .inner {
@@ -8245,7 +8252,7 @@ a.fancybox-close {
 
 .bx-pager {
   text-align: center;
-  margin-top: -50px;
+  margin-top: 10px;
 }
 
 .bx-pager a {
@@ -8369,10 +8376,10 @@ a.fancybox-close {
 
 .card-text__prise {
   font: 12px open_sansregular;
-  margin-top: 20px;
+  margin-top: 5px;
   margin-bottom: 7px;
   margin-left: 6px;
-  color: #b6b6b6;
+  color: #000;
 }
 
 .card-text__prise--black {
@@ -8646,7 +8653,9 @@ h1.title-page2 {
   font: 14px open_sansregular;
   margin-bottom: 20px;
   padding-left: 8px;
+  padding-bottom: 5px;
   color: #000000;
+  height: 50px;
 }
 .card-text__weight {
   font: 14px open_sansregular;
@@ -8687,7 +8696,7 @@ section.cataloge .b-cataloge-content .b-product-list ul li {
 .card-text__prise2 b {
   color: #000000;
 }
-
+ 
 @media screen and (max-width: 1210px) {
   .pdf--button {
     position: absolute;
@@ -8786,18 +8795,8 @@ section.cataloge .b-cataloge-content .b-product-list ul li {
     padding-bottom: 10px;
 }
   .l-inform p {
-    font: 12px "open_sansregular";
+    font: 11px "open_sansregular";
   }
-  /*.card-text__button:after {
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: 17px;
-    width: 16px;
-    height: 14px;
-    background: url(../images/icons/basket.png) 0 0 no-repeat;
-    background-size: cover;
-  }*/
 
   h1.title-page {
     font-size: 14px;
@@ -9437,12 +9436,23 @@ footer .footer-bottom .socials {
 
 
 /*Slider(Begin)*/
-.top-slider {}
+.top-slider {
+  position: relative;
+}
 
 .top-slider .bx-wrapper .bx-controls-direction a {
   width: 11px !important;
   height: 16px !important;
   background: url(../images/icons/str.png) -9px -10px no-repeat;
+}
+.top-slider .bx-wrapper .bx-controls-direction a:after {
+  position: absolute;
+  content: "";
+  width: 100px;
+  height: 100px;
+  left: -40px;
+  top: -40px;
+
 }
 
 .top-slider .bx-wrapper .bx-prev {
@@ -9881,7 +9891,7 @@ section.conditions h1 {
     display: inline-block;
  }
  .breadcrumbs-item {
-  margin-left: 250px;
+  margin-left: 225px;
   vertical-align: middle;
  }
 .breadcrumbs-item:nth-child(2),
@@ -9892,4 +9902,36 @@ section.conditions h1 {
 }
 .breadcrumbs-link {
   color: #000;
+}
+.logo span {
+  display: block;
+  margin-top: 40px;
+  font: 12px "espuma_proregular";
+}
+.additional-price {
+  font: 12px open_sansregular;
+  margin-left: 6px;
+  color: #b6b6b6;
+  font-weight: bold;
+}
+.additional-price b {
+    color: #b6b6b6;
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: bold;
+
+}
+
+.additional-price b:after {
+  content: '';
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  right: 0;
+  width: 11px;
+  height: 18px;
+  margin-left: 5px;
+  background: url(../images/icons/rub.png) 0 5px no-repeat;
+  -webkit-background-size: 8px;
+  background-size: 8px;
 }

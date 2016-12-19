@@ -57,7 +57,8 @@ $this->registerMetaTag([
                             <?php foreach($items as $item):?>
                                 <li data-composition_id="<?=$item['composition_id'];?>" data-packing_id="<?=$item['packing_id'];?>" data-weight_id="<?=$item['weight_id'];?>" class="catd-text-catalog">
                                     <a href="/product/<?=$item['alias']?>"><img src="<?='/userfiles/gallery/'.$item['galleryImages'][0]['basename'].'.'.$item['galleryImages'][0]['ext']?>" alt=""></a>
-                                    <div class="card-text__prise card-text__prise2"><b><?php echo \common\models\PricesValues::getPriceValue(1, $item['id'])?></b>ваша цена</div>
+                                    <div class="additional-price"><b><?php echo \common\models\PricesValues::getPriceValue(2, $item['id'])?></b>цена розничная</div>
+                                    <div class="card-text__prise card-text__prise2"><b><?php echo \common\models\PricesValues::getPriceValue(1, $item['id'])?></b> цена оптовая</div>
                                     <!-- /.card-text__prise -->
                                     <div class="card-text__name"><?=$item['name'];?></div>
                                     <!-- /.card-text__name -->
