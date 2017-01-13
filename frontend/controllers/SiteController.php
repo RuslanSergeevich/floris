@@ -79,9 +79,17 @@ class SiteController extends Controller
     public function actionPage($alias)
     {
         $model = $this->_queryOrException(Pages::findOne(['alias' => $alias, 'publish' => Pages::PUBLISH]));
-        return $this->render($model['template'], [
-            'model' => $model
+        if($model['template'] == 'get_price'){
+             return $this->render($model['template'], [
+             'model' => $model,
+             $this->layout = 'price'
         ]);
+        }else{
+                 return $this->render($model['template'], [
+            'model' => $model
+        ]);   
+        }
+
     }
 
     public function actionSubscribe()

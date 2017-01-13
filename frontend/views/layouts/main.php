@@ -60,7 +60,7 @@ AppAsset::register($this);?>
     <a class="go-top"></a>
     <a class="mobile-menu mobile" href="#backcall"></a>
     <?= Html::a('','#backcall', ['class' => 'mobile-phone mobile fancybox'])?>
-    <?= Html::a('', Url::home(),['class' => 'logo'])?>
+    <?= Html::a('<span>'.strip_tags(\common\models\Boxes::getBox('header_logo_text')).'</span>', Url::home(),['class' => 'logo'])?>
     <?= MenuWidget::widget([
         'attach_icon' => true,
         'class_name' => ''

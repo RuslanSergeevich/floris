@@ -3966,7 +3966,9 @@ section.cataloge .cataloge-header2 {
   .cataloge-header__title {
     font: 16px open_sansregular;
   }
-
+  header a.logo span {
+    display: none;
+  }
 }
 
 section.cataloge .cataloge-filter {
@@ -5294,7 +5296,12 @@ section.conditions h1 {
   }
 }
 @media screen and (max-width: 568px) {
-
+  header a.logo span {
+    position: absolute;
+    width: 150px;
+    top: -10px;
+    left: 0px; 
+  }
   .card-text__left {
     float: none;
     margin-right: 60px;
@@ -6561,8 +6568,10 @@ a.fancybox-close {
   }
   header a.logo {
     left: 111px;
-    top: 20px !important;
+    top: 5px !important;
   }
+
+
   header a.mobile-menu {
     display: block;
     top: 25px !important;
@@ -8207,6 +8216,7 @@ a.fancybox-close {
   }
 }
 @media screen and (max-width: 320px) {
+
   footer .footer-bottom .socials {
     left: 219px;
   }
@@ -9276,6 +9286,7 @@ footer .footer-bottom .socials {
     padding: 0;
     width: 62px !important;
   }
+
 }
 
 
@@ -9417,6 +9428,7 @@ footer .footer-bottom .socials {
   header menu li.payment {
     left: 700px;
   }
+
 }
 
 @media screen and (max-width: 568px) {
