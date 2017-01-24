@@ -111,7 +111,7 @@ $this->registerMetaTag([
                     <!-- /.card-text__prise -->
                     <!--<div class="card-text__prise"><b></b> цена дилерская</div>-->
                     <!-- /.card-text__prise -->
-                    <a href="#" class="card-text__button">купить</a>
+                    <a href="/price" class="card-text__button fancybox"><?php echo \common\models\Elements::getValue(1);?></a>
                     <!-- /.card-text__button -->
                     <a href="#" class="card-text__info">
                         Спец-условия дилерам<br />

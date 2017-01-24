@@ -58,6 +58,7 @@ $this->registerMetaTag([
                                 <li data-composition_id="<?=$item['composition_id'];?>" data-packing_id="<?=$item['packing_id'];?>" data-weight_id="<?=$item['weight_id'];?>" class="catd-text-catalog">
                                     <a href="/product/<?=$item['alias']?>"><img src="<?='/userfiles/gallery/'.$item['galleryImages'][0]['basename'].'.'.$item['galleryImages'][0]['ext']?>" alt=""></a>
                                     <div class="additional-price"><b><?php echo \common\models\PricesValues::getPriceValue(2, $item['id'])?></b>цена розничная</div>
+                                    <div class="card-text__prise card-text__prise__mod card-text__prise2"><a id="lock" class="fancybox" href="#unlock">оптовая цена</a></div>
                                     <div class="card-text__prise card-text__prise2"><b><?php echo \common\models\PricesValues::getPriceValue(1, $item['id'])?></b> цена оптовая</div>
                                     <!-- /.card-text__prise -->
                                     <div class="card-text__name"><?=$item['name'];?></div>
@@ -68,7 +69,7 @@ $this->registerMetaTag([
                                     <?php endif;?>
                                     <div class="card-text__weight">Вес: <?= \common\models\Weight::getValueById($item->weight_id)?> г</div>
                                     <!-- /.card-text__weight -->
-                                    <a href="#sotrudnichestvo" class="card-text__button fancybox"><?php echo \common\models\Elements::getValue(1);?></a>
+                                    <a href="/price" class="card-text__button fancybox"><?php echo \common\models\Elements::getValue(1);?></a>
                                     <!-- /.card-text__button -->
                                 </li>    
                             <?php endforeach;?>

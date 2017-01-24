@@ -76,4 +76,25 @@ use yii\widgets\ActiveForm;
             <?php ActiveForm::end(); ?>
         </div>
     </div>
+    <div id="unlock" class="popup">
+        <div class="popup-head"></div>
+        <div class="popup-content">
+            <div class="title">
+                ВВЕДИТЕ ВАШИ ДАННЫЕ И ЦЕНЫ ОТКРОЮТСЯ АВТОМАТИЧЕСКИ
+            </div>
+            <form id="w2" action="/send" method="post">
+                <div class="form-group field-unlock-phone">
+                    <input type="text" id="orders-phone" class="phone" name="Orders[phone]" placeholder="Номер телефона">
+                </div>            
+                <div class="form-group field-orders-email">
+                    <input type="text" id="orders-email" class="email" name="Orders[email]" placeholder="Электронный адрес">
+                </div>            
+                <div class="confident">
+                    <input type="checkbox" name="confirm">
+                    <span>Я даю свою согласие на обработку персональный данных и соглашаюсь с условиями и политикой конфидециальности</span>
+                </div>
+                <input class="btn border" type="submit" value="ОК">
+            </form>
+        </div>
+    </div>   
 </div>

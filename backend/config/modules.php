@@ -73,4 +73,7 @@ return [
     'prices' => [
         'class' => 'backend\modules\prices\Prices',
     ],
+    'lk' => [
+        'class' => 'backend\modules\lk\Lk',
+    ],    
 ];

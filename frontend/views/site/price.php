@@ -20,7 +20,7 @@ $this->registerMetaTag([
 ?>
 <div id="wrapper">
     <!-- /.city -->
-    <div id="main">
+    <div id="main" class="overlay-wrap">
         <section class="price">
             <div class="inner">
                 <h1>
@@ -189,3 +189,21 @@ $this->registerMetaTag([
         </section>
     </div>
 </div>
+<div id="get-price" class="popup">
+    <div class="popup-close"></div>
+    <div class="popup-head"></div>
+    <div class="popup-content">
+        <div class="title">
+            Введите ваши данные и прайс-лист откроется автоматически
+        </div>
+        <form id="w2" action="/send" method="post">
+            <input type="text" id="orders-phone" class="phone" name="Orders[phone]" placeholder="Номер телефона" required>
+            <input type="text" id="orders-email" class="email" name="Orders[email]" placeholder="Электронный адрес" required>
+            <div class="confident">
+                <input type="checkbox" name="confirm">
+                <span>Я даю свою согласие на обработку персональный данных и соглашаюсь с условиями и политикой конфидециальности</span>
+            </div>
+            <input class="btn" type="submit" value="ОК">
+        </form> 
+    </div>
+</div> 
