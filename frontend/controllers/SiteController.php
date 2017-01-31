@@ -6,6 +6,7 @@ use common\models\CatalogItems;
 use common\models\GalleryImages;
 use common\models\Geography;
 use common\models\GeographyImages;
+use common\models\Lk;
 use common\models\Orders;
 use common\models\OrderSend;
 use common\models\Subscribers;
@@ -178,6 +179,37 @@ class SiteController extends Controller
             return $model->send();
         }
         return false;
+    }
+
+    public function actionAddUserLk(){
+        $response['is_new'] = Lk::addUserLk($_POST['email'], $_POST['phone']);
+        return json_encode($response);
+    }
+
+    public function actionUserTokenLogin(){
+        if($_GET['token']){
+            $model = new Lk();
+            $user = $model->find()->where(['active_alias' => $_GET['token']])->one();
+            if($user){
+                $session = Yii::$app->session;
+                $session->set('id', $user->id);
+                if($_GET['url']){
+                    header('Location: '.$_GET["url"].'');
+                    die();
+                }
+                header('Location: /price');
+                die();
+            }else{
+                die('Токена не существует'); // TODO Продумать красивые обработчики
+            }
+        }else{
+            die('Токена не существует'); // TODO Продумать красивые обработчики
+        }
+    }
+
+    public function actionUserLogout(){
+        $session = Yii::$app->session;
+        $session->remove('id');
     }
 
     private function _queryOrException($model)

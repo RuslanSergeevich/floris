@@ -18,6 +18,7 @@ $this->registerMetaTag([
     'content' => Html::encode($model->keywords)
 ]);
 ?>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <div id="wrapper">
     <!-- /.city -->
     <div id="main" class="overlay-wrap">
@@ -189,6 +190,7 @@ $this->registerMetaTag([
         </section>
     </div>
 </div>
+<?php if(!Yii::$app->session['id']):?>
 <div id="get-price" class="popup">
     <div class="popup-close"></div>
     <div class="popup-head"></div>
@@ -196,14 +198,41 @@ $this->registerMetaTag([
         <div class="title">
             Введите ваши данные и прайс-лист откроется автоматически
         </div>
-        <form id="w2" action="/send" method="post">
+        <form id="w2" action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
             <input type="text" id="orders-phone" class="phone" name="Orders[phone]" placeholder="Номер телефона" required>
-            <input type="text" id="orders-email" class="email" name="Orders[email]" placeholder="Электронный адрес" required>
+            <input type="text" id="orders-email" class="email" name="email" placeholder="Электронный адрес" required>
+            <input type="hidden" name="campaign_token" value="pEIMz" />
             <div class="confident">
-                <input type="checkbox" name="confirm">
+                <input type="checkbox" class="confirm" name="confirm">
                 <span>Я даю свою согласие на обработку персональный данных и соглашаюсь с условиями и политикой конфидециальности</span>
             </div>
-            <input class="btn" type="submit" value="ОК">
+            <input class="send_form_ajax btn" value="ОК">
         </form> 
     </div>
-</div> 
+</div>
+<?php endif;?>
+
+<script>
+
+    $('.send_form_ajax').on('click', function(e){
+        e.preventDefault();
+        if($('input.confirm').prop('checked') == false){
+            alert('Согласие'); // TODO Правильную всплывашку
+            return false;
+        }
+        $.ajax({
+            url: '/add-user-lk',
+            data: {phone:$('#orders-phone').val(), email: $('#orders-email').val()},
+            dataType: 'json',
+            type: 'post',
+            success:function(response){
+                if(response.is_new == true){
+                    $('#w2').submit();
+                }else{
+                    //TODO Сюда запилите конфирмашку, типо проверьте почту туда придет линк
+                }
+
+            }
+        })
+    })
+</script>

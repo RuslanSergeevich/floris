@@ -50,7 +50,7 @@ class Lk extends \yii\db\ActiveRecord
         return [
             [['email', 'phone'], 'required'], 
             [['publish', 'created_at', 'updated_at'], 'integer'],
-            [['email'], 'string', 'max' => 255]
+            [['email', 'active_alias'], 'string', 'max' => 255]
         ];
     }
 
@@ -88,6 +88,40 @@ class Lk extends \yii\db\ActiveRecord
     public static function getList()
     {
         return self::find()->where(['publish' => self::PUBLISH])->asArray()->all();
+    }
+
+    public static function addUserLk($email, $phone){
+
+        $is_new = false;
+        $model = self::findUserByEmail($email);
+        if(!$model){
+            $is_new = true;
+            $model = new self;
+        }
+        $model->email = $email;
+        $model->phone = $phone;
+        $model->publish = 1;
+        $token = self::generateToken();
+        $model->active_alias = $token;
+        if($model->save()){
+            // TODO тут отправляется письмо с урлом /user-token/login?token=$token
+        }
+        return $is_new;
+    }
+
+    private static function generateToken($length = 15){
+        $chars = 'abdefhiknrstyzABDEFGHKNQRSTYZ23456789';
+        $numChars = strlen($chars);
+        $string = '';
+        for ($i = 0; $i < $length; $i++) {
+            $string .= substr($chars, rand(1, $numChars) - 1, 1);
+        }
+        return $string;
+    }
+
+    public static function findUserByEmail($email){
+        $model = self::find()->where(['email' => $email])->one();
+        return $model;
     }
 
     /**
