@@ -199,7 +199,7 @@ $this->registerMetaTag([
             Введите ваши данные и прайс-лист откроется автоматически
         </div>
         <form id="w2" action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
-            <input type="text" id="orders-phone" class="phone" name="Orders[phone]" placeholder="Номер телефона" required>
+            <input type="text" id="orders-phone" class="phone" name="custom_postal_code" placeholder="Номер телефона" required>
             <input type="text" id="orders-email" class="email" name="email" placeholder="Электронный адрес" required>
             <input type="hidden" name="campaign_token" value="pEIMz" />
             <div class="confident">
@@ -213,7 +213,6 @@ $this->registerMetaTag([
 <?php endif;?>
 
 <script>
-
     $('.send_form_ajax').on('click', function(e){
         e.preventDefault();
         if($('input.confirm').prop('checked') == false){
