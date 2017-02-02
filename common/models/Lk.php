@@ -107,6 +107,7 @@ class Lk extends \yii\db\ActiveRecord
             $from = "Floris | Крымский чай и сладости floristea.com <info@floristea.com>";
             $to = 'rustikjan@gmail.com';
             $subject = 'Подтвердите свой e-mail на сайте floristea.com';
+            $html = '';
             $html .= '<tr>Здравствуйте!<br/><br/></tr>';
             $html .= '<tr>Вы ввели свои данные на сайте <a href="//floristea.com">floristea.com</a><br/><br/></tr>';
             $html .= '<tr>Для получения доступа к оптовым ценам подтвердите свой адрес электронной почты, 
