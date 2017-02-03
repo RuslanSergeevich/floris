@@ -173,9 +173,30 @@ AppAsset::register($this);?>
 </script>
 <script src="/js/lib/_order.js"></script>
 <script type="text/javascript">
-   $(document).ready(function(){
+    $(document).ready(function(){
         $('#get-price').addClass('active');
-   });
+    });
+
+    $('.send_form_ajax').on('click', function(e){
+        e.preventDefault();
+        if($('input.confirm').prop('checked') == false){
+            alert('Необходимо ваше согласие на обработку персональных данных.'); // TODO Правильную всплывашку
+            return false;
+        }
+        $.ajax({
+            url: '/add-user-lk',
+            data: {phone:$('#orders-phone').val(), email: $('#orders-email').val()},
+            dataType: 'json',
+            type: 'post',
+            success:function(response){
+                if(response.is_new == true){
+                    $('#w2').submit();
+                }else{
+                    //TODO Сюда запилите конфирмашку, типо проверьте почту туда придет линк
+                }
+            }
+        })
+    }) 
 </script>
 </body>
 </html>

@@ -82,19 +82,16 @@ use yii\widgets\ActiveForm;
             <div class="title">
                 ВВЕДИТЕ ВАШИ ДАННЫЕ И ЦЕНЫ ОТКРОЮТСЯ АВТОМАТИЧЕСКИ
             </div>
-            <form id="w2" action="/send" method="post">
-                <div class="form-group field-unlock-phone">
-                    <input type="text" id="orders-phone" class="phone" name="Orders[phone]" placeholder="Номер телефона">
-                </div>            
-                <div class="form-group field-orders-email">
-                    <input type="text" id="orders-email" class="email" name="Orders[email]" placeholder="Электронный адрес">
-                </div>            
+            <form id="w2" action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
+                <input type="text" id="orders-phone" class="phone" name="custom_postal_code" placeholder="Номер телефона" required>
+                <input type="text" id="orders-email" class="email" name="email" placeholder="Электронный адрес" required>
+                <input type="hidden" name="campaign_token" value="pEIMz" />
                 <div class="confident">
-                    <input type="checkbox" name="confirm">
+                    <input type="checkbox" class="confirm" name="confirm">
                     <span>Я даю свою согласие на обработку персональный данных и соглашаюсь с условиями и политикой конфидециальности</span>
                 </div>
-                <input class="btn border" type="submit" value="ОК">
-            </form>
+               <input class="send_form_ajax btn border" type="submit" value="ОК">
+            </form> 
         </div>
     </div>   
 </div>

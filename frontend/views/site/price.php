@@ -21,7 +21,7 @@ $this->registerMetaTag([
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <div id="wrapper">
     <!-- /.city -->
-    <div id="main" class="overlay-wrap">
+    <div id="main" <?php if(!Yii::$app->session['id']):?> class="overlay-wrap" <?php endif;?>>
         <section class="price">
             <div class="inner">
                 <h1>
@@ -206,32 +206,8 @@ $this->registerMetaTag([
                 <input type="checkbox" class="confirm" name="confirm">
                 <span>Я даю свою согласие на обработку персональный данных и соглашаюсь с условиями и политикой конфидециальности</span>
             </div>
-            <input class="send_form_ajax btn" value="ОК">
+            <input class="send_form_ajax btn border" type="submit" value="ОК">
         </form> 
     </div>
 </div>
 <?php endif;?>
-
-<script>
-    $('.send_form_ajax').on('click', function(e){
-        e.preventDefault();
-        if($('input.confirm').prop('checked') == false){
-            alert('Согласие'); // TODO Правильную всплывашку
-            return false;
-        }
-        $.ajax({
-            url: '/add-user-lk',
-            data: {phone:$('#orders-phone').val(), email: $('#orders-email').val()},
-            dataType: 'json',
-            type: 'post',
-            success:function(response){
-                if(response.is_new == true){
-                    $('#w2').submit();
-                }else{
-                    //TODO Сюда запилите конфирмашку, типо проверьте почту туда придет линк
-                }
-
-            }
-        })
-    })
-</script>
