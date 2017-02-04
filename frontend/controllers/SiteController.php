@@ -182,7 +182,7 @@ class SiteController extends Controller
     }
 
     public function actionAddUserLk(){
-        $response['is_new'] = Lk::addUserLk($_POST['email'], $_POST['phone']);
+        $response['is_new'] = Lk::addUserLk($_POST['email'], $_POST['phone'], $_POST['url']);
         return json_encode($response);
     }
 

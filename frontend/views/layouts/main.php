@@ -185,7 +185,7 @@ AppAsset::register($this);?>
         }
         $.ajax({
             url: '/add-user-lk',
-            data: {phone:$('#orders-phone').val(), email: $('#orders-email').val()},
+            data: {phone:$('#orders-phone').val(), email: $('#orders-email').val(), url:location.href},
             dataType: 'json',
             type: 'post',
             success:function(response){
