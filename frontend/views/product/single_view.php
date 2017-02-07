@@ -99,14 +99,17 @@ $this->registerMetaTag([
 
                         <div class="card-text__title card-text__title--end ">В производстве</div>
                         <!-- /.card-text__title -->
-
                     <?php endif;?>
                     <?php if($price->getWhole() != 0):?>
                         <div class="card-text__prise"><b><?php echo $price->getWhole()?></b> цена розничная</div>
                     <?php endif;?>
                     <!-- /.card-text__prise -->
                     <?php if($price->getRetail() != 0):?>
-                        <div class="card-text__prise card-text__prise--black"><b><?php echo $price->getRetail()?></b> цена оптовая</div>
+                        <?php if(!Yii::$app->session['id']):?>    
+                            <div class="card-text__prise card-text__prise__mod card-text__prise2"><a id="lock" class="fancybox" href="#unlock">оптовая цена</a></div>
+                        <?php else:?>
+                            <div class="card-text__prise card-text__prise--black"><b><?php echo $price->getRetail()?></b> цена оптовая</div>
+                        <?php endif;?>
                     <?php endif;?>
                     <!-- /.card-text__prise -->
                     <!--<div class="card-text__prise"><b></b> цена дилерская</div>-->

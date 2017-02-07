@@ -174,7 +174,7 @@ AppAsset::register($this);?>
 <script src="/js/lib/_order.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#get-price').addClass('active');
+        $('#get-price').addClass('popup-active');
     });
 
     $('.send_form_ajax').on('click', function(e){
