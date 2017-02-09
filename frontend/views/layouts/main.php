@@ -174,25 +174,25 @@ AppAsset::register($this);?>
 <script src="/js/lib/_order.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#get-price').addClass('active');
+        $('#get-price').addClass('popup-active');
     });
 
     $('.send_form_ajax').on('click', function(e){
         e.preventDefault();
         if($('input.confirm').prop('checked') == false){
-            alert('Необходимо ваше согласие на обработку персональных данных.'); // TODO Правильную всплывашку
+            alert('Необходимо ваше согласие на обработку персональных данных.');
             return false;
         }
         $.ajax({
             url: '/add-user-lk',
-            data: {phone:$('#orders-phone').val(), email: $('#orders-email').val(), url:location.href},
+            data: {phone:$('#orders-phone2').val(), email: $('#orders-email2').val(), url:location.href},
             dataType: 'json',
             type: 'post',
             success:function(response){
                 if(response.is_new == true){
                     $('#w2').submit();
                 }else{
-                    //TODO Сюда запилите конфирмашку, типо проверьте почту туда придет линк
+                    alert('На вашу почту отправльна ссылка для просмотра оптовых цен.');
                 }
             }
         })
