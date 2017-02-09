@@ -114,7 +114,7 @@ $this->registerMetaTag([
                             <input class="uform-name name" type="text" name="name" id="name">
                             <label for="uname"></label>
                             <span class="form-description">Телефон*</span>
-                            <input class="uform-phone" type="text" name="uphone" id="phone">
+                            <input class="uform-phone" type="text" name="phone" id="phone">
                             <label for="uphone"></label>
                             <input type="hidden" name="email" id = 'email' class="email" value="sfhk@fhsj.ss">
                             <span class="form-description">Ваш комментарий</span>
