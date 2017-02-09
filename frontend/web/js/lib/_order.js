@@ -5,10 +5,10 @@ $(document).ready(function () {
      |-----------------------------------------------------------
      */
 
-    $("#price_form input[type=submit]").click(function (e) {
+    $("#price_form button[type=submit]").click(function (e) {
         e.preventDefault();
         var data  = [],
-            _form = $(this).parent('#price_form');
+            _form = $(this).closest('#price_form');
         $('table tr.product').each(function (i) {
             var _this= $(this);
             if(_this.find('.price-count-inp input').val() > 0){
@@ -30,12 +30,11 @@ $(document).ready(function () {
 
         var reklama  = $('#reklama').prop('checked'),
             obrazci  = $('#obrazci').prop('checked'),
-            name     = _form.find('.name').val(),
-            email    = _form.find('.email').val(),
-            email_to = _form.find('.email_to').val(),
+            name     = _form.find('#name').val(),
+            email    = _form.find('#email').val(),
+            email_to = _form.find('#email_to').val(),
             itogo    = parseInt($('.itogo .sum-rub span').text().trim());
-
-        if(name && email){
+        if(name){
             return $.ajax({
                 type: 'post',
                 url: _form.attr('action'),
