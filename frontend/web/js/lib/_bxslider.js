@@ -73,8 +73,8 @@
 		autoSlideForOnePage: false,
 
 		// CAROUSEL
-		minSlides: 1,
-		maxSlides: 1,
+		minSlides: 4,
+		maxSlides: 4,
 		moveSlides: 1,
 		slideWidth: 0,
 

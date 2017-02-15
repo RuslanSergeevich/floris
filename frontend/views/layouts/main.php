@@ -174,9 +174,17 @@ AppAsset::register($this);?>
 <script src="/js/lib/_order.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
+        $('#get-price').fadeIn(500);
         $('#get-price').addClass('popup-active');
     });
-
+    $('.popup-close').on('click', function(){
+        $('#get-price').fadeOut(300);
+        $('#get-price').removeClass('popup-active');
+    });
+    $('.feedback-popup-btn').on('click', function(){
+        $('#feedback-popup').fadeOut(300);
+        $('#feedback-popup').removeClass('popup-active');
+    });
     $('.send_form_ajax').on('click', function(e){
         e.preventDefault();
         if($('input.confirm').prop('checked') == false){
@@ -192,7 +200,11 @@ AppAsset::register($this);?>
                 if(response.is_new == true){
                     $('#w2').submit();
                 }else{
-                    alert('На вашу почту отправльна ссылка для просмотра оптовых цен.');
+                    //alert('Необходимо в .');
+                    $('#get-price').removeClass('popup-active').css('display', 'none');
+                    $.fancybox.close();
+                    $('#unlock').removeClass('popup-active').css('display', 'none');
+                    $('#feedback-popup').fadeIn(500).addClass('popup-active').css('display', 'block');
                 }
             }
         })

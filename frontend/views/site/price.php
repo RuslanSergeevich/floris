@@ -199,11 +199,14 @@ $this->registerMetaTag([
             Введите ваши данные и прайс-лист откроется автоматически
         </div>
         <form id="w2" action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
-            <input type="text" id="orders-phone2" class="phone" name="custom_myphone" placeholder="Номер телефона" required>
-            <input type="text" id="orders-email2" class="email" name="email" placeholder="Электронный адрес" required>
-            <input type="hidden" name="campaign_token" value="pEIMz" />
+            <div class="get-price-input">
+                <input type="text" id="orders-phone2" class="phone" name="custom_myphone" placeholder="Номер телефона" required>
+            </div>
+            <div class="get-price-input">
+                <input type="text" id="orders-email2" class="email" name="email" placeholder="Ваш e-mail" required>
+            </div>
             <div class="confident">
-                <input type="checkbox" class="confirm" name="confirm">
+                <input type="checkbox" class="confirm" name="confirm" checked>
                 <span>Я даю свою согласие на обработку персональный данных и соглашаюсь с условиями и политикой конфидециальности</span>
             </div>
             <input class="send_form_ajax btn border" type="submit" value="ОК">

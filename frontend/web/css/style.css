@@ -5681,11 +5681,12 @@ a.fancybox-close {
 	width: 100%;
 }
 .popup .popup-content {
-	padding: 15px 15px 25px;
+	padding: 20px 40px 25px;
 }
 .popup .popup-content .title {
 	color: #fff;
-	font: 16px "open_sansregular";
+	font: 20px "open_sansregular";
+	line-height: 30px;
 	text-align: center;
 	margin: 25px 0 30px;
 	text-transform: uppercase;
@@ -5697,9 +5698,12 @@ a.fancybox-close {
 	background: none;
 	font: 16px "open_sansregular";
 	height: 25px;
-	margin-bottom: 23px;
+	margin-bottom: 25px;
 	border-bottom: 1px solid #5c5d60;
-	width: 100%;
+	width: 300px;
+	/*margin-left: 50%;
+	transform: translateX(-50%);*/
+	
 }
 .popup .popup-content form input[type=submit] {
 	background: none;
@@ -5757,16 +5761,21 @@ a.fancybox-close {
 #unlock .popup-head {
 	background: url('../images/popups/sotrudnichestvo-bg.png') 50% 50% no-repeat;
 }
+#unlock {
+	width: 620px;
+}
 #unlock form {
+	min-width: 320px;
 	width: 490px;
 	margin: 0 auto;
+	text-align: center;
 }
-#unlock form input[type=text].phone, #unlock form input[type=text].email {
+/*#unlock form input[type=text].phone, #unlock form input[type=text].email {
 	width: 100%;
-}
-#unlock form input[type=text].phone {
+}*/
+/*#unlock form input[type=text].phone {
 	width: 100%;
-}
+}*/
 #unlock form input[type=submit] {
 	margin-top: 20px;
 }
@@ -9890,7 +9899,6 @@ section.conditions h1 {
 .clear {
 	min-height: 45px;
  }
-
  .opt-conditions {
 	min-height: 605px;
 	padding: 25px 0;
@@ -9914,12 +9922,12 @@ section.conditions h1 {
 	width: 320px;
  }
  .breadcrumbs {
-		width: 100%;
-		height: 25px;
-		background: #d4d4d6;
+	width: 100%;
+	height: 25px;
+	background: #d4d4d6;
  }
  .breadcrumbs li {
-		display: inline-block;
+	display: inline-block;
  }
  .breadcrumbs-item {
 	margin-left: 225px;
@@ -9952,7 +9960,6 @@ section.conditions h1 {
 		font-weight: bold;
 
 }
-
 .additional-price b:after {
 	content: '';
 	display: inline-block;
@@ -9967,11 +9974,11 @@ section.conditions h1 {
 	background-size: 8px;
 }
 
-/***
+/*
 
 	Styles for lock-card-price
 
-***/
+*/
 
 .card-text__prise {
 	position: relative;
@@ -10006,18 +10013,26 @@ section.conditions h1 {
 	top: 0;
 	background: url(../images/icons/lock.svg) no-repeat 0 0;
 }
+
+/*
+	
+	Popups
+
+*/
+
 .overlay-wrap {
 	filter: blur(2px);
 }
-
 #lock {
 	width: 100px;
 	height: 0;
 	line-height: 20px;
 	color: #1fd3d2;
+	cursor: pointer;
 }
 #get-price {
 	min-height: 415px;
+	min-width: 320px;
 	width: 620px;
 	background: #16171c;
 	border: 1px solid #000;
@@ -10029,23 +10044,24 @@ section.conditions h1 {
 	display: none;
 	position: fixed;
 	z-index: 10;
-
 }
+.popup-close {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	background: url('../images/popups/fancy-close.png') center center no-repeat;
+	right: 0;
+	cursor: pointer;
+}
+
 #get-price .popup-head {
 	background: url(../images/popup_background.jpg) 50% 50% no-repeat;
 	width: 100%;
 	height: 100px;
 }
-/*#get-price .popup-close:after {
-	content: "";
-	position: absolute;
-	width: 20px;
-	height: 20px;
-	right: -30px;
-	top: 0;
-	background: url('../images/close_popup.png') no-repeat;
-	cursor: pointer;
-}*/
+.get-price-input {
+	text-align: center;
+}
 
 .popup-active {
 	display: block !important;
@@ -10054,9 +10070,41 @@ section.conditions h1 {
 .confident {
 	text-align: center;
 	color: #444;
+	font-size: 12px;
+	width: 315px;
+	margin: 0 auto;
 }
-/***
 
-
-***/
-
+#feedback-popup {
+	min-height: 350px;
+    min-width: 320px;
+    width: 620px;
+    background: #16171c;
+    border: 1px solid #000;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    display: none;
+    position: fixed;
+    z-index: 10;
+}
+#feedback-popup .popup-head {
+	background: url(../images/popup_background.jpg) 50% 50% no-repeat;
+	width: 100%;
+	height: 100px;
+}
+.feedback-popup-link {
+	text-align: center;	
+}
+.popup-content .feedback-popup-btn {
+	color: #fff;
+	border: 1px solid #fff;
+	cursor: pointer;
+	background: transparent;
+}
+.popup-content .feedback-popup-btn:hover {
+	color: #fff;
+	border: 1px solid #fff;	
+}

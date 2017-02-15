@@ -80,7 +80,7 @@
 											<a href="/product/zeleniy-s-imbirem"><img src="userfiles/gallery/_BIG_1449211660.jpg" style="height: 100px" alt=""></a>
 											<div class="additional-price "><b>110</b>розничная цена</div>
 											<div class="card-text__prise  card-text__prise2"><b>300</b> ваша цена</div>
-											<div class="card-text__prise card-text__prise__mod card-text__prise2"><a id="lock" class="fancybox" href="#unlock">оптовая цена</a></div>
+											<div class="card-text__prise card-text__prise__mod card-text__prise2"><a id="lock">оптовая цена</a></div>
 											<!-- /.card-text__prise -->
 											<div class="card-text__name">Лесная ягода</div>
 											<!-- /.card-text__name -->
@@ -203,6 +203,39 @@
 				</div>
 			</footer>
 		</div>
+				<div id="get-price" class="popup">
+			<div class="popup-close"></div>
+			<div class="popup-head"></div>
+			<div class="popup-content">
+				<div class="title">
+					Введите ваши данные и прайс-лист откроется автоматически
+				</div>
+				<form id="w2" action="/send" method="post">
+					<div class="get-price-input">
+						<input type="text" id="orders-phone" class="phone" name="Orders[phone]" placeholder="Номер телефона" required>
+					</div>
+					<div class="get-price-input">
+						<input type="text" id="orders-email" class="email" name="Orders[email]" placeholder="Ваш e-mail" required>
+					</div>
+					<div class="confident">
+						<input type="checkbox" name="confirm" checked>
+						<span>Я даю свою согласие на обработку персональный данных и соглашаюсь с условиями и политикой конфидециальности</span>
+					</div>
+					<input class="btn" type="submit" value="ОК">
+				</form> 
+			</div>
+		</div>
+		<div id="feedback-popup" class="popup">
+			<div class="popup-head"></div>
+			<div class="popup-content">
+				<div class="title">
+					На ваш контактный e-mail было отправленно письмо, перейдите по ссылке для просмотра оптовых цен.
+				</div>
+				<div class="feedback-popup-link">
+					<button class="btn feedback-popup-btn">ОК</button>
+				</div>
+			</div>
+		</div>
 		<div class="popups" style="display: none;">
 			<div id="sotrudnichestvo" class="popup">
 				<div class="popup-head"></div>
@@ -236,17 +269,28 @@
 					</div>
 					<form id="w2" action="/send" method="post">
 						<div class="form-group field-unlock-phone">
-							<input type="text" id="orders-phone" class="phone" name="Orders[phone]" placeholder="Номер телефона">
+							<input type="text" id="orders-phone" class="phone" name="Orders[phone]" placeholder="Номер телефона" required>
 						</div>            
 						<div class="form-group field-orders-email">
-							<input type="text" id="orders-email" class="email" name="Orders[email]" placeholder="Электронный адрес">
+							<input type="text" id="orders-email" class="email" name="Orders[email]" placeholder="Ваш e-mail" required>
 						</div>            
 						<div class="confident">
-							<input type="checkbox" name="confirm">
+							<input type="checkbox" name="confirm" checked>
 							<span>Я даю свою согласие на обработку персональный данных и соглашаюсь с условиями и политикой конфидециальности</span>
 						</div>
 						<input class="btn border" type="submit" onclick="yaCounter34978440.reachGoal('cooperation'); return true;" value="ОК">
 					</form>
+				</div>
+			</div>
+			<div id="feedback-popup" class="popup">
+				<div class="popup-head"></div>
+				<div class="popup-content">
+					<div class="title">
+						На ваш контактный e-mail было отправленно письмо, перейдите по ссылке для просмотра оптовых цен.
+					</div>
+					<div class="feedback-popup-link">
+						<button class="btn feedback-popup-btn">ОК</button>
+					</div>
 				</div>
 			</div>
 			<div id="backcall" class="popup">
@@ -335,5 +379,21 @@
 		<script src="assets/f12f254f/yii.js?v=1447873110"></script>
 		<script src="assets/f12f254f/yii.validation.js?v=1447873110"></script>
 		<script src="assets/f12f254f/yii.activeForm.js?v=1447873110"></script>
+		
+		<script type="text/javascript">
+			$('#lock').on('click', function(){
+					$('#get-price').fadeIn(300);
+					$('#get-price').addClass('popup-active');
+				});
+			$('.popup-close').on('click', function(){
+					$('#get-price').fadeOut(300);
+					$('#get-price').removeClass('popup-active');
+				});
+
+			$('.feedback-popup-btn').on('click', function(){
+					$('#feedback-popup').fadeOut(300);
+					$('#feedback-popup').removeClass('popup-active');
+				});
+		</script>
 	</body>
 	</html>

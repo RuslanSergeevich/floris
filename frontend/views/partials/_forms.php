@@ -80,18 +80,32 @@ use yii\widgets\ActiveForm;
         <div class="popup-head"></div>
         <div class="popup-content">
             <div class="title">
-                ВВЕДИТЕ ВАШИ ДАННЫЕ И ЦЕНЫ ОТКРОЮТСЯ АВТОМАТИЧЕСКИ
+                Введите ваши данные и цены откроются автоматически
             </div>
             <form id="w2" action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
-                <input type="text" id="orders-phone2" class="phone" name="custom_myphon" placeholder="Номер телефона" required>
-                <input type="text" id="orders-email2" class="email" name="email" placeholder="Электронный адрес" required>
-                <input type="hidden" name="campaign_token" value="pEIMz" />
+                <div class="get-price-input">
+                    <input type="text" id="orders-phone2" class="phone" name="custom_myphone" placeholder="Номер телефона" required>
+                </div>
+                <div class="get-price-input">
+                    <input type="text" id="orders-email2" class="email" name="email" placeholder="Ваш e-mail" required>
+                </div>
                 <div class="confident">
-                    <input type="checkbox" class="confirm" name="confirm" required>
+                    <input type="checkbox" class="confirm" name="confirm" checked>
                     <span>Я даю свою согласие на обработку персональный данных и соглашаюсь с условиями и политикой конфидециальности</span>
                 </div>
-               <input class="send_form_ajax btn border" type="submit" value="ОК">
+                <input class="send_form_ajax btn border" type="submit" value="ОК">
             </form> 
         </div>
-    </div>
+    </div>  
 </div>
+<div id="feedback-popup" class="popup">
+    <div class="popup-head"></div>
+    <div class="popup-content">
+        <div class="title">
+            На ваш контактный e-mail было отправленно письмо, перейдите по ссылке для просмотра оптовых цен.
+        </div>
+        <div class="feedback-popup-link">
+            <button class="btn feedback-popup-btn">ОК</button>
+        </div>
+    </div>
+</div>  
