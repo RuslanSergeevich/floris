@@ -99,7 +99,9 @@ class Lk extends \yii\db\ActiveRecord
             $model = new self;
         }
         $model->email = $email;
-        $model->phone = $phone;
+        if($phone != '') {
+            $model->phone = $phone;
+        }
         $model->publish = 1;
         $token = self::generateToken();
         $model->active_alias = $token;
