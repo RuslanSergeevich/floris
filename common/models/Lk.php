@@ -113,7 +113,7 @@ class Lk extends \yii\db\ActiveRecord
             $html .= '<tr>Здравствуйте!<br/><br/></tr>';
             $html .= '<tr>Вы ввели свои данные на сайте <a href="//floristea.com">floristea.com</a><br/><br/></tr>';
             $html .= '<tr>Для получения доступа к оптовым ценам подтвердите свой адрес электронной почты, 
-                          перейдя по ссылке <a href="http://'.Yii::$app->request->serverName.'/user-token-login?token='.$token.'&url='.$url.'" style="color:red">'.Yii::$app->request->serverName.'/user-token-login?token='.$token.'&url='.$url.'</a><br/><br/></tr>';
+                          перейдя по ссылке <a style="color:blue" target="_blank" href="http://'.Yii::$app->request->serverName.'/user-token-login?token='.$token.'&url='.$url.'" style="color:red">'.Yii::$app->request->serverName.'/user-token-login?token='.$token.'&url='.$url.'</a><br/><br/></tr>';
             $html .= '<tr>Если вы не совершали никаких действий на сайте просто проигнорируйте это письмо.<br/><br/></tr>';
             $html .= '<tr>Всегда рады ответить на ваши вопросы<br/><br/></tr>';
             $html .= '<tr><a href="tel:+73652583577">+73652583577</a> Команда Флорис.<br/><br/></tr>';
