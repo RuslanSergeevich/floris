@@ -1,31 +1,35 @@
 {
-  "name": "Floris",
-  "version": "0.0.0",
-  "description": "Floris-project ",
-  "main": "gulp.js",
-  "dependencies": {
-    "gulp": "~3.9.0",
-    "uglify-js": "~2.4.24",
-    "yuicompressor": "~2.4.8"
-  },
-  "devDependencies": {
-    "gulp-concat": "~2.6.0",
-    "gulp-concat-css": "~2.2.0",
-    "gulp-minify-css": "~1.2.1",
-    "gulp-rename": "~1.2.2",
-    "gulp-uglify": "~1.4.1",
-    "gulp-watch": "^4.3.5"
-  },
+  "name": "yii2",
+  "description": "a modern PHP framework designed for professional Web development",
+  "main": "index.js",
   "directories": {
-    "test": "tests"
+    "doc": "docs",
+    "test": "tests/js/tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jsdom": "^9.8.3",
+    "leche": "^2.1.2",
+    "mocha": "^3.1.2",
+    "mocha-jsdom": "^1.1.0",
+    "sinon": "^1.17.6"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha tests/js/tests/*.test.js --timeout 0"
   },
   "repository": {
     "type": "git",
-    "url": "https://sliver2512@bitbucket.org/granat_in/floris.git"
+    "url": "git+https://github.com/yiisoft/yii2.git"
   },
-  "author": "Krasnopyorov",
-  "license": "BSD"
+  "keywords": [
+    "php",
+    "framework"
+  ],
+  "author": "",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/yiisoft/yii2/issues"
+  },
+  "homepage": "https://github.com/yiisoft/yii2"
 }

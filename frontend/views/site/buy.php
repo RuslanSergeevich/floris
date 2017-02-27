@@ -37,18 +37,18 @@ $this->registerMetaTag([
                     Галлерея продукции на полке
                 </h2>
             </div>
-            <?php// if($images = \common\models\GeographyImages::getList()):
+            <?//php if($images = \common\models\GeographyImages::getList()):
                 //$count = 1;?>
             <ul>
                 <li>
-                    <?php// foreach($images as $i):?>
-                        <?php// if (($count % 2) == 1 && $count > 1) echo '<li></li>';
+                    <?//php foreach($images as $i):?>
+                        <?//php if (($count % 2) == 1 && $count > 1) echo '<li></li>';
                             //echo Html::a(Html::img('@geography/'.$i['basename'] . '.' . $i['ext']), '#');
                         //$count++;?>
-                    <?php //endforeach;?>
+                    <?//php endforeach;?>
                 </li>
             </ul>
-            <?php //endif;?>
+            <?//php endif;?>
         </div>
         <div class="inner add-mag">
             <a class="btn green fancybox" href="#search-shop">ДОБАВИТЬ МАГАЗИН</a>
