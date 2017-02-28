@@ -5330,7 +5330,8 @@ section.conditions h1 {
 section.price {
 	margin: 107px auto 0;
 	padding-top: 70px;
-	width: 940px;
+	min-width: 320px;
+	max-width: 940px;
 }
 section.price h1 {
 	color: #272830;
@@ -6986,6 +6987,51 @@ a.fancybox-close {
 	.opt-description p {
 		font: 14px "open_sansregular" !important;
 	}
+	#get-price {
+		width: 100% !important;
+		height: 100% !important;
+		height: auto;
+	} 
+	section.price table tr td.col-img {
+		display: none;	
+	}
+	section.price table .b-img {
+		width: auto;
+	}
+	section.price table tr.product td.col-name {
+		text-align: left;
+	}
+	section.price table tr td.col-massa {
+		width: 60px;
+	}
+	section.price table tr td.col-massa {
+		width: 60px;
+	}
+	section.price table tr td.col-count {
+		width: 90px;
+	}
+	section.price table tr td.col-price {
+		width: 60px;
+	}
+	section.price {
+		padding: 0 10px;
+	}
+	.order-block {
+		float: left;
+	}
+	.for-user p {
+		margin-bottom: 10px;
+	}
+	.user-connect {
+		display: block;
+		margin-bottom: 10px;
+	}
+	section.price table tr.pos-title td {
+		padding-left: 0;
+	}
+	.popup-close {
+		top: 100px;
+	}
 }
 
 @media screen and (max-width: 576px) {
@@ -8102,6 +8148,101 @@ a.fancybox-close {
 	height: 80px;
  }
 }
+@media screen and (max-width: 480px) {
+	#get-price {
+		height: 100%;
+		width: 100%;
+	}
+	.get-price-input input {
+		width: 100% !important;
+	}
+	.confident {
+		width: auto !important;
+	}
+	section.price table tr.head td.col-name{
+		width: auto;
+		text-align: center;
+		font-size: 12px;
+	}
+	section.price table tr td.col-massa {
+		width: auto;
+		font-size: 12px;
+	}
+	section.price table tr td.col-up {
+		width: auto;
+		font-size: 12px;
+	}
+	section.price table tr.product td.col-name .product-name {
+		font-size: 12px;
+	}
+	section.price table tr td.col-name {
+		width: auto;
+		font-size: 12px;
+
+	}
+	section.price table tr.pos-title td {
+		padding-left: 0;
+	}
+	section.price table tr td input.count {
+		width: 20px;
+		height: 20px;
+	}
+	section.price table tr td a {
+		width: 19px;
+		height: 19px;
+	}
+	section.price table tr td.col-sum {
+		width: auto;
+		padding: 0 5px;
+		font-size: 12px;
+	}
+	section.price table tr td.col-price {
+		width: auto;
+		font-size: 12px;
+
+	}
+	section.price table tr td.col-count {
+		width: 70px;
+	}
+	section.price h1 {
+		font-size: 20px;
+	}
+	section.price h2 {
+		font-size: 15px;
+	}
+	section.price h2 span {
+		float: left;
+		margin-bottom: 15px;
+	}
+	.order-block {
+		width: 100%;
+	}
+	.features-list {
+		-webkit-flex-direction: column;
+		-moz-flex-direction: column;
+		-ms-flex-direction: column;
+		-o-flex-direction: column;
+		flex-direction: column;
+		-ms-align-items: center;
+		align-items: center;
+	}
+	.order-block h4 {
+		text-align: center;
+	}
+	.price-bottom {
+		text-align: center;
+	}
+	.price-checks {
+		float: none;
+		width: auto;
+	}
+	.price-bottom {
+		width: 100%;
+	}
+	
+
+}
+
 @media screen and (max-width: 420px) {
 	header menu {
 		padding-top: 50px;
@@ -8284,6 +8425,31 @@ a.fancybox-close {
 	.opt-description p {
 		font: 12px "open_sansregular" !important;
 	}
+	section.price table tr td.col-up {
+		display: none;
+	}
+	section.price table tr td.col-count {
+		width: 60px;
+	}
+	section.price table tr.itogo td:first-child {
+		padding-left: 0;
+	}
+	section.price table tr.itogo td.count-sum {
+		padding: 0;
+	}
+	section.price table tr.itogo td.sum-rub {
+		padding-right: 20px;
+	}
+	.uform-name, .uform-phone, .uform-comment {
+		width: 250px;
+	}
+	.for-user {
+		float: none;
+		width: 100%;
+	}
+	.for-user p {
+		width: 100%;
+	}
 }
 
 
@@ -8415,10 +8581,6 @@ a.fancybox-close {
 	margin-right: 5px;
 	background: url(../images/icons/gl.png) 0 -26px no-repeat;
 }
-
-
-
-
 
 .card-text__prise--black {
 	color: #000000;
@@ -10043,7 +10205,7 @@ section.conditions h1 {
 	transform: translate(-50%,-50%);
 	display: none;
 	position: fixed;
-	z-index: 10;
+	z-index: 9;
 }
 .popup-close {
 	position: absolute;

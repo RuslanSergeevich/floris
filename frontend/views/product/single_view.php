@@ -106,7 +106,7 @@ $this->registerMetaTag([
                     <!-- /.card-text__prise -->
                     <?php if($price->getRetail() != 0):?>
                         <?php if(!Yii::$app->session['id']):?>    
-                            <div class="card-text__prise card-text__prise__mod card-text__prise2"><a id="lock" class="fancybox" href="#unlock">оптовая цена</a></div>
+                            <div class="card-text__prise card-text__prise__mod card-text__prise2"><a id="lock" class="lock">оптовая цена</a></div>
                         <?php else:?>
                             <div class="card-text__prise card-text__prise--black"><b><?php echo $price->getRetail()?></b> цена оптовая</div>
                         <?php endif;?>

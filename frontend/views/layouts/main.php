@@ -155,32 +155,15 @@ AppAsset::register($this);?>
 <?php $this->registerJsFile('https://api-maps.yandex.ru/2.1/?lang=ru_RU');?>
 <?php $this->registerJsFile('js/_yandex_map.js',['depends'=>'yii\web\JqueryAsset']);?>
 <script type="text/javascript">
-    $(function(){
-        ymaps.ready(init);
-        function init() {
-            ymaps.geolocation.get({provider:"yandex"})
-            .then(function (res)  {
-                var g = res.geoObjects.get(0);
-                $("#city")
-                .html(g.getCountry() + ', ' + g.getAdministrativeAreas()[0] + ', ' + g.getLocalities()[0]);
-                //.html(g.getLocalities()[0]);
-            })
-            .catch(function (err) {
-                console.log('Не удалось установить местоположение', err);
-            });
-        }
-    });
-</script>
-<script src="/js/lib/_order.js"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('#get-price').fadeIn(500);
+    $('.lock').on('click', function(){
+        $('#get-price').fadeIn(300);
         $('#get-price').addClass('popup-active');
     });
     $('.popup-close').on('click', function(){
         $('#get-price').fadeOut(300);
         $('#get-price').removeClass('popup-active');
     });
+
     $('.feedback-popup-btn').on('click', function(){
         $('#feedback-popup').fadeOut(300);
         $('#feedback-popup').removeClass('popup-active');
@@ -203,13 +186,29 @@ AppAsset::register($this);?>
                     //alert('Необходимо в .');
                     $('#get-price').removeClass('popup-active').css('display', 'none');
                     $.fancybox.close();
-                    $('#unlock').removeClass('popup-active').css('display', 'none');
+                    //$('#unlock').removeClass('popup-active').css('display', 'none');
                     $('#feedback-popup').fadeIn(500).addClass('popup-active').css('display', 'block');
                 }
             }
         })
-    }) 
+    });
+    $(function(){
+        ymaps.ready(init);
+        function init() {
+            ymaps.geolocation.get({provider:"yandex"})
+            .then(function (res)  {
+                var g = res.geoObjects.get(0);
+                $("#city")
+                .html(g.getCountry() + ', ' + g.getAdministrativeAreas()[0] + ', ' + g.getLocalities()[0]);
+                //.html(g.getLocalities()[0]);
+            })
+            .catch(function (err) {
+                console.log('Не удалось установить местоположение', err);
+            });
+        }
+    });
 </script>
+<script src="/js/lib/_order.js"></script>
 </body>
 </html>
 <?php $this->endPage()?>

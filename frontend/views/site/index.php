@@ -86,7 +86,7 @@ $this->registerMetaTag([
                       <a href="/product/<?=$catalog->alias?>"><img src="/userfiles/gallery/<?php echo $catalog->basename?>.<?php echo $catalog->ext?>" alt=""></a>
                       <div class="additional-price"><b><?php echo \common\models\PricesValues::getPriceValue(2, $catalog->id)?></b>цена розничная</div>
                       <?php if(!Yii::$app->session['id']):?>
-                      <div class="card-text__prise card-text__prise__mod card-text__prise2"><a id="lock" class="fancybox" href="#unlock">оптовая цена</a></div>
+                      <div class="card-text__prise card-text__prise__mod card-text__prise2"><a id="lock" class="lock">оптовая цена</a></div>
                       <?php else:?>
                       <div class="card-text__prise card-text__prise2"><b><?php echo \common\models\PricesValues::getPriceValue(1, $catalog->id)?></b> цена оптовая</div>
                       <?php endif;?>
