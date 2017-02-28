@@ -48,7 +48,7 @@ class Lk extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['email', 'phone'], 'required'], 
+            [['email'], 'required'],
             [['publish', 'created_at', 'updated_at'], 'integer'],
             [['email', 'active_alias'], 'string', 'max' => 255]
         ];
