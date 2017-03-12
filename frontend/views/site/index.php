@@ -33,7 +33,7 @@ $this->registerMetaTag([
                   <!-- /.slider-info__text -->
                   <?php if ($image->alt!=''):?>
                   <a href="<?php echo $image->alt?>" class="slider-info__button">ПОДРОБНЕЙ</a>
-                  <?endif;?>
+                  <?php endif;?>
                   <!-- /.slider-info__button -->
                 </div>
                 <!-- /.slider-info -->
@@ -155,3 +155,6 @@ $this->registerMetaTag([
           <!-- /.map -->
         </main>
       </div>
+
+<?php $this->registerJsFile('https://api-maps.yandex.ru/2.1/?lang=ru_RU');?>
+<?php $this->registerJsFile('js/_yandex_map.js',['depends'=>'yii\web\JqueryAsset']);?>
