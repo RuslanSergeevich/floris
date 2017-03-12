@@ -29,12 +29,12 @@ $this->title = 'Добавление/Редактирование галереи
                         } else {
                             echo $form->field($model, 'parent_id')->dropDownList(Gallery::getListGallery($model->id), ['class' => 'form-control select2']);
                         }?>
-                        <?= $form->field($model, 'name') ?>
+                        <?php echo $form->field($model, 'name') ?>
                         <?php if(!$model->isNewRecord):?>
-                            <?= $form->field($model, 'publish')->checkbox(['class' => 'minimal']) ?>
+                            <?php echo $form->field($model, 'publish')->checkbox(['class' => 'minimal']) ?>
                         <?php endif;?>
                         <div class="form-group">
-                            <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
+                            <?php echo Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
                         </div>
                         <?php if($model->id =='91'):?>
                             <p>Для слайдера загужать изображения размером <strong>500 х 500 px</strong></p>
