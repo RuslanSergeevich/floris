@@ -21,18 +21,18 @@ $this->registerMetaTag([
           <?php if ($slider):?>
             <?php foreach ($slider as $image): ?>
               <li>
-                <img class="img-sl" src="/userfiles/gallery/<?=$image->basename?>.<?=$image->ext?>" alt="" rel="product"></a>
+                <img class="img-sl" src="/userfiles/gallery/<?php echo $image->basename?>.<?php echo $image->ext?>" alt="" rel="product"></a>
                 <div class="slider-info">
                   <div class="slider-info__title">
-                    <?=$image->name?>
+                    <?php echo $image->name?>
                   </div>
                   <!-- /.slider-info__title -->
                   <div class="slider-info__text">
-                    <?=$image->title?>
+                      <?php echo $image->title?>
                   </div>
                   <!-- /.slider-info__text -->
-                  <?if ($image->alt!=''):?>
-                  <a href="<?=$image->alt?>" class="slider-info__button">ПОДРОБНЕЙ</a>
+                  <?php if ($image->alt!=''):?>
+                  <a href="<?php echo $image->alt?>" class="slider-info__button">ПОДРОБНЕЙ</a>
                   <?endif;?>
                   <!-- /.slider-info__button -->
                 </div>
