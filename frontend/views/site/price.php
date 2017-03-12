@@ -202,7 +202,7 @@ $this->registerMetaTag([
         <div class="title">
             Введите ваши данные и прайс-лист откроется автоматически
         </div>
-        <form id="w2" action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
+        <form id="w33" action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
             <div class="get-price-input">
                 <input type="text" id="orders-email2" class="email" name="email" placeholder="Ваш e-mail" required>
             </div>
@@ -211,8 +211,8 @@ $this->registerMetaTag([
                 <span>Я даю свою согласие на обработку персональный данных и соглашаюсь с условиями и политикой конфидециальности</span>
             </div>
             <input type="hidden" name="campaign_token" value="pEIMz" />
-            <input class="send_form_ajax btn border" type="submit" value="ОК">
-        </form> 
+        </form>
+        <input class="send_form_ajax btn modal-button" type="submit" value="ОК">
     </div>
 </div>
 <script type="text/javascript">

@@ -90,7 +90,7 @@ class Lk extends \yii\db\ActiveRecord
         return self::find()->where(['publish' => self::PUBLISH])->asArray()->all();
     }
 
-    public static function addUserLk($email, $phone, $url){
+    public static function addUserLk($email, $phone='', $url){
 
         $is_new = false;
         $model = self::findUserByEmail($email);
@@ -99,9 +99,7 @@ class Lk extends \yii\db\ActiveRecord
             $model = new self;
         }
         $model->email = $email;
-        if($phone != '') {
-            $model->phone = $phone;
-        }
+        $model->phone = $phone;
         $model->publish = 1;
         $token = self::generateToken();
         $model->active_alias = $token;

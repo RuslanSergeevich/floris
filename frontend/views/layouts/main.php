@@ -180,8 +180,9 @@ AppAsset::register($this);?>
             dataType: 'json',
             type: 'post',
             success:function(response){
+                console.log(response);
                 if(response.is_new == true){
-                    $('#w2').submit();
+                    $('#w33').submit();
                 }else{
                     //alert('Необходимо в .');
                     $('#get-price').removeClass('popup-active').css('display', 'none');
