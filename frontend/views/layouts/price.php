@@ -45,7 +45,7 @@
         </div>
     </header>
     <div class="main">
-       <?=$content; ?>
+       <?php echo $content; ?>
         <footer class="main_footer">
             <div class="container">
                 <div class="row">
@@ -85,7 +85,7 @@
                         Получите оптовый<br>прайс-лист на e-mail
                     </div>
                     <form id="w2" action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
-                        <input type="text" id="orders-phone" class="phone" name="custom_phone" placeholder="Номер телефона" value="">
+                        <input type="text" id="orders-phone" class="phone" name="custom_phone_price" placeholder="Номер телефона" value="">
                         <input type="text" id="orders-email" class="email" name="email" placeholder="Электронный адрес *" required>
                         <input type="hidden" name="campaign_token" value="pEIMz" />
                         <input type="submit" value="ПОЛУЧИТЬ"/>
