@@ -118,8 +118,22 @@ class Lk extends \yii\db\ActiveRecord
             $headers  = "Content-type: text/html; charset=utf-8 \r\n";
             $headers .= 'From: '.$from."\r\n"; 
             mail($to, $subject, $html, $headers);
+            if(strstr($url, 'price')){
+                self::sendCopy($_POST['email']);
+            }
         }
         return $is_new;
+    }
+
+    private static function sendCopy($email){
+        $from = "Floris | Крымский чай и сладости floristea.com <info@floristea.com>";
+        $to = 'info@floristea.com';
+        $subject = 'Подтвердите свой e-mail на сайте floristea.com';
+        $html = '';
+        $html .= '<tr>Оптовый прайс лист '.$email.'<br/><br/></tr>';
+        $headers  = "Content-type: text/html; charset=utf-8 \r\n";
+        $headers .= 'From: '.$from."\r\n";
+        mail($to, $subject, $html, $headers);
     }
 
     private static function generateToken($length = 15){
